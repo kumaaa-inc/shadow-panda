@@ -1,0 +1,26 @@
+{
+  "name": "shadow-panda",
+  "version": "0.0.1",
+  "description": "Panda CSS preset for shadcn/ui & Radix UI",
+  "scripts": {},
+  "packageManager": "pnpm@8.6.5",
+  "keywords": [
+    "shadow-panda",
+    "shadcn/ui",
+    "pandacss",
+    "radix-ui",
+    "panda",
+    "css",
+    "ui"
+  ],
+  "author": "nanopx <0nanopx@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "6.1.0",
+    "@typescript-eslint/parser": "6.1.0",
+    "eslint": "8.45.0",
+    "eslint-config-prettier": "8.8.0",
+    "eslint-plugin-import": "2.27.5",
+    "typescript": "5.1.6"
+  }
+}

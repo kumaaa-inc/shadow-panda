@@ -1,0 +1,31 @@
+{
+  "name": "@shadow-panda/preset",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "files": [
+    "src",
+    "dist"
+  ],
+  "sideEffects": false,
+  "license": "MIT",
+  "scripts": {
+    "prepare": "panda codegen",
+    "debug": "panda debug",
+    "studio": "panda studio"
+  },
+  "dependencies": {
+    "@pandacss/preset-panda": "0.7.0"
+  },
+  "devDependencies": {
+    "@pandacss/dev": "0.7.0",
+    "@pandacss/types": "0.7.0",
+    "eslint": "8.44.0",
+    "postcss": "8.4.25",
+    "typescript": "5.1.6"
+  },
+  "peerDependencies": {
+    "@pandacss/dev": "0.7.0"
+  }
+}
