@@ -6,7 +6,7 @@ export const outline: UtilityConfig = {
     shorthand: 'ring',
     values: 'borders',
     transform(value) {
-      if (value === 'default') {
+      if (value === 'base') {
         return { outline: '2px solid transparent', outlineOffset: '2px' }
       }
       return { outline: value }

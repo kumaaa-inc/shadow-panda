@@ -16,7 +16,7 @@ export const button = defineRecipe({
     cursor: 'pointer',
 
     _focusVisible: {
-      ring: 'default',
+      ring: 'base',
       ringColor: 'ring',
     },
 
@@ -44,7 +44,7 @@ export const button = defineRecipe({
         },
       },
       outline: {
-        borderWidth: '1px',
+        border: '1',
         borderColor: 'input',
         bg: 'background',
 
