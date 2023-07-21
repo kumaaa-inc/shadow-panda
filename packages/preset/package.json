@@ -12,6 +12,7 @@
   "license": "MIT",
   "scripts": {
     "prepare": "panda codegen",
+    "watch": "panda codegen -w",
     "debug": "panda debug",
     "studio": "panda studio"
   },

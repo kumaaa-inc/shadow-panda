@@ -8,9 +8,9 @@
     "allowJs": false,
     "skipLibCheck": true,
     "strict": true,
+    "jsx": "react",
     "paths": {
       "@/*": ["./src/*"]
     }
   }
-  // "exclude": ["node_modules", "styled-system"]
 }
