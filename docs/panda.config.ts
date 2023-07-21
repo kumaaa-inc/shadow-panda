@@ -17,6 +17,7 @@ export default defineConfig({
   staticCss: {
     recipes: {
       button: ['*'],
+      typography: ['*'],
     },
   },
 
