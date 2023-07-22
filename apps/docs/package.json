@@ -15,7 +15,7 @@
     "build": "next build",
     "start": "next start",
     "export": "next build && next export",
-    "deploy": "ghpages -d out -t true"
+    "deploy:ghpages": "ghpages -d out -t true"
   },
   "dependencies": {
     "@radix-ui/react-slot": "1.0.2",
@@ -30,7 +30,7 @@
     "@pandacss/dev": "0.7.0",
     "@shadow-panda/preset": "workspace:*",
     "@types/react": "18.2.15",
-    "eslint": "8.44.0",
+    "eslint": "8.45.0",
     "gh-pages": "5.0.0",
     "postcss": "8.4.27",
     "typescript": "5.1.6"
