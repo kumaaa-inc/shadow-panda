@@ -7,7 +7,7 @@ const config: DocsThemeConfig = {
   logo: <span>Shadow Panda</span>,
   project: { link: 'https://github.com/kumaaa-inc/shadow-panda' },
   docsRepositoryBase:
-    'https://github.com/kumaaa-inc/shadow-panda/blob/main/apps/docs/src/pages',
+    'https://github.com/kumaaa-inc/shadow-panda/blob/main/apps/docs',
   useNextSeoProps() {
     const { asPath } = useRouter()
     const baseConfig = {
