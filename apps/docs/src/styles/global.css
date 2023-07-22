@@ -6,6 +6,9 @@
 
 html, body {
   background: var(--sp-colors-background);
+}
+
+.nextra-content {
   color: var(--sp-colors-foreground);
 }
 

@@ -1,4 +1,5 @@
 import { defineConfig } from '@pandacss/dev'
+import { shadowPandaPreset } from './src'
 
 export default defineConfig({
   // Whether to use css reset
@@ -8,10 +9,10 @@ export default defineConfig({
   prefix: 'sp',
 
   // Presets
-  presets: ['@shadow-panda/preset'],
+  presets: [shadowPandaPreset],
 
   // Where to look for your css declarations
-  include: ['./src/**/*.{js,jsx,ts,tsx,mdx}', './theme.config.tsx'],
+  include: ['./src/**/*.{js,jsx,ts,tsx}'],
 
   // Files to exclude
   exclude: [],
