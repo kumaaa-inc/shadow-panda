@@ -1,7 +1,11 @@
 import { button } from './button'
-import { typography } from './typography'
+import { h1, h2, h3, h4, p } from './typography'
 
 export const recipes = {
   button,
-  typography,
+  h1,
+  h2,
+  h3,
+  h4,
+  p,
 }

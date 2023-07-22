@@ -1,0 +1,186 @@
+import { Tabs, Tab, Callout } from 'nextra/components'
+import { h1, h2, h3, h4, p } from '@shadow-panda/styled-system/recipes'
+import { css } from '@shadow-panda/styled-system/css'
+import { Preview } from '@/components/_docs/preview'
+
+# Typography
+
+Styles for headings, paragraphs, lists...etc
+
+<Callout type="warning" emoji="⚒️">
+  WIP
+</Callout>
+
+<Callout type="warning" emoji="⚠️">
+  Please note that when using text style, layout properties like `border`,
+  `margin`, `scroll-margin`, etc. are not applied.
+</Callout>
+
+## h1
+
+<Tabs items={['Preview', 'Recipe', 'Text Style']}>
+  <Tab>
+    <Preview>
+      <h1 className={h1()}>Taxing Laughter: The Joke Tax Chronicles</h1>
+    </Preview>
+  </Tab>
+  <Tab>
+
+```tsx copy
+import { h1 } from '<generated>/styled-system/recipes'
+
+export function Example() {
+  return <h1 className={h1()}>Taxing Laughter: The Joke Tax Chronicles</h1>
+}
+```
+
+  </Tab>
+  <Tab>
+  
+```tsx copy
+import { css } from '<generated>/styled-system/css'
+
+export function Example() {
+  return <h1 className={css({ textStyle: 'h1' })}>Taxing Laughter: The Joke Tax Chronicles</h1>
+}
+```
+
+  </Tab>
+</Tabs>
+
+## h2
+
+<Tabs items={['Preview', 'Recipe', 'Text Style']}>
+  <Tab>
+    <Preview>
+      <h2 className={h2()}>The People of the Kingdom</h2>
+    </Preview>
+  </Tab>
+  <Tab>
+
+```tsx copy
+import { h2 } from '<generated>/styled-system/recipes'
+
+export function Example() {
+  return <h2 className={h2()}>The People of the Kingdom</h2>
+}
+```
+
+  </Tab>
+  <Tab>
+  
+```tsx copy
+import { css } from '<generated>/styled-system/css'
+
+export function Example() {
+  return <h2 className={css({ textStyle: 'h2' })}>The People of the Kingdom</h2>
+}
+```
+
+  </Tab>
+</Tabs>
+
+## h3
+
+<Tabs items={['Preview', 'Recipe', 'Text Style']}>
+  <Tab>
+    <Preview>
+      <h3 className={h3()}>The Joke Tax</h3>
+    </Preview>
+  </Tab>
+  <Tab>
+
+```tsx copy
+import { h3 } from '<generated>/styled-system/recipes'
+
+export function Example() {
+  return <h3 className={h3()}>The Joke Tax</h3>
+}
+```
+
+  </Tab>
+  <Tab>
+  
+```tsx copy
+import { css } from '<generated>/styled-system/css'
+
+export function Example() {
+  return <h3 className={css({ textStyle: 'h3' })}>The Joke Tax</h3>
+}
+```
+
+  </Tab>
+</Tabs>
+
+## h4
+
+<Tabs items={['Preview', 'Recipe', 'Text Style']}>
+  <Tab>
+    <Preview>
+      <h4 className={h4()}>People stopped telling jokes</h4>
+    </Preview>
+  </Tab>
+  <Tab>
+
+```tsx copy
+import { h4 } from '<generated>/styled-system/recipes'
+
+export function Example() {
+  return <h4 className={h4()}>People stopped telling jokes</h4>
+}
+```
+
+  </Tab>
+  <Tab>
+  
+```tsx copy
+import { css } from '<generated>/styled-system/css'
+
+export function Example() {
+  return <h4 className={css({ textStyle: 'h4' })}>People stopped telling jokes</h4>
+}
+```
+
+  </Tab>
+</Tabs>
+
+## p
+
+<Tabs items={['Preview', 'Recipe', 'Text Style']}>
+  <Tab>
+    <Preview>
+      <p className={p()}>The king, seeing how much happier his subjects were, realized the error of his ways and repealed the joke tax.</p>
+    </Preview>
+  </Tab>
+  <Tab>
+
+```tsx copy
+import { p } from '<generated>/styled-system/recipes'
+
+export function Example() {
+  return (
+    <p className={p()}>
+      The king, seeing how much happier his subjects were, realized the error of
+      his ways and repealed the joke tax.
+    </p>
+  )
+}
+```
+
+  </Tab>
+  <Tab>
+  
+```tsx copy
+import { css } from '<generated>/styled-system/css'
+
+export function Example() {
+  return (
+    <p className={css({ textStyle: 'p' })}>
+      The king, seeing how much happier his subjects were, realized the error of his ways and repealed the joke tax.
+    </p>
+  )
+}
+```
+
+  </Tab>
+</Tabs>

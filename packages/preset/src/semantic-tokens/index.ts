@@ -10,20 +10,20 @@ export const semanticTokens = defineSemanticTokens({
     },
     foreground: {
       value: {
-        base: 'hsl(222.2 47.4% 11.2%)',
+        base: 'hsl(240 10% 3.9%)',
         _dark: 'hsl(0 0% 98%)',
       },
     },
     muted: {
       DEFAULT: {
         value: {
-          base: 'hsl(210 40% 96.1%)',
+          base: 'hsl(240 4.8% 95.9%)',
           _dark: 'hsl(240 3.7% 15.9%)',
         },
       },
       foreground: {
         value: {
-          base: 'hsl(215.4 16.3% 46.9%)',
+          base: 'hsl(240 3.8% 46.1%)',
           _dark: 'hsl(240 5% 64.9%)',
         },
       },
@@ -37,7 +37,7 @@ export const semanticTokens = defineSemanticTokens({
       },
       foreground: {
         value: {
-          base: 'hsl(222.2 47.4% 11.2%)',
+          base: 'hsl(240 10% 3.9%)',
           _dark: 'hsl(0 0% 98%)',
         },
       },
@@ -51,33 +51,33 @@ export const semanticTokens = defineSemanticTokens({
       },
       foreground: {
         value: {
-          base: 'hsl(222.2 47.4% 11.2%)',
+          base: 'hsl(240 10% 3.9%)',
           _dark: 'hsl(0 0% 98%)',
         },
       },
     },
     border: {
       value: {
-        base: 'hsl(214.3 31.8% 91.4%)',
+        base: 'hsl(240 5.9% 90%)',
         _dark: 'hsl(240 3.7% 15.9%)',
       },
     },
     input: {
       value: {
-        base: 'hsl(214.3 31.8% 91.4%)',
+        base: 'hsl(240 5.9% 90%)',
         _dark: 'hsl(240 3.7% 15.9%)',
       },
     },
     primary: {
       DEFAULT: {
         value: {
-          base: 'hsl(222.2 47.4% 11.2%)',
+          base: 'hsl(240 5.9% 10%)',
           _dark: 'hsl(0 0% 98%)',
         },
       },
       foreground: {
         value: {
-          base: 'hsl(210 40% 98%)',
+          base: 'hsl(240 5.9% 10%)',
           _dark: 'hsl(240 5.9% 10%)',
         },
       },
@@ -85,13 +85,13 @@ export const semanticTokens = defineSemanticTokens({
     secondary: {
       DEFAULT: {
         value: {
-          base: 'hsl(210 40% 96.1%)',
+          base: 'hsl(240 4.8% 95.9%)',
           _dark: 'hsl(240 3.7% 15.9%)',
         },
       },
       foreground: {
         value: {
-          base: 'hsl(222.2 47.4% 11.2%)',
+          base: 'hsl(240 5.9% 10%)',
           _dark: 'hsl(0 0% 98%)',
         },
       },
@@ -99,13 +99,13 @@ export const semanticTokens = defineSemanticTokens({
     accent: {
       DEFAULT: {
         value: {
-          base: 'hsl(210 40% 96.1%)',
+          base: 'hsl(240 4.8% 95.9%)',
           _dark: 'hsl(240 3.7% 15.9%)',
         },
       },
       foreground: {
         value: {
-          base: 'hsl(222.2 47.4% 11.2%)',
+          base: 'hsl(240 5.9% 10%)',
           _dark: 'hsl(0 0% 98%)',
         },
       },
@@ -126,7 +126,7 @@ export const semanticTokens = defineSemanticTokens({
     },
     ring: {
       value: {
-        base: 'hsl(215 20.2% 65.1%)',
+        base: 'hsl(240 5% 64.9%)',
         _dark: 'hsl(240 3.7% 15.9%)',
       },
     },
