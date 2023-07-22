@@ -13,10 +13,7 @@
     "test-storybook": "test-storybook",
     "dev": "rm -rf .next && next dev",
     "build": "next build",
-    "start": "next start",
-    "export": "next build && next export",
-    "deploy:ghpages": "gh-pages -d out -t true",
-    "ghpages": "gh-pages -h"
+    "start": "next start"
   },
   "dependencies": {
     "@radix-ui/react-slot": "1.0.2",
@@ -32,7 +29,6 @@
     "@shadow-panda/preset": "workspace:*",
     "@types/react": "18.2.15",
     "eslint": "8.45.0",
-    "gh-pages": "5.0.0",
     "postcss": "8.4.27",
     "typescript": "5.1.6"
   },
