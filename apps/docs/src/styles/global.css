@@ -1,0 +1,5 @@
+/**
+ * NOTE: Added `nextra` layer to fix the issue with `nextra` theme CSS
+ * @see apps/docs/patch/postinstall-fix-nextra-theme-css.js
+ */
+@layer nextra, reset, base, tokens, recipes, utilities;

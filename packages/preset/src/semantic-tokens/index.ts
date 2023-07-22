@@ -64,10 +64,10 @@ export const semanticTokens = defineSemanticTokens({
     },
     destructive: {
       DEFAULT: {
-        value: 'hsl(0 100% 50%)',
+        value: 'hsl(0 84.2% 60.2%)',
       },
       foreground: {
-        value: 'hsl(210 40% 98%)',
+        value: 'hsl(0 0% 98%)',
       },
     },
     ring: {
