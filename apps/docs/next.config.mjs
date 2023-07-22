@@ -6,6 +6,9 @@ import nextra from 'nextra'
  */
 const nextConfig = {
   reactStrictMode: true,
+  images: {
+    unoptimized: true,
+  },
   redirects() {
     return [
       {
