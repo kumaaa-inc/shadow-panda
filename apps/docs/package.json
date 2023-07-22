@@ -15,7 +15,8 @@
     "build": "next build",
     "start": "next start",
     "export": "next build && next export",
-    "deploy:ghpages": "gh-pages -d out -t true"
+    "deploy:ghpages": "gh-pages -d out -t true",
+    "ghpages": "gh-pages -h"
   },
   "dependencies": {
     "@radix-ui/react-slot": "1.0.2",
