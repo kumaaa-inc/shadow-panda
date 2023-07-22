@@ -2,7 +2,7 @@
 import nextra from 'nextra'
 
 const isProd = process.env.NODE_ENV === 'production'
-const assetPrefix = isProd ? '/reading-notes' : ''
+const assetPrefix = isProd ? '/shadow-panda' : ''
 
 /**
  * @type {import('next').NextConfig}
