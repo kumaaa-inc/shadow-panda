@@ -1,0 +1,19 @@
+{
+  "index": {
+    "title": "Home",
+    "display": "hidden",
+    "theme": {
+      "layout": "full",
+      "breadcrumb": false,
+      "footer": true,
+      "sidebar": false,
+      "toc": false,
+      "pagination": false
+    }
+  },
+  "docs": {
+    "title": "Documentation",
+    "type": "page",
+    "href": "/docs/overview/getting-started"
+  }
+}

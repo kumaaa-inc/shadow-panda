@@ -8,9 +8,16 @@
     "allowJs": false,
     "skipLibCheck": true,
     "strict": true,
-    "jsx": "react",
+    "jsx": "preserve",
     "paths": {
       "@/*": ["./src/*"]
-    }
-  }
+    },
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "noEmit": true,
+    "incremental": true,
+    "module": "esnext",
+    "resolveJsonModule": true
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules"]
 }

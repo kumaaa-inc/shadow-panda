@@ -1,0 +1,38 @@
+{
+  "name": "@shadow-panda/docs",
+  "version": "0.0.0",
+  "private": true,
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "prepare": "panda codegen",
+    "postinstall": "node patch/postinstall-fix-nextra-theme-css.js",
+    "watch": "panda codegen -w",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build",
+    "test-storybook": "test-storybook",
+    "dev": "rm -rf .next && next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@radix-ui/react-slot": "1.0.2",
+    "lucide-react": "^0.263.0",
+    "next": "13.4.12",
+    "nextra": "2.10.0",
+    "nextra-theme-docs": "2.10.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
+  },
+  "devDependencies": {
+    "@pandacss/dev": "0.7.0",
+    "@shadow-panda/preset": "workspace:*",
+    "@types/react": "18.2.15",
+    "eslint": "8.44.0",
+    "postcss": "8.4.25",
+    "typescript": "5.1.6"
+  },
+  "peerDependencies": {
+    "@pandacss/dev": "0.7.0"
+  }
+}

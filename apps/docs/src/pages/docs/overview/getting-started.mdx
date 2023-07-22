@@ -1,0 +1,43 @@
+import { Steps, Callout } from 'nextra/components'
+
+# Getting started
+
+## Installation
+
+<Callout type="info" emoji="ℹ️">
+  Before installing this package, make sure you have installed [Panda
+  CSS](https://panda-css.com/docs/overview/getting-started#installation) in your
+  project.
+</Callout>
+
+<Steps>
+### Step 1
+
+Install the package
+
+```sh npm2yarn copy
+npm i -D @shadow-panda/preset
+```
+
+<Callout type="warning" emoji="⚠️">
+  This package is not published yet (WIP)
+</Callout>
+
+### Step 2
+
+Add the preset to your `panda.config.ts`
+
+```ts
+import { defineConfig } from '@pandacss/dev'
+
+export default defineConfig({
+  presets: ['@shadow-panda/preset'],
+  // Other configurations and overrides...
+})
+```
+
+### Step 3
+
+Copy [components](/docs/components) and use it!
+
+</Steps>

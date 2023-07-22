@@ -1,17 +1,11 @@
 import { defineConfig } from '@pandacss/dev'
-import { shadowPandaPreset } from '@shadow-panda/preset'
 
 export default defineConfig({
   // Whether to use css reset
-  preflight: true,
-
-  // jsxFramework: 'react',
-
-  // Allow use tokens instead of raw values
-  // strictTokens: true,
+  // preflight: true,
 
   // Namespace prefix for the generated css
-  // prefix: 'rf',
+  prefix: 'sp',
 
   // Always generate static recipe css to use inside storybook
   staticCss: {
@@ -22,10 +16,10 @@ export default defineConfig({
   },
 
   // Presets
-  presets: [shadowPandaPreset],
+  presets: ['@shadow-panda/preset'],
 
   // Where to look for your css declarations
-  include: ['./src/**/*.{js,jsx,ts,tsx}'],
+  include: ['./src/**/*.{js,jsx,ts,tsx,mdx}', './theme.config.tsx'],
 
   // Files to exclude
   exclude: [],
