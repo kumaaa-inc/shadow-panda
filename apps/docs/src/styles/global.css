@@ -3,3 +3,13 @@
  * @see apps/docs/patch/postinstall-fix-nextra-theme-css.js
  */
 @layer nextra, reset, base, tokens, recipes, utilities;
+
+html, body {
+  background: var(--sp-colors-background);
+  color: var(--sp-colors-foreground);
+}
+
+.dark\:nx-bg-dark {
+  background: var(--sp-colors-background);
+  color: var(--sp-colors-foreground);
+}

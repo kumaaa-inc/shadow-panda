@@ -10,14 +10,16 @@ export const button = defineRecipe({
     borderRadius: 'md',
     fontSize: 'sm',
     fontWeight: 'medium',
-    ring: 'default',
+    ring: 'base',
     ringColor: 'background',
     transition: 'colors',
     cursor: 'pointer',
+    boxShadow: 'none',
 
     _focusVisible: {
       ring: 'base',
       ringColor: 'ring',
+      boxShadow: 'none',
     },
 
     _disabled: {
