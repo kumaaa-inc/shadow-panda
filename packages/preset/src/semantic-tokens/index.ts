@@ -77,7 +77,7 @@ export const semanticTokens = defineSemanticTokens({
       },
       foreground: {
         value: {
-          base: 'hsl(240 5.9% 10%)',
+          base: 'hsl(0 0% 98%)',
           _dark: 'hsl(240 5.9% 10%)',
         },
       },

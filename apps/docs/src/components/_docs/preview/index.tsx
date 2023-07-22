@@ -20,7 +20,7 @@ export const Preview = ({
         borderRadius: 'md',
         p: '10',
       })}
-      style={{ height }}
+      style={{ minHeight: height }}
     >
       {children}
     </div>

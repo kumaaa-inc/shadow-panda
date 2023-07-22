@@ -49,4 +49,27 @@ export const textStyles = defineTextStyles({
       lineHeight: '7',
     },
   },
+  lead: {
+    description: 'Lead paragraph',
+    value: {
+      fontSize: 'xl',
+      lineHeight: '7',
+    },
+  },
+  large: {
+    description: 'Large text',
+    value: {
+      fontSize: 'lg',
+      fontWeight: 'semibold',
+      lineHeight: '7',
+    },
+  },
+  small: {
+    description: 'Small text',
+    value: {
+      fontSize: 'sm',
+      fontWeight: 'medium',
+      lineHeight: 'none',
+    },
+  },
 })

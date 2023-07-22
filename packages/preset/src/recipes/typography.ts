@@ -54,3 +54,86 @@ export const p = defineRecipe({
     },
   },
 })
+
+export const table = defineRecipe({
+  name: 'table',
+  description: 'Typography - table style',
+  base: {
+    // TODO
+  },
+})
+
+export const blockquote = defineRecipe({
+  name: 'blockquote',
+  description: 'Typography - blockquote style',
+  base: {
+    mt: '6',
+    borderLeft: '1',
+    borderLeftWidth: '2px',
+    borderLeftColor: 'border',
+    pl: '6',
+    fontStyle: 'italic',
+  },
+})
+
+export const list = defineRecipe({
+  name: 'list',
+  description: 'Typography - list style',
+  base: {
+    my: '6',
+    ml: '6',
+    listStyleType: 'disc',
+    '& > li': {
+      mt: '2',
+    },
+  },
+})
+
+export const inlineCode = defineRecipe({
+  name: 'inlineCode',
+  description: 'Typography - InlineCode style',
+  base: {
+    position: 'relative',
+    rounded: 'sm',
+    bg: 'muted',
+    px: '0.3rem',
+    py: '0.2rem',
+    fontFamily: 'mono',
+    fontSize: 'sm',
+    fontWeight: 'semibold',
+  },
+})
+
+export const lead = defineRecipe({
+  name: 'lead',
+  description: 'Typography - Lead style',
+  base: {
+    textStyle: 'lead',
+    color: 'muted.foreground',
+  },
+})
+
+export const large = defineRecipe({
+  name: 'large',
+  description: 'Typography - Large style',
+  base: {
+    textStyle: 'large',
+  },
+})
+
+export const small = defineRecipe({
+  name: 'small',
+  description: 'Typography - Small style',
+  base: {
+    textStyle: 'small',
+  },
+})
+
+export const muted = defineRecipe({
+  name: 'muted',
+  description: 'Typography - Muted style',
+  base: {
+    fontSize: 'sm',
+    color: 'muted.foreground',
+  },
+})

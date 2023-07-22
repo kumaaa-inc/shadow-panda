@@ -33,7 +33,7 @@ importers:
         specifier: 1.0.2
         version: 1.0.2(@types/react@18.2.15)(react@18.2.0)
       lucide-react:
-        specifier: ^0.263.0
+        specifier: 0.263.0
         version: 0.263.0(react@18.2.0)
       next:
         specifier: 13.4.12
