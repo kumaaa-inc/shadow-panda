@@ -3,8 +3,8 @@
   "version": "0.0.1",
   "description": "Panda CSS preset for shadcn/ui & Radix UI",
   "scripts": {
-    "app-docs": "pnpm -F @shadow-panda/docs",
-    "preset": "pnpm -F @shadow-panda/preset"
+    "apps:docs": "pnpm -F @shadow-panda/docs",
+    "packages:preset": "pnpm -F @shadow-panda/preset"
   },
   "packageManager": "pnpm@8.6.5",
   "keywords": [

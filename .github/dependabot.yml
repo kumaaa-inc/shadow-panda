@@ -1,0 +1,18 @@
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    target-branch: "develop"
+    commit-message:
+      prefix: "npm"
+    schedule:
+      interval: "daily"
+      timezone: "Asia/Tokyo"
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    target-branch: "develop"
+    commit-message:
+      prefix: "github-actions"
+    schedule:
+      interval: "daily"
+      timezone: "Asia/Tokyo"
