@@ -1,6 +1,9 @@
 // eslint-disable-next-line import/default
 import nextra from 'nextra'
 
+const isProd = process.env.NODE_ENV === 'production'
+const assetPrefix = isProd ? '/reading-notes' : ''
+
 /**
  * @type {import('next').NextConfig}
  */
@@ -9,6 +12,9 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
+  assetPrefix,
+  basePath: assetPrefix,
+  trailingSlash: true,
   redirects() {
     return [
       {
