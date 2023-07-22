@@ -1,7 +1,6 @@
 version: 2
 updates:
   - package-ecosystem: "npm"
-    vendor: "pnpm"
     directory: "/"
     target-branch: "develop"
     commit-message:
