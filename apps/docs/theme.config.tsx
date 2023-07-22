@@ -10,13 +10,29 @@ const config: DocsThemeConfig = {
     'https://github.com/kumaaa-inc/shadow-panda/blob/main/apps/docs/src/pages',
   useNextSeoProps() {
     const { asPath } = useRouter()
+    const baseConfig = {
+      description: 'Panda CSS preset for shadcn/ui & Radix UI',
+      siteName: 'Shadow Panda',
+      images: [
+        // {
+        //   url: 'https://www.example.ie/og-image-01.jpg',
+        //   width: 800,
+        //   height: 600,
+        //   alt: 'Og Image Alt',
+        //   type: 'image/jpeg',
+        // },
+      ],
+    }
+
     if (asPath !== '/') {
       return {
+        ...baseConfig,
         titleTemplate: '%s – Shadow Panda',
       }
     }
 
     return {
+      ...baseConfig,
       titleTemplate: 'Shadow Panda',
     }
   },
@@ -30,6 +46,11 @@ const config: DocsThemeConfig = {
   },
   darkMode: true,
   primaryHue: 290,
+  head: (
+    <>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    </>
+  ),
   footer: {
     text: (
       <div
