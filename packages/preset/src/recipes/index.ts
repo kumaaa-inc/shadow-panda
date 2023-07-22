@@ -1,7 +1,33 @@
 import { button } from './button'
-import { typography } from './typography'
+import {
+  h1,
+  h2,
+  h3,
+  h4,
+  p,
+  blockquote,
+  table,
+  list,
+  inlineCode,
+  lead,
+  large,
+  small,
+  muted,
+} from './typography'
 
 export const recipes = {
   button,
-  typography,
+  h1,
+  h2,
+  h3,
+  h4,
+  p,
+  blockquote,
+  table,
+  list,
+  inlineCode,
+  lead,
+  large,
+  small,
+  muted,
 }
