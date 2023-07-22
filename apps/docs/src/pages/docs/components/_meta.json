@@ -1,7 +1,4 @@
 {
-  "index": {
-    "title": "Components",
-    "display": "hidden"
-  },
+  "index": "Supported Components",
   "button": "Button"
 }
