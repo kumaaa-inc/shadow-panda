@@ -10,14 +10,18 @@ jobs:
       - name: Cancel Previous Runs
         uses: styfle/cancel-workflow-action@0.11.0
       - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 8
       - name: Use Node.js 20.x
         uses: actions/setup-node@v3
         with:
           node-version: 20.x
+          cache: 'pnpm'
       - name: Install dependencies
-        run: |
-          pnpm i
-          pnpm apps:docs export
+        run: pnpm i
+      - name: Export
+        run: pnpm apps:docs export
       - name: Deploy
         run: |
           git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
