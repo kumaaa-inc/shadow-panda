@@ -18,7 +18,7 @@
   },
   "dependencies": {
     "@radix-ui/react-slot": "1.0.2",
-    "lucide-react": "0.263.0",
+    "lucide-react": "0.263.1",
     "next": "13.4.12",
     "nextra": "2.10.0",
     "nextra-theme-docs": "2.10.0",
