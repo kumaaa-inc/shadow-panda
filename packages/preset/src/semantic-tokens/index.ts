@@ -136,4 +136,8 @@ export const semanticTokens = defineSemanticTokens({
       value: '0.5rem',
     },
   },
+  animations: {
+    'accordion-down': { value: 'accordion-down 0.2s ease-out' },
+    'accordion-up': { value: 'accordion-up 0.2s ease-out' },
+  },
 })
