@@ -1,0 +1,181 @@
+import { Tabs, Tab, Steps } from 'nextra/components'
+import { Preview } from '@/components/_docs/preview'
+import { Terminal, AlertCircle } from "lucide-react"
+import {
+  Alert,
+  AlertTitle,
+  AlertDescription,
+} from '@/components/ui/alert'
+
+# Alert
+
+Displays a callout for user attention.
+
+<Tabs items={['Preview', 'Code']}>
+  <Tab>
+    <Preview>
+      <Alert>
+        <Terminal />
+        <AlertTitle>Heads up!</AlertTitle>
+        <AlertDescription>You can add components to your app using the cli.</AlertDescription>
+      </Alert>
+    </Preview>
+  </Tab>
+  <Tab>
+
+```tsx filename="components/ui/button.tsx" copy
+import { Alert, AlertTitle, AlertDescription } from '@/components/ui/alert'
+import { Terminal } from "lucide-react"
+
+export function Example() {
+  return (
+    <Alert>
+      <Terminal />
+      <AlertTitle>Heads up!</AlertTitle>
+      <AlertDescription>
+        You can add components to your app using the cli.
+      </AlertDescription>
+    </Alert>
+  )
+}
+```
+
+  </Tab>
+</Tabs>
+
+## Installation
+
+<Steps>
+### Copy and paste the following code into your project
+
+```tsx filename="components/ui/alert.tsx" copy
+import * as React from 'react'
+import { cx } from '@shadow-panda/styled-system/css'
+import {
+  alert,
+  alertTitle,
+  alertDescription,
+  type AlertVariantProps,
+} from '@shadow-panda/styled-system/recipes'
+
+const Alert = React.forwardRef<
+  HTMLDivElement,
+  React.HTMLAttributes<HTMLDivElement> & AlertVariantProps
+>(({ className, variant, ...props }, ref) => (
+  <div
+    ref={ref}
+    role="alert"
+    className={cx(alert({ variant }), className)}
+    {...props}
+  />
+))
+Alert.displayName = 'Alert'
+
+const AlertTitle = React.forwardRef<
+  HTMLParagraphElement,
+  React.HTMLAttributes<HTMLHeadingElement>
+>(({ className, ...props }, ref) => (
+  <h5 ref={ref} className={cx(alertTitle(), className)} {...props} />
+))
+AlertTitle.displayName = 'AlertTitle'
+
+const AlertDescription = React.forwardRef<
+  HTMLParagraphElement,
+  React.HTMLAttributes<HTMLParagraphElement>
+>(({ className, ...props }, ref) => (
+  <div ref={ref} className={cx(alertDescription(), className)} {...props} />
+))
+AlertDescription.displayName = 'AlertDescription'
+
+export { Alert, AlertTitle, AlertDescription }
+```
+
+### Update the import paths to match your project setup
+</Steps>
+
+## Usage
+
+```tsx copy
+import { Alert, AlertTitle, AlertDescription } from '@/components/ui/alert'
+import { Terminal } from "lucide-react" // Any icon of your choice
+```
+
+```tsx copy
+<Alert>
+  <Terminal />
+  <AlertTitle>Heads up!</AlertTitle>
+  <AlertDescription>
+    You can add components and dependencies to your app using the cli.
+  </AlertDescription>
+</Alert>
+```
+
+## Examples
+
+### Default
+
+<Tabs items={['Preview', 'Code']}>
+  <Tab>
+    <Preview>
+      <Alert>
+        <Terminal />
+        <AlertTitle>Heads up!</AlertTitle>
+        <AlertDescription>You can add components to your app using the cli.</AlertDescription>
+      </Alert>
+    </Preview>
+  </Tab>
+  <Tab>
+
+```tsx copy
+import { Alert, AlertTitle, AlertDescription } from '@/components/ui/alert'
+import { Terminal } from "lucide-react"
+
+export function Example() {
+  return (
+    <Alert>
+      <Terminal />
+      <AlertTitle>Heads up!</AlertTitle>
+      <AlertDescription>
+        You can add components to your app using the cli.
+      </AlertDescription>
+    </Alert>
+  )
+}
+```
+
+  </Tab>
+</Tabs>
+
+### Destructive
+
+<Tabs items={['Preview', 'Code']}>
+  <Tab>
+    <Preview>
+      <Alert variant="destructive">
+        <AlertCircle />
+        <AlertTitle>Error</AlertTitle>
+        <AlertDescription>Your session has expired. Please log in again.</AlertDescription>
+      </Alert>
+    </Preview>
+  </Tab>
+  <Tab>
+
+```tsx copy
+import { Alert, AlertTitle, AlertDescription } from '@/components/ui/alert'
+import { AlertCircle } from "lucide-react"
+
+export function Example() {
+  return (
+    <Alert variant="destructive">
+      <AlertCircle />
+      <AlertTitle>Error</AlertTitle>
+      <AlertDescription>
+        Your session has expired. Please log in again.
+      </AlertDescription>
+    </Alert>
+  )
+}
+```
+
+  </Tab>
+</Tabs>
