@@ -1,33 +1,9 @@
-import { button } from './button'
-import {
-  h1,
-  h2,
-  h3,
-  h4,
-  p,
-  blockquote,
-  table,
-  list,
-  inlineCode,
-  lead,
-  large,
-  small,
-  muted,
-} from './typography'
+import * as typography from './typography'
+import * as accordion from './accordion'
+import * as button from './button'
 
 export const recipes = {
-  button,
-  h1,
-  h2,
-  h3,
-  h4,
-  p,
-  blockquote,
-  table,
-  list,
-  inlineCode,
-  lead,
-  large,
-  small,
-  muted,
+  ...typography,
+  ...accordion,
+  ...button,
 }
