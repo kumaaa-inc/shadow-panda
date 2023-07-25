@@ -8,7 +8,7 @@ export const textStyles = defineTextStyles({
         base: '4xl',
         lg: '5xl',
       },
-      lineHeight: {
+      leading: {
         base: '10',
         lg: 'none',
       },
@@ -20,7 +20,7 @@ export const textStyles = defineTextStyles({
     description: 'Heading 2',
     value: {
       fontSize: '3xl',
-      lineHeight: '9',
+      leading: '9',
       fontWeight: 'semibold',
       letterSpacing: 'tight',
     },
@@ -29,7 +29,7 @@ export const textStyles = defineTextStyles({
     description: 'Heading 3',
     value: {
       fontSize: '2xl',
-      lineHeight: '8',
+      leading: '8',
       fontWeight: 'semibold',
       letterSpacing: 'tight',
     },
@@ -38,7 +38,7 @@ export const textStyles = defineTextStyles({
     description: 'Heading 4',
     value: {
       fontSize: 'xl',
-      lineHeight: '7',
+      leading: '7',
       fontWeight: 'semibold',
       letterSpacing: 'tight',
     },
@@ -46,14 +46,14 @@ export const textStyles = defineTextStyles({
   p: {
     description: 'Paragraph',
     value: {
-      lineHeight: '7',
+      leading: '7',
     },
   },
   lead: {
     description: 'Lead paragraph',
     value: {
       fontSize: 'xl',
-      lineHeight: '7',
+      leading: '7',
     },
   },
   large: {
@@ -61,7 +61,7 @@ export const textStyles = defineTextStyles({
     value: {
       fontSize: 'lg',
       fontWeight: 'semibold',
-      lineHeight: '7',
+      leading: '7',
     },
   },
   small: {
@@ -69,7 +69,7 @@ export const textStyles = defineTextStyles({
     value: {
       fontSize: 'sm',
       fontWeight: 'medium',
-      lineHeight: 'none',
+      leading: 'none',
     },
   },
 })
