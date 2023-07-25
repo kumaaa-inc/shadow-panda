@@ -6,6 +6,7 @@ import {
   h4,
   p,
   blockquote,
+  tableContainer,
   table,
   list,
   inlineCode,
@@ -50,7 +51,46 @@ Styles for headings, paragraphs, lists...etc
         <h3 className={cx(h3(), css({ mt: '8' }))}>The People's Rebellion</h3>
         <p className={p()}>The people of the kingdom, feeling uplifted by the laughter, started to tell jokes and puns again, and soon the entire kingdom was in on the joke.</p>
 
-        <div className={cx(muted(), css({ mt: '6' }))}>TODO: Table</div>
+        <div className={tableContainer()}>
+          <table className={table()}>
+            <thead>
+              <tr>
+                <th>
+                  King's Treasury
+                </th>
+                <th>
+                  People's happiness
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  Empty
+                </td>
+                <td>
+                  Overflowing
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  Modest
+                </td>
+                <td>
+                  Satisfied
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  Full
+                </td>
+                <td>
+                  Ecstatic
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
 
         <p className={p()}>The king, seeing how much happier his subjects were, realized the error of his ways and repealed the joke tax. Jokester was declared a hero, and the kingdom lived happily ever after.</p>
         <p className={p()}>The moral of the story is: never underestimate the power of a good laugh and always be careful of bad ideas.</p>
@@ -387,8 +427,75 @@ export function Example() {
 
 ## table
 
-<Callout type="warning" emoji="⚒️">
-  WIP
+<Tabs items={['Preview', 'Recipe']}>
+  <Tab>
+    <Preview>
+      <div className={tableContainer()}>
+        <table className={table()}>
+          <thead>
+            <tr>
+              <th>King's Treasury</th>
+              <th>People's happiness</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Empty</td>
+              <td>Overflowing</td>
+            </tr>
+            <tr>
+              <td>Modest</td>
+              <td>Satisfied</td>
+            </tr>
+            <tr>
+              <td>Full</td>
+              <td>Ecstatic</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </Preview>
+  </Tab>
+  <Tab>
+
+```tsx copy
+import { tableContainer, table } from '<generated>/styled-system/recipes'
+
+export function Example() {
+  return (
+    <div className={tableContainer()}>
+      <table className={table()}>
+        <thead>
+          <tr>
+            <th>King's Treasury</th>
+            <th>People's happiness</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Empty</td>
+            <td>Overflowing</td>
+          </tr>
+          <tr>
+            <td>Modest</td>
+            <td>Satisfied</td>
+          </tr>
+          <tr>
+            <td>Full</td>
+            <td>Ecstatic</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  )
+}
+```
+
+  </Tab>
+</Tabs>
+
+<Callout type="info" emoji="ℹ️">
+  The `tableContainer` recipe is used for handling the table's x axis overflow.
 </Callout>
 
 <Callout type="info" emoji="ℹ️">

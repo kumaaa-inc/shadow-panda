@@ -55,11 +55,52 @@ export const p = defineRecipe({
   },
 })
 
+export const tableContainer = defineRecipe({
+  name: 'tableContainer',
+  description: 'Typography - table container style',
+  base: {
+    my: '6',
+    width: 'full',
+    overflowX: 'auto',
+  },
+})
+
 export const table = defineRecipe({
   name: 'table',
   description: 'Typography - table style',
   base: {
-    // TODO
+    width: 'full',
+    '& tr': {
+      m: 0,
+      borderTop: '1',
+      borderTopColor: 'border',
+      p: 0,
+
+      _even: {
+        bg: 'muted',
+      },
+
+      '& th': {
+        fontWeight: 'bold',
+      },
+
+      '& th, & td': {
+        border: '1',
+        borderStyle: 'solid',
+        borderColor: 'border',
+        px: '4',
+        py: '2',
+        textAlign: 'left',
+
+        '&[align=center]': {
+          textAlign: 'center',
+        },
+
+        '&[align=right]': {
+          textAlign: 'right',
+        },
+      },
+    },
   },
 })
 
