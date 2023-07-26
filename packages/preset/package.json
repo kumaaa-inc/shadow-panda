@@ -17,16 +17,16 @@
     "studio": "panda studio"
   },
   "dependencies": {
-    "@pandacss/preset-panda": "0.7.0"
+    "@pandacss/preset-panda": "0.8.0"
   },
   "devDependencies": {
-    "@pandacss/dev": "0.7.0",
-    "@pandacss/types": "0.7.0",
+    "@pandacss/dev": "0.8.0",
+    "@pandacss/types": "0.8.0",
     "eslint": "8.45.0",
     "postcss": "8.4.27",
     "typescript": "5.1.6"
   },
   "peerDependencies": {
-    "@pandacss/dev": "0.7.0"
+    "@pandacss/dev": "0.8.0"
   }
 }
