@@ -19,10 +19,10 @@
     "dev": "pnpm build-fast --watch"
   },
   "dependencies": {
-    "@pandacss/preset-panda": "0.7.0"
+    "@pandacss/preset-panda": "0.8.0"
   },
   "devDependencies": {
-    "@pandacss/types": "0.7.0"
+    "@pandacss/types": "0.8.0"
   },
   "peerDependencies": {
     "@pandacss/dev": "0.7.0"

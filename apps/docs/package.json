@@ -27,7 +27,7 @@
     "react-dom": "18.2.0"
   },
   "devDependencies": {
-    "@pandacss/dev": "0.7.0",
+    "@pandacss/dev": "0.8.0",
     "@shadow-panda/preset": "workspace:*",
     "@types/react": "18.2.16",
     "eslint": "8.45.0",
@@ -35,6 +35,6 @@
     "typescript": "5.1.6"
   },
   "peerDependencies": {
-    "@pandacss/dev": "0.7.0"
+    "@pandacss/dev": "0.8.0"
   }
 }
