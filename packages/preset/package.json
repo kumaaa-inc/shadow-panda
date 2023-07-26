@@ -22,9 +22,10 @@
     "@pandacss/preset-panda": "0.8.0"
   },
   "devDependencies": {
+    "@pandacss/dev": "0.8.0",
     "@pandacss/types": "0.8.0"
   },
   "peerDependencies": {
-    "@pandacss/dev": "0.7.0"
+    "@pandacss/dev": "0.8.0"
   }
 }
