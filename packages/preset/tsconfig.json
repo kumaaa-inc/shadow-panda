@@ -11,6 +11,6 @@
     "paths": {
       "@/*": ["./src/*"]
     }
-  }
-  // "exclude": ["node_modules", "styled-system"]
+  },
+  "include": ["src", "index.ts"]
 }
