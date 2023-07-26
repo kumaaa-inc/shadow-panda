@@ -1,4 +1,4 @@
-lockfileVersion: '6.1'
+lockfileVersion: '6.0'
 
 settings:
   autoInstallPeers: true
@@ -104,8 +104,8 @@ importers:
         version: 0.7.0
     devDependencies:
       '@pandacss/types':
-        specifier: 0.7.0
-        version: 0.7.0
+        specifier: 0.8.0
+        version: 0.8.0
 
 packages:
 
@@ -1682,6 +1682,10 @@ packages:
 
   /@pandacss/types@0.7.0:
     resolution: {integrity: sha512-KRd2801/kfuna37e8LZ16uv6tucVGtoqo01j23ewmVjoL/oaWzZIw4dMgrJjBtfiWMFMxt6W0PaxwiaZ7DlY/g==}
+
+  /@pandacss/types@0.8.0:
+    resolution: {integrity: sha512-rA77ztVZZMZYMcgjT7wuxqfaMSjUk5e5MN3RQZUp+/9cnki1tfTepQv6DMp4XgjYidbgJ/3OSCX/1Tu1P2RxHQ==}
+    dev: true
 
   /@pkgr/utils@2.4.2:
     resolution: {integrity: sha512-POgTXhjrTfbTV63DiFXav4lBHiICLKKwDeaKn9Nphwj7WH6m0hMMCaJkMyRWjgtPFyRKRVoMXXjczsTQRDEhYw==}
