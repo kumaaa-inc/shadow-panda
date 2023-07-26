@@ -1,4 +1,4 @@
-lockfileVersion: '6.1'
+lockfileVersion: '6.0'
 
 settings:
   autoInstallPeers: true
@@ -100,8 +100,8 @@ importers:
         specifier: 0.7.0
         version: 0.7.0(@internationalized/date@3.3.0)(@types/react-dom@18.2.7)(@types/react@18.2.16)(astro@2.9.0)(typescript@5.1.6)
       '@pandacss/preset-panda':
-        specifier: 0.7.0
-        version: 0.7.0
+        specifier: 0.8.0
+        version: 0.8.0
     devDependencies:
       '@pandacss/types':
         specifier: 0.7.0
@@ -1638,6 +1638,12 @@ packages:
     dependencies:
       '@pandacss/types': 0.7.0
 
+  /@pandacss/preset-panda@0.8.0:
+    resolution: {integrity: sha512-K4ZZoD917k2t99JO7TzKRdVhlrWkz0CVOqzswKJZpg4xAXhL+uL+jeBVKrKcr8FbXFk6ZKQXdVIq0OF4yay+Qw==}
+    dependencies:
+      '@pandacss/types': 0.8.0
+    dev: false
+
   /@pandacss/shared@0.7.0:
     resolution: {integrity: sha512-ujrvXN2gKikPjR1dg2f14BR5OJDwtCLsZ1TRc2NvO0CvfEYKO+qkns004WfYdZQKmarGQbFG21mooaCsk5PMXA==}
 
@@ -1682,6 +1688,10 @@ packages:
 
   /@pandacss/types@0.7.0:
     resolution: {integrity: sha512-KRd2801/kfuna37e8LZ16uv6tucVGtoqo01j23ewmVjoL/oaWzZIw4dMgrJjBtfiWMFMxt6W0PaxwiaZ7DlY/g==}
+
+  /@pandacss/types@0.8.0:
+    resolution: {integrity: sha512-rA77ztVZZMZYMcgjT7wuxqfaMSjUk5e5MN3RQZUp+/9cnki1tfTepQv6DMp4XgjYidbgJ/3OSCX/1Tu1P2RxHQ==}
+    dev: false
 
   /@pkgr/utils@2.4.2:
     resolution: {integrity: sha512-POgTXhjrTfbTV63DiFXav4lBHiICLKKwDeaKn9Nphwj7WH6m0hMMCaJkMyRWjgtPFyRKRVoMXXjczsTQRDEhYw==}
