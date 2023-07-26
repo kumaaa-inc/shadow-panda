@@ -3,10 +3,7 @@
   "tag": "alpha",
   "initialVersions": {
     "@shadow-panda/docs": "0.0.1-alpha.0",
-    "@shadow-panda/preset": "0.0.1-alpha.1"
+    "@shadow-panda/preset": "0.0.2-alpha.0"
   },
-  "changesets": [
-    "early-penguins-relax",
-    "tame-pans-cover"
-  ]
+  "changesets": []
 }
