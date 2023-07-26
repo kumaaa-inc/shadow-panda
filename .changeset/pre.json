@@ -5,5 +5,7 @@
     "@shadow-panda/docs": "0.0.1",
     "@shadow-panda/preset": "0.0.1"
   },
-  "changesets": []
+  "changesets": [
+    "cold-rabbits-call"
+  ]
 }
