@@ -8,6 +8,10 @@ updates:
     schedule:
       interval: "daily"
       timezone: "Asia/Tokyo"
+    groups:
+      pandacss:
+        patterns:
+          - '@pandacss/*'
   - package-ecosystem: "github-actions"
     directory: "/"
     target-branch: "develop"

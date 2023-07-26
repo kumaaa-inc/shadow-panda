@@ -1,4 +1,6 @@
-import { defineTextStyles } from '@pandacss/dev'
+import type { TextStyles } from '@pandacss/types'
+
+const defineTextStyles = <T extends TextStyles>(config: T) => config
 
 export const textStyles = defineTextStyles({
   h1: {

@@ -1,1 +1,9 @@
+.github
+.next
+dist
+build
+node_modules
+*.d.ts
 apps/docs/src/pages/**/*.mdx
+pnpm-lock.yaml
+pnpm-workspace.yaml
