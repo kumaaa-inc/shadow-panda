@@ -2,11 +2,11 @@
   "mode": "pre",
   "tag": "alpha",
   "initialVersions": {
-    "@shadow-panda/docs": "0.0.1-alpha.0",
-    "@shadow-panda/preset": "0.0.1-alpha.0"
+    "@shadow-panda/preset": "0.0.1-alpha.0",
+    "@shadow-panda/docs": "0.0.1-alpha.0"
   },
   "changesets": [
-    "tame-pans-cover",
-    "early-penguins-relax"
+    "early-penguins-relax",
+    "tame-pans-cover"
   ]
 }
