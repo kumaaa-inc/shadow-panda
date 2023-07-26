@@ -5,11 +5,18 @@
   "author": "nanopx <0nanopx@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "prepare": "husky install",
+    "prepare": "husky install && pnpm build-fast",
     "apps:docs": "pnpm -F @shadow-panda/docs",
     "packages:preset": "pnpm -F @shadow-panda/preset",
+    "dev:docs": "pnpm apps:docs dev",
+    "dev": "pnpm -r --parallel --filter=./packages/** dev",
+    "build-fast": "pnpm -r --parallel --filter=./packages/** build-fast",
+    "build": "pnpm -r --filter=./packages/** build",
+    "release": "changeset publish",
+    "release-dev": "changeset version --snapshot dev && changeset publish --tag dev",
     "typecheck": "tsc --noEmit",
-    "format": "eslint --fix"
+    "lint": "eslint ./ --ext .ts,.tsx,.json",
+    "lint-fix": "eslint --fix --ext .ts,.tsx,.json"
   },
   "packageManager": "pnpm@8.6.5",
   "keywords": [
@@ -23,19 +30,22 @@
   ],
   "lint-staged": {
     "packages/**/*.{ts,tsx}": [
-      "pnpm format"
+      "pnpm lint-fix"
     ]
   },
-  "devDependencies": {
+  "dependencies": {
     "@changesets/changelog-github": "0.4.8",
     "@changesets/cli": "2.26.2",
     "@typescript-eslint/eslint-plugin": "6.2.0",
     "@typescript-eslint/parser": "6.2.0",
     "eslint": "8.45.0",
+    "eslint-plugin-prettier": "5.0.0",
     "eslint-config-prettier": "8.8.0",
     "eslint-plugin-import": "2.27.5",
     "husky": "8.0.3",
     "lint-staged": "13.2.3",
-    "typescript": "5.1.6"
+    "typescript": "5.1.6",
+    "tsup": "7.1.0",
+    "prettier": "3.0.0"
   }
 }

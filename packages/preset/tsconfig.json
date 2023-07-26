@@ -1,16 +1,10 @@
 {
+  "extends": "../../tsconfig.json",
+  "include": ["src", "index.ts"],
   "compilerOptions": {
-    "composite": false,
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    "isolatedModules": true,
-    "moduleResolution": "node",
-    "allowJs": false,
-    "skipLibCheck": true,
-    "strict": true,
     "paths": {
       "@/*": ["./src/*"]
-    }
-  },
-  "include": ["src", "index.ts"]
+    },
+    "tsBuildInfoFile": "node_modules/.cache/.tsbuildinfo"
+  }
 }
