@@ -5,5 +5,6 @@ build
 node_modules
 *.d.ts
 apps/docs/src/pages/**/*.mdx
+!apps/docs/src/pages/docs/overview/supported-components.mdx
 pnpm-lock.yaml
 pnpm-workspace.yaml
