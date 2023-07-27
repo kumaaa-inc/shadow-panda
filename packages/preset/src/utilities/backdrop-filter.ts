@@ -22,6 +22,6 @@ export const backdropFilter: UtilityConfig = {
         backdropFilter: blurValue,
       }
     },
-    values: Object.keys(blurValues) as (keyof typeof blurValues)[],
+    values: blurValues,
   },
 }
