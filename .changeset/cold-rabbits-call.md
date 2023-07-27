@@ -2,4 +2,4 @@
 '@shadow-panda/preset': minor
 ---
 
-feat: Support `AlertDialog` component
+Support `AlertDialog` component

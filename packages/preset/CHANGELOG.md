@@ -4,4 +4,4 @@
 
 ### Minor Changes
 
-- 43bf25d: feat: Support `AlertDialog` component
+- 43bf25d: Support `AlertDialog` component
