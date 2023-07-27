@@ -1,6 +1,6 @@
 import { Tabs, Tab, Steps } from 'nextra/components'
 import { Preview } from '@/components/_docs/preview'
-import { Terminal, AlertCircle } from "lucide-react"
+import { Terminal, AlertCircle } from 'lucide-react'
 import {
   AlertDialog,
   AlertDialogAction,
@@ -11,8 +11,8 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
   AlertDialogTrigger,
-} from "@/components/ui/alert-dialog"
-import { Button } from "@/components/ui/button"
+} from '@/components/ui/alert-dialog'
+import { Button } from '@/components/ui/button'
 
 # AlertDialog
 
@@ -40,7 +40,7 @@ A modal dialog that interrupts the user with important content and expects a res
   </Tab>
   <Tab>
 
-```tsx filename="components/ui/button.tsx" copy
+```tsx copy
 import {
   AlertDialog,
   AlertDialogAction,
@@ -51,8 +51,8 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
   AlertDialogTrigger,
-} from "@/components/ui/alert-dialog"
-import { Button } from "@/components/ui/button"
+} from '@/components/ui/alert-dialog'
+import { Button } from '@/components/ui/button'
 
 export function Example() {
   return (
@@ -231,6 +231,7 @@ export {
 ```
 
 ### Update the import paths to match your project setup
+
 </Steps>
 
 ## Usage
@@ -246,7 +247,7 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
   AlertDialogTrigger,
-} from "@/components/ui/alert-dialog"
+} from '@/components/ui/alert-dialog'
 ```
 
 ```tsx copy
@@ -266,5 +267,4 @@ import {
     </AlertDialogFooter>
   </AlertDialogContent>
 </AlertDialog>
-
 ```

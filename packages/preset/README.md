@@ -23,6 +23,14 @@ import { defineConfig } from '@pandacss/dev'
 
 export default defineConfig({
   presets: ['@shadow-panda/preset'],
+
+  // Optional: Emit artifacts to `node_modules` as a package.
+  // The copy-paste component examples use `@shadow-panda/styled-system` as the import path of the generated files.
+  // If you choose not to use this option, you should rewrite your component imports as needed.
+  // @see https://panda-css.com/docs/references/config#emitpackage
+  emitPackage: true,
+  outdir: '@shadow-panda/styled-system',
+
   // Other configurations and overrides...
 })
 ```
