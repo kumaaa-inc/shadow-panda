@@ -7,8 +7,7 @@ export const alert = defineRecipe({
     position: 'relative',
     width: 'full',
     rounded: 'lg',
-    border: '1',
-    borderColor: 'border',
+    border: 'base',
     p: '4',
 
     '&:has(svg)': {

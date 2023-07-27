@@ -15,8 +15,7 @@ export const Preview = ({
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        border: '1',
-        borderColor: 'input',
+        border: 'input',
         borderRadius: 'md',
         p: '10',
       })}

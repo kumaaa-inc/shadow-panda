@@ -4,8 +4,7 @@ export const accordionItem = defineRecipe({
   name: 'accordionItem',
   description: 'Styles for the AccordionItem component',
   base: {
-    borderBottom: '1',
-    borderBottomColor: 'border',
+    borderBottom: 'base',
   },
 })
 

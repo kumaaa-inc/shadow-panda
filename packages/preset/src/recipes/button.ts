@@ -46,8 +46,7 @@ export const button = defineRecipe({
         },
       },
       outline: {
-        border: '1',
-        borderColor: 'input',
+        border: 'input',
         bg: 'background',
 
         _hover: {
