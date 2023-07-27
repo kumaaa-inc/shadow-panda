@@ -1,0 +1,723 @@
+import { Tabs, Tab, Callout } from 'nextra/components'
+import {
+  h1,
+  h2,
+  h3,
+  h4,
+  p,
+  blockquote,
+  tableContainer,
+  table,
+  list,
+  inlineCode,
+  lead,
+  large,
+  small,
+  muted,
+} from '@shadow-panda/styled-system/recipes'
+import { cx, css } from '@shadow-panda/styled-system/css'
+import { Preview } from '@/components/_docs/preview'
+import { ReferenceBadges } from '@/components/_docs/reference-badges'
+import { Lead } from '@/components/_docs/lead'
+
+# Typography
+
+<Lead>Styles for headings, paragraphs, lists...etc</Lead>
+
+<ReferenceBadges shadcnUiLink="https://ui.shadcn.com/docs/components/typography" />
+
+<Tabs items={['Preview', 'Code']}>
+  <Tab>
+    <Preview>
+      <div>
+        <h1 className={h1()}>The Joke Tax Chronicles</h1>
+        <p className={p()}>Once upon a time, in a far-off land, there was a very lazy king who spent all day lounging on his throne. One day, his advisors came to him with a problem: the kingdom was running out of money.</p>
+        <h2 className={cx(h2(), css({ mt: '10' }))}>The King's Plan</h2>
+        <p className={p()}>The king thought long and hard, and finally came up with a brilliant plan: he would tax the jokes in the kingdom.</p>
+        <blockquote className={blockquote()}>"After all," he said, "everyone enjoys a good joke, so it's only fair that they should pay for the privilege."</blockquote>
+        <h3 className={cx(h3(), css({ mt: '8' }))}>The Joke Tax</h3>
+        <p className={p()}>The king's subjects were not amused. They grumbled and complained, but the king was firm:</p>
+        <ul className={list()}>
+          <li>1st level of puns: 5 gold coins</li>
+          <li>2nd level of jokes: 10 gold coins</li>
+          <li>3rd level of one-liners : 20 gold coins</li>
+        </ul>
+        <p className={p()}>As a result, people stopped telling jokes, and the kingdom fell into a gloom. But there was one person who refused to let the king's foolishness get him down: a court jester named Jokester.</p>
+        <h3 className={cx(h3(), css({ mt: '8' }))}>Jokester's Revolt</h3>
+        <p className={p()}>Jokester began sneaking into the castle in the middle of the night and leaving jokes all over the place: under the king's pillow, in his soup, even in the royal toilet. The king was furious, but he couldn't seem to stop Jokester.</p>
+        <p className={p()}>And then, one day, the people of the kingdom discovered that the jokes left by Jokester were so funny that they couldn't help but laugh. And once they started laughing, they couldn't stop.</p>
+        <h3 className={cx(h3(), css({ mt: '8' }))}>The People's Rebellion</h3>
+        <p className={p()}>The people of the kingdom, feeling uplifted by the laughter, started to tell jokes and puns again, and soon the entire kingdom was in on the joke.</p>
+
+        <div className={tableContainer()}>
+          <table className={table()}>
+            <thead>
+              <tr>
+                <th>
+                  King's Treasury
+                </th>
+                <th>
+                  People's happiness
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  Empty
+                </td>
+                <td>
+                  Overflowing
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  Modest
+                </td>
+                <td>
+                  Satisfied
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  Full
+                </td>
+                <td>
+                  Ecstatic
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p className={p()}>The king, seeing how much happier his subjects were, realized the error of his ways and repealed the joke tax. Jokester was declared a hero, and the kingdom lived happily ever after.</p>
+        <p className={p()}>The moral of the story is: never underestimate the power of a good laugh and always be careful of bad ideas.</p>
+      </div>
+    </Preview>
+
+  </Tab>
+  <Tab>
+
+```tsx copy
+import {
+  h1,
+  h2,
+  h3,
+  p,
+  blockquote,
+  list,
+} from '@shadow-panda/styled-system/recipes'
+import { cx, css } from '@shadow-panda/styled-system/css'
+
+export function Example() {
+  return (
+    <div>
+      <h1 className={h1()}>The Joke Tax Chronicles</h1>
+      <p className={p()}>
+        Once upon a time, in a far-off land, there was a very lazy king who
+        spent all day lounging on his throne. One day, his advisors came to him
+        with a problem: the kingdom was running out of money.
+      </p>
+
+      <h2 className={cx(h2(), css({ mt: '10' }))}>The King's Plan</h2>
+      <p className={p()}>
+        The king thought long and hard, and finally came up with a brilliant
+        plan: he would tax the jokes in the kingdom.
+      </p>
+      <blockquote className={blockquote()}>
+        "After all," he said, "everyone enjoys a good joke, so it's only fair
+        that they should pay for the privilege."
+      </blockquote>
+
+      <h3 className={cx(h3(), css({ mt: '8' }))}>The Joke Tax</h3>
+      <p className={p()}>
+        The king's subjects were not amused. They grumbled and complained, but
+        the king was firm:
+      </p>
+      <ul className={list()}>
+        <li>1st level of puns: 5 gold coins</li>
+        <li>2nd level of jokes: 10 gold coins</li>
+        <li>3rd level of one-liners : 20 gold coins</li>
+      </ul>
+      <p className={p()}>
+        As a result, people stopped telling jokes, and the kingdom fell into a
+        gloom. But there was one person who refused to let the king's
+        foolishness get him down: a court jester named Jokester.
+      </p>
+
+      <h3 className={cx(h3(), css({ mt: '8' }))}>Jokester's Revolt</h3>
+      <p className={p()}>
+        Jokester began sneaking into the castle in the middle of the night and
+        leaving jokes all over the place: under the king's pillow, in his soup,
+        even in the royal toilet. The king was furious, but he couldn't seem to
+        stop Jokester.
+      </p>
+      <p className={p()}>
+        And then, one day, the people of the kingdom discovered that the jokes
+        left by Jokester were so funny that they couldn't help but laugh. And
+        once they started laughing, they couldn't stop.
+      </p>
+
+      <h3 className={cx(h3(), css({ mt: '8' }))}>The People's Rebellion</h3>
+      <p className={p()}>
+        The people of the kingdom, feeling uplifted by the laughter, started to
+        tell jokes and puns again, and soon the entire kingdom was in on the
+        joke.
+      </p>
+
+      <div className={cx(muted(), css({ mt: '6' }))}>TODO: Table</div>
+
+      <p className={p()}>
+        The king, seeing how much happier his subjects were, realized the error
+        of his ways and repealed the joke tax. Jokester was declared a hero, and
+        the kingdom lived happily ever after.
+      </p>
+      <p className={p()}>
+        The moral of the story is: never underestimate the power of a good laugh
+        and always be careful of bad ideas.
+      </p>
+    </div>
+  )
+}
+```
+
+  </Tab>
+</Tabs>
+
+<Callout type="info" emoji="ℹ️">
+  Please note that when using `textStyle`, only the **"text styles"** are
+  applied. <br />
+  Every other properties like colors and layout properties (i.e. `border`, `margin`,
+  `scroll-margin`, etc.) are not applied.
+</Callout>
+
+## h1
+
+<Tabs items={['Preview', 'Recipe']}>
+  <Tab>
+    <Preview>
+      <h1 className={h1()}>Taxing Laughter: The Joke Tax Chronicles</h1>
+    </Preview>
+  </Tab>
+  <Tab>
+
+```tsx copy
+import { h1 } from '@shadow-panda/styled-system/recipes'
+
+export function Example() {
+  return <h1 className={h1()}>Taxing Laughter: The Joke Tax Chronicles</h1>
+}
+```
+
+  </Tab>
+</Tabs>
+
+<Tabs items={['Preview', 'Text Style']}>
+  <Tab>
+    <Preview>
+      <h1 className={css({ textStyle: 'h1' })}>Taxing Laughter: The Joke Tax Chronicles</h1>
+    </Preview>
+  </Tab>
+  <Tab>
+  
+```tsx copy
+import { css } from '@shadow-panda/styled-system/css'
+
+export function Example() {
+  return <h1 className={css({ textStyle: 'h1' })}>Taxing Laughter: The Joke Tax Chronicles</h1>
+}
+```
+
+  </Tab>
+</Tabs>
+
+## h2
+
+<Tabs items={['Preview', 'Recipe']}>
+  <Tab>
+    <Preview>
+      <h2 className={h2()}>The People of the Kingdom</h2>
+    </Preview>
+  </Tab>
+  <Tab>
+
+```tsx copy
+import { h2 } from '@shadow-panda/styled-system/recipes'
+
+export function Example() {
+  return <h2 className={h2()}>The People of the Kingdom</h2>
+}
+```
+
+  </Tab>
+</Tabs>
+
+<Tabs items={['Preview', 'Text Style']}>
+  <Tab>
+    <Preview>
+      <h2 className={css({ textStyle: 'h2' })}>The People of the Kingdom</h2>
+    </Preview>
+  </Tab>
+  <Tab>
+  
+```tsx copy
+import { css } from '@shadow-panda/styled-system/css'
+
+export function Example() {
+  return <h2 className={css({ textStyle: 'h2' })}>The People of the Kingdom</h2>
+}
+```
+
+  </Tab>
+</Tabs>
+
+## h3
+
+<Tabs items={['Preview', 'Recipe']}>
+  <Tab>
+    <Preview>
+      <h3 className={h3()}>The Joke Tax</h3>
+    </Preview>
+  </Tab>
+  <Tab>
+
+```tsx copy
+import { h3 } from '@shadow-panda/styled-system/recipes'
+
+export function Example() {
+  return <h3 className={h3()}>The Joke Tax</h3>
+}
+```
+
+  </Tab>
+</Tabs>
+
+<Tabs items={['Preview', 'Text Style']}>
+  <Tab>
+    <Preview>
+      <h3 className={css({ textStyle: 'h3' })}>The Joke Tax</h3>
+    </Preview>
+  </Tab>
+  <Tab>
+  
+```tsx copy
+import { css } from '@shadow-panda/styled-system/css'
+
+export function Example() {
+  return <h3 className={css({ textStyle: 'h3' })}>The Joke Tax</h3>
+}
+```
+
+  </Tab>
+</Tabs>
+
+## h4
+
+<Tabs items={['Preview', 'Recipe']}>
+  <Tab>
+    <Preview>
+      <h4 className={h4()}>People stopped telling jokes</h4>
+    </Preview>
+  </Tab>
+  <Tab>
+
+```tsx copy
+import { h4 } from '@shadow-panda/styled-system/recipes'
+
+export function Example() {
+  return <h4 className={h4()}>People stopped telling jokes</h4>
+}
+```
+
+  </Tab>
+</Tabs>
+
+<Tabs items={['Preview', 'Text Style']}>
+  <Tab>
+    <Preview>
+      <h4 className={css({ textStyle: 'h4' })}>People stopped telling jokes</h4>
+    </Preview>
+  </Tab>
+  <Tab>
+  
+```tsx copy
+import { css } from '@shadow-panda/styled-system/css'
+
+export function Example() {
+  return <h4 className={css({ textStyle: 'h4' })}>People stopped telling jokes</h4>
+}
+```
+
+  </Tab>
+</Tabs>
+
+## p
+
+<Tabs items={['Preview', 'Recipe']}>
+  <Tab>
+    <Preview>
+      <p className={p()}>The king, seeing how much happier his subjects were, realized the error of his ways and repealed the joke tax.</p>
+    </Preview>
+  </Tab>
+  <Tab>
+
+```tsx copy
+import { p } from '@shadow-panda/styled-system/recipes'
+
+export function Example() {
+  return (
+    <p className={p()}>
+      The king, seeing how much happier his subjects were, realized the error of
+      his ways and repealed the joke tax.
+    </p>
+  )
+}
+```
+
+  </Tab>
+</Tabs>
+
+<Tabs items={['Preview', 'Text Style']}>
+  <Tab>
+    <Preview>
+      <p className={css({ textStyle: 'p' })}>The king, seeing how much happier his subjects were, realized the error of his ways and repealed the joke tax.</p>
+    </Preview>
+  </Tab>
+  <Tab>
+  
+```tsx copy
+import { css } from '@shadow-panda/styled-system/css'
+
+export function Example() {
+  return (
+    <p className={css({ textStyle: 'p' })}>
+      The king, seeing how much happier his subjects were, realized the error of his ways and repealed the joke tax.
+    </p>
+  )
+}
+```
+
+  </Tab>
+</Tabs>
+
+## blockquote
+
+<Tabs items={['Preview', 'Recipe']}>
+  <Tab>
+    <Preview>
+      <blockquote className={blockquote()}>"After all," he said, "everyone enjoys a good joke, so it's only fair that they should pay for the privilege."</blockquote>
+    </Preview>
+  </Tab>
+  <Tab>
+
+```tsx copy
+import { blockquote } from '@shadow-panda/styled-system/recipes'
+
+export function Example() {
+  return (
+    <blockquote className={blockquote()}>
+      "After all," he said, "everyone enjoys a good joke, so it's only fair that
+      they should pay for the privilege."
+    </blockquote>
+  )
+}
+```
+
+  </Tab>
+</Tabs>
+
+<Callout type="info" emoji="ℹ️">
+  There is no `blockquote` text style. Use the recipe instead.
+</Callout>
+
+## table
+
+<Tabs items={['Preview', 'Recipe']}>
+  <Tab>
+    <Preview>
+      <div className={tableContainer()}>
+        <table className={table()}>
+          <thead>
+            <tr>
+              <th>King's Treasury</th>
+              <th>People's happiness</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Empty</td>
+              <td>Overflowing</td>
+            </tr>
+            <tr>
+              <td>Modest</td>
+              <td>Satisfied</td>
+            </tr>
+            <tr>
+              <td>Full</td>
+              <td>Ecstatic</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </Preview>
+  </Tab>
+  <Tab>
+
+```tsx copy
+import { tableContainer, table } from '@shadow-panda/styled-system/recipes'
+
+export function Example() {
+  return (
+    <div className={tableContainer()}>
+      <table className={table()}>
+        <thead>
+          <tr>
+            <th>King's Treasury</th>
+            <th>People's happiness</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Empty</td>
+            <td>Overflowing</td>
+          </tr>
+          <tr>
+            <td>Modest</td>
+            <td>Satisfied</td>
+          </tr>
+          <tr>
+            <td>Full</td>
+            <td>Ecstatic</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  )
+}
+```
+
+  </Tab>
+</Tabs>
+
+<Callout type="info" emoji="ℹ️">
+  The `tableContainer` recipe is used for handling the table's x axis overflow.
+</Callout>
+
+<Callout type="info" emoji="ℹ️">
+  There is no `table` text style. Use the recipe instead.
+</Callout>
+
+## list
+
+<Tabs items={['Preview', 'Recipe']}>
+  <Tab>
+    <Preview>
+      <ul className={list()}>
+        <li>1st level of puns: 5 gold coins</li>
+        <li>2nd level of jokes: 10 gold coins</li>
+        <li>3rd level of one-liners : 20 gold coins</li>
+      </ul>
+    </Preview>
+  </Tab>
+  <Tab>
+
+```tsx copy
+import { list } from '@shadow-panda/styled-system/recipes'
+
+export function Example() {
+  return (
+    <ul className={list()}>
+      <li>1st level of puns: 5 gold coins</li>
+      <li>2nd level of jokes: 10 gold coins</li>
+      <li>3rd level of one-liners : 20 gold coins</li>
+    </ul>
+  )
+}
+```
+
+  </Tab>
+</Tabs>
+
+<Callout type="info" emoji="ℹ️">
+  There is no `list` text style. Use the recipe instead.
+</Callout>
+
+## Inline code
+
+<Tabs items={['Preview', 'Recipe']}>
+  <Tab>
+    <Preview>
+      <code className={inlineCode()}>@radix-ui/react-alert-dialog</code>
+    </Preview>
+  </Tab>
+  <Tab>
+
+```tsx copy
+import { inlineCode } from '@shadow-panda/styled-system/recipes'
+
+export function Example() {
+  return <code className={inlineCode()}>@radix-ui/react-alert-dialog</code>
+}
+```
+
+  </Tab>
+</Tabs>
+
+<Callout type="info" emoji="ℹ️">
+  There is no `inlineCode` text style. Use the recipe instead.
+</Callout>
+
+## Lead
+
+<Tabs items={['Preview', 'Recipe']}>
+  <Tab>
+    <Preview>
+      <p className={lead()}>A modal dialog that interrupts the user with important content and expects a response.</p>
+    </Preview>
+  </Tab>
+  <Tab>
+
+```tsx copy
+import { lead } from '@shadow-panda/styled-system/recipes'
+
+export function Example() {
+  return (
+    <p className={lead()}>
+      A modal dialog that interrupts the user with important content and expects
+      a response.
+    </p>
+  )
+}
+```
+
+  </Tab>
+</Tabs>
+
+<Tabs items={['Preview', 'Text Style']}>
+  <Tab>
+    <Preview>
+      <p className={css({ textStyle: 'lead' })}>A modal dialog that interrupts the user with important content and expects a response.</p>
+    </Preview>
+  </Tab>
+  <Tab>
+  
+```tsx copy
+import { css } from '@shadow-panda/styled-system/css'
+
+export function Example() {
+  return (
+    <p className={css({ textStyle: 'lead' })}>
+      A modal dialog that interrupts the user with important content and expects
+      a response.
+    </p>
+  )
+}
+```
+
+  </Tab>
+</Tabs>
+
+## Large
+
+<Tabs items={['Preview', 'Recipe']}>
+  <Tab>
+    <Preview>
+      <div className={large()}>Are you sure absolutely sure?</div>
+    </Preview>
+  </Tab>
+  <Tab>
+
+```tsx copy
+import { large } from '@shadow-panda/styled-system/recipes'
+
+export function Example() {
+  return <div className={large()}>Are you sure absolutely sure?</div>
+}
+```
+
+  </Tab>
+</Tabs>
+
+<Tabs items={['Preview', 'Text Style']}>
+  <Tab>
+    <Preview>
+      <div className={css({ textStyle: 'large' })}>Are you sure absolutely sure?</div>
+    </Preview>
+  </Tab>
+  <Tab>
+  
+```tsx copy
+import { css } from '@shadow-panda/styled-system/css'
+
+export function Example() {
+  return <div className={css({ textStyle: 'large' })}>Are you sure absolutely sure?</div>
+}
+```
+
+  </Tab>
+</Tabs>
+
+## Small
+
+<Tabs items={['Preview', 'Recipe']}>
+  <Tab>
+    <Preview>
+      <small className={small()}>Email address</small>
+    </Preview>
+  </Tab>
+  <Tab>
+
+```tsx copy
+import { small } from '@shadow-panda/styled-system/recipes'
+
+export function Example() {
+  return <small className={small()}>Email address</small>
+}
+```
+
+  </Tab>
+</Tabs>
+
+<Tabs items={['Preview', 'Text Style']}>
+  <Tab>
+    <Preview>
+      <small className={css({ textStyle: 'small' })}>Email address</small>
+    </Preview>
+  </Tab>
+  <Tab>
+  
+```tsx copy
+import { css } from '@shadow-panda/styled-system/css'
+
+export function Example() {
+  return <small className={css({ textStyle: 'small' })}>Email address</small>
+}
+```
+
+  </Tab>
+</Tabs>
+
+## Muted
+
+<Tabs items={['Preview', 'Recipe']}>
+  <Tab>
+    <Preview>
+      <p className={muted()}>Enter your email address.</p>
+    </Preview>
+  </Tab>
+  <Tab>
+
+```tsx copy
+import { muted } from '@shadow-panda/styled-system/recipes'
+
+export function Example() {
+  return <p className={muted()}>Enter your email address.</p>
+}
+```
+
+  </Tab>
+</Tabs>
+
+<Callout type="info" emoji="ℹ️">
+  There is no `muted` text style. Use the recipe instead.
+</Callout>
