@@ -17,16 +17,13 @@ import {
 } from '@shadow-panda/styled-system/recipes'
 import { cx, css } from '@shadow-panda/styled-system/css'
 import { Preview } from '@/components/_docs/preview'
+import { ReferenceBadges } from '@/components/_docs/reference-badges'
 
 # Typography
 
 Styles for headings, paragraphs, lists...etc
 
-<Callout type="warning" emoji="⚠️">
-  Please note that when using text style, only the **"text styles"** are
-  applied. Every other properties like colors and layout properties (i.e.
-  `border`, `margin`, `scroll-margin`, etc.) are not applied.
-</Callout>
+<ReferenceBadges shadcnUiLink="https://ui.shadcn.com/docs/components/typography" />
 
 <Tabs items={['Preview', 'Code']}>
   <Tab>
@@ -185,6 +182,13 @@ export function Example() {
 
   </Tab>
 </Tabs>
+
+<Callout type="info" emoji="ℹ️">
+  Please note that when using `textStyle`, only the **"text styles"** are
+  applied. <br />
+  Every other properties like colors and layout properties (i.e. `border`, `margin`,
+  `scroll-margin`, etc.) are not applied.
+</Callout>
 
 ## h1
 
