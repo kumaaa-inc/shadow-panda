@@ -9,11 +9,11 @@ export const animate: UtilityConfig = {
       return {
         animationName: 'enter',
         animationDuration: token('durations.normal'),
-        '--sp-enter-opacity': 'initial',
-        '--sp-enter-scale': 'initial',
-        '--sp-enter-rotate': 'initial',
-        '--sp-enter-translate-x': 'initial',
-        '--sp-enter-translate-y': 'initial',
+        '--enter-opacity': 'initial',
+        '--enter-scale': 'initial',
+        '--enter-rotate': 'initial',
+        '--enter-translate-x': 'initial',
+        '--enter-translate-y': 'initial',
       }
     },
   },
@@ -25,11 +25,11 @@ export const animate: UtilityConfig = {
       return {
         animationName: 'exit',
         animationDuration: token('durations.normal'),
-        '--sp-exit-opacity': 'initial',
-        '--sp-exit-scale': 'initial',
-        '--sp-exit-rotate': 'initial',
-        '--sp-exit-translate-x': 'initial',
-        '--sp-exit-translate-y': 'initial',
+        '--exit-opacity': 'initial',
+        '--exit-scale': 'initial',
+        '--exit-rotate': 'initial',
+        '--exit-translate-x': 'initial',
+        '--exit-translate-y': 'initial',
       }
     },
   },
@@ -37,7 +37,7 @@ export const animate: UtilityConfig = {
     className: 'animate_fade_in',
     transform: (value: number | string) => {
       return {
-        '--sp-enter-opacity': value,
+        '--enter-opacity': value,
       }
     },
   },
@@ -45,7 +45,7 @@ export const animate: UtilityConfig = {
     className: 'animate_fade_out',
     transform: (value: number | string) => {
       return {
-        '--sp-exit-opacity': value,
+        '--exit-opacity': value,
       }
     },
   },
@@ -53,7 +53,7 @@ export const animate: UtilityConfig = {
     className: 'animate_zoom_in',
     transform: (value: number | string) => {
       return {
-        '--sp-enter-scale': Number(value) / 100,
+        '--enter-scale': Number(value) / 100,
       }
     },
   },
@@ -61,7 +61,7 @@ export const animate: UtilityConfig = {
     className: 'animate_zoom_out',
     transform: (value: number | string) => {
       return {
-        '--sp-exit-scale': Number(value) / 100,
+        '--exit-scale': Number(value) / 100,
       }
     },
   },
@@ -69,7 +69,7 @@ export const animate: UtilityConfig = {
     className: 'animate_spin_in',
     transform: (value: number | string) => {
       return {
-        '--sp-enter-rotate': value,
+        '--enter-rotate': value,
       }
     },
   },
@@ -77,7 +77,7 @@ export const animate: UtilityConfig = {
     className: 'animate_spin_out',
     transform: (value: number | string) => {
       return {
-        '--sp-exit-rotate': value,
+        '--exit-rotate': value,
       }
     },
   },
@@ -85,7 +85,7 @@ export const animate: UtilityConfig = {
     className: 'animate_slide_in_from_top',
     transform: (value: number | string) => {
       return {
-        '--sp-enter-translate-y': `-${value}`,
+        '--enter-translate-y': `-${value}`,
       }
     },
   },
@@ -93,7 +93,7 @@ export const animate: UtilityConfig = {
     className: 'animate_slide_in_from_bottom',
     transform: (value: number | string) => {
       return {
-        '--sp-enter-translate-y': value,
+        '--enter-translate-y': value,
       }
     },
   },
@@ -101,7 +101,7 @@ export const animate: UtilityConfig = {
     className: 'animate_slide_in_from_left',
     transform: (value: number | string) => {
       return {
-        '--sp-enter-translate-x': `-${value}`,
+        '--enter-translate-x': `-${value}`,
       }
     },
   },
@@ -109,7 +109,7 @@ export const animate: UtilityConfig = {
     className: 'animate_slide_in_from_right',
     transform: (value: number | string) => {
       return {
-        '--sp-enter-translate-x': value,
+        '--enter-translate-x': value,
       }
     },
   },
@@ -117,7 +117,7 @@ export const animate: UtilityConfig = {
     className: 'animate_slide_out_to_top',
     transform: (value: number | string) => {
       return {
-        '--sp-exit-translate-y': `-${value}`,
+        '--exit-translate-y': `-${value}`,
       }
     },
   },
@@ -125,7 +125,7 @@ export const animate: UtilityConfig = {
     className: 'animate_slide_out_to_bottom',
     transform: (value: number | string) => {
       return {
-        '--sp-exit-translate-y': value,
+        '--exit-translate-y': value,
       }
     },
   },
@@ -133,7 +133,7 @@ export const animate: UtilityConfig = {
     className: 'animate_slide_out_to_left',
     transform: (value: number | string) => {
       return {
-        '--sp-exit-translate-x': `-${value}`,
+        '--exit-translate-x': `-${value}`,
       }
     },
   },
@@ -141,7 +141,7 @@ export const animate: UtilityConfig = {
     className: 'animate_slide_out_to_right',
     transform: (value: number | string) => {
       return {
-        '--sp-exit-translate-x': value,
+        '--exit-translate-x': value,
       }
     },
   },

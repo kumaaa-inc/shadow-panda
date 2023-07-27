@@ -3,7 +3,7 @@ import { animate } from './animate'
 import { backdropFilter } from './backdrop-filter'
 import { backgroundAlpha } from './background-alpha'
 import { borderColorAlpha } from './border-color-alpha'
-import { outline } from './outline'
+import { focusRing } from './focus-ring'
 import { space } from './space'
 import { typography } from './typography'
 
@@ -12,7 +12,7 @@ export const utilities: UtilityConfig = {
   ...backdropFilter,
   ...backgroundAlpha,
   ...borderColorAlpha,
-  ...outline,
+  ...focusRing,
   ...space,
   ...typography,
 }

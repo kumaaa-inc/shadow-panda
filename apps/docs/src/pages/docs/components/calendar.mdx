@@ -1,0 +1,122 @@
+import React from 'react'
+import { Tabs, Tab, Steps } from 'nextra/components'
+import { css } from '@shadow-panda/styled-system/css'
+import { Preview } from '@/components/_docs/preview'
+import { ReferenceBadges } from '@/components/_docs/reference-badges'
+import { Lead } from '@/components/_docs/lead'
+import { Calendar } from '@/components/ui/calendar'
+
+# Calendar
+
+<Lead>A date field component that allows users to enter and edit date.</Lead>
+
+<ReferenceBadges shadcnUiLink="https://ui.shadcn.com/docs/components/calendar" />
+
+export function Example() {
+  const [date, setDate] = React.useState(new Date())
+
+  return (
+    <Calendar
+      mode="single"
+      selected={date}
+      onSelect={setDate}
+      className={css({
+        border: 'base',
+        rounded: 'md',
+      })}
+    />
+  )
+}
+
+<Tabs items={['Preview', 'Code']}>
+  <Tab>
+    <Preview>
+      <Example />
+    </Preview>
+  </Tab>
+  <Tab>
+
+```tsx copy
+'use client'
+
+import * as React from 'react'
+import { Calendar } from '@/components/ui/calendar'
+
+export function Example() {
+  const [date, setDate] = React.useState<Date | undefined>(new Date())
+
+  return (
+    <Calendar
+      mode="single"
+      selected={date}
+      onSelect={setDate}
+      className={css({
+        border: 'base',
+        rounded: 'md',
+      })}
+    />
+  )
+}
+```
+
+  </Tab>
+</Tabs>
+
+## Installation
+
+<Steps>
+### Install the following dependencies
+
+```bash npm2yarn copy
+npm i @radix-ui/react-slot
+```
+
+### Copy and paste the following code into your project
+
+```tsx filename="components/ui/button.tsx" copy
+import * as React from 'react'
+import { Slot } from '@radix-ui/react-slot'
+import { cx } from '@shadow-panda/styled-system/css'
+import {
+  button,
+  type ButtonVariantProps,
+} from '@shadow-panda/styled-system/recipes'
+
+export interface ButtonProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
+    ButtonVariantProps {
+  asChild?: boolean
+}
+
+export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+  ({ className, variant, size, asChild = false, ...props }, ref) => {
+    const Comp = asChild ? Slot : 'button'
+
+    return (
+      <Comp
+        className={cx(button({ variant, size }), className)}
+        ref={ref}
+        {...props}
+      />
+    )
+  },
+)
+
+Button.displayName = 'Button'
+```
+
+### Update the import paths to match your project setup
+
+</Steps>
+
+## Usage
+
+```tsx copy
+import { Button } from '@/components/ui/button'
+```
+
+```tsx copy
+<Button variant="default" size="default">
+  Button
+</Button>
+```
