@@ -2,4 +2,4 @@
 '@shadow-panda/preset': minor
 ---
 
-Support `Avatar` component
+Support `Badge` component

@@ -1,6 +1,7 @@
 import { Tabs, Tab, Steps } from 'nextra/components'
 import { css } from '@shadow-panda/styled-system/css'
 import { Preview } from '@/components/_docs/preview'
+import { ReferenceBadges } from '@/components/_docs/reference-badges'
 import {
   Accordion,
   AccordionContent,
@@ -11,6 +12,14 @@ import {
 # Accordion
 
 A vertically stacked set of interactive headings that each reveal a section of content.
+
+<ReferenceBadges
+  shadcnUiLink="https://ui.shadcn.com/docs/components/accordion"
+  radix={{
+    link: 'https://www.radix-ui.com/docs/primitives/components/accordion',
+    api: 'https://www.radix-ui.com/docs/primitives/components/accordion#api-reference',
+  }}
+/>
 
 <Tabs items={['Preview', 'Code']}>
   <Tab>

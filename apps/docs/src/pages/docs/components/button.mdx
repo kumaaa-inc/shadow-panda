@@ -1,11 +1,14 @@
 import { Tabs, Tab, Steps } from 'nextra/components'
 import { css } from '@shadow-panda/styled-system/css'
 import { Preview } from '@/components/_docs/preview'
+import { ReferenceBadges } from '@/components/_docs/reference-badges'
 import { Button } from '@/components/ui/button'
 
 # Button
 
 Displays a button or a component that looks like a button.
+
+<ReferenceBadges shadcnUiLink="https://ui.shadcn.com/docs/components/button" />
 
 <Tabs items={['Preview', 'Code']}>
   <Tab>
@@ -50,7 +53,6 @@ export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
     ButtonVariantProps {
   asChild?: boolean
-  children: React.ReactNode
 }
 
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
@@ -100,7 +102,9 @@ import {
 ```
 
 ```tsx copy
-<button className={button({ variant, size })}>Button</button>
+<button className={button({ variant: 'outline', size: 'default' })}>
+  Button
+</button>
 ```
 
 ### Link
@@ -125,7 +129,7 @@ Alternatively, you can set the asChild parameter and nest the link component.
 
 ## Examples
 
-### Primary
+### Default (Primary)
 
 <Tabs items={['Preview', 'Code']}>
   <Tab>
