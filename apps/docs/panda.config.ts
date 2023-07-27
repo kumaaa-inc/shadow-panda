@@ -18,4 +18,21 @@ export default defineConfig({
 
   emitPackage: true,
   outdir: '@shadow-panda/styled-system',
+
+  theme: {
+    extend: {
+      semanticTokens: {
+        colors: {
+          primary: {
+            DEFAULT: {
+              value: {
+                base: 'hsl(120 80% 36%)',
+                _dark: 'hsl(120 80% 36%)',
+              },
+            },
+          },
+        },
+      },
+    },
+  },
 })

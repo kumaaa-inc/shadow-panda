@@ -2,6 +2,7 @@ import { Tabs, Tab, Steps } from 'nextra/components'
 import { Terminal, AlertCircle } from 'lucide-react'
 import { Preview } from '@/components/_docs/preview'
 import { ReferenceBadges } from '@/components/_docs/reference-badges'
+import { Lead } from '@/components/_docs/lead'
 import {
   AlertDialog,
   AlertDialogAction,
@@ -17,7 +18,11 @@ import { Button } from '@/components/ui/button'
 
 # AlertDialog
 
-A modal dialog that interrupts the user with important content and expects a response.
+<Lead>
+  {
+    'A modal dialog that interrupts the user with important content and expects a response.'
+  }
+</Lead>
 
 <ReferenceBadges
   shadcnUiLink="https://ui.shadcn.com/docs/components/alert-dialog"
