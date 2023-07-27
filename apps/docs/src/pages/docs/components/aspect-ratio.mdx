@@ -2,11 +2,20 @@ import Image from 'next/image'
 import { Tabs, Tab, Steps } from 'nextra/components'
 import { css } from '@shadow-panda/styled-system/css'
 import { Preview } from '@/components/_docs/preview'
+import { ReferenceBadges } from '@/components/_docs/reference-badges'
 import { AspectRatio } from '@/components/ui/aspect-ratio'
 
 # AspectRatio
 
 A vertically stacked set of interactive headings that each reveal a section of content.
+
+<ReferenceBadges
+  shadcnUiLink="https://ui.shadcn.com/docs/components/aspect-ratio"
+  radix={{
+    link: 'https://www.radix-ui.com/docs/primitives/components/aspect-ratio',
+    api: 'https://www.radix-ui.com/docs/primitives/components/aspect-ratio#api-reference',
+  }}
+/>
 
 <Tabs items={['Preview', 'Code']}>
   <Tab>

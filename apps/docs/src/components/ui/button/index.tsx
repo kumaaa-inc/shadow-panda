@@ -10,7 +10,6 @@ export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
     ButtonVariantProps {
   asChild?: boolean
-  children: React.ReactNode
 }
 
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
