@@ -5,6 +5,14 @@
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
+  "homepage": "https://shadow-panda.vercel.app",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kumaaa-inc/shadow-panda.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kumaaa-inc/shadow-panda/issues"
+  },
   "files": [
     "dist"
   ],
