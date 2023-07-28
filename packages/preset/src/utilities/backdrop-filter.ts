@@ -16,12 +16,11 @@ export const backdropFilter: UtilityConfig = {
     property: 'backdropFilter',
     shorthand: ['backdropBlur'],
     className: 'backdrop_blur',
-    transform: (value: keyof typeof blurValues) => {
-      const blurValue = blurValues[value]
+    values: blurValues,
+    transform: (value) => {
       return {
-        backdropFilter: blurValue,
+        backdropFilter: value,
       }
     },
-    values: blurValues,
   },
 }

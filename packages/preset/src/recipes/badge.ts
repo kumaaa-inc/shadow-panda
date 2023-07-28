@@ -13,11 +13,14 @@ export const badge = defineRecipe({
     fontSize: 'xs',
     fontWeight: 'semibold',
     transition: 'colors',
+    focusRingOffsetColor: 'background',
 
     _focus: {
-      outline: 'none',
-      ring: 'base',
-      ringColor: 'ring',
+      outline: '2px solid transparent',
+      outlineOffset: '2px',
+      focusRingWidth: '2',
+      focusRingColor: 'ring',
+      focusRingOffsetWidth: '2',
     },
   },
   variants: {
