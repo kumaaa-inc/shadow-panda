@@ -5,6 +5,7 @@ import * as alert from './alert'
 import * as avatar from './avatar'
 import * as badge from './badge'
 import * as button from './button'
+import * as calendar from './calendar'
 
 export const recipes = {
   ...typography,
@@ -14,4 +15,5 @@ export const recipes = {
   ...avatar,
   ...badge,
   ...button,
+  ...calendar,
 }

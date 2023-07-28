@@ -7,7 +7,7 @@
   "scripts": {
     "prepare": "panda codegen",
     "postinstall": "node patch/postinstall-fix-nextra-theme-css.js",
-    "watch": "panda codegen -w",
+    "watch": "panda codegen -w --clean",
     "compile": "panda codegen --clean",
     "studio": "panda studio",
     "debug": "panda debug",
@@ -19,18 +19,18 @@
     "start": "next start"
   },
   "dependencies": {
-    "@radix-ui/react-accordion": "^1.1.2",
-    "@radix-ui/react-alert-dialog": "^1.0.4",
-    "@radix-ui/react-aspect-ratio": "^1.0.3",
-    "@radix-ui/react-avatar": "^1.0.3",
+    "@radix-ui/react-accordion": "1.1.2",
+    "@radix-ui/react-alert-dialog": "1.0.4",
+    "@radix-ui/react-aspect-ratio": "1.0.3",
+    "@radix-ui/react-avatar": "1.0.3",
     "@radix-ui/react-slot": "1.0.2",
-    "date-fns": "^2.30.0",
+    "date-fns": "2.30.0",
     "lucide-react": "0.263.1",
     "next": "13.4.12",
     "nextra": "2.10.0",
     "nextra-theme-docs": "2.10.0",
     "react": "18.2.0",
-    "react-day-picker": "^8.8.0",
+    "react-day-picker": "8.8.0",
     "react-dom": "18.2.0"
   },
   "devDependencies": {

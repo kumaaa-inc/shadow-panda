@@ -1,5 +1,5 @@
 import React from 'react'
-import { Tabs, Tab, Steps } from 'nextra/components'
+import { Tabs, Tab, Steps, Callout } from 'nextra/components'
 import { css } from '@shadow-panda/styled-system/css'
 import { Preview } from '@/components/_docs/preview'
 import { ReferenceBadges } from '@/components/_docs/reference-badges'
@@ -15,18 +15,18 @@ import { Calendar } from '@/components/ui/calendar'
 export function Example() {
   const [date, setDate] = React.useState(new Date())
 
-  return (
-    <Calendar
-      mode="single"
-      selected={date}
-      onSelect={setDate}
-      className={css({
-        border: 'base',
-        rounded: 'md',
-      })}
-    />
-  )
-}
+return (
+
+<Calendar
+  mode="single"
+  selected={date}
+  onSelect={setDate}
+  className={css({
+    border: 'base',
+    rounded: 'md',
+  })}
+/>
+) }
 
 <Tabs items={['Preview', 'Code']}>
   <Tab>
@@ -62,47 +62,112 @@ export function Example() {
   </Tab>
 </Tabs>
 
+## About
+
+The `Calendar` component is built on top of [React DayPicker](https://react-day-picker.js.org).
+
 ## Installation
 
 <Steps>
 ### Install the following dependencies
 
 ```bash npm2yarn copy
-npm i @radix-ui/react-slot
+npm i react-day-picker date-fns
 ```
 
 ### Copy and paste the following code into your project
 
-```tsx filename="components/ui/button.tsx" copy
+```tsx filename="components/ui/calendar.tsx" copy
+'use client'
+
 import * as React from 'react'
-import { Slot } from '@radix-ui/react-slot'
-import { cx } from '@shadow-panda/styled-system/css'
+import { ChevronLeft, ChevronRight } from 'lucide-react'
+import { DayPicker } from 'react-day-picker'
+import { cx, css } from '@shadow-panda/styled-system/css'
 import {
   button,
-  type ButtonVariantProps,
+  calendar,
+  calendarMonths,
+  calendarMonth,
+  calendarCaption,
+  calendarCaptionLabel,
+  calendarNav,
+  calendarNavButton,
+  calendarNavButtonPrevious,
+  calendarNavButtonNext,
+  calendarTable,
+  calendarHeadRow,
+  calendarHeadCell,
+  calendarRow,
+  calendarCell,
+  calendarDay,
+  calendarDaySelected,
+  calendarDayToday,
+  calendarDayOutside,
+  calendarDayDisabled,
+  calendarDayRangeMiddle,
+  calendarDayHidden,
 } from '@shadow-panda/styled-system/recipes'
 
-export interface ButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
-    ButtonVariantProps {
-  asChild?: boolean
+export type CalendarProps = React.ComponentProps<typeof DayPicker>
+
+export function Calendar({
+  className,
+  classNames,
+  showOutsideDays = true,
+  ...props
+}: CalendarProps) {
+  return (
+    <DayPicker
+      className={cx(calendar(), className)}
+      classNames={{
+        months: calendarMonths(),
+        month: calendarMonth(),
+        caption: calendarCaption(),
+        caption_label: calendarCaptionLabel(),
+        nav: calendarNav(),
+        nav_button: cx(button({ variant: 'outline' }), calendarNavButton()),
+        nav_button_previous: calendarNavButtonPrevious(),
+        nav_button_next: calendarNavButtonNext(),
+        table: calendarTable(),
+        head_row: calendarHeadRow(),
+        head_cell: calendarHeadCell(),
+        row: calendarRow(),
+        cell: calendarCell(),
+        day: cx(button({ variant: 'ghost' }), calendarDay()),
+        day_selected: calendarDaySelected(),
+        day_today: calendarDayToday(),
+        day_outside: calendarDayOutside(),
+        day_disabled: calendarDayDisabled(),
+        day_range_middle: calendarDayRangeMiddle(),
+        day_hidden: calendarDayHidden(),
+        ...classNames,
+      }}
+      components={{
+        IconLeft: ({ ..._props }) => (
+          <ChevronLeft
+            className={css({
+              height: '4',
+              width: '4',
+            })}
+          />
+        ),
+        IconRight: ({ ..._props }) => (
+          <ChevronRight
+            className={css({
+              height: '4',
+              width: '4',
+            })}
+          />
+        ),
+      }}
+      showOutsideDays={showOutsideDays}
+      {...props}
+    />
+  )
 }
 
-export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant, size, asChild = false, ...props }, ref) => {
-    const Comp = asChild ? Slot : 'button'
-
-    return (
-      <Comp
-        className={cx(button({ variant, size }), className)}
-        ref={ref}
-        {...props}
-      />
-    )
-  },
-)
-
-Button.displayName = 'Button'
+Calendar.displayName = 'Calendar'
 ```
 
 ### Update the import paths to match your project setup
@@ -112,11 +177,35 @@ Button.displayName = 'Button'
 ## Usage
 
 ```tsx copy
-import { Button } from '@/components/ui/button'
+import { Calendar } from '@/components/ui/calendar'
 ```
 
 ```tsx copy
-<Button variant="default" size="default">
-  Button
-</Button>
+const [date, setDate] = React.useState<Date | undefined>(new Date())
+
+return (
+  <Calendar
+    mode="single"
+    selected={date}
+    onSelect={setDate}
+    className={css({
+      border: 'base',
+      rounded: 'md',
+    })}
+  />
+)
 ```
+
+See the [React DayPicker](https://react-day-picker.js.org) documentation for more information.
+
+## Date Picker
+
+You can use the `Calendar` component to build a date picker. See the See the [React DayPicker](https://react-day-picker.js.org) page for more information.
+
+## Examples
+
+### Form
+
+<Callout type="warning" emoji="⚒️">
+  WIP
+</Callout>
