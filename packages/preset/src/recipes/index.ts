@@ -6,6 +6,7 @@ import * as avatar from './avatar'
 import * as badge from './badge'
 import * as button from './button'
 import * as calendar from './calendar'
+import * as input from './input'
 
 export const recipes = {
   ...typography,
@@ -16,4 +17,5 @@ export const recipes = {
   ...badge,
   ...button,
   ...calendar,
+  ...input,
 }
