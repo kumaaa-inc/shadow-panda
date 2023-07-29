@@ -10,6 +10,8 @@ import * as checkbox from './checkbox'
 import * as input from './input'
 import * as label from './label'
 import * as select from './select'
+import * as separator from './separator'
+import * as switchRecipes from './switch'
 import * as textarea from './textarea'
 
 export const recipes = {
@@ -25,5 +27,7 @@ export const recipes = {
   ...input,
   ...label,
   ...select,
+  ...separator,
+  ...switchRecipes,
   ...textarea,
 }
