@@ -9,6 +9,7 @@ import * as calendar from './calendar'
 import * as checkbox from './checkbox'
 import * as input from './input'
 import * as label from './label'
+import * as select from './select'
 import * as textarea from './textarea'
 
 export const recipes = {
@@ -23,5 +24,6 @@ export const recipes = {
   ...checkbox,
   ...input,
   ...label,
+  ...select,
   ...textarea,
 }

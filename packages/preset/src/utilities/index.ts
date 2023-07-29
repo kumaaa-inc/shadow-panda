@@ -5,6 +5,7 @@ import { backgroundAlpha } from './background-alpha'
 import { borderColorAlpha } from './border-color-alpha'
 import { focusRing } from './focus-ring'
 import { space } from './space'
+import { transform } from './transform'
 import { typography } from './typography'
 
 export const utilities: UtilityConfig = {
@@ -14,5 +15,6 @@ export const utilities: UtilityConfig = {
   ...borderColorAlpha,
   ...focusRing,
   ...space,
+  ...transform,
   ...typography,
 }
