@@ -59,7 +59,7 @@ export const tableContainer = defineRecipe({
   description: 'Typography - table container style',
   base: {
     my: '6',
-    width: 'full',
+    w: 'full',
     overflowX: 'auto',
   },
 })
@@ -68,7 +68,7 @@ export const table = defineRecipe({
   name: 'table',
   description: 'Typography - table style',
   base: {
-    width: 'full',
+    w: 'full',
     '& tr': {
       m: 0,
       borderTop: 'base',

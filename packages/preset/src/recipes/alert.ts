@@ -5,7 +5,7 @@ export const alert = defineRecipe({
   description: 'Styles for the Alert component',
   base: {
     position: 'relative',
-    width: 'full',
+    w: 'full',
     rounded: 'lg',
     border: 'base',
     p: '4',
@@ -23,8 +23,8 @@ export const alert = defineRecipe({
       left: '4',
       top: '4',
       color: 'foreground',
-      height: '4',
-      width: '4',
+      h: '4',
+      w: '4',
     },
   },
   variants: {
