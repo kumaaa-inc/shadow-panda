@@ -1,5 +1,6 @@
 import { Tabs, Tab, Steps, Callout } from 'nextra/components'
 import { css } from '@shadow-panda/styled-system/css'
+import { muted } from '@shadow-panda/styled-system/recipes'
 import { Preview } from '@/components/_docs/preview'
 import { ReferenceBadges } from '@/components/_docs/reference-badges'
 import { Lead } from '@/components/_docs/lead'
@@ -127,7 +128,7 @@ import { Checkbox } from '@/components/ui/checkbox'
           leading: 'none'
         })}>
           <Label htmlFor="terms1">Accept terms and conditions</Label>
-          <p className={css({fontSize: 'sm', color: 'muted.foreground'})}>You agree to our Terms of Service and Privacy Policy.</p>
+          <p className={muted()}>You agree to our Terms of Service and Privacy Policy.</p>
         </div>
       </div>
     </Preview>
@@ -156,7 +157,7 @@ export function Example() {
         })}
       >
         <Label htmlFor="terms1">Accept terms and conditions</Label>
-        <p className={css({ fontSize: 'sm', color: 'muted.foreground' })}>
+        <p className={muted()}>
           You agree to our Terms of Service and Privacy Policy.
         </p>
       </div>
@@ -203,7 +204,7 @@ export function Example() {
         })}
       >
         <Label htmlFor="terms1">Accept terms and conditions</Label>
-        <p className={css({ fontSize: 'sm', color: 'muted.foreground' })}>
+        <p className={muted()}>
           You agree to our Terms of Service and Privacy Policy.
         </p>
       </div>

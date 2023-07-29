@@ -13,6 +13,7 @@ export const textarea = defineRecipe({
     px: '3',
     py: '2',
     fontSize: 'sm',
+    leading: 'tight',
     focusRingOffsetColor: 'background',
 
     _placeholder: {

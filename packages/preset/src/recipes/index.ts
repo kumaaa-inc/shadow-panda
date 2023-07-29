@@ -6,6 +6,7 @@ import * as avatar from './avatar'
 import * as badge from './badge'
 import * as button from './button'
 import * as calendar from './calendar'
+import * as card from './card'
 import * as checkbox from './checkbox'
 import * as input from './input'
 import * as label from './label'
@@ -23,6 +24,7 @@ export const recipes = {
   ...badge,
   ...button,
   ...calendar,
+  ...card,
   ...checkbox,
   ...input,
   ...label,
