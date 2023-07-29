@@ -6,6 +6,11 @@
     "@shadow-panda/preset": "0.0.1"
   },
   "changesets": [
-    "cold-rabbits-call"
+    "cold-rabbits-call",
+    "curly-planes-vanish",
+    "lazy-items-peel",
+    "modern-days-trade",
+    "silver-points-beam",
+    "strange-dolphins-tickle"
   ]
 }
