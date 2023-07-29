@@ -24,11 +24,11 @@ export const focusRing: UtilityConfig = {
     transform(value) {
       return {
         // NOTE: Comma after inset is required
-        '--sp-ring-offset-shadow': `var(--sp-ring-inset,) 0 0 0 var(--sp-ring-offset-width, ${ringOffsetValues[0]}) var(--sp-ring-offset-color)`,
+        '--shadow-panda-ring-offset-shadow': `var(--shadow-panda-ring-inset,) 0 0 0 var(--shadow-panda-ring-offset-width, ${ringOffsetValues[0]}) var(--shadow-panda-ring-offset-color)`,
         // NOTE: Comma after inset is required
-        '--sp-ring-shadow': `var(--sp-ring-inset,) 0 0 0 calc(${value} + var(--sp-ring-offset-width, ${ringOffsetValues[0]})) var(--sp-ring-color)`,
+        '--shadow-panda-ring-shadow': `var(--shadow-panda-ring-inset,) 0 0 0 calc(${value} + var(--shadow-panda-ring-offset-width, ${ringOffsetValues[0]})) var(--shadow-panda-ring-color)`,
         boxShadow:
-          'var(--sp-ring-offset-shadow),var(--sp-ring-shadow),var(--sp-base-shadow,0 0 #0000)',
+          'var(--shadow-panda-ring-offset-shadow),var(--shadow-panda-ring-shadow),var(--shadow-panda-base-shadow,0 0 #0000)',
       }
     },
   },
@@ -37,7 +37,7 @@ export const focusRing: UtilityConfig = {
     values: 'colors',
     transform(value: string) {
       return {
-        '--sp-ring-color': value,
+        '--shadow-panda-ring-color': value,
       }
     },
   },
@@ -46,7 +46,7 @@ export const focusRing: UtilityConfig = {
     values: ringOffsetValues,
     transform(value) {
       return {
-        '--sp-ring-offset-width': value,
+        '--shadow-panda-ring-offset-width': value,
       }
     },
   },
@@ -55,7 +55,7 @@ export const focusRing: UtilityConfig = {
     values: 'colors',
     transform(value: string) {
       return {
-        '--sp-ring-offset-color': value,
+        '--shadow-panda-ring-offset-color': value,
       }
     },
   },
@@ -64,7 +64,7 @@ export const focusRing: UtilityConfig = {
     values: { type: 'boolean' },
     transform(value: string) {
       return {
-        '--sp-ring-inset': value ? 'inset' : '',
+        '--shadow-panda-ring-inset': value ? 'inset' : '',
       }
     },
   },
