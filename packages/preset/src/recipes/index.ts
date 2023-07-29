@@ -7,6 +7,7 @@ import * as badge from './badge'
 import * as button from './button'
 import * as calendar from './calendar'
 import * as input from './input'
+import * as textarea from './textarea'
 
 export const recipes = {
   ...typography,
@@ -18,4 +19,5 @@ export const recipes = {
   ...button,
   ...calendar,
   ...input,
+  ...textarea,
 }
