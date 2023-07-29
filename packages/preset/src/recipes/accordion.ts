@@ -33,8 +33,8 @@ export const accordionTrigger = defineRecipe({
     },
 
     '& > svg': {
-      height: '4',
-      width: '4',
+      h: '4',
+      w: '4',
       flexShrink: '0',
       transition: 'transform',
       transitionDuration: 'normal',

@@ -1,0 +1,222 @@
+import { Tabs, Tab, Steps, Callout } from 'nextra/components'
+import { css } from '@shadow-panda/styled-system/css'
+import { Preview } from '@/components/_docs/preview'
+import { ReferenceBadges } from '@/components/_docs/reference-badges'
+import { Lead } from '@/components/_docs/lead'
+import { Label } from '@/components/ui/label'
+import { Checkbox } from '@/components/ui/checkbox'
+
+# Checkbox
+
+<Lead>
+  {'A control that allows the user to toggle between checked and not checked.'}
+</Lead>
+
+<ReferenceBadges
+  shadcnUiLink="https://ui.shadcn.com/docs/components/checkbox"
+  radix={{
+    link: 'https://www.radix-ui.com/docs/primitives/components/checkbox',
+    api: 'https://www.radix-ui.com/docs/primitives/components/checkbox#api-reference',
+  }}
+/>
+
+<Tabs items={['Preview', 'Code']}>
+  <Tab>
+    <Preview>
+      <div className={css({ display: 'flex', alignItems: 'center', spaceX: '2' })}>
+        <Checkbox id="terms" />
+        <Label htmlFor="terms">Accept terms and conditions</Label>
+      </div>
+    </Preview>
+  </Tab>
+  <Tab>
+
+```tsx copy
+import { Label } from '@/components/ui/label'
+import { Checkbox } from '@/components/ui/checkbox'
+
+export function Example() {
+  return (
+    <div
+      className={css({ display: 'flex', alignItems: 'center', spaceX: '2' })}
+    >
+      <Checkbox id="terms" />
+      <Label htmlFor="terms">Accept terms and conditions</Label>
+    </div>
+  )
+}
+```
+
+  </Tab>
+</Tabs>
+
+## Installation
+
+<Steps>
+### Install the following dependencies
+
+```bash npm2yarn copy
+npm i @radix-ui/react-checkbox
+```
+
+### Copy and paste the following code into your project
+
+```tsx filename="components/ui/checkbox.tsx" copy
+'use client'
+
+import * as React from 'react'
+import * as CheckboxPrimitive from '@radix-ui/react-checkbox'
+import { Check } from 'lucide-react'
+import { cx, css } from '@shadow-panda/styled-system/css'
+import {
+  checkbox,
+  checkboxIndicator,
+} from '@shadow-panda/styled-system/recipes'
+
+const Checkbox = React.forwardRef<
+  React.ElementRef<typeof CheckboxPrimitive.Root>,
+  React.ComponentPropsWithoutRef<typeof CheckboxPrimitive.Root>
+>(({ className, ...props }, ref) => (
+  <CheckboxPrimitive.Root
+    ref={ref}
+    className={cx('peer', checkbox(), className)}
+    {...props}
+  >
+    <CheckboxPrimitive.Indicator className={cx(checkboxIndicator())}>
+      <Check
+        className={css({
+          h: '4',
+          w: '4',
+        })}
+      />
+    </CheckboxPrimitive.Indicator>
+  </CheckboxPrimitive.Root>
+))
+
+Checkbox.displayName = CheckboxPrimitive.Root.displayName
+
+export { Checkbox }
+```
+
+### Update the import paths to match your project setup
+
+</Steps>
+
+## Usage
+
+```tsx copy
+import { Checkbox } from '@/components/ui/checkbox'
+```
+
+```tsx copy
+<Checkbox />
+```
+
+## Examples
+
+### With Text
+
+<Tabs items={['Preview', 'Code']}>
+  <Tab>
+    <Preview>
+      <div className={css({display: 'flex', alignItems: 'flex-start', spaceX: '2'})}>
+        <Checkbox id="terms1" />
+        <div className={css({
+          display: 'grid',
+          gap: '1.5',
+          leading: 'none'
+        })}>
+          <Label htmlFor="terms1">Accept terms and conditions</Label>
+          <p className={css({fontSize: 'sm', color: 'muted.foreground'})}>You agree to our Terms of Service and Privacy Policy.</p>
+        </div>
+      </div>
+    </Preview>
+  </Tab>
+  <Tab>
+
+```tsx copy
+import { Label } from '@/components/ui/label'
+import { Checkbox } from '@/components/ui/checkbox'
+
+export function Example() {
+  return (
+    <div
+      className={css({
+        display: 'flex',
+        alignItems: 'flex-start',
+        spaceX: '2',
+      })}
+    >
+      <Checkbox id="terms1" />
+      <div
+        className={css({
+          display: 'grid',
+          gap: '1.5',
+          leading: 'none',
+        })}
+      >
+        <Label htmlFor="terms1">Accept terms and conditions</Label>
+        <p className={css({ fontSize: 'sm', color: 'muted.foreground' })}>
+          You agree to our Terms of Service and Privacy Policy.
+        </p>
+      </div>
+    </div>
+  )
+}
+```
+
+  </Tab>
+</Tabs>
+
+### Disabled
+
+<Tabs items={['Preview', 'Code']}>
+  <Tab>
+    <Preview>
+      <div className={css({display: 'flex', alignItems: 'center', spaceX: '2'})}>
+        <Checkbox id="terms2" disabled />
+        <Label htmlFor="terms2">Accept terms and conditions</Label>
+      </div>
+    </Preview>
+  </Tab>
+  <Tab>
+
+```tsx copy
+import { Label } from '@/components/ui/label'
+import { Checkbox } from '@/components/ui/checkbox'
+
+export function Example() {
+  return (
+    <div
+      className={css({
+        display: 'flex',
+        alignItems: 'flex-start',
+        spaceX: '2',
+      })}
+    >
+      <Checkbox id="terms1" />
+      <div
+        className={css({
+          display: 'grid',
+          gap: '1.5',
+          leading: 'none',
+        })}
+      >
+        <Label htmlFor="terms1">Accept terms and conditions</Label>
+        <p className={css({ fontSize: 'sm', color: 'muted.foreground' })}>
+          You agree to our Terms of Service and Privacy Policy.
+        </p>
+      </div>
+    </div>
+  )
+}
+```
+
+  </Tab>
+</Tabs>
+
+### Form
+
+<Callout type="warning" emoji="⚒️">
+  WIP
+</Callout>

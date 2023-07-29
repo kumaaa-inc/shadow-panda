@@ -31,7 +31,7 @@ export const alertDialogContent = defineRecipe({
     top: '50%',
     zIndex: 50,
     display: 'grid',
-    width: 'full',
+    w: 'full',
     maxWidth: 'lg',
     transform: 'translate(-50%, -50%)',
     gap: '4',

@@ -1,0 +1,97 @@
+import { Tabs, Tab, Steps } from 'nextra/components'
+import { css } from '@shadow-panda/styled-system/css'
+import { Preview } from '@/components/_docs/preview'
+import { ReferenceBadges } from '@/components/_docs/reference-badges'
+import { Lead } from '@/components/_docs/lead'
+import { Label } from '@/components/ui/label'
+import { Checkbox } from '@/components/ui/checkbox'
+
+# Label
+
+<Lead>Renders an accessible label associated with controls.</Lead>
+
+<ReferenceBadges
+  shadcnUiLink="https://ui.shadcn.com/docs/components/label"
+  radix={{
+    link: 'https://www.radix-ui.com/docs/primitives/components/label',
+    api: 'https://www.radix-ui.com/docs/primitives/components/label#api-reference',
+  }}
+/>
+
+<Tabs items={['Preview', 'Code']}>
+  <Tab>
+    <Preview>
+      <div className={css({ display: 'flex', alignItems: 'center', spaceX: '2' })}>
+        <Checkbox id="terms" />
+        <Label htmlFor="terms">Accept terms and conditions</Label>
+      </div>
+    </Preview>
+  </Tab>
+  <Tab>
+
+```tsx copy
+import { Label } from '@/components/ui/label'
+import { Checkbox } from '@/components/ui/checkbox'
+
+export function Example() {
+  return (
+    <div
+      className={css({ display: 'flex', alignItems: 'center', spaceX: '2' })}
+    >
+      <Checkbox id="terms" />
+      <Label htmlFor="terms">Accept terms and conditions</Label>
+    </div>
+  )
+}
+```
+
+  </Tab>
+</Tabs>
+
+## Installation
+
+<Steps>
+### Install the following dependencies
+
+```bash npm2yarn copy
+npm i @radix-ui/react-label
+```
+
+### Copy and paste the following code into your project
+
+```tsx filename="components/ui/label.tsx" copy
+'use client'
+
+import * as React from 'react'
+import * as LabelPrimitive from '@radix-ui/react-label'
+import { cx } from '@shadow-panda/styled-system/css'
+import { label, type LabelVariant } from '@shadow-panda/styled-system/recipes'
+
+const Label = React.forwardRef<
+  React.ElementRef<typeof LabelPrimitive.Root>,
+  React.ComponentPropsWithoutRef<typeof LabelPrimitive.Root> & LabelVariant
+>(({ className, ...props }, ref) => (
+  <LabelPrimitive.Root
+    ref={ref}
+    className={cx(label(), className)}
+    {...props}
+  />
+))
+Label.displayName = LabelPrimitive.Root.displayName
+
+export { Label }
+```
+
+### Update the import paths to match your project setup
+
+</Steps>
+
+## Usage
+
+```tsx copy
+import { Label } from '@/components/ui/label'
+```
+
+```tsx copy
+<Label htmlFor="email">Your email address</Label>
+```

@@ -65,8 +65,8 @@ export const calendarNavButton = defineRecipe({
   name: 'calendarNavButton',
   description: 'Styles for the calendarNavButton',
   base: {
-    height: '7 !important',
-    width: '7 !important',
+    h: '7 !important',
+    w: '7 !important',
     px: '0 !important',
     py: '0 !important',
     bg: 'transparent',
@@ -100,7 +100,7 @@ export const calendarTable = defineRecipe({
   name: 'calendarTable',
   description: 'Styles for the calendarTable',
   base: {
-    width: 'full',
+    w: 'full',
     borderCollapse: 'collapse',
     spaceY: '1',
   },
@@ -120,7 +120,7 @@ export const calendarHeadCell = defineRecipe({
   base: {
     color: 'muted.foreground',
     rounded: 'md',
-    width: '9',
+    w: '9',
     fontWeight: 'normal',
     fontSize: '0.8rem',
   },
@@ -131,7 +131,7 @@ export const calendarRow = defineRecipe({
   description: 'Styles for the calendarRow',
   base: {
     display: 'flex',
-    width: 'full',
+    w: 'full',
     mt: '2',
   },
 })
@@ -169,8 +169,8 @@ export const calendarDay = defineRecipe({
   description: 'Styles for the calendarDay',
   base: {
     // Unset button size styles
-    height: '9 !important',
-    width: '9 !important',
+    h: '9 !important',
+    w: '9 !important',
     px: '0 !important',
     py: '0 !important',
 

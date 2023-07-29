@@ -5,8 +5,8 @@ export const input = defineRecipe({
   description: 'Styles for the Input component',
   base: {
     display: 'flex',
-    height: '10',
-    width: 'full',
+    h: '10',
+    w: 'full',
     rounded: 'md',
     border: 'input',
     bg: 'background',
