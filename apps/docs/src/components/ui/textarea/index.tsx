@@ -5,7 +5,7 @@ import { textarea } from '@shadow-panda/styled-system/recipes'
 export interface TextareaProps
   extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {}
 
-export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
+const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
   ({ className, ...props }, ref) => {
     return (
       <textarea className={cx(textarea(), className)} ref={ref} {...props} />
@@ -14,3 +14,5 @@ export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
 )
 
 Textarea.displayName = 'Textarea'
+
+export { Textarea }
