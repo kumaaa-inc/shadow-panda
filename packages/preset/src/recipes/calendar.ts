@@ -47,6 +47,7 @@ export const calendarCaptionLabel = defineRecipe({
   description: 'Styles for the calendarCaptionLabel',
   base: {
     fontSize: 'sm',
+    leading: 'tight',
     fontWeight: 'medium',
   },
 })
@@ -142,6 +143,7 @@ export const calendarCell = defineRecipe({
   base: {
     textAlign: 'center',
     fontSize: 'sm',
+    leading: 'tight',
     p: '0',
     position: 'relative',
 

@@ -136,6 +136,7 @@ export const inlineCode = defineRecipe({
     py: '0.2rem',
     fontFamily: 'mono',
     fontSize: 'sm',
+    leading: 'tight',
     fontWeight: 'semibold',
   },
 })
@@ -170,6 +171,7 @@ export const muted = defineRecipe({
   description: 'Typography - Muted style',
   base: {
     fontSize: 'sm',
+    leading: 'tight',
     color: 'muted.foreground',
   },
 })

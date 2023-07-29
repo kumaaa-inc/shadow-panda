@@ -13,12 +13,14 @@ export const input = defineRecipe({
     px: '3',
     py: '2',
     fontSize: 'sm',
+    leading: 'tight',
     focusRingOffsetColor: 'background',
 
     _file: {
       border: 'none',
       bg: 'transparent',
       fontSize: 'sm',
+      leading: 'tight',
       fontWeight: 'medium',
     },
 

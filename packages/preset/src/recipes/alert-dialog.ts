@@ -108,6 +108,7 @@ export const alertDialogDescription = defineRecipe({
   description: 'Styles for the AlertDialogDescription component',
   base: {
     fontSize: 'sm',
+    leading: 'tight',
     color: 'muted.foreground',
   },
 })

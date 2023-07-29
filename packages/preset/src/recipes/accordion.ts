@@ -52,6 +52,7 @@ export const accordionContent = defineRecipe({
   base: {
     overflow: 'hidden',
     fontSize: 'sm',
+    leading: 'tight',
     transition: 'all',
 
     '&[data-state=closed]': {

@@ -59,7 +59,7 @@ export const alertTitle = defineRecipe({
     mb: '1',
     fontWeight: 'medium',
     leading: 'none',
-    letterSpacing: 'tight',
+    tracking: 'tight',
   },
 })
 
@@ -68,6 +68,7 @@ export const alertDescription = defineRecipe({
   description: 'Styles for the AlertDescription component',
   base: {
     fontSize: 'sm',
+    leading: 'tight',
 
     '& p': {
       leading: 'relaxed',

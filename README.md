@@ -16,8 +16,6 @@ Install the preset by running the following command:
 npm i -D @shadow-panda/preset
 ```
 
-> NOTE: This package is not published yet (WIP)
-
 Add the preset to your `panda.config.ts`
 
 ```ts
