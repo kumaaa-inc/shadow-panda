@@ -135,8 +135,7 @@ export const inlineCode = defineRecipe({
     px: '0.3rem',
     py: '0.2rem',
     fontFamily: 'mono',
-    fontSize: 'sm',
-    leading: 'tight',
+    textStyle: 'sm',
     fontWeight: 'semibold',
   },
 })
@@ -170,8 +169,7 @@ export const muted = defineRecipe({
   name: 'muted',
   description: 'Typography - Muted style',
   base: {
-    fontSize: 'sm',
-    leading: 'tight',
+    textStyle: 'sm',
     color: 'muted.foreground',
   },
 })

@@ -133,7 +133,7 @@ export const dialogTitle = defineRecipe({
   name: 'dialogTitle',
   description: 'Styles for the DialogTitle component',
   base: {
-    fontSize: 'lg',
+    textStyle: 'lg',
     fontWeight: 'semibold',
     leading: 'none',
     tracking: 'tight',
@@ -144,8 +144,7 @@ export const dialogDescription = defineRecipe({
   name: 'dialogDescription',
   description: 'Styles for the DialogDescription component',
   base: {
-    fontSize: 'sm',
-    leading: 'tight',
+    textStyle: 'sm',
     color: 'muted.foreground',
   },
 })

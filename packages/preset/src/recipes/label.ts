@@ -4,7 +4,7 @@ export const label = defineRecipe({
   name: 'label',
   description: 'Styles for the Label component',
   base: {
-    fontSize: 'sm',
+    textStyle: 'sm',
     leading: 'none',
     fontWeight: 'medium',
 

@@ -10,7 +10,7 @@ export const badge = defineRecipe({
     border: 'base',
     px: '2.5',
     py: '0.5',
-    fontSize: 'xs',
+    textStyle: 'xs',
     fontWeight: 'semibold',
     transition: 'colors',
     focusRingOffsetColor: 'background',

@@ -67,8 +67,7 @@ export const alertDescription = defineRecipe({
   name: 'alertDescription',
   description: 'Styles for the AlertDescription component',
   base: {
-    fontSize: 'sm',
-    leading: 'tight',
+    textStyle: 'sm',
 
     '& p': {
       leading: 'relaxed',
