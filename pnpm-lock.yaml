@@ -87,7 +87,7 @@ importers:
         specifier: 1.0.3
         version: 1.0.3(@types/react-dom@18.2.7)(@types/react@18.2.16)(react-dom@18.2.0)(react@18.2.0)
       cmdk:
-        specifier: ^0.2.0
+        specifier: 0.2.0
         version: 0.2.0(@types/react@18.2.16)(react-dom@18.2.0)(react@18.2.0)
       date-fns:
         specifier: 2.30.0
