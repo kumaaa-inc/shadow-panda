@@ -16,3 +16,7 @@ html, body {
   background: var(--sp-colors-background);
   color: var(--sp-colors-foreground);
 }
+
+[data-radix-popper-content-wrapper] .subheading-anchor::after {
+  display: none;
+}
