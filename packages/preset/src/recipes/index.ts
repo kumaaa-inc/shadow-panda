@@ -8,6 +8,7 @@ import * as button from './button'
 import * as calendar from './calendar'
 import * as card from './card'
 import * as checkbox from './checkbox'
+import * as dialog from './dialog'
 import * as input from './input'
 import * as label from './label'
 import * as select from './select'
@@ -26,6 +27,7 @@ export const recipes = {
   ...calendar,
   ...card,
   ...checkbox,
+  ...dialog,
   ...input,
   ...label,
   ...select,
