@@ -12,6 +12,7 @@ import * as command from './command'
 import * as dialog from './dialog'
 import * as input from './input'
 import * as label from './label'
+import * as popover from './popover'
 import * as select from './select'
 import * as separator from './separator'
 import * as switchRecipes from './switch'
@@ -30,6 +31,7 @@ export const recipes = {
   ...checkbox,
   ...command,
   ...dialog,
+  ...popover,
   ...input,
   ...label,
   ...select,
