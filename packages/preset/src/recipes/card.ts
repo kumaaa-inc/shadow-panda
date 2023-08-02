@@ -27,7 +27,7 @@ export const cardTitle = defineRecipe({
   name: 'cardTitle',
   description: 'Styles for the CardTitle component',
   base: {
-    fontSize: '2xl',
+    textStyle: '2xl',
     fontWeight: 'semibold',
     leading: 'none',
     tracking: 'tight',
@@ -38,8 +38,7 @@ export const cardDescription = defineRecipe({
   name: 'cardDescription',
   description: 'Styles for the CardDescription component',
   base: {
-    fontSize: 'sm',
-    leading: 'tight',
+    textStyle: 'sm',
     color: 'muted.foreground',
   },
 })

@@ -14,8 +14,7 @@ export const selectTrigger = defineRecipe({
     bg: 'transparent',
     px: '3',
     py: '2',
-    fontSize: 'sm',
-    leading: 'tight',
+    textStyle: 'sm',
     focusRingOffsetColor: 'background',
 
     _placeholder: {
@@ -134,8 +133,7 @@ export const selectLabel = defineRecipe({
     py: '1.5',
     pl: '8',
     pr: '2',
-    fontSize: 'sm',
-    leading: 'tight',
+    textStyle: 'sm',
     fontWeight: 'semibold',
   },
 })
@@ -153,8 +151,7 @@ export const selectItem = defineRecipe({
     py: '1.5',
     pl: '8',
     pr: '2',
-    fontSize: 'sm',
-    leading: 'tight',
+    textStyle: 'sm',
     outline: '2px solid transparent',
 
     _focus: {

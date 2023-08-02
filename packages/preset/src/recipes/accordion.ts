@@ -51,8 +51,7 @@ export const accordionContent = defineRecipe({
   description: 'Styles for the AccordionContent component',
   base: {
     overflow: 'hidden',
-    fontSize: 'sm',
-    leading: 'tight',
+    textStyle: 'sm',
     transition: 'all',
 
     '&[data-state=closed]': {

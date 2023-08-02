@@ -46,8 +46,7 @@ export const calendarCaptionLabel = defineRecipe({
   name: 'calendarCaptionLabel',
   description: 'Styles for the calendarCaptionLabel',
   base: {
-    fontSize: 'sm',
-    leading: 'tight',
+    textStyle: 'sm',
     fontWeight: 'medium',
   },
 })
@@ -142,10 +141,13 @@ export const calendarCell = defineRecipe({
   description: 'Styles for the calendarCell',
   base: {
     textAlign: 'center',
-    fontSize: 'sm',
-    leading: 'tight',
+    textStyle: 'sm',
     p: '0',
     position: 'relative',
+
+    '&:has([aria-selected])': {
+      bg: 'accent',
+    },
 
     _first: {
       '&:has([aria-selected])': {

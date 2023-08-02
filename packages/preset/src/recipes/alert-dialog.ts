@@ -98,7 +98,7 @@ export const alertDialogTitle = defineRecipe({
   name: 'alertDialogTitle',
   description: 'Styles for the AlertDialogTitle component',
   base: {
-    fontSize: 'lg',
+    textStyle: 'lg',
     fontWeight: 'semibold',
   },
 })
@@ -107,8 +107,7 @@ export const alertDialogDescription = defineRecipe({
   name: 'alertDialogDescription',
   description: 'Styles for the AlertDialogDescription component',
   base: {
-    fontSize: 'sm',
-    leading: 'tight',
+    textStyle: 'sm',
     color: 'muted.foreground',
   },
 })
