@@ -1,5 +1,15 @@
 # @shadow-panda/preset
 
+## 0.1.0-alpha.3
+
+### Minor Changes
+
+- 22d1849: Support `Command` component
+- c790ac1: Support `Dialog` component
+- eee251c: Support `DropdownMenu` component
+- 7922a8e: Support `Popover` component
+- 899779c: Support `Collapsible` component
+
 ## 0.1.0-alpha.2
 
 ### Minor Changes
