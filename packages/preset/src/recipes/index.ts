@@ -14,6 +14,7 @@ import * as dropdownMenu from './dropdown-menu'
 import * as input from './input'
 import * as label from './label'
 import * as popover from './popover'
+import * as radioGroup from './radio-group'
 import * as select from './select'
 import * as separator from './separator'
 import * as switchRecipes from './switch'
@@ -34,6 +35,7 @@ export const recipes = {
   ...dialog,
   ...dropdownMenu,
   ...popover,
+  ...radioGroup,
   ...input,
   ...label,
   ...select,
