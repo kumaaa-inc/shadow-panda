@@ -1,5 +1,12 @@
 # @shadow-panda/preset
 
+## 0.1.0-alpha.4
+
+### Minor Changes
+
+- 9bb6569: Support `Combobox` component
+- f258b5a: Support `DatePicker` component, and fix `Calendar` component styles
+
 ## 0.1.0-alpha.3
 
 ### Minor Changes
