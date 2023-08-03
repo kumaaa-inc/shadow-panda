@@ -10,6 +10,7 @@ import * as card from './card'
 import * as checkbox from './checkbox'
 import * as command from './command'
 import * as dialog from './dialog'
+import * as dropdownMenu from './dropdown-menu'
 import * as input from './input'
 import * as label from './label'
 import * as popover from './popover'
@@ -31,6 +32,7 @@ export const recipes = {
   ...checkbox,
   ...command,
   ...dialog,
+  ...dropdownMenu,
   ...popover,
   ...input,
   ...label,

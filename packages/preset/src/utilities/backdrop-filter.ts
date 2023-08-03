@@ -14,7 +14,6 @@ const blurValues = {
 export const backdropFilter: UtilityConfig = {
   backdropBlur: {
     property: 'backdropFilter',
-    shorthand: ['backdropBlur'],
     className: 'backdrop_blur',
     values: blurValues,
     transform: (value) => {
