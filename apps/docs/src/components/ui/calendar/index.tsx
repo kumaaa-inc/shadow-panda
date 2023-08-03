@@ -25,7 +25,9 @@ import {
   calendarDayToday,
   calendarDayOutside,
   calendarDayDisabled,
+  calendarDayRangeStart,
   calendarDayRangeMiddle,
+  calendarDayRangeEnd,
   calendarDayHidden,
 } from '@shadow-panda/styled-system/recipes'
 
@@ -59,7 +61,9 @@ function Calendar({
         day_today: calendarDayToday(),
         day_outside: calendarDayOutside(),
         day_disabled: calendarDayDisabled(),
+        day_range_start: calendarDayRangeStart(),
         day_range_middle: calendarDayRangeMiddle(),
+        day_range_end: calendarDayRangeEnd(),
         day_hidden: calendarDayHidden(),
         ...classNames,
       }}
