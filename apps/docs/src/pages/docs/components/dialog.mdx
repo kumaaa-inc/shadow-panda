@@ -104,17 +104,77 @@ export const Example = () => {
 ```tsx copy
 'use client'
 
-import * as React from 'react'
-import { ChevronsUpDown } from 'lucide-react'
+import { css } from '@shadow-panda/styled-system/css'
 import { Button } from '@/components/ui/button'
 import {
-  Collapsible,
-  CollapsibleContent,
-  CollapsibleTrigger,
-} from '@/components/ui/collapsible'
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from '@/components/ui/dialog'
+import { Input } from '@/components/ui/input'
+import { Label } from '@/components/ui/label'
 
 export function Example() {
-  return apps / docs / src / pages / docs / components / dialog.mdx
+  return (
+    <Dialog>
+      <DialogTrigger asChild>
+        <Button variant="outline">Edit Profile</Button>
+      </DialogTrigger>
+      <DialogContent className={css({ sm: { maxW: '425px' } })}>
+        <DialogHeader>
+          <DialogTitle>Edit profile</DialogTitle>
+          <DialogDescription>
+            Make changes to your profile here. Click save when you're done.
+          </DialogDescription>
+        </DialogHeader>
+        <div className={css({ display: 'grid', gap: '4', py: '4' })}>
+          <div
+            className={css({
+              display: 'grid',
+              gridTemplateColumns: '4',
+              alignItems: 'center',
+              gap: '4',
+            })}
+          >
+            <Label htmlFor="name" className={css({ textAlign: 'right' })}>
+              Name
+            </Label>
+            <Input
+              id="name"
+              value="Pedro Duarte"
+              className={css({ gridColumn: '3' })}
+              onChange={() => {}}
+            />
+          </div>
+          <div
+            className={css({
+              display: 'grid',
+              gridTemplateColumns: '4',
+              alignItems: 'center',
+              gap: '4',
+            })}
+          >
+            <Label htmlFor="username" className={css({ textAlign: 'right' })}>
+              Name
+            </Label>
+            <Input
+              id="username"
+              value="@peduarte"
+              className={css({ gridColumn: '3' })}
+              onChange={() => {}}
+            />
+          </div>
+        </div>
+        <DialogFooter>
+          <Button type="submit">Save changes</Button>
+        </DialogFooter>
+      </DialogContent>
+    </Dialog>
+  )
 }
 ```
 
@@ -132,7 +192,7 @@ npm i @radix-ui/react-dialog
 
 ### Copy and paste the following code into your project
 
-```tsx filename="components/ui/collapsible.tsx" copy
+```tsx filename="components/ui/dialog.tsx" copy
 'use client'
 
 import * as React from 'react'
