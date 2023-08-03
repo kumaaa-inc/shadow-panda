@@ -1,7 +1,7 @@
 {
   "name": "@shadow-panda/preset",
   "description": "The preset for PandaCSS that contains the theme for Shadow Panda",
-  "version": "0.1.0-alpha.3",
+  "version": "0.1.0-alpha.4",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
