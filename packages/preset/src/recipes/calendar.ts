@@ -190,8 +190,8 @@ export const calendarDaySelected = defineRecipe({
   name: 'calendarDaySelected',
   description: 'Styles for the calendarDaySelected',
   base: {
-    bg: 'primary !important',
-    color: 'primary.foreground !important',
+    bg: 'primary',
+    color: 'primary.foreground',
 
     _hover: {
       bg: 'primary',
@@ -232,6 +232,17 @@ export const calendarDayDisabled = defineRecipe({
   },
 })
 
+export const calendarDayRangeStart = defineRecipe({
+  name: 'calendarDayRangeStart',
+  description: 'Styles for the calendarDayRangeStart',
+  base: {
+    _hover: {
+      bg: 'primary !important',
+      color: 'primary.foreground !important',
+    },
+  },
+})
+
 export const calendarDayRangeMiddle = defineRecipe({
   name: 'calendarDayRangeMiddle',
   description: 'Styles for the calendarDayRangeMiddle',
@@ -239,6 +250,22 @@ export const calendarDayRangeMiddle = defineRecipe({
     '&[aria-selected="true"]': {
       bg: 'accent',
       color: 'accent.foreground',
+
+      _hover: {
+        bg: 'accent',
+        color: 'accent.foreground',
+      },
+    },
+  },
+})
+
+export const calendarDayRangeEnd = defineRecipe({
+  name: 'calendarDayRangeEnd',
+  description: 'Styles for the calendarDayRangeEnd',
+  base: {
+    _hover: {
+      bg: 'primary !important',
+      color: 'primary.foreground !important',
     },
   },
 })
