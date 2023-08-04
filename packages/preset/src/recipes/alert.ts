@@ -5,10 +5,9 @@ export const alert = defineRecipe({
   description: 'Styles for the Alert component',
   base: {
     position: 'relative',
-    width: 'full',
+    w: 'full',
     rounded: 'lg',
-    border: '1',
-    borderColor: 'border',
+    border: 'base',
     p: '4',
 
     '&:has(svg)': {
@@ -24,8 +23,8 @@ export const alert = defineRecipe({
       left: '4',
       top: '4',
       color: 'foreground',
-      height: '4',
-      width: '4',
+      h: '4',
+      w: '4',
     },
   },
   variants: {
@@ -60,7 +59,7 @@ export const alertTitle = defineRecipe({
     mb: '1',
     fontWeight: 'medium',
     leading: 'none',
-    letterSpacing: 'tight',
+    tracking: 'tight',
   },
 })
 
@@ -68,7 +67,7 @@ export const alertDescription = defineRecipe({
   name: 'alertDescription',
   description: 'Styles for the AlertDescription component',
   base: {
-    fontSize: 'sm',
+    textStyle: 'sm',
 
     '& p': {
       leading: 'relaxed',

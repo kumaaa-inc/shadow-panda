@@ -8,18 +8,18 @@ export const button = defineRecipe({
     alignItems: 'center',
     justifyContent: 'center',
     rounded: 'md',
-    fontSize: 'sm',
+    textStyle: 'sm',
     fontWeight: 'medium',
-    ring: 'base',
-    ringColor: 'background',
     transition: 'colors',
     cursor: 'pointer',
-    boxShadow: 'none',
+    focusRingOffsetColor: 'background',
 
     _focusVisible: {
-      ring: 'base',
-      ringColor: 'ring',
-      boxShadow: 'none',
+      outline: '2px solid transparent',
+      outlineOffset: '2px',
+      focusRingWidth: '2',
+      focusRingColor: 'ring',
+      focusRingOffsetWidth: '2',
     },
 
     _disabled: {
@@ -46,8 +46,7 @@ export const button = defineRecipe({
         },
       },
       outline: {
-        border: '1',
-        borderColor: 'input',
+        border: 'input',
         bg: 'background',
 
         _hover: {

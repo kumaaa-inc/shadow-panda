@@ -15,8 +15,7 @@ export const h2 = defineRecipe({
   base: {
     textStyle: 'h2',
     scrollMargin: '20',
-    borderBottom: '1',
-    borderBottomColor: 'border',
+    borderBottom: 'base',
     pb: '2',
     transition: 'colors',
 
@@ -60,7 +59,7 @@ export const tableContainer = defineRecipe({
   description: 'Typography - table container style',
   base: {
     my: '6',
-    width: 'full',
+    w: 'full',
     overflowX: 'auto',
   },
 })
@@ -69,11 +68,10 @@ export const table = defineRecipe({
   name: 'table',
   description: 'Typography - table style',
   base: {
-    width: 'full',
+    w: 'full',
     '& tr': {
       m: 0,
-      borderTop: '1',
-      borderTopColor: 'border',
+      borderTop: 'base',
       p: 0,
 
       _even: {
@@ -85,9 +83,7 @@ export const table = defineRecipe({
       },
 
       '& th, & td': {
-        border: '1',
-        borderStyle: 'solid',
-        borderColor: 'border',
+        border: 'base',
         px: '4',
         py: '2',
         textAlign: 'left',
@@ -109,9 +105,8 @@ export const blockquote = defineRecipe({
   description: 'Typography - blockquote style',
   base: {
     mt: '6',
-    borderLeft: '1',
+    borderLeft: 'base',
     borderLeftWidth: '2px',
-    borderLeftColor: 'border',
     pl: '6',
     fontStyle: 'italic',
   },
@@ -140,7 +135,7 @@ export const inlineCode = defineRecipe({
     px: '0.3rem',
     py: '0.2rem',
     fontFamily: 'mono',
-    fontSize: 'sm',
+    textStyle: 'sm',
     fontWeight: 'semibold',
   },
 })
@@ -174,7 +169,7 @@ export const muted = defineRecipe({
   name: 'muted',
   description: 'Typography - Muted style',
   base: {
-    fontSize: 'sm',
+    textStyle: 'sm',
     color: 'muted.foreground',
   },
 })

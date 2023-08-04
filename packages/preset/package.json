@@ -1,10 +1,18 @@
 {
   "name": "@shadow-panda/preset",
   "description": "The preset for PandaCSS that contains the theme for Shadow Panda",
-  "version": "0.0.1-alpha.0",
+  "version": "0.1.0",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
+  "homepage": "https://shadow-panda.vercel.app",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kumaaa-inc/shadow-panda.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kumaaa-inc/shadow-panda/issues"
+  },
   "files": [
     "dist"
   ],

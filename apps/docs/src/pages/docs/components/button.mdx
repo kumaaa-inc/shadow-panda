@@ -1,11 +1,15 @@
 import { Tabs, Tab, Steps } from 'nextra/components'
 import { css } from '@shadow-panda/styled-system/css'
 import { Preview } from '@/components/_docs/preview'
+import { ReferenceBadges } from '@/components/_docs/reference-badges'
+import { Lead } from '@/components/_docs/lead'
 import { Button } from '@/components/ui/button'
 
 # Button
 
-Displays a button or a component that looks like a button.
+<Lead>Displays a button or a component that looks like a button.</Lead>
+
+<ReferenceBadges shadcnUiLink="https://ui.shadcn.com/docs/components/button" />
 
 <Tabs items={['Preview', 'Code']}>
   <Tab>
@@ -15,7 +19,7 @@ Displays a button or a component that looks like a button.
   </Tab>
   <Tab>
 
-```tsx filename="components/ui/button.tsx" copy
+```tsx copy
 import { Button } from '@/components/ui/button'
 
 export function Example() {
@@ -50,10 +54,9 @@ export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
     ButtonVariantProps {
   asChild?: boolean
-  children: React.ReactNode
 }
 
-export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant, size, asChild = false, ...props }, ref) => {
     const Comp = asChild ? Slot : 'button'
 
@@ -68,6 +71,8 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 )
 
 Button.displayName = 'Button'
+
+export { Button }
 ```
 
 ### Update the import paths to match your project setup
@@ -96,11 +101,13 @@ You can use the `button` recipe to apply the button styles to any component.
 import {
   button,
   type ButtonVariantProps,
-} from '<generated>/styled-system/recipes'
+} from '@shadow-panda/styled-system/recipes'
 ```
 
 ```tsx copy
-<button className={button({ variant, size })}>Button</button>
+<button className={button({ variant: 'outline', size: 'default' })}>
+  Button
+</button>
 ```
 
 ### Link
@@ -108,7 +115,7 @@ import {
 You can use the `button` recipe to create a link that looks like a button.
 
 ```tsx copy
-import { button } from '<generated>/styled-system/recipes'
+import { button } from '@shadow-panda/styled-system/recipes'
 ```
 
 ```tsx copy
@@ -125,7 +132,7 @@ Alternatively, you can set the asChild parameter and nest the link component.
 
 ## Examples
 
-### Primary
+### Default (Primary)
 
 <Tabs items={['Preview', 'Code']}>
   <Tab>
@@ -270,7 +277,7 @@ import { ChevronRight } from 'lucide-react'
 
 ```tsx copy
 import { ChevronRight } from 'lucide-react'
-import { css } from '<generated>/styled-system/css'
+import { css } from '@shadow-panda/styled-system/css'
 import { Button } from '@/components/ui/button'
 
 export function Example() {
@@ -308,7 +315,7 @@ import { Mail } from 'lucide-react'
 
 ```tsx copy
 import { Mail } from 'lucide-react'
-import { css } from '<generated>/styled-system/css'
+import { css } from '@shadow-panda/styled-system/css'
 import { Button } from '@/components/ui/button'
 
 export function Example() {
@@ -349,7 +356,7 @@ import { Loader2 } from 'lucide-react'
 
 ```tsx copy
 import { Loader2 } from 'lucide-react'
-import { css } from '<generated>/styled-system/css'
+import { css } from '@shadow-panda/styled-system/css'
 import { Button } from '@/components/ui/button'
 
 export function Example() {
@@ -386,7 +393,7 @@ import Link from 'next/link'
 
 ```tsx copy
 import Link from 'next/link'
-import { css } from '<generated>/styled-system/css'
+import { css } from '@shadow-panda/styled-system/css'
 import { Button } from '@/components/ui/button'
 
 export function Example() {

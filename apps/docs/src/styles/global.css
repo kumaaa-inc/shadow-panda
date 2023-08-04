@@ -16,3 +16,13 @@ html, body {
   background: var(--sp-colors-background);
   color: var(--sp-colors-foreground);
 }
+
+/* Fix: Hide heading anchors inside Popover content */
+[data-radix-popper-content-wrapper] .subheading-anchor::after {
+  display: none;
+}
+
+/* Fix: Hide focus rings around Dropdown Menu item */
+[data-radix-menu-content] [tabindex]:not([tabindex="-1"]):focus-visible {
+  box-shadow: initial;
+}

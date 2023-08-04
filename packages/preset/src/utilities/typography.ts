@@ -6,4 +6,9 @@ export const typography: UtilityConfig = {
     shorthand: 'leading',
     values: 'lineHeights',
   },
+  letterSpacing: {
+    className: 'tracking',
+    shorthand: 'tracking',
+    values: 'letterSpacings',
+  },
 }

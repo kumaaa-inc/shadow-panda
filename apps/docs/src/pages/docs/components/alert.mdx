@@ -1,15 +1,15 @@
 import { Tabs, Tab, Steps } from 'nextra/components'
+import { Terminal, AlertCircle } from 'lucide-react'
 import { Preview } from '@/components/_docs/preview'
-import { Terminal, AlertCircle } from "lucide-react"
-import {
-  Alert,
-  AlertTitle,
-  AlertDescription,
-} from '@/components/ui/alert'
+import { ReferenceBadges } from '@/components/_docs/reference-badges'
+import { Lead } from '@/components/_docs/lead'
+import { Alert, AlertTitle, AlertDescription } from '@/components/ui/alert'
 
 # Alert
 
-Displays a callout for user attention.
+<Lead>Displays a callout for user attention.</Lead>
+
+<ReferenceBadges shadcnUiLink="https://ui.shadcn.com/docs/components/alert" />
 
 <Tabs items={['Preview', 'Code']}>
   <Tab>
@@ -23,9 +23,9 @@ Displays a callout for user attention.
   </Tab>
   <Tab>
 
-```tsx filename="components/ui/button.tsx" copy
+```tsx copy
 import { Alert, AlertTitle, AlertDescription } from '@/components/ui/alert'
-import { Terminal } from "lucide-react"
+import { Terminal } from 'lucide-react'
 
 export function Example() {
   return (
@@ -91,13 +91,14 @@ export { Alert, AlertTitle, AlertDescription }
 ```
 
 ### Update the import paths to match your project setup
+
 </Steps>
 
 ## Usage
 
 ```tsx copy
 import { Alert, AlertTitle, AlertDescription } from '@/components/ui/alert'
-import { Terminal } from "lucide-react" // Any icon of your choice
+import { Terminal } from 'lucide-react' // Any icon of your choice
 ```
 
 ```tsx copy
@@ -128,7 +129,7 @@ import { Terminal } from "lucide-react" // Any icon of your choice
 
 ```tsx copy
 import { Alert, AlertTitle, AlertDescription } from '@/components/ui/alert'
-import { Terminal } from "lucide-react"
+import { Terminal } from 'lucide-react'
 
 export function Example() {
   return (
@@ -162,7 +163,7 @@ export function Example() {
 
 ```tsx copy
 import { Alert, AlertTitle, AlertDescription } from '@/components/ui/alert'
-import { AlertCircle } from "lucide-react"
+import { AlertCircle } from 'lucide-react'
 
 export function Example() {
   return (

@@ -1,0 +1,371 @@
+import * as React from 'react'
+import { Tabs, Tab, Steps } from 'nextra/components'
+import { ChevronsUpDown } from 'lucide-react'
+import { css } from '@shadow-panda/styled-system/css'
+import { Preview } from '@/components/_docs/preview'
+import { ReferenceBadges } from '@/components/_docs/reference-badges'
+import { Lead } from '@/components/_docs/lead'
+import { Button } from '@/components/ui/button'
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from '@/components/ui/dialog'
+import { Input } from '@/components/ui/input'
+import { Label } from '@/components/ui/label'
+
+# Dialog
+
+<Lead>
+  {
+    'A window overlaid on either the primary window or another dialog window, rendering the content underneath inert.'
+  }
+</Lead>
+
+<ReferenceBadges
+  shadcnUiLink="https://ui.shadcn.com/docs/components/dialog"
+  radix={{
+    link: 'https://www.radix-ui.com/docs/primitives/components/dialog',
+    api: 'https://www.radix-ui.com/docs/primitives/components/dialog#api-reference',
+  }}
+/>
+
+export const Example = () => {
+  return (
+    <Dialog>
+      <DialogTrigger asChild>
+        <Button variant="outline">Edit Profile</Button>
+      </DialogTrigger>
+      <DialogContent className={css({ sm: { maxW: '425px' } })}>
+        <DialogHeader>
+          <DialogTitle>Edit profile</DialogTitle>
+          <DialogDescription>
+            Make changes to your profile here. Click save when you're done.
+          </DialogDescription>
+        </DialogHeader>
+        <div className={css({ display: 'grid', gap: '4', py: '4' })}>
+          <div
+            className={css({
+              display: 'grid',
+              gridTemplateColumns: '4',
+              alignItems: 'center',
+              gap: '4',
+            })}
+          >
+            <Label htmlFor="name" className={css({ textAlign: 'right' })}>
+              Name
+            </Label>
+            <Input
+              id="name"
+              value="Pedro Duarte"
+              className={css({ gridColumn: '3' })}
+              onChange={() => {}}
+            />
+          </div>
+          <div
+            className={css({
+              display: 'grid',
+              gridTemplateColumns: '4',
+              alignItems: 'center',
+              gap: '4',
+            })}
+          >
+            <Label htmlFor="username" className={css({ textAlign: 'right' })}>
+              Name
+            </Label>
+            <Input
+              id="username"
+              value="@peduarte"
+              className={css({ gridColumn: '3' })}
+              onChange={() => {}}
+            />
+          </div>
+        </div>
+        <DialogFooter>
+          <Button type="submit">Save changes</Button>
+        </DialogFooter>
+      </DialogContent>
+    </Dialog>
+  )
+}
+
+<Tabs items={['Preview', 'Code']}>
+  <Tab>
+    <Preview>
+      <Example />
+    </Preview>
+  </Tab>
+  <Tab>
+
+```tsx copy
+'use client'
+
+import { css } from '@shadow-panda/styled-system/css'
+import { Button } from '@/components/ui/button'
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from '@/components/ui/dialog'
+import { Input } from '@/components/ui/input'
+import { Label } from '@/components/ui/label'
+
+export function Example() {
+  return (
+    <Dialog>
+      <DialogTrigger asChild>
+        <Button variant="outline">Edit Profile</Button>
+      </DialogTrigger>
+      <DialogContent className={css({ sm: { maxW: '425px' } })}>
+        <DialogHeader>
+          <DialogTitle>Edit profile</DialogTitle>
+          <DialogDescription>
+            Make changes to your profile here. Click save when you're done.
+          </DialogDescription>
+        </DialogHeader>
+        <div className={css({ display: 'grid', gap: '4', py: '4' })}>
+          <div
+            className={css({
+              display: 'grid',
+              gridTemplateColumns: '4',
+              alignItems: 'center',
+              gap: '4',
+            })}
+          >
+            <Label htmlFor="name" className={css({ textAlign: 'right' })}>
+              Name
+            </Label>
+            <Input
+              id="name"
+              value="Pedro Duarte"
+              className={css({ gridColumn: '3' })}
+              onChange={() => {}}
+            />
+          </div>
+          <div
+            className={css({
+              display: 'grid',
+              gridTemplateColumns: '4',
+              alignItems: 'center',
+              gap: '4',
+            })}
+          >
+            <Label htmlFor="username" className={css({ textAlign: 'right' })}>
+              Name
+            </Label>
+            <Input
+              id="username"
+              value="@peduarte"
+              className={css({ gridColumn: '3' })}
+              onChange={() => {}}
+            />
+          </div>
+        </div>
+        <DialogFooter>
+          <Button type="submit">Save changes</Button>
+        </DialogFooter>
+      </DialogContent>
+    </Dialog>
+  )
+}
+```
+
+  </Tab>
+</Tabs>
+
+## Installation
+
+<Steps>
+### Install the following dependencies
+
+```bash npm2yarn copy
+npm i @radix-ui/react-dialog
+```
+
+### Copy and paste the following code into your project
+
+```tsx filename="components/ui/dialog.tsx" copy
+'use client'
+
+import * as React from 'react'
+import * as DialogPrimitive from '@radix-ui/react-dialog'
+import { X } from 'lucide-react'
+import { cx, css } from '@shadow-panda/styled-system/css'
+import {
+  dialogOverlay,
+  dialogContent,
+  dialogClose,
+  dialogHeader,
+  dialogFooter,
+  dialogTitle,
+  dialogDescription,
+} from '@shadow-panda/styled-system/recipes'
+
+const Dialog = DialogPrimitive.Root
+
+const DialogTrigger = DialogPrimitive.Trigger
+
+const DialogPortal = ({
+  className,
+  ...props
+}: DialogPrimitive.DialogPortalProps) => (
+  <DialogPrimitive.Portal className={cx(className)} {...props} />
+)
+DialogPortal.displayName = DialogPrimitive.Portal.displayName
+
+const DialogOverlay = React.forwardRef<
+  React.ElementRef<typeof DialogPrimitive.Overlay>,
+  React.ComponentPropsWithoutRef<typeof DialogPrimitive.Overlay>
+>(({ className, ...props }, ref) => (
+  <DialogPrimitive.Overlay
+    ref={ref}
+    className={cx(dialogOverlay(), className)}
+    {...props}
+  />
+))
+DialogOverlay.displayName = DialogPrimitive.Overlay.displayName
+
+const DialogContent = React.forwardRef<
+  React.ElementRef<typeof DialogPrimitive.Content>,
+  React.ComponentPropsWithoutRef<typeof DialogPrimitive.Content>
+>(({ className, children, ...props }, ref) => (
+  <DialogPortal>
+    <DialogOverlay />
+    <DialogPrimitive.Content
+      ref={ref}
+      className={cx(dialogContent(), className)}
+      {...props}
+    >
+      {children}
+      <DialogPrimitive.Close className={dialogClose()}>
+        <X className={css({ h: '4', w: '4' })} />
+        <span className={css({ srOnly: true })}>Close</span>
+      </DialogPrimitive.Close>
+    </DialogPrimitive.Content>
+  </DialogPortal>
+))
+DialogContent.displayName = DialogPrimitive.Content.displayName
+
+const DialogHeader = ({
+  className,
+  ...props
+}: React.HTMLAttributes<HTMLDivElement>) => (
+  <div className={cx(dialogHeader(), className)} {...props} />
+)
+DialogHeader.displayName = 'DialogHeader'
+
+const DialogFooter = ({
+  className,
+  ...props
+}: React.HTMLAttributes<HTMLDivElement>) => (
+  <div className={cx(dialogFooter(), className)} {...props} />
+)
+DialogFooter.displayName = 'DialogFooter'
+
+const DialogTitle = React.forwardRef<
+  React.ElementRef<typeof DialogPrimitive.Title>,
+  React.ComponentPropsWithoutRef<typeof DialogPrimitive.Title>
+>(({ className, ...props }, ref) => (
+  <DialogPrimitive.Title
+    ref={ref}
+    className={cx(dialogTitle(), className)}
+    {...props}
+  />
+))
+DialogTitle.displayName = DialogPrimitive.Title.displayName
+
+const DialogDescription = React.forwardRef<
+  React.ElementRef<typeof DialogPrimitive.Description>,
+  React.ComponentPropsWithoutRef<typeof DialogPrimitive.Description>
+>(({ className, ...props }, ref) => (
+  <DialogPrimitive.Description
+    ref={ref}
+    className={cx(dialogDescription(), className)}
+    {...props}
+  />
+))
+DialogDescription.displayName = DialogPrimitive.Description.displayName
+
+export {
+  Dialog,
+  DialogTrigger,
+  DialogContent,
+  DialogHeader,
+  DialogFooter,
+  DialogTitle,
+  DialogDescription,
+}
+```
+
+### Update the import paths to match your project setup
+
+</Steps>
+
+## Usage
+
+```tsx copy
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from '@/components/ui/dialog'
+```
+
+```tsx copy
+<Dialog>
+  <DialogTrigger>Open</DialogTrigger>
+  <DialogContent>
+    <DialogHeader>
+      <DialogTitle>Are you sure absolutely sure?</DialogTitle>
+      <DialogDescription>
+        This action cannot be undone. This will permanently delete your account
+        and remove your data from our servers.
+      </DialogDescription>
+    </DialogHeader>
+  </DialogContent>
+</Dialog>
+```
+
+## Notes
+
+To activate the `Dialog` component from within a `Context Menu` or `Dropdown Menu`, you must encase the `Context Menu` or `Dropdown Menu` component in the `Dialog` component. For more information, refer to the linked issue [here](https://github.com/radix-ui/primitives/issues/1836).
+
+```tsx {14-25} copy
+<Dialog>
+  <ContextMenu>
+    <ContextMenuTrigger>Right click</ContextMenuTrigger>
+    <ContextMenuContent>
+      <ContextMenuItem>Open</ContextMenuItem>
+      <ContextMenuItem>Download</ContextMenuItem>
+      <DialogTrigger asChild>
+        <ContextMenuItem>
+          <span>Delete</span>
+        </ContextMenuItem>
+      </DialogTrigger>
+    </ContextMenuContent>
+  </ContextMenu>
+  <DialogContent>
+    <DialogHeader>
+      <DialogTitle>Are you sure absolutely sure?</DialogTitle>
+      <DialogDescription>
+        This action cannot be undone. Are you sure you want to permanently
+        delete this file from our servers?
+      </DialogDescription>
+    </DialogHeader>
+    <DialogFooter>
+      <Button type="submit">Confirm</Button>
+    </DialogFooter>
+  </DialogContent>
+</Dialog>
+```

@@ -1,0 +1,262 @@
+import { Tabs, Tab, Steps, Callout } from 'nextra/components'
+import { css } from '@shadow-panda/styled-system/css'
+import { Preview } from '@/components/_docs/preview'
+import { ReferenceBadges } from '@/components/_docs/reference-badges'
+import { Lead } from '@/components/_docs/lead'
+import { Label } from '@/components/ui/label'
+import { Button } from '@/components/ui/button'
+import { Input } from '@/components/ui/input'
+
+# Input
+
+<Lead>
+  {'Displays a form input field or a component that looks like an input field.'}
+</Lead>
+
+<ReferenceBadges shadcnUiLink="https://ui.shadcn.com/docs/components/input" />
+
+<Tabs items={['Preview', 'Code']}>
+  <Tab>
+    <Preview>
+      <Input type="email" placeholder="Email" />
+    </Preview>
+  </Tab>
+  <Tab>
+
+```tsx copy
+import { Input } from '@/components/ui/input'
+
+export function Example() {
+  return <Input type="email" placeholder="Email" />
+}
+```
+
+  </Tab>
+</Tabs>
+
+## Installation
+
+<Steps>
+### Copy and paste the following code into your project
+
+```tsx filename="components/ui/input.tsx" copy
+import * as React from 'react'
+import { cx } from '@shadow-panda/styled-system/css'
+import { input } from '@shadow-panda/styled-system/recipes'
+
+export interface InputProps
+  extends React.InputHTMLAttributes<HTMLInputElement> {}
+
+const Input = React.forwardRef<HTMLInputElement, InputProps>(
+  ({ className, type, ...props }, ref) => {
+    return (
+      <input
+        type={type}
+        className={cx(input(), className)}
+        ref={ref}
+        {...props}
+      />
+    )
+  },
+)
+
+Input.displayName = 'Input'
+
+export { Input }
+```
+
+### Update the import paths to match your project setup
+
+</Steps>
+
+## Usage
+
+```tsx copy
+import { Input } from '@/components/ui/input'
+```
+
+```tsx copy
+<Input />
+```
+
+## Examples
+
+### Default
+
+<Tabs items={['Preview', 'Code']}>
+  <Tab>
+    <Preview>
+      <Input type="email" placeholder="Email" />
+    </Preview>
+  </Tab>
+  <Tab>
+
+```tsx copy
+import { Input } from '@/components/ui/input'
+
+export function Example() {
+  return <Input type="email" placeholder="Email" />
+}
+```
+
+  </Tab>
+</Tabs>
+
+### File
+
+<Tabs items={['Preview', 'Code']}>
+  <Tab>
+    <Preview>
+      <div className={css({
+        display: 'grid',
+        w: 'full',
+        maxW: 'sm',
+        alignItems: 'center',
+        gap: '1.5'
+      })}>
+        <Label htmlFor="picture">Picture</Label>
+        <Input id="picture" type="file" />
+      </div>
+    </Preview>
+  </Tab>
+  <Tab>
+
+```tsx copy
+import { Label } from '@/components/ui/label'
+import { Input } from '@/components/ui/input'
+
+export function Example() {
+  return (
+    <div
+      className={css({
+        display: 'grid',
+        w: 'full',
+        maxW: 'sm',
+        alignItems: 'center',
+        gap: '1.5',
+      })}
+    >
+      <Label htmlFor="picture">Picture</Label>
+      <Input id="picture" type="file" />
+    </div>
+  )
+}
+```
+
+  </Tab>
+</Tabs>
+
+### Disabled
+
+<Tabs items={['Preview', 'Code']}>
+  <Tab>
+    <Preview>
+      <Input disabled type="email" placeholder="Email" />
+    </Preview>
+  </Tab>
+  <Tab>
+
+```tsx copy
+import { Input } from '@/components/ui/input'
+
+export function Example() {
+  return <Input disabled type="email" placeholder="Email" />
+}
+```
+
+  </Tab>
+</Tabs>
+
+### With Label
+
+<Tabs items={['Preview', 'Code']}>
+  <Tab>
+    <Preview>
+      <div className={css({
+        display: 'grid',
+        w: 'full',
+        maxW: 'sm',
+        alignItems: 'center',
+        gap: '1.5'
+      })}>
+        <Label htmlFor="email">Email</Label>
+        <Input type="email" id="email" placeholder="Email" />
+      </div>
+    </Preview>
+  </Tab>
+  <Tab>
+
+```tsx copy
+import { Label } from '@/components/ui/label'
+import { Input } from '@/components/ui/input'
+
+export function Example() {
+  return (
+    <div
+      className={css({
+        display: 'grid',
+        w: 'full',
+        maxW: 'sm',
+        alignItems: 'center',
+        gap: '1.5',
+      })}
+    >
+      <Label htmlFor="email">Email</Label>
+      <Input type="email" id="email" placeholder="Email" />
+    </div>
+  )
+}
+```
+
+  </Tab>
+</Tabs>
+
+### With Button
+
+<Tabs items={['Preview', 'Code']}>
+  <Tab>
+    <Preview>
+      <div className={css({
+        display: 'flex',
+        w: 'full',
+        maxW: 'sm',
+        alignItems: 'center',
+        spaceX: '2'
+      })}>
+        <Input type="email" placeholder="Email" />
+        <Button type="submit">Subscribe</Button>
+      </div>
+    </Preview>
+  </Tab>
+  <Tab>
+
+```tsx copy
+import { Label } from '@/components/ui/label'
+import { Input } from '@/components/ui/input'
+
+export function Example() {
+  return (
+    <div
+      className={css({
+        display: 'grid',
+        w: 'full',
+        maxW: 'sm',
+        alignItems: 'center',
+        gap: '1.5',
+      })}
+    >
+      <Label htmlFor="email">Email</Label>
+      <Input type="email" id="email" placeholder="Email" />
+    </div>
+  )
+}
+```
+
+  </Tab>
+</Tabs>
+
+### Form
+
+<Callout type="warning" emoji="⚒️">
+  WIP
+</Callout>

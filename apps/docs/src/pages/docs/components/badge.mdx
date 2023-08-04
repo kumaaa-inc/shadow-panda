@@ -1,0 +1,224 @@
+import { Tabs, Tab, Steps } from 'nextra/components'
+import { css } from '@shadow-panda/styled-system/css'
+import { Preview } from '@/components/_docs/preview'
+import { ReferenceBadges } from '@/components/_docs/reference-badges'
+import { Lead } from '@/components/_docs/lead'
+import { Badge } from '@/components/ui/badge'
+
+# Badge
+
+<Lead>Displays a badge or a component that looks like a badge.</Lead>
+
+<ReferenceBadges shadcnUiLink="https://ui.shadcn.com/docs/components/badge" />
+
+<Tabs items={['Preview', 'Code']}>
+  <Tab>
+    <Preview>
+      <Badge>Badge</Badge>
+    </Preview>
+  </Tab>
+  <Tab>
+
+```tsx copy
+import { Badge } from '@/components/ui/badge'
+
+export function Example() {
+  return <Badge>Badge</Badge>
+}
+```
+
+  </Tab>
+</Tabs>
+
+## Installation
+
+<Steps>
+### Copy and paste the following code into your project
+
+```tsx filename="components/ui/badge.tsx" copy
+import * as React from 'react'
+import { cx } from '@shadow-panda/styled-system/css'
+import {
+  badge,
+  type BadgeVariantProps,
+} from '@shadow-panda/styled-system/recipes'
+
+export interface BadgeProps
+  extends React.HTMLAttributes<HTMLDivElement>,
+    BadgeVariantProps {}
+
+function Badge({ className, variant, ...props }: BadgeProps) {
+  return <div className={cx(badge({ variant }), className)} {...props} />
+}
+
+export { Badge }
+```
+
+### Update the import paths to match your project setup
+
+</Steps>
+
+## Usage
+
+```tsx copy
+import { Badge } from '@/components/ui/badge'
+```
+
+```tsx copy
+<Badge variant="outline">Badge</Badge>
+```
+
+## Recipe
+
+### Usage
+
+You can use the `badge` recipe to apply the badge styles to any component.
+
+```tsx copy
+import {
+  badge,
+  type BadgeVariantProps,
+} from '@shadow-panda/styled-system/recipes'
+```
+
+```tsx copy
+<span className={badge({ variant: 'outline' })}>Badge</span>
+```
+
+### Link
+
+You can use the `badge` recipe to create a link that looks like a badge.
+
+```tsx copy
+import { badge } from '@shadow-panda/styled-system/recipes'
+```
+
+```tsx copy
+<Link className={badge({ variant: 'outline' })}>Click here</Link>
+```
+
+## Examples
+
+### Default (Primary)
+
+<Tabs items={['Preview', 'Code']}>
+  <Tab>
+    <Preview>
+      <Badge>Badge</Badge>
+    </Preview>
+  </Tab>
+  <Tab>
+
+```tsx copy
+import { Badge } from '@/components/ui/badge'
+
+export function Example() {
+  return <Badge>Badge</Badge>
+}
+```
+
+  </Tab>
+</Tabs>
+
+### Secondary
+
+<Tabs items={['Preview', 'Code']}>
+  <Tab>
+    <Preview>
+      <Badge variant="secondary">Secondary</Badge>
+    </Preview>
+  </Tab>
+  <Tab>
+
+```tsx copy
+import { Badge } from '@/components/ui/badge'
+
+export function Example() {
+  return <Badge variant="secondary">Badge</Badge>
+}
+```
+
+  </Tab>
+</Tabs>
+
+### Destructive
+
+<Tabs items={['Preview', 'Code']}>
+  <Tab>
+    <Preview>
+      <Badge variant="destructive">Destructive</Badge>
+    </Preview>
+  </Tab>
+  <Tab>
+
+```tsx copy
+import { Badge } from '@/components/ui/badge'
+
+export function Example() {
+  return <Badge variant="destructive">Badge</Badge>
+}
+```
+
+  </Tab>
+</Tabs>
+
+### Outline
+
+<Tabs items={['Preview', 'Code']}>
+  <Tab>
+    <Preview>
+      <Badge variant="outline">Outline</Badge>
+    </Preview>
+  </Tab>
+  <Tab>
+
+```tsx copy
+import { Badge } from '@/components/ui/badge'
+
+export function Example() {
+  return <Badge variant="outline">Badge</Badge>
+}
+```
+
+  </Tab>
+</Tabs>
+
+### With Icon
+
+import { Check } from 'lucide-react'
+
+<Tabs items={['Preview', 'Code']}>
+  <Tab>
+    <Preview>
+      <Badge><Check className={css({
+          mr: '2',
+          height: '4',
+          width: '4',
+        })} /> Verified</Badge>
+    </Preview>
+  </Tab>
+  <Tab>
+
+```tsx copy
+import { Check } from 'lucide-react'
+import { css } from '@shadow-panda/styled-system/css'
+import { Badge } from '@/components/ui/badge'
+
+export function Example() {
+  return (
+    <Badge>
+      <Check
+        className={css({
+          mr: '2',
+          height: '4',
+          width: '4',
+        })}
+      />
+      Verified
+    </Badge>
+  )
+}
+```
+
+  </Tab>
+</Tabs>

@@ -4,8 +4,7 @@ export const accordionItem = defineRecipe({
   name: 'accordionItem',
   description: 'Styles for the AccordionItem component',
   base: {
-    borderBottom: '1',
-    borderBottomColor: 'border',
+    borderBottom: 'base',
   },
 })
 
@@ -34,8 +33,8 @@ export const accordionTrigger = defineRecipe({
     },
 
     '& > svg': {
-      height: '4',
-      width: '4',
+      h: '4',
+      w: '4',
       flexShrink: '0',
       transition: 'transform',
       transitionDuration: 'normal',
@@ -52,7 +51,7 @@ export const accordionContent = defineRecipe({
   description: 'Styles for the AccordionContent component',
   base: {
     overflow: 'hidden',
-    fontSize: 'sm',
+    textStyle: 'sm',
     transition: 'all',
 
     '&[data-state=closed]': {

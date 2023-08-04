@@ -11,7 +11,8 @@ const config: DocsThemeConfig = {
   useNextSeoProps() {
     const { asPath } = useRouter()
     const baseConfig = {
-      description: 'Panda CSS preset for shadcn/ui & Radix UI',
+      description:
+        'Shadow Panda is a preset of Panda CSS for shadcn/ui & Radix UI, created for developers utilizing Panda CSS as an alternative to Tailwind CSS.',
       siteName: 'Shadow Panda',
       images: [
         // {
@@ -59,7 +60,7 @@ const config: DocsThemeConfig = {
           justifyContent: 'space-between',
           gap: '4',
           width: '100%',
-          fontSize: 'sm',
+          textStyle: 'sm',
         })}
       >
         <span>Copyright © {new Date().getFullYear()}</span>

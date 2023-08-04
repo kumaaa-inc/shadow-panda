@@ -15,7 +15,7 @@ export const textStyles = defineTextStyles({
         lg: 'none',
       },
       fontWeight: 'extrabold',
-      letterSpacing: 'tight',
+      tracking: 'tight',
     },
   },
   h2: {
@@ -24,7 +24,7 @@ export const textStyles = defineTextStyles({
       fontSize: '3xl',
       leading: '9',
       fontWeight: 'semibold',
-      letterSpacing: 'tight',
+      tracking: 'tight',
     },
   },
   h3: {
@@ -33,7 +33,7 @@ export const textStyles = defineTextStyles({
       fontSize: '2xl',
       leading: '8',
       fontWeight: 'semibold',
-      letterSpacing: 'tight',
+      tracking: 'tight',
     },
   },
   h4: {
@@ -42,7 +42,7 @@ export const textStyles = defineTextStyles({
       fontSize: 'xl',
       leading: '7',
       fontWeight: 'semibold',
-      letterSpacing: 'tight',
+      tracking: 'tight',
     },
   },
   p: {
