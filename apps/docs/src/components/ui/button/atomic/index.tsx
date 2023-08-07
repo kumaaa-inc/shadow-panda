@@ -6,7 +6,7 @@ import {
   type RecipeVariantProps,
 } from '@shadow-panda/styled-system/css'
 
-export const button = cva({
+const buttonVariants = cva({
   base: {
     display: 'inline-flex',
     alignItems: 'center',
@@ -109,7 +109,7 @@ export const button = cva({
   },
 })
 
-export type ButtonVariantProps = RecipeVariantProps<typeof button>
+export type ButtonVariantProps = RecipeVariantProps<typeof buttonVariants>
 
 export type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> &
   ButtonVariantProps & {
@@ -124,7 +124,7 @@ const Button = React.forwardRef<
 
   return (
     <Comp
-      className={cx(button({ variant, size }), className)}
+      className={cx(buttonVariants({ variant, size }), className)}
       ref={ref}
       {...props}
     />
@@ -133,4 +133,4 @@ const Button = React.forwardRef<
 
 Button.displayName = 'Button'
 
-export { Button }
+export { Button, buttonVariants }
