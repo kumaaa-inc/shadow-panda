@@ -4,6 +4,9 @@ export default defineConfig({
   // Whether to use css reset
   preflight: true,
 
+  // Use styled
+  jsxFramework: 'react',
+
   // Namespace prefix for the generated css
   prefix: 'sp',
 

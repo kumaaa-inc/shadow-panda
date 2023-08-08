@@ -12,6 +12,12 @@ import {
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'
 import { AspectRatio } from '@/components/ui/aspect-ratio'
 import { Button } from '@/components/ui/button'
+import {
+  Tabs,
+  TabsList,
+  TabsTrigger,
+  TabsContent,
+} from '@/components/docs/tabs'
 
 export const components = {
   Accordion,
@@ -21,9 +27,13 @@ export const components = {
   Alert,
   AlertTitle,
   AlertDescription,
+  AspectRatio,
   Button,
   Image,
-  AspectRatio,
+  Tabs,
+  TabsList,
+  TabsTrigger,
+  TabsContent,
 
   h1: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
     <h1 className={cx(h1(), className)} {...props} />
