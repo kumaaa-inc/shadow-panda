@@ -6,8 +6,8 @@ import { Icons } from '../icons'
 export interface ReferenceBadgesProps {
   shadcnUiLink?: string
   radix?: {
-    link: string
-    api: string
+    link?: string
+    api?: string
   }
 }
 

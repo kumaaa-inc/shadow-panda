@@ -1,10 +1,12 @@
-// import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import { getMDXComponent } from 'next-contentlayer/hooks'
 import { allComponents } from 'contentlayer/generated'
+import { h1 } from '@shadow-panda/styled-system/recipes'
+import { MdxComponent } from '@/components/docs/mdx-component'
+import { Lead } from '@/components/docs/lead'
+import { ReferenceBadges } from '@/components/docs/reference-badges'
 
 export const generateStaticParams = async () =>
-  allComponents.map((post) => ({ slug: post._raw.flattenedPath }))
+  allComponents.map((post) => ({ slug: post.componentName }))
 
 export const generateMetadata = ({
   params,
@@ -12,33 +14,32 @@ export const generateMetadata = ({
   params: { component: string }
 }) => {
   const post = allComponents.find(
-    (post) =>
-      post._raw.flattenedPath.replace(/^components\//, '') === params.component,
+    (post) => post.componentName === params.component,
   )
+
   if (!post) throw new Error(`Component not found: ${params.component}`)
-  return { title: post.title }
+
+  return { title: post.title, description: post.description }
 }
 
-const ComponentsLayout = ({ params }: { params: { component: string } }) => {
+const ComponentsPage = ({ params }: { params: { component: string } }) => {
   const post = allComponents.find(
-    (post) =>
-      post._raw.flattenedPath.replace(/^components\//, '') === params.component,
+    (post) => post.componentName === params.component,
   )
 
   if (!post) {
     notFound()
   }
 
-  const Content = getMDXComponent(post.body.code)
-
   return (
-    <article className="mx-auto max-w-xl py-8">
-      <div className="mb-8 text-center">
-        <h1 className="text-3xl font-bold">{post.title}</h1>
-      </div>
-      <Content />
+    <article>
+      <h1 className={h1()}>{post.title}</h1>
+      <Lead>{post.description}</Lead>
+      {post.references && <ReferenceBadges {...post.references} />}
+
+      <MdxComponent code={post.body.code} />
     </article>
   )
 }
 
-export default ComponentsLayout
+export default ComponentsPage
