@@ -6,9 +6,11 @@
   "license": "MIT",
   "scripts": {
     "prepare": "husky install && pnpm build-fast",
-    "apps:docs": "pnpm -F @shadow-panda/docs",
     "packages:preset": "pnpm -F @shadow-panda/preset",
+    "apps:docs": "pnpm -F @shadow-panda/docs",
+    "apps:docs_next": "pnpm -F @shadow-panda/docs_next",
     "dev:docs": "pnpm apps:docs dev",
+    "dev:docs_next": "pnpm apps:docs_next dev",
     "dev": "pnpm -r --parallel dev",
     "reload": "pnpm build-fast && pnpm apps:docs compile",
     "build-fast": "pnpm -r --parallel --filter=./packages/** build-fast",

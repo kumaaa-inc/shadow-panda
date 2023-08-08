@@ -1,0 +1,106 @@
+import Image from 'next/image'
+import { Tabs, Tab, Steps } from 'nextra/components'
+import { css } from '@shadow-panda/styled-system/css'
+import { Preview } from '@/components/_docs/preview'
+import { ReferenceBadges } from '@/components/_docs/reference-badges'
+import { Lead } from '@/components/_docs/lead'
+import { AspectRatio } from '@/components/ui/aspect-ratio'
+
+# AspectRatio
+
+<Lead>
+  {
+    'A vertically stacked set of interactive headings that each reveal a section of content.'
+  }
+</Lead>
+
+<ReferenceBadges
+  shadcnUiLink="https://ui.shadcn.com/docs/components/aspect-ratio"
+  radix={{
+    link: 'https://www.radix-ui.com/docs/primitives/components/aspect-ratio',
+    api: 'https://www.radix-ui.com/docs/primitives/components/aspect-ratio#api-reference',
+  }}
+/>
+
+<Tabs items={['Preview', 'Code']}>
+  <Tab>
+    <Preview>
+      <AspectRatio ratio={16 / 9} className={css({ bg: 'muted' })}>
+        <Image
+          src="https://images.unsplash.com/photo-1588345921523-c2dcdb7f1dcd?w=800&dpr=2&q=80"
+          alt="Photo by Drew Beamer"
+          fill
+          className={css({ rounded: 'md', objectFit: 'cover' })}
+          priority
+        />
+      </AspectRatio>
+    </Preview>
+  </Tab>
+  <Tab>
+
+```tsx copy
+import Image from 'next/image'
+import { css } from '@shadow-panda/styled-system/css'
+import { AspectRatio } from '@/components/ui/aspect-ratio'
+
+export function Example() {
+  return (
+    <AspectRatio ratio={16 / 9} className={css({ bg: 'muted' })}>
+      <Image
+        src="https://images.unsplash.com/photo-1588345921523-c2dcdb7f1dcd?w=800&dpr=2&q=80"
+        alt="Photo by Drew Beamer"
+        fill
+        className={css({ rounded: 'md', objectFit: 'cover' })}
+      />
+    </AspectRatio>
+  )
+}
+```
+
+  </Tab>
+</Tabs>
+
+## Installation
+
+<Steps>
+### Install the following dependencies
+
+```bash npm2yarn copy
+npm i @radix-ui/react-aspect-ratio
+```
+
+### Copy and paste the following code into your project
+
+```tsx filename="components/ui/aspect-ratio.tsx" copy
+'use client'
+
+import * as AspectRatioPrimitive from '@radix-ui/react-aspect-ratio'
+
+const AspectRatio = AspectRatioPrimitive.Root
+
+export { AspectRatio }
+```
+
+### Update the import paths to match your project setup
+
+</Steps>
+
+## Usage
+
+```tsx copy
+import Image from 'next/image'
+import { css } from '@shadow-panda/styled-system/css'
+import { AspectRatio } from '@/components/ui/aspect-ratio'
+```
+
+```tsx copy
+<div className={css({ width: '450px' })}>
+  <AspectRatio ratio={16 / 9}>
+    <Image
+      src="..."
+      alt=Image""
+      className={css({ rounded: 'md', objectFit: 'cover' })}
+    />
+  </AspectRatio>
+</div>
+```

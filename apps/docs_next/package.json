@@ -1,18 +1,17 @@
 {
-  "name": "@shadow-panda/docs",
+  "name": "@shadow-panda/docs_next",
   "version": "0.0.1",
   "private": true,
   "license": "MIT",
   "type": "module",
   "scripts": {
     "prepare": "panda codegen",
-    "postinstall": "node patch/postinstall-fix-nextra-theme-css.js",
     "watch": "panda codegen -w --clean",
     "compile": "panda codegen --clean",
     "studio": "panda studio",
     "debug": "panda debug",
     "dev": "next dev",
-    "build": "next build",
+    "build": "contentlayer build && next build",
     "start": "next start"
   },
   "dependencies": {
@@ -35,9 +34,9 @@
     "cmdk": "0.2.0",
     "date-fns": "2.30.0",
     "lucide-react": "0.263.1",
-    "next": "13.4.12",
-    "nextra": "2.10.0",
-    "nextra-theme-docs": "2.10.0",
+    "next": "13.4.13",
+    "contentlayer": "0.3.4",
+    "next-contentlayer": "0.3.4",
     "react": "18.2.0",
     "react-day-picker": "8.8.0",
     "react-dom": "18.2.0",

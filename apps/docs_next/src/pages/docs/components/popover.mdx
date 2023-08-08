@@ -1,0 +1,279 @@
+import * as React from 'react'
+import { Tabs, Tab, Steps } from 'nextra/components'
+import { css } from '@shadow-panda/styled-system/css'
+import { muted } from '@shadow-panda/styled-system/recipes'
+import { Preview } from '@/components/_docs/preview'
+import { ReferenceBadges } from '@/components/_docs/reference-badges'
+import { Lead } from '@/components/_docs/lead'
+import { Button } from '@/components/ui/button'
+import { Input } from '@/components/ui/input'
+import { Label } from '@/components/ui/label'
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from '@/components/ui/popover'
+
+# Popover
+
+<Lead>Displays rich content in a portal, triggered by a button.</Lead>
+
+<ReferenceBadges
+  shadcnUiLink="https://ui.shadcn.com/docs/components/popover"
+  radix={{
+    link: 'https://www.radix-ui.com/docs/primitives/components/popover',
+    api: 'https://www.radix-ui.com/docs/primitives/components/popover#api-reference',
+  }}
+/>
+
+export const Example = () => {
+  return (
+    <Popover>
+      <PopoverTrigger asChild>
+        <Button variant="outline">Open popover</Button>
+      </PopoverTrigger>
+      <PopoverContent className={css({ w: '80' })}>
+        <div className={css({ display: 'grid', gap: '4' })}>
+          <div className={css({ spaceY: '2' })}>
+            <h4 className={css({ fontWeight: 'medium', leading: 'none' })}>
+              Dimensions
+            </h4>
+            <p className={muted()}>Set the dimensions for the layer.</p>
+          </div>
+          <div className={css({ display: 'grid', gap: '2' })}>
+            <div
+              className={css({
+                display: 'grid',
+                gridTemplateColumns: '3',
+                alignItems: 'center',
+                gap: '4',
+              })}
+            >
+              <Label htmlFor="width">Width</Label>
+              <Input
+                id="width"
+                defaultValue="100%"
+                className={css({ gridColumn: '2', h: '8' })}
+              />
+            </div>
+            <div
+              className={css({
+                display: 'grid',
+                gridTemplateColumns: '3',
+                alignItems: 'center',
+                gap: '4',
+              })}
+            >
+              <Label htmlFor="maxWidth">Max. width</Label>
+              <Input
+                id="maxWidth"
+                defaultValue="300px"
+                className={css({ gridColumn: '2', h: '8' })}
+              />
+            </div>
+            <div
+              className={css({
+                display: 'grid',
+                gridTemplateColumns: '3',
+                alignItems: 'center',
+                gap: '4',
+              })}
+            >
+              <Label htmlFor="height">Height</Label>
+              <Input
+                id="height"
+                defaultValue="25px"
+                className={css({ gridColumn: '2', h: '8' })}
+              />
+            </div>
+            <div
+              className={css({
+                display: 'grid',
+                gridTemplateColumns: '3',
+                alignItems: 'center',
+                gap: '4',
+              })}
+            >
+              <Label htmlFor="maxHeight">Max. height</Label>
+              <Input
+                id="maxHeight"
+                defaultValue="none"
+                className={css({ gridColumn: '2', h: '8' })}
+              />
+            </div>
+          </div>
+        </div>
+      </PopoverContent>
+    </Popover>
+  )
+}
+
+<Tabs items={['Preview', 'Code']}>
+  <Tab>
+    <Preview>
+      <Example />
+    </Preview>
+  </Tab>
+  <Tab>
+
+```tsx copy
+'use client'
+
+import { muted } from '@shadow-panda/styled-system/recipes'
+import { Button } from '@/components/ui/button'
+import { Input } from '@/components/ui/input'
+import { Label } from '@/components/ui/label'
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from '@/components/ui/popover'
+
+export function Example() {
+  return (
+    <Popover>
+      <PopoverTrigger asChild>
+        <Button variant="outline">Open popover</Button>
+      </PopoverTrigger>
+      <PopoverContent className={css({ w: '80' })}>
+        <div className={css({ display: 'grid', gap: '4' })}>
+          <div className={css({ spaceY: '2' })}>
+            <h4 className={css({ fontWeight: 'medium', leading: 'none' })}>
+              Dimensions
+            </h4>
+            <p className={muted()}>Set the dimensions for the layer.</p>
+          </div>
+          <div className={css({ display: 'grid', gap: '2' })}>
+            <div
+              className={css({
+                display: 'grid',
+                gridTemplateColumns: '3',
+                alignItems: 'center',
+                gap: '4',
+              })}
+            >
+              <Label htmlFor="width">Width</Label>
+              <Input
+                id="width"
+                defaultValue="100%"
+                className={css({ gridColumn: '2', h: '8' })}
+              />
+            </div>
+            <div
+              className={css({
+                display: 'grid',
+                gridTemplateColumns: '3',
+                alignItems: 'center',
+                gap: '4',
+              })}
+            >
+              <Label htmlFor="maxWidth">Max. width</Label>
+              <Input
+                id="maxWidth"
+                defaultValue="300px"
+                className={css({ gridColumn: '2', h: '8' })}
+              />
+            </div>
+            <div
+              className={css({
+                display: 'grid',
+                gridTemplateColumns: '3',
+                alignItems: 'center',
+                gap: '4',
+              })}
+            >
+              <Label htmlFor="height">Height</Label>
+              <Input
+                id="height"
+                defaultValue="25px"
+                className={css({ gridColumn: '2', h: '8' })}
+              />
+            </div>
+            <div
+              className={css({
+                display: 'grid',
+                gridTemplateColumns: '3',
+                alignItems: 'center',
+                gap: '4',
+              })}
+            >
+              <Label htmlFor="maxHeight">Max. height</Label>
+              <Input
+                id="maxHeight"
+                defaultValue="none"
+                className={css({ gridColumn: '2', h: '8' })}
+              />
+            </div>
+          </div>
+        </div>
+      </PopoverContent>
+    </Popover>
+  )
+}
+```
+
+  </Tab>
+</Tabs>
+
+## Installation
+
+<Steps>
+### Install the following dependencies
+
+```bash npm2yarn copy
+npm i @radix-ui/react-popover
+```
+
+### Copy and paste the following code into your project
+
+```tsx filename="components/ui/popover.tsx" copy
+'use client'
+
+import * as React from 'react'
+import * as PopoverPrimitive from '@radix-ui/react-popover'
+import { cx } from '@shadow-panda/styled-system/css'
+import { popoverContent } from '@shadow-panda/styled-system/recipes'
+
+const Popover = PopoverPrimitive.Root
+
+const PopoverTrigger = PopoverPrimitive.Trigger
+
+const PopoverContent = React.forwardRef<
+  React.ElementRef<typeof PopoverPrimitive.Content>,
+  React.ComponentPropsWithoutRef<typeof PopoverPrimitive.Content>
+>(({ className, align = 'center', sideOffset = 4, ...props }, ref) => (
+  <PopoverPrimitive.Portal>
+    <PopoverPrimitive.Content
+      ref={ref}
+      align={align}
+      sideOffset={sideOffset}
+      className={cx(popoverContent(), className)}
+      {...props}
+    />
+  </PopoverPrimitive.Portal>
+))
+PopoverContent.displayName = PopoverPrimitive.Content.displayName
+
+export { Popover, PopoverTrigger, PopoverContent }
+```
+
+### Update the import paths to match your project setup
+
+</Steps>
+
+## Usage
+
+```tsx copy
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from '@/components/ui/popover'
+```
+
+```tsx copy
+<Popover>
+  <PopoverTrigger>Open</PopoverTrigger>
+  <PopoverContent>Place content for the popover here.</PopoverContent>
+</Popover>
+```

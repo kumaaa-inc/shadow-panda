@@ -1,0 +1,409 @@
+import { Tabs, Tab, Steps } from 'nextra/components'
+import { css } from '@shadow-panda/styled-system/css'
+import { Preview } from '@/components/_docs/preview'
+import { ReferenceBadges } from '@/components/_docs/reference-badges'
+import { Lead } from '@/components/_docs/lead'
+import { Button } from '@/components/ui/button'
+
+# Button
+
+<Lead>Displays a button or a component that looks like a button.</Lead>
+
+<ReferenceBadges shadcnUiLink="https://ui.shadcn.com/docs/components/button" />
+
+<Tabs items={['Preview', 'Code']}>
+  <Tab>
+    <Preview>
+      <Button>Button</Button>
+    </Preview>
+  </Tab>
+  <Tab>
+
+```tsx copy
+import { Button } from '@/components/ui/button'
+
+export function Example() {
+  return <Button>Button</Button>
+}
+```
+
+  </Tab>
+</Tabs>
+
+## Installation
+
+<Steps>
+### Install the following dependencies
+
+```bash npm2yarn copy
+npm i @radix-ui/react-slot
+```
+
+### Copy and paste the following code into your project
+
+```tsx filename="components/ui/button.tsx" copy
+import * as React from 'react'
+import { Slot } from '@radix-ui/react-slot'
+import { cx } from '@shadow-panda/styled-system/css'
+import {
+  button,
+  type ButtonVariantProps,
+} from '@shadow-panda/styled-system/recipes'
+
+export interface ButtonProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
+    ButtonVariantProps {
+  asChild?: boolean
+}
+
+const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+  ({ className, variant, size, asChild = false, ...props }, ref) => {
+    const Comp = asChild ? Slot : 'button'
+
+    return (
+      <Comp
+        className={cx(button({ variant, size }), className)}
+        ref={ref}
+        {...props}
+      />
+    )
+  },
+)
+
+Button.displayName = 'Button'
+
+export { Button }
+```
+
+### Update the import paths to match your project setup
+
+</Steps>
+
+## Usage
+
+```tsx copy
+import { Button } from '@/components/ui/button'
+```
+
+```tsx copy
+<Button variant="default" size="default">
+  Button
+</Button>
+```
+
+## Recipe
+
+### Usage
+
+You can use the `button` recipe to apply the button styles to any component.
+
+```tsx copy
+import {
+  button,
+  type ButtonVariantProps,
+} from '@shadow-panda/styled-system/recipes'
+```
+
+```tsx copy
+<button className={button({ variant: 'outline', size: 'default' })}>
+  Button
+</button>
+```
+
+### Link
+
+You can use the `button` recipe to create a link that looks like a button.
+
+```tsx copy
+import { button } from '@shadow-panda/styled-system/recipes'
+```
+
+```tsx copy
+<Link className={button({ variant: 'outline' })}>Click here</Link>
+```
+
+Alternatively, you can set the asChild parameter and nest the link component.
+
+```tsx copy
+<Button asChild>
+  <Link href="/login">Login</Link>
+</Button>
+```
+
+## Examples
+
+### Default (Primary)
+
+<Tabs items={['Preview', 'Code']}>
+  <Tab>
+    <Preview>
+      <Button>Button</Button>
+    </Preview>
+  </Tab>
+  <Tab>
+
+```tsx copy
+import { Button } from '@/components/ui/button'
+
+export function Example() {
+  return <Button>Button</Button>
+}
+```
+
+  </Tab>
+</Tabs>
+
+### Secondary
+
+<Tabs items={['Preview', 'Code']}>
+  <Tab>
+    <Preview>
+      <Button variant="secondary">Secondary</Button>
+    </Preview>
+  </Tab>
+  <Tab>
+
+```tsx copy
+import { Button } from '@/components/ui/button'
+
+export function Example() {
+  return <Button variant="secondary">Button</Button>
+}
+```
+
+  </Tab>
+</Tabs>
+
+### Destructive
+
+<Tabs items={['Preview', 'Code']}>
+  <Tab>
+    <Preview>
+      <Button variant="destructive">Destructive</Button>
+    </Preview>
+  </Tab>
+  <Tab>
+
+```tsx copy
+import { Button } from '@/components/ui/button'
+
+export function Example() {
+  return <Button variant="destructive">Button</Button>
+}
+```
+
+  </Tab>
+</Tabs>
+
+### Outline
+
+<Tabs items={['Preview', 'Code']}>
+  <Tab>
+    <Preview>
+      <Button variant="outline">Outline</Button>
+    </Preview>
+  </Tab>
+  <Tab>
+
+```tsx copy
+import { Button } from '@/components/ui/button'
+
+export function Example() {
+  return <Button variant="outline">Button</Button>
+}
+```
+
+  </Tab>
+</Tabs>
+
+### Ghost
+
+<Tabs items={['Preview', 'Code']}>
+  <Tab>
+    <Preview>
+      <Button variant="ghost">Ghost</Button>
+    </Preview>
+  </Tab>
+  <Tab>
+
+```tsx copy
+import { Button } from '@/components/ui/button'
+
+export function Example() {
+  return <Button variant="ghost">Button</Button>
+}
+```
+
+  </Tab>
+</Tabs>
+
+### Link
+
+<Tabs items={['Preview', 'Code']}>
+  <Tab>
+    <Preview>
+      <Button variant="link">Link</Button>
+    </Preview>
+  </Tab>
+  <Tab>
+
+```tsx copy
+import { Button } from '@/components/ui/button'
+
+export function Example() {
+  return <Button variant="link">Button</Button>
+}
+```
+
+  </Tab>
+</Tabs>
+
+### Icon
+
+import { ChevronRight } from 'lucide-react'
+
+<Tabs items={['Preview', 'Code']}>
+  <Tab>
+    <Preview>
+      <Button variant="outline" size="icon">
+        <ChevronRight className={css({
+          height: '4',
+          width: '4',
+        })} />
+      </Button>
+    </Preview>
+  </Tab>
+  <Tab>
+
+```tsx copy
+import { ChevronRight } from 'lucide-react'
+import { css } from '@shadow-panda/styled-system/css'
+import { Button } from '@/components/ui/button'
+
+export function Example() {
+  return (
+    <Button variant="outline" size="icon">
+      <ChevronRight
+        className={css({
+          height: '4',
+          width: '4',
+        })}
+      />
+    </Button>
+  )
+}
+```
+
+  </Tab>
+</Tabs>
+
+### With Icon
+
+import { Mail } from 'lucide-react'
+
+<Tabs items={['Preview', 'Code']}>
+  <Tab>
+    <Preview>
+      <Button><Mail className={css({
+          mr: '2',
+          height: '4',
+          width: '4',
+        })} /> Login with Email</Button>
+    </Preview>
+  </Tab>
+  <Tab>
+
+```tsx copy
+import { Mail } from 'lucide-react'
+import { css } from '@shadow-panda/styled-system/css'
+import { Button } from '@/components/ui/button'
+
+export function Example() {
+  return (
+    <Button>
+      <Mail
+        className={css({
+          mr: '2',
+          height: '4',
+          width: '4',
+        })}
+      />
+      Login with Email
+    </Button>
+  )
+}
+```
+
+  </Tab>
+</Tabs>
+
+### Loading
+
+import { Loader2 } from 'lucide-react'
+
+<Tabs items={['Preview', 'Code']}>
+  <Tab>
+    <Preview>
+      <Button disabled><Loader2 className={css({
+          mr: '2',
+          height: '4',
+          width: '4',
+          animation: 'spin',
+        })} />Please wait</Button>
+    </Preview>
+  </Tab>
+  <Tab>
+
+```tsx copy
+import { Loader2 } from 'lucide-react'
+import { css } from '@shadow-panda/styled-system/css'
+import { Button } from '@/components/ui/button'
+
+export function Example() {
+  return (
+    <Button disabled>
+      <Loader2
+        className={css({
+          mr: '2',
+          height: '4',
+          width: '4',
+          animation: 'spin',
+        })}
+      />
+      Please wait
+    </Button>
+  )
+}
+```
+
+  </Tab>
+</Tabs>
+
+### As Child
+
+import Link from 'next/link'
+
+<Tabs items={['Preview', 'Code']}>
+  <Tab>
+    <Preview>
+      <Button asChild><Link href="#">Login</Link></Button>
+    </Preview>
+  </Tab>
+  <Tab>
+
+```tsx copy
+import Link from 'next/link'
+import { css } from '@shadow-panda/styled-system/css'
+import { Button } from '@/components/ui/button'
+
+export function Example() {
+  return (
+    <Button asChild>
+      <Link href="#">Login</Link>
+    </Button>
+  )
+}
+```
+
+  </Tab>
+</Tabs>

@@ -173,3 +173,14 @@ export const muted = defineRecipe({
     color: 'muted.foreground',
   },
 })
+
+export const link = defineRecipe({
+  name: 'link',
+  description: 'Typography - Link style',
+  base: {
+    color: 'primary',
+    fontWeight: 'medium',
+    textDecoration: 'underline',
+    textUnderlineOffset: '4px',
+  },
+})

@@ -1,0 +1,53 @@
+import { Callout } from 'nextra/components'
+import { Lead } from '@/components/_docs/lead'
+
+# Theming
+
+<Lead>Using PandaCSS or CSS Variables for theming.</Lead>
+
+You can choose between extending the theme using PandaCSS or CSS variables.
+
+## Extending PandaCSS theme
+
+The easiest way to configure the theme is to use the theme feature from PandaCSS.
+
+Variables used in Shadow Panda are defined as `semanticTokens`, so simply extend the theme and override them:
+
+```ts filename="panda.config.ts" copy
+import { defineConfig } from '@pandacss/dev'
+
+export default defineConfig({
+  // Presets
+  presets: ['@shadow-panda/preset'],
+
+  // Extend theme
+  theme: {
+    extend: {
+      // Override `semanticTokens`
+      semanticTokens: {
+        // Example: Set primary color to another value
+        colors: {
+          primary: {
+            DEFAULT: {
+              value: {
+                // Light mode
+                base: 'hsl(240 5.9% 10%)',
+                // Dark mode
+                _dark: 'hsl(0 0% 98%)',
+              },
+            },
+          },
+        },
+      },
+    },
+  },
+})
+```
+
+For a list of semanticTokens defined in Shadow Panda, [check out the config file here](https://github.com/kumaaa-inc/shadow-panda/blob/main/packages/preset/src/semantic-tokens/index.ts).
+
+## CSS Variables
+
+<Callout type="warning" emoji="⚒️">
+  WIP
+</Callout>

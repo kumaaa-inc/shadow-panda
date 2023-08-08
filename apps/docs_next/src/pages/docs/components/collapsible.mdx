@@ -1,0 +1,250 @@
+import * as React from 'react'
+import { Tabs, Tab, Steps } from 'nextra/components'
+import { ChevronsUpDown } from 'lucide-react'
+import { css } from '@shadow-panda/styled-system/css'
+import { Preview } from '@/components/_docs/preview'
+import { ReferenceBadges } from '@/components/_docs/reference-badges'
+import { Lead } from '@/components/_docs/lead'
+import { Button } from '@/components/ui/button'
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from '@/components/ui/collapsible'
+
+# Collapsible
+
+<Lead>An interactive component which expands/collapses a panel.</Lead>
+
+<ReferenceBadges
+  shadcnUiLink="https://ui.shadcn.com/docs/components/collapsible"
+  radix={{
+    link: 'https://www.radix-ui.com/docs/primitives/components/collapsible',
+    api: 'https://www.radix-ui.com/docs/primitives/components/collapsible#api-reference',
+  }}
+/>
+
+export const Example = () => {
+  const [isOpen, setIsOpen] = React.useState(false)
+
+return (
+
+<Collapsible
+  open={isOpen}
+  onOpenChange={setIsOpen}
+  className={css({ w: '350px', spaceY: '2' })}
+>
+  <div
+    className={css({
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'space-between',
+      spaceX: '4',
+      px: '4',
+    })}
+  >
+    <h4 className={css({ textStyle: 'sm', fontWeight: 'semibold' })}>
+      @peduarte starred 3 repositories
+    </h4>
+    <CollapsibleTrigger asChild>
+      <Button
+        variant="ghost"
+        size="sm"
+        className={css({
+          w: '9',
+          p: '0',
+        })}
+      >
+        <ChevronsUpDown className={css({ h: '4', w: '4' })} />
+        <span className={css({ srOnly: true })}>Toggle</span>
+      </Button>
+    </CollapsibleTrigger>
+  </div>
+  <div
+    className={css({
+      rounded: 'md',
+      border: 'base',
+      px: '4',
+      py: '3',
+      fontFamily: 'mono',
+      textStyle: 'sm',
+    })}
+  >
+    @radix-ui/primitives
+  </div>
+  <CollapsibleContent className={css({ spaceY: '2' })}>
+    <div
+      className={css({
+        rounded: 'md',
+        border: 'base',
+        px: '4',
+        py: '3',
+        fontFamily: 'mono',
+        textStyle: 'sm',
+      })}
+    >
+      @radix-ui/colors
+    </div>
+    <div
+      className={css({
+        rounded: 'md',
+        border: 'base',
+        px: '4',
+        py: '3',
+        fontFamily: 'mono',
+        textStyle: 'sm',
+      })}
+    >
+      @stitches/react
+    </div>
+  </CollapsibleContent>
+</Collapsible>
+) }
+
+<Tabs items={['Preview', 'Code']}>
+  <Tab>
+    <Preview>
+      <Example />
+    </Preview>
+  </Tab>
+  <Tab>
+
+```tsx copy
+'use client'
+
+import * as React from 'react'
+import { ChevronsUpDown } from 'lucide-react'
+import { Button } from '@/components/ui/button'
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from '@/components/ui/collapsible'
+
+export function Example() {
+  return (
+    <Collapsible
+      open={isOpen}
+      onOpenChange={setIsOpen}
+      className={css({ w: '350px', spaceY: '2' })}
+    >
+      <div
+        className={css({
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          spaceX: '4',
+          px: '4',
+        })}
+      >
+        <h4 className={css({ textStyle: 'sm', fontWeight: 'semibold' })}>
+          @peduarte starred 3 repositories
+        </h4>
+        <CollapsibleTrigger asChild>
+          <Button
+            variant="ghost"
+            size="sm"
+            className={css({
+              w: '9',
+              p: '0',
+            })}
+          >
+            <ChevronsUpDown className={css({ h: '4', w: '4' })} />
+            <span className={css({ srOnly: true })}>Toggle</span>
+          </Button>
+        </CollapsibleTrigger>
+      </div>
+      <div
+        className={css({
+          rounded: 'md',
+          border: 'base',
+          px: '4',
+          py: '3',
+          fontFamily: 'mono',
+          textStyle: 'sm',
+        })}
+      >
+        @radix-ui/primitives
+      </div>
+      <CollapsibleContent className={css({ spaceY: '2' })}>
+        <div
+          className={css({
+            rounded: 'md',
+            border: 'base',
+            px: '4',
+            py: '3',
+            fontFamily: 'mono',
+            textStyle: 'sm',
+          })}
+        >
+          @radix-ui/colors
+        </div>
+        <div
+          className={css({
+            rounded: 'md',
+            border: 'base',
+            px: '4',
+            py: '3',
+            fontFamily: 'mono',
+            textStyle: 'sm',
+          })}
+        >
+          @stitches/react
+        </div>
+      </CollapsibleContent>
+    </Collapsible>
+  )
+}
+```
+
+  </Tab>
+</Tabs>
+
+## Installation
+
+<Steps>
+### Install the following dependencies
+
+```bash npm2yarn copy
+npm i @radix-ui/react-collapsible
+```
+
+### Copy and paste the following code into your project
+
+```tsx filename="components/ui/collapsible.tsx" copy
+'use client'
+
+import * as CollapsiblePrimitive from '@radix-ui/react-collapsible'
+
+const Collapsible = CollapsiblePrimitive.Root
+
+const CollapsibleTrigger = CollapsiblePrimitive.CollapsibleTrigger
+
+const CollapsibleContent = CollapsiblePrimitive.CollapsibleContent
+
+export { Collapsible, CollapsibleTrigger, CollapsibleContent }
+```
+
+### Update the import paths to match your project setup
+
+</Steps>
+
+## Usage
+
+```tsx copy
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from '@/components/ui/collapsible'
+```
+
+```tsx copy
+<Collapsible>
+  <CollapsibleTrigger>Can I use this in my project?</CollapsibleTrigger>
+  <CollapsibleContent>
+    Yes. Free to use for personal and commercial projects. No attribution
+    required.
+  </CollapsibleContent>
+</Collapsible>
+```

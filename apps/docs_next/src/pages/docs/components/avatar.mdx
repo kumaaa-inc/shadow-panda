@@ -1,0 +1,123 @@
+import { Tabs, Tab, Steps } from 'nextra/components'
+import { Preview } from '@/components/_docs/preview'
+import { ReferenceBadges } from '@/components/_docs/reference-badges'
+import { Lead } from '@/components/_docs/lead'
+import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar'
+
+# Avatar
+
+<Lead>An image element with a fallback for representing the user.</Lead>
+
+<ReferenceBadges
+  shadcnUiLink="https://ui.shadcn.com/docs/components/avatar"
+  radix={{
+    link: 'https://www.radix-ui.com/docs/primitives/components/avatar',
+    api: 'https://www.radix-ui.com/docs/primitives/components/avatar#api-reference',
+  }}
+/>
+
+<Tabs items={['Preview', 'Code']}>
+  <Tab>
+    <Preview>
+      <Avatar>
+        <AvatarImage src="https://github.com/nanopx.png" alt="@nanopx" />
+        <AvatarFallback>NP</AvatarFallback>
+      </Avatar>
+    </Preview>
+  </Tab>
+  <Tab>
+
+```tsx copy
+import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar'
+
+export function Example() {
+  return (
+    <Avatar>
+      <AvatarImage src="https://github.com/nanopx.png" alt="@nanopx" />
+      <AvatarFallback>NP</AvatarFallback>
+    </Avatar>
+  )
+}
+```
+
+  </Tab>
+</Tabs>
+
+## Installation
+
+<Steps>
+### Install the following dependencies
+
+```bash npm2yarn copy
+npm i @radix-ui/react-avatar
+```
+
+### Copy and paste the following code into your project
+
+```tsx filename="components/ui/avatar.tsx" copy
+'use client'
+
+import * as React from 'react'
+import * as AvatarPrimitive from '@radix-ui/react-avatar'
+import { cx } from '@shadow-panda/styled-system/css'
+import {
+  avatar,
+  avatarImage,
+  avatarFallback,
+} from '@shadow-panda/styled-system/recipes'
+
+const Avatar = React.forwardRef<
+  React.ElementRef<typeof AvatarPrimitive.Root>,
+  React.ComponentPropsWithoutRef<typeof AvatarPrimitive.Root>
+>(({ className, ...props }, ref) => (
+  <AvatarPrimitive.Root
+    ref={ref}
+    className={cx(avatar(), className)}
+    {...props}
+  />
+))
+Avatar.displayName = AvatarPrimitive.Root.displayName
+
+const AvatarImage = React.forwardRef<
+  React.ElementRef<typeof AvatarPrimitive.Image>,
+  React.ComponentPropsWithoutRef<typeof AvatarPrimitive.Image>
+>(({ className, ...props }, ref) => (
+  <AvatarPrimitive.Image
+    ref={ref}
+    className={cx(avatarImage(), className)}
+    {...props}
+  />
+))
+AvatarImage.displayName = AvatarPrimitive.Image.displayName
+
+const AvatarFallback = React.forwardRef<
+  React.ElementRef<typeof AvatarPrimitive.Fallback>,
+  React.ComponentPropsWithoutRef<typeof AvatarPrimitive.Fallback>
+>(({ className, ...props }, ref) => (
+  <AvatarPrimitive.Fallback
+    ref={ref}
+    className={cx(avatarFallback(), className)}
+    {...props}
+  />
+))
+AvatarFallback.displayName = AvatarPrimitive.Fallback.displayName
+
+export { Avatar, AvatarImage, AvatarFallback }
+```
+
+### Update the import paths to match your project setup
+
+</Steps>
+
+## Usage
+
+```tsx copy
+import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar'
+```
+
+```tsx copy
+<Avatar>
+  <AvatarImage src="https://github.com/nanopx.png" alt="@nanopx" />
+  <AvatarFallback>NP</AvatarFallback>
+</Avatar>
+```

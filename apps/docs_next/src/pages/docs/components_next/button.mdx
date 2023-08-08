@@ -1,0 +1,43 @@
+import { Tabs, Tab, Steps } from 'nextra/components'
+import { useData } from 'nextra/data'
+import { findComponent } from '@/lib/findComponent'
+import { Preview } from '@/components/_docs/preview'
+import { Lead } from '@/components/_docs/lead'
+import { ReferenceBadges } from '@/components/_docs/reference-badges'
+
+export const getStaticProps = async () => {
+  return {
+    props: { ssg: { component: await findComponent('button') } },
+    revalidate: 60,
+  }
+}
+
+export const Data = () => {
+  const { component } = useData()
+
+return (
+
+<>
+  <h1>{component.title}</h1>
+  <Lead>{component.description}</Lead>
+  <ReferenceBadges {...component.references} />
+
+  <Tabs items={['Preview', 'Code']}>
+  <Tab>
+    <Preview>
+    </Preview>
+  </Tab>
+  <Tab>
+
+```tsx copy
+{
+  component.files.preview
+}
+```
+
+  </Tab>
+</Tabs>
+</>
+) }
+
+<Data />
