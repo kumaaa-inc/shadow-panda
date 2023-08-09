@@ -1,4 +1,5 @@
 import { notFound } from 'next/navigation'
+import { ChevronRightIcon } from 'lucide-react'
 import { allComponents } from 'contentlayer/generated'
 import { css } from '@shadow-panda/styled-system/css'
 import { h1 } from '@shadow-panda/styled-system/recipes'
@@ -53,8 +54,25 @@ const ComponentsPage = ({ params }: { params: { component: string } }) => {
           minW: '0',
         })}
       >
+        <div
+          className={css({
+            mb: '4',
+            display: 'flex',
+            alignItems: 'center',
+            spaceX: '1',
+            textStyle: 'sm',
+            color: 'muted.foreground',
+          })}
+        >
+          <div className={css({ truncate: true })}>Docs</div>
+          <ChevronRightIcon className={css({ h: '4', w: '4' })} />
+          <div className={css({ fontWeight: 'medium', color: 'foreground' })}>
+            {doc.title}
+          </div>
+        </div>
+
         <h1 className={h1()}>{doc.title}</h1>
-        <Lead>{doc.description}</Lead>
+        <Lead className={css({ mt: '4' })}>{doc.description}</Lead>
         {doc.references && <ReferenceBadges {...doc.references} />}
 
         <MdxComponent code={doc.body.code} />
