@@ -45,13 +45,13 @@ export const components = {
     <h1 className={cx(h1(), className)} {...props} />
   ),
   h2: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
-    <h2 className={cx(h2(), className)} {...props} />
+    <h2 className={cx(h2(), css({ mt: '10' }), className)} {...props} />
   ),
   h3: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
-    <h3 className={cx(h3(), className)} {...props} />
+    <h3 className={cx(h3(), css({ mt: '8' }), className)} {...props} />
   ),
   h4: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
-    <h4 className={cx(h4(), className)} {...props} />
+    <h4 className={cx(h4(), css({ mt: '8' }), className)} {...props} />
   ),
   h5: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
     <h5
@@ -162,7 +162,7 @@ export const components = {
               border: 'base',
               bg: 'slate.950',
 
-              dark: {
+              _dark: {
                 bg: 'slate.900',
               },
 
@@ -178,7 +178,7 @@ export const components = {
         {__code__ && (
           <CopyButton
             className={css({
-              position: 'absolute !important',
+              position: 'absolute',
               top: '4',
               right: '4',
             })}
@@ -192,9 +192,6 @@ export const components = {
     <code className={cx(inlineCode(), className)} {...props} />
   ),
   Link: ({ className, ...props }: React.ComponentProps<typeof Link>) => (
-    <Link
-      className={cx('font-medium underline underline-offset-4', className)}
-      {...props}
-    />
+    <Link className={cx(link(), className)} {...props} />
   ),
 } as const

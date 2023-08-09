@@ -1,10 +1,15 @@
 import * as React from 'react'
 import { CheckIcon, CopyIcon } from 'lucide-react'
 import { css, cx } from '@shadow-panda/styled-system/css'
-import { Button } from '@/components/ui/button'
+import { Button, type ButtonProps } from '@/components/ui/button'
 
 export const copy = (value: string) => {
   navigator.clipboard.writeText(value)
+}
+
+export interface CopyButtonProps extends ButtonProps {
+  className?: string
+  value: string
 }
 
 export function CopyButton({ value, className, ...props }: CopyButtonProps) {
@@ -22,10 +27,9 @@ export function CopyButton({ value, className, ...props }: CopyButtonProps) {
       variant="ghost"
       className={cx(
         css({
-          position: 'relative',
           zIndex: '10',
-          h: '6',
-          w: '6',
+          h: '7',
+          w: '7',
           color: 'slate.50',
           _hover: {
             color: 'slate.50',

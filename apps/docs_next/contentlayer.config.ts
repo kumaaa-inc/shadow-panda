@@ -4,12 +4,15 @@ import {
   makeSource,
 } from 'contentlayer/source-files'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
-import rehypePrettyCode from 'rehype-pretty-code'
+import rehypePrettyCode, { type LineElement } from 'rehype-pretty-code'
 import rehypeSlug from 'rehype-slug'
 import { codeImport } from 'remark-code-import'
 import remarkGfm from 'remark-gfm'
 import { remarkNpm2Yarn } from '@theguild/remark-npm2yarn'
 import { visit } from 'unist-util-visit'
+import { generateToc } from './src/lib/toc'
+
+const TOC_LEVEL = 3
 
 const RadixReferencesType = defineNestedType(() => ({
   name: 'Radix',
@@ -35,6 +38,7 @@ export const Component = defineDocumentType(() => ({
     title: { type: 'string', required: true },
     description: { type: 'string', required: true },
     references: { type: 'nested', of: ReferencesType },
+    toc: { type: 'boolean', required: false, default: true },
   },
   computedFields: {
     componentName: {
@@ -44,6 +48,12 @@ export const Component = defineDocumentType(() => ({
     url: {
       type: 'string',
       resolve: (post) => `/docs/${post._raw.flattenedPath}`,
+    },
+    tocData: {
+      type: 'json',
+      resolve: async (doc) => {
+        return generateToc(doc.body.raw, TOC_LEVEL)
+      },
     },
   },
 }))
@@ -81,23 +91,15 @@ export default makeSource({
       [
         rehypePrettyCode,
         {
-          // getHighlighter: async () => {
-          //   const theme = await loadTheme(
-          //     path.join(process.cwd(), '/lib/themes/dark.json'),
-          //   )
-          //   return await getHighlighter({ theme })
-          // },
-          onVisitLine(node) {
-            // Prevent lines from collapsing in `display: grid` mode, and allow empty
-            // lines to be copy/pasted
+          onVisitLine(node: LineElement) {
             if (node.children.length === 0) {
               node.children = [{ type: 'text', value: ' ' }]
             }
           },
-          onVisitHighlightedLine(node) {
-            node.properties.className.push('line--highlighted')
+          onVisitHighlightedLine(node: LineElement) {
+            node.properties.className?.push('line--highlighted')
           },
-          onVisitHighlightedWord(node) {
+          onVisitHighlightedWord(node: LineElement) {
             node.properties.className = ['word--highlighted']
           },
         },

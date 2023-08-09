@@ -18,10 +18,6 @@ export const h2 = defineRecipe({
     borderBottom: 'base',
     pb: '2',
     transition: 'colors',
-
-    _first: {
-      mt: '0',
-    },
   },
 })
 

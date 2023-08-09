@@ -1,6 +1,9 @@
 import { type Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import type { PropsWithChildren } from 'react'
+import { css } from '@shadow-panda/styled-system/css'
+import { Header } from '@/components/docs/header'
+import { Footer } from '@/components/docs/footer'
 import '../styles/global.css'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
@@ -20,6 +23,7 @@ export const metadata: Metadata = {
     'Components',
     'React',
   ],
+  manifest: '/site.webmanifest',
   openGraph: {
     type: 'website',
     locale: 'en_US',
@@ -27,7 +31,6 @@ export const metadata: Metadata = {
     description:
       'Shadow Panda is a preset of Panda CSS for shadcn/ui & Radix UI, created for developers utilizing Panda CSS as an alternative to Tailwind CSS.',
   },
-  // manifest: '/site.webmanifest',
   twitter: {
     creator: '@nanopx',
   },
@@ -36,7 +39,20 @@ export const metadata: Metadata = {
 const RootLayout = (props: PropsWithChildren) => {
   return (
     <html lang="en" className={inter.variable}>
-      <body>{props.children}</body>
+      <body>
+        <div
+          className={css({
+            display: 'flex',
+            position: 'relative',
+            flexDirection: 'column',
+            minH: 'screen',
+          })}
+        >
+          <Header />
+          <div className={css({ flex: '1' })}>{props.children}</div>
+          <Footer />
+        </div>
+      </body>
     </html>
   )
 }

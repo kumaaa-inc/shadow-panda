@@ -3,6 +3,7 @@ import { animate } from './animate'
 import { backdropFilter } from './backdrop-filter'
 import { backgroundAlpha } from './background-alpha'
 import { borderColorAlpha } from './border-color-alpha'
+import { container } from './container'
 import { focusRing } from './focus-ring'
 import { screenReaders } from './screen-readers'
 import { space } from './space'
@@ -14,6 +15,7 @@ export const utilities: UtilityConfig = {
   ...backdropFilter,
   ...backgroundAlpha,
   ...borderColorAlpha,
+  ...container,
   ...focusRing,
   ...screenReaders,
   ...space,
