@@ -26,9 +26,53 @@ import { AspectRatio } from '@/components/ui/aspect-ratio'
 import { Button } from '@/components/ui/button'
 import { Tabs, Tab } from '@/components/docs/tabs'
 import { Callout, type CalloutProps } from '@/components/docs/callout'
+import { ComponentPreview } from '@/components/docs/component-preview'
+import { ComponentSource } from '@/components/docs/component-source'
 import { CopyButton } from '@/components/docs/copy-button'
 import { Preview, type PreviewProps } from '@/components/docs/preview'
 import { Steps } from '@/components/docs/steps'
+import { HashIcon } from 'lucide-react'
+
+const HeadingAnchor = ({
+  id,
+  level,
+}: {
+  id?: string
+  level: 1 | 2 | 3 | 4
+}) => {
+  if (!id) return null
+
+  return (
+    <Link
+      aria-label="Link to section"
+      href={`#${id}`}
+      className={css({
+        display: 'inline-block',
+        rounded: 'md',
+        mx: level > 2 ? '1' : '2',
+        focusRingOffsetColor: 'background',
+        color: 'muted.foreground',
+        opacity: '0',
+        transition: 'opacity',
+
+        _focus: {
+          outline: '2px solid transparent',
+          outlineOffset: '2px',
+          focusRingWidth: '2',
+          focusRingColor: 'ring',
+          focusRingOffsetWidth: '2',
+        },
+      })}
+    >
+      <HashIcon
+        className={css({
+          h: level === 1 ? '9' : level === 2 ? '7' : level === 3 ? '6' : '5',
+          w: level === 1 ? '9' : level === 2 ? '7' : level === 3 ? '6' : '5',
+        })}
+      />
+    </Link>
+  )
+}
 
 export const components = {
   Accordion,
@@ -54,6 +98,8 @@ export const components = {
   Image,
   Tabs,
   Tab,
+  ComponentPreview,
+  ComponentSource,
   Preview: ({ className, ...props }: PreviewProps) => (
     <Preview
       className={cx(
@@ -67,17 +113,108 @@ export const components = {
     />
   ),
   Steps,
-  h1: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
-    <h1 className={cx(h1(), className)} {...props} />
+  h1: ({
+    className,
+    children,
+    ...props
+  }: React.HTMLAttributes<HTMLHeadingElement>) => (
+    <h1
+      className={cx(
+        h1(),
+        css({
+          display: 'flex',
+          alignItems: 'center',
+          _hover: {
+            '& a': {
+              opacity: 1,
+            },
+          },
+        }),
+        className,
+      )}
+      {...props}
+    >
+      {children}
+      <HeadingAnchor id={props.id} level={1} />
+    </h1>
   ),
-  h2: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
-    <h2 className={cx(h2(), css({ mt: '10' }), className)} {...props} />
+  h2: ({
+    className,
+    children,
+    ...props
+  }: React.HTMLAttributes<HTMLHeadingElement>) => (
+    <h2
+      className={cx(
+        h2(),
+        css({
+          mt: '10',
+          display: 'flex',
+          alignItems: 'center',
+          _hover: {
+            '& a': {
+              opacity: 1,
+            },
+          },
+        }),
+        className,
+      )}
+      {...props}
+    >
+      {children}
+      <HeadingAnchor id={props.id} level={2} />
+    </h2>
   ),
-  h3: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
-    <h3 className={cx(h3(), css({ mt: '8' }), className)} {...props} />
+  h3: ({
+    className,
+    children,
+    ...props
+  }: React.HTMLAttributes<HTMLHeadingElement>) => (
+    <h3
+      className={cx(
+        h3(),
+        css({
+          mt: '8',
+          display: 'flex',
+          alignItems: 'center',
+          _hover: {
+            '& a': {
+              opacity: 1,
+            },
+          },
+        }),
+        className,
+      )}
+      {...props}
+    >
+      {children}
+      <HeadingAnchor id={props.id} level={3} />
+    </h3>
   ),
-  h4: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
-    <h4 className={cx(h4(), css({ mt: '8' }), className)} {...props} />
+  h4: ({
+    className,
+    children,
+    ...props
+  }: React.HTMLAttributes<HTMLHeadingElement>) => (
+    <h4
+      className={cx(
+        h4(),
+        css({
+          mt: '8',
+          display: 'flex',
+          alignItems: 'center',
+          _hover: {
+            '& a': {
+              opacity: 1,
+            },
+          },
+        }),
+        className,
+      )}
+      {...props}
+    >
+      {children}
+      <HeadingAnchor id={props.id} level={4} />
+    </h4>
   ),
   h5: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
     <h5
@@ -88,6 +225,11 @@ export const components = {
           textStyle: 'lg',
           fontWeight: 'semibold',
           tracking: 'tight',
+          _hover: {
+            '& a': {
+              opacity: 1,
+            },
+          },
         }),
         className,
       )}
@@ -102,6 +244,11 @@ export const components = {
           scrollMargin: '20',
           fontWeight: 'semibold',
           tracking: 'tight',
+          _hover: {
+            '& a': {
+              opacity: 1,
+            },
+          },
         }),
         className,
       )}

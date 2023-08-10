@@ -259,6 +259,9 @@ importers:
       '@types/react':
         specifier: 18.2.16
         version: 18.2.16
+      '@types/unist':
+        specifier: 3.0.0
+        version: 3.0.0
       eslint:
         specifier: 8.45.0
         version: 8.45.0
@@ -289,6 +292,9 @@ importers:
       typescript:
         specifier: 5.1.6
         version: 5.1.6
+      unist-builder:
+        specifier: 4.0.0
+        version: 4.0.0
       unist-util-visit:
         specifier: 5.0.0
         version: 5.0.0
@@ -10746,6 +10752,12 @@ packages:
       is-plain-obj: 4.1.0
       trough: 2.1.0
       vfile: 5.3.7
+
+  /unist-builder@4.0.0:
+    resolution: {integrity: sha512-wmRFnH+BLpZnTKpc5L7O67Kac89s9HMrtELpnNaE6TAobq5DTZZs5YaTQfAZBA9bFPECx2uVAPO31c+GVug8mg==}
+    dependencies:
+      '@types/unist': 3.0.0
+    dev: true
 
   /unist-util-find-after@4.0.1:
     resolution: {integrity: sha512-QO/PuPMm2ERxC6vFXEPtmAutOopy5PknD+Oq64gGwxKtk4xwo9Z97t9Av1obPmGU0IyTa6EKYUfTrK2QJS3Ozw==}

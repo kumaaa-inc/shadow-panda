@@ -52,16 +52,17 @@
     "@shadow-panda/style-context": "workspace:*",
     "@theguild/remark-npm2yarn": "0.1.1",
     "@types/react": "18.2.16",
+    "@types/unist": "3.0.0",
     "eslint": "8.45.0",
     "github-slugger": "2.0.0",
     "postcss": "8.4.27",
-    "rehype-autolink-headings": "6.1.1",
     "rehype-pretty-code": "0.10.0",
     "rehype-slug": "5.1.0",
     "remark-code-import": "1.2.0",
     "remark-gfm": "3.0.1",
     "shiki": "0.14.3",
     "typescript": "5.1.6",
+    "unist-builder": "4.0.0",
     "unist-util-visit": "5.0.0"
   },
   "peerDependencies": {

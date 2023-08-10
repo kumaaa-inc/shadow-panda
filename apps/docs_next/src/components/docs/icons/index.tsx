@@ -22,8 +22,8 @@ export const Icons = {
         fill="currentColor"
       />
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         d="M16.5507 2.5V33.5L20.0507 18H32.0507L16.5507 2.5ZM25.8007 15H19.3007L18.8007 7.5L25.8007 15Z"
         fill="currentColor"
       />

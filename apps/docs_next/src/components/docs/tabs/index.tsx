@@ -1,11 +1,15 @@
 import * as React from 'react'
 import * as WrappedTabs from './wrapper'
 
+type TabProps = React.ComponentProps<typeof WrappedTabs.TabsContent>
+type TabElement = React.ReactElement<TabProps>
+type TabComponent = (props: Omit<TabProps, 'value'>) => JSX.Element
+
 export interface TabsProps {
   items: string[]
   defaultIndex?: number
   storageKey?: string
-  children: React.ReactNode
+  children: TabElement | TabElement[]
 }
 
 // `@theguild/remark-npm2yarn` -compatible tabs
@@ -15,7 +19,9 @@ export const Tabs = ({
   defaultIndex,
   children,
 }: TabsProps) => {
-  const [selectedIndex, setSelectedIndex] = React.useState(defaultIndex ?? 0)
+  const [selectedIndex, setSelectedIndex] = React.useState(
+    String(defaultIndex ?? 0),
+  )
 
   React.useEffect(() => {
     if (!storageKey) {
@@ -25,12 +31,12 @@ export const Tabs = ({
 
     function fn(event: StorageEvent) {
       if (event.key === storageKey) {
-        setSelectedIndex(Number(event.newValue))
+        setSelectedIndex(event.newValue ?? '0')
       }
     }
 
-    const index = Number(localStorage.getItem(storageKey))
-    setSelectedIndex(Number.isNaN(index) ? 0 : index)
+    const index = localStorage.getItem(storageKey)
+    setSelectedIndex(index ?? '0')
 
     window.addEventListener('storage', fn)
     return () => {
@@ -38,13 +44,12 @@ export const Tabs = ({
     }
   }, [])
 
-  const handleChange = React.useCallback((index: number) => {
+  const handleChange = React.useCallback((index: string) => {
     if (storageKey) {
-      const newValue = String(index)
-      localStorage.setItem(storageKey, newValue)
+      localStorage.setItem(storageKey, index)
 
       window.dispatchEvent(
-        new StorageEvent('storage', { key: storageKey, newValue }),
+        new StorageEvent('storage', { key: storageKey, newValue: index }),
       )
       return
     }
@@ -53,14 +58,16 @@ export const Tabs = ({
 
   // Map children and add value prop
   const tabContent = React.Children.map(children, (child, i) => {
-    return React.cloneElement(child, { value: i })
+    return React.isValidElement(child)
+      ? React.cloneElement(child, { value: `${i}` })
+      : null
   })
 
   return (
     <WrappedTabs.Tabs value={selectedIndex} onValueChange={handleChange}>
       <WrappedTabs.TabsList>
         {items.map((item, i) => (
-          <WrappedTabs.TabsTrigger key={i} value={i}>
+          <WrappedTabs.TabsTrigger key={i} value={`${i}`}>
             {item}
           </WrappedTabs.TabsTrigger>
         ))}
@@ -70,4 +77,4 @@ export const Tabs = ({
   )
 }
 
-export const Tab = WrappedTabs.TabsContent
+export const Tab = WrappedTabs.TabsContent as TabComponent

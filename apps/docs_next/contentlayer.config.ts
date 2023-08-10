@@ -4,7 +4,6 @@ import {
   defineNestedType,
   makeSource,
 } from 'contentlayer/source-files'
-import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import rehypePrettyCode, { type LineElement } from 'rehype-pretty-code'
 import rehypeSlug from 'rehype-slug'
 import { codeImport } from 'remark-code-import'
@@ -12,6 +11,7 @@ import remarkGfm from 'remark-gfm'
 import { remarkNpm2Yarn } from '@theguild/remark-npm2yarn'
 import { visit } from 'unist-util-visit'
 import { generateToc } from './src/lib/toc'
+import { rehypeComponent } from './src/lib/rehype-component'
 
 const TOC_LEVEL = 3
 
@@ -117,6 +117,7 @@ export default makeSource({
     ],
     rehypePlugins: [
       rehypeSlug,
+      rehypeComponent,
       () => (tree) => {
         visit(tree, (node) => {
           if (node?.type === 'element' && node?.tagName === 'pre') {
@@ -164,15 +165,6 @@ export default makeSource({
           }
         })
       },
-      [
-        rehypeAutolinkHeadings,
-        {
-          properties: {
-            className: ['heading-anchor'],
-            ariaLabel: 'Link to section',
-          },
-        },
-      ],
     ],
   },
 })
