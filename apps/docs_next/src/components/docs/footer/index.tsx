@@ -13,26 +13,25 @@ export const Footer = () => {
     >
       <div
         className={css({
-          container: true,
-          mx: 'auto',
+          maxW: '7xl',
           display: 'flex',
-          flexDirection: 'column',
           alignItems: 'center',
-          justifyContent: 'space-between',
-          gap: '4',
-          px: '2',
+          justifyContent: 'center',
+          gap: '1',
+          px: '4',
+          h: '16',
+          mx: 'auto',
+          textStyle: 'sm',
+          flexDirection: 'column-reverse',
           md: {
             h: '24',
+            justifyContent: 'space-between',
             flexDirection: 'row',
           },
         })}
       >
-        <span
-          className={css({
-            ml: 'auto',
-            textStyle: 'sm',
-          })}
-        >
+        <span>Copyright &copy; {new Date().getFullYear()}</span>
+        <span>
           Made with ❤️ by{' '}
           <Link className={link()} href="https://twitter.com/nanopx">
             @nanopx
