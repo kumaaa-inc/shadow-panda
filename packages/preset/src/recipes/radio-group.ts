@@ -1,7 +1,7 @@
 import { defineRecipe } from '@pandacss/dev'
 
 export const radioGroup = defineRecipe({
-  name: 'radioGroup',
+  className: 'radioGroup',
   description: 'Styles for the RadioGroup component',
   base: {
     display: 'grid',
@@ -10,7 +10,7 @@ export const radioGroup = defineRecipe({
 })
 
 export const radioGroupItem = defineRecipe({
-  name: 'radioGroupItem',
+  className: 'radioGroupItem',
   description: 'Styles for the RadioGroupItem component',
   base: {
     aspectRatio: 'square',
@@ -37,7 +37,7 @@ export const radioGroupItem = defineRecipe({
 })
 
 export const radioGroupItemIndicator = defineRecipe({
-  name: 'radioGroupItemIndicator',
+  className: 'radioGroupItemIndicator',
   description: 'Styles for the RadioGroupItem indicator',
   base: {
     display: 'flex',

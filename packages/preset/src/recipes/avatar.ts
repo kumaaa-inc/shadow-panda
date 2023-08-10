@@ -1,7 +1,7 @@
 import { defineRecipe } from '@pandacss/dev'
 
 export const avatar = defineRecipe({
-  name: 'avatar',
+  className: 'avatar',
   description: 'Styles for the Avatar component',
   base: {
     position: 'relative',
@@ -15,7 +15,7 @@ export const avatar = defineRecipe({
 })
 
 export const avatarImage = defineRecipe({
-  name: 'avatarImage',
+  className: 'avatarImage',
   description: 'Styles for the AvatarImage component',
   base: {
     aspectRatio: 'square',
@@ -25,7 +25,7 @@ export const avatarImage = defineRecipe({
 })
 
 export const avatarFallback = defineRecipe({
-  name: 'avatarFallback',
+  className: 'avatarFallback',
   description: 'Styles for the AvatarFallback component',
   base: {
     display: 'flex',

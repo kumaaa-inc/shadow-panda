@@ -1,7 +1,7 @@
 import { defineRecipe } from '@pandacss/dev'
 
 export const switchRecipe = defineRecipe({
-  name: 'switchRecipe',
+  className: 'switchRecipe',
   description: 'Styles for the Switch component',
   base: {
     display: 'inline-flex',
@@ -38,7 +38,7 @@ export const switchRecipe = defineRecipe({
 })
 
 export const switchThumb = defineRecipe({
-  name: 'switchThumb',
+  className: 'switchThumb',
   description: 'Styles for the Switch thumb',
   base: {
     pointerEvents: 'none',

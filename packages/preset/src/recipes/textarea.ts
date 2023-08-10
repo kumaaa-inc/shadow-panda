@@ -1,7 +1,7 @@
 import { defineRecipe } from '@pandacss/dev'
 
 export const textarea = defineRecipe({
-  name: 'textarea',
+  className: 'textarea',
   description: 'Styles for the Textarea component',
   base: {
     display: 'flex',

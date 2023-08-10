@@ -11,7 +11,11 @@ import {
 } from '@/components/ui/accordion'
 import { allOverviews, allGuides, allComponents } from 'contentlayer/generated'
 
-export const SidebarNav = () => {
+export interface SidebarNavProps {
+  onNavigate?: (url: string) => void
+}
+
+export const SidebarNav = ({ onNavigate }: SidebarNavProps) => {
   const pathname = usePathname()
 
   const triggerStyle = css({
@@ -32,6 +36,14 @@ export const SidebarNav = () => {
     },
   })
 
+  const subMenuStyle = css({
+    mt: '2',
+    pl: '2',
+    ml: '4',
+    borderLeft: 'base',
+    spaceY: '1',
+  })
+
   return (
     <Accordion
       type="multiple"
@@ -50,15 +62,7 @@ export const SidebarNav = () => {
               Overview
             </AccordionTrigger>
             <AccordionContent>
-              <ul
-                className={css({
-                  ml: '4',
-                  px: '2',
-                  mt: '2',
-                  borderLeft: 'base',
-                  spaceY: '1',
-                })}
-              >
+              <ul className={subMenuStyle}>
                 {allOverviews.map((doc) => (
                   <li key={doc.slug}>
                     <Link
@@ -75,6 +79,9 @@ export const SidebarNav = () => {
                         _hover: { bg: 'muted' },
                       })}
                       href={doc.url}
+                      onClick={() => {
+                        onNavigate?.(doc.url)
+                      }}
                     >
                       {doc.title}
                     </Link>
@@ -92,15 +99,7 @@ export const SidebarNav = () => {
           <li>
             <AccordionTrigger className={triggerStyle}>Guides</AccordionTrigger>
             <AccordionContent>
-              <ul
-                className={css({
-                  ml: '4',
-                  px: '2',
-                  mt: '2',
-                  borderLeft: 'base',
-                  spaceY: '1',
-                })}
-              >
+              <ul className={subMenuStyle}>
                 {allGuides.map((doc) => (
                   <li key={doc.slug}>
                     <Link
@@ -117,6 +116,9 @@ export const SidebarNav = () => {
                         _hover: { bg: 'muted' },
                       })}
                       href={doc.url}
+                      onClick={() => {
+                        onNavigate?.(doc.url)
+                      }}
                     >
                       {doc.title}
                     </Link>
@@ -136,15 +138,7 @@ export const SidebarNav = () => {
               Components
             </AccordionTrigger>
             <AccordionContent>
-              <ul
-                className={css({
-                  ml: '4',
-                  pl: '4',
-                  mt: '2',
-                  borderLeft: 'base',
-                  spaceY: '1',
-                })}
-              >
+              <ul className={subMenuStyle}>
                 {allComponents.map((doc) => (
                   <li key={doc.slug}>
                     <Link
@@ -161,6 +155,9 @@ export const SidebarNav = () => {
                         _hover: { bg: 'muted' },
                       })}
                       href={doc.url}
+                      onClick={() => {
+                        onNavigate?.(doc.url)
+                      }}
                     >
                       {doc.title}
                     </Link>

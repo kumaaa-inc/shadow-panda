@@ -1,7 +1,7 @@
 import { defineRecipe } from '@pandacss/dev'
 
 export const popoverContent = defineRecipe({
-  name: 'popoverContent',
+  className: 'popoverContent',
   description: 'Styles for the Popover content',
   base: {
     zIndex: 50,

@@ -1,7 +1,7 @@
 import { defineRecipe } from '@pandacss/dev'
 
 export const command = defineRecipe({
-  name: 'command',
+  className: 'command',
   description: 'Styles for the Command component',
   base: {
     display: 'flex',
@@ -16,7 +16,7 @@ export const command = defineRecipe({
 })
 
 export const commandDialogContent = defineRecipe({
-  name: 'commandDialogContent',
+  className: 'commandDialogContent',
   description: 'Styles for the CommandDialog content',
   base: {
     overflow: 'hidden',
@@ -26,7 +26,7 @@ export const commandDialogContent = defineRecipe({
 })
 
 export const commandDialogCommand = defineRecipe({
-  name: 'commandDialogCommand',
+  className: 'commandDialogCommand',
   description: 'Styles for the CommandDialog command',
   base: {
     '& [cmdk-group-heading]': {
@@ -58,7 +58,7 @@ export const commandDialogCommand = defineRecipe({
 })
 
 export const commandInput = defineRecipe({
-  name: 'commandInput',
+  className: 'commandInput',
   description: 'Styles for the CommandInput component',
   base: {
     display: 'flex',
@@ -69,7 +69,7 @@ export const commandInput = defineRecipe({
 })
 
 export const commandInputSearch = defineRecipe({
-  name: 'commandInputSearch',
+  className: 'commandInputSearch',
   description: 'Styles for the CommandInput search',
   base: {
     mr: '2',
@@ -81,7 +81,7 @@ export const commandInputSearch = defineRecipe({
 })
 
 export const commandInputInput = defineRecipe({
-  name: 'commandInputInput',
+  className: 'commandInputInput',
   description: 'Styles for the CommandInput input',
   base: {
     display: 'flex',
@@ -106,7 +106,7 @@ export const commandInputInput = defineRecipe({
 })
 
 export const commandList = defineRecipe({
-  name: 'commandList',
+  className: 'commandList',
   description: 'Styles for the CommandList component',
   base: {
     maxH: '300px',
@@ -116,7 +116,7 @@ export const commandList = defineRecipe({
 })
 
 export const commandEmpty = defineRecipe({
-  name: 'commandEmpty',
+  className: 'commandEmpty',
   description: 'Styles for the CommandEmpty component',
   base: {
     py: '6',
@@ -126,7 +126,7 @@ export const commandEmpty = defineRecipe({
 })
 
 export const commandGroup = defineRecipe({
-  name: 'commandGroup',
+  className: 'commandGroup',
   description: 'Styles for the CommandGroup component',
   base: {
     overflow: 'hidden',
@@ -144,7 +144,7 @@ export const commandGroup = defineRecipe({
 })
 
 export const commandSeparator = defineRecipe({
-  name: 'commandSeparator',
+  className: 'commandSeparator',
   description: 'Styles for the CommandSeparator component',
   base: {
     mx: '-1',
@@ -154,7 +154,7 @@ export const commandSeparator = defineRecipe({
 })
 
 export const commandItem = defineRecipe({
-  name: 'commandItem',
+  className: 'commandItem',
   description: 'Styles for the CommandItem component',
   base: {
     position: 'relative',
@@ -180,7 +180,7 @@ export const commandItem = defineRecipe({
 })
 
 export const commandShortcut = defineRecipe({
-  name: 'commandShortcut',
+  className: 'commandShortcut',
   description: 'Styles for the CommandShortcut component',
   base: {
     ml: 'auto',

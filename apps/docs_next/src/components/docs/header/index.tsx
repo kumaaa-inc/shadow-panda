@@ -1,12 +1,12 @@
 import Link from 'next/link'
-import { MenuIcon } from 'lucide-react'
 import { css } from '@shadow-panda/styled-system/css'
 import { Button } from '@/components/ui/button'
 import { HeaderNav } from '@/components/docs/header-nav'
+import { MobileHeaderNav } from '@/components/docs/mobile-header-nav'
 import { CommandMenu } from '@/components/docs/command-menu'
 import { ModeToggle } from '@/components/docs/mode-toggle'
 import { Icons } from '@/components/docs/icons'
-import { MobileHeaderNav } from '../mobile-header-nav'
+import { MobileSidebarToggle } from '@/components/docs/mobile-sidebar-toggle'
 
 export const Header = () => {
   return (
@@ -32,7 +32,7 @@ export const Header = () => {
           pr: '2',
 
           md: {
-            pl: '2',
+            pr: '4',
           },
         })}
       >
@@ -86,21 +86,7 @@ export const Header = () => {
 
             <ModeToggle />
 
-            {/* TODO: MENU */}
-            <Button
-              className={css({
-                w: '9',
-                h: '9',
-                px: '0',
-                display: 'flex',
-                md: {
-                  display: 'none',
-                },
-              })}
-              variant="ghost"
-            >
-              <MenuIcon className={css({ w: '4', h: '4' })} />
-            </Button>
+            <MobileSidebarToggle />
           </nav>
         </div>
       </div>

@@ -1,7 +1,7 @@
 import { defineRecipe } from '@pandacss/dev'
 
 export const dropdownMenuSubTrigger = defineRecipe({
-  name: 'dropdownMenuSubTrigger',
+  className: 'dropdownMenuSubTrigger',
   description: 'Styles for the DropdownMenuSubTrigger component',
   base: {
     display: 'flex',
@@ -35,7 +35,7 @@ export const dropdownMenuSubTrigger = defineRecipe({
 })
 
 export const dropdownMenuSubContent = defineRecipe({
-  name: 'dropdownMenuSubContent',
+  className: 'dropdownMenuSubContent',
   description: 'Styles for the DropdownMenuSubContent component',
   base: {
     zIndex: 50,
@@ -63,7 +63,7 @@ export const dropdownMenuSubContent = defineRecipe({
 })
 
 export const dropdownMenuContent = defineRecipe({
-  name: 'dropdownMenuContent',
+  className: 'dropdownMenuContent',
   description: 'Styles for the DropdownMenuContent component',
   base: {
     zIndex: 50,
@@ -91,7 +91,7 @@ export const dropdownMenuContent = defineRecipe({
 })
 
 export const dropdownMenuItem = defineRecipe({
-  name: 'dropdownMenuItem',
+  className: 'dropdownMenuItem',
   description: 'Styles for the DropdownMenuItem component',
   base: {
     position: 'relative',
@@ -129,7 +129,7 @@ export const dropdownMenuItem = defineRecipe({
 })
 
 export const dropdownMenuCheckboxItem = defineRecipe({
-  name: 'dropdownMenuCheckboxItem',
+  className: 'dropdownMenuCheckboxItem',
   description: 'Styles for the DropdownMenuCheckboxItem component',
   base: {
     position: 'relative',
@@ -158,7 +158,7 @@ export const dropdownMenuCheckboxItem = defineRecipe({
 })
 
 export const dropdownMenuRadioItem = defineRecipe({
-  name: 'dropdownMenuRadioItem',
+  className: 'dropdownMenuRadioItem',
   description: 'Styles for the DropdownMenuRadioItem component',
   base: {
     position: 'relative',
@@ -187,7 +187,7 @@ export const dropdownMenuRadioItem = defineRecipe({
 })
 
 export const dropdownMenuItemIndicator = defineRecipe({
-  name: 'dropdownMenuItemIndicator',
+  className: 'dropdownMenuItemIndicator',
   description: 'Styles for the DropdownMenu item indicator',
   base: {
     position: 'absolute',
@@ -201,7 +201,7 @@ export const dropdownMenuItemIndicator = defineRecipe({
 })
 
 export const dropdownMenuLabel = defineRecipe({
-  name: 'dropdownMenuLabel',
+  className: 'dropdownMenuLabel',
   description: 'Styles for the DropdownMenuLabel',
   base: {
     px: '2',
@@ -222,7 +222,7 @@ export const dropdownMenuLabel = defineRecipe({
 })
 
 export const dropdownMenuSeparator = defineRecipe({
-  name: 'dropdownMenuSeparator',
+  className: 'dropdownMenuSeparator',
   description: 'Styles for the DropdownMenuSeparator',
   base: {
     mx: '-1',
@@ -233,7 +233,7 @@ export const dropdownMenuSeparator = defineRecipe({
 })
 
 export const dropdownMenuShortcut = defineRecipe({
-  name: 'dropdownMenuShortcut',
+  className: 'dropdownMenuShortcut',
   description: 'Styles for the DropdownMenuShortcut',
   base: {
     ml: 'auto',

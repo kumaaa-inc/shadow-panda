@@ -1,7 +1,7 @@
 import { defineRecipe } from '@pandacss/dev'
 
 export const button = defineRecipe({
-  name: 'button',
+  className: 'button',
   description: 'Styles for the Button component',
   base: {
     display: 'inline-flex',

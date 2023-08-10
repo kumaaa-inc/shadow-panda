@@ -9,6 +9,7 @@ import { breakpoints } from './breakpoints'
 import { utilities } from './utilities'
 import { conditions } from './conditions'
 import { recipes } from './recipes'
+import { slotRecipes } from './slot-recipes'
 import { layerStyles } from './layer-styles'
 
 const defineConfig = <T extends Config>(config: T) => config
@@ -32,6 +33,7 @@ export const shadowPandaPreset = defineConfig({
       textStyles,
       keyframes,
       recipes,
+      slotRecipes,
       layerStyles,
     },
   },

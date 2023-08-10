@@ -1,7 +1,7 @@
 import { defineRecipe } from '@pandacss/dev'
 
 export const accordionItem = defineRecipe({
-  name: 'accordionItem',
+  className: 'accordionItem',
   description: 'Styles for the AccordionItem component',
   base: {
     borderBottom: 'base',
@@ -9,7 +9,7 @@ export const accordionItem = defineRecipe({
 })
 
 export const accordionHeader = defineRecipe({
-  name: 'accordionHeader',
+  className: 'accordionHeader',
   description: 'Styles for the AccordionHeader component',
   base: {
     display: 'flex',
@@ -17,7 +17,7 @@ export const accordionHeader = defineRecipe({
 })
 
 export const accordionTrigger = defineRecipe({
-  name: 'accordionTrigger',
+  className: 'accordionTrigger',
   description: 'Styles for the AccordionTrigger component',
   base: {
     display: 'flex',
@@ -47,7 +47,7 @@ export const accordionTrigger = defineRecipe({
 })
 
 export const accordionContent = defineRecipe({
-  name: 'accordionContent',
+  className: 'accordionContent',
   description: 'Styles for the AccordionContent component',
   base: {
     overflow: 'hidden',

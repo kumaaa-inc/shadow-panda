@@ -1,7 +1,7 @@
 import { defineRecipe } from '@pandacss/dev'
 
 export const dialogOverlay = defineRecipe({
-  name: 'dialogOverlay',
+  className: 'dialogOverlay',
   description: 'Styles for the DialogOverlay component',
   base: {
     position: 'fixed',
@@ -23,7 +23,7 @@ export const dialogOverlay = defineRecipe({
 })
 
 export const dialogContent = defineRecipe({
-  name: 'dialogContent',
+  className: 'dialogContent',
   description: 'Styles for the DialogContent component',
   base: {
     position: 'fixed',
@@ -65,7 +65,7 @@ export const dialogContent = defineRecipe({
 })
 
 export const dialogClose = defineRecipe({
-  name: 'dialogClose',
+  className: 'dialogClose',
   description: 'Styles for the DialogContent close button',
   base: {
     position: 'absolute',
@@ -100,7 +100,7 @@ export const dialogClose = defineRecipe({
 })
 
 export const dialogHeader = defineRecipe({
-  name: 'dialogHeader',
+  className: 'dialogHeader',
   description: 'Styles for the DialogHeader component',
   base: {
     display: 'flex',
@@ -115,7 +115,7 @@ export const dialogHeader = defineRecipe({
 })
 
 export const dialogFooter = defineRecipe({
-  name: 'dialogFooter',
+  className: 'dialogFooter',
   description: 'Styles for the DialogFooter component',
   base: {
     display: 'flex',
@@ -130,7 +130,7 @@ export const dialogFooter = defineRecipe({
 })
 
 export const dialogTitle = defineRecipe({
-  name: 'dialogTitle',
+  className: 'dialogTitle',
   description: 'Styles for the DialogTitle component',
   base: {
     textStyle: 'lg',
@@ -141,7 +141,7 @@ export const dialogTitle = defineRecipe({
 })
 
 export const dialogDescription = defineRecipe({
-  name: 'dialogDescription',
+  className: 'dialogDescription',
   description: 'Styles for the DialogDescription component',
   base: {
     textStyle: 'sm',

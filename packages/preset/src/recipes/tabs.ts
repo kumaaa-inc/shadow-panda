@@ -1,7 +1,7 @@
 import { defineRecipe } from '@pandacss/dev'
 
 export const tabsList = defineRecipe({
-  name: 'tabsList',
+  className: 'tabsList',
   description: 'Styles for the TabsList component',
   base: {
     display: 'inline-flex',
@@ -15,7 +15,7 @@ export const tabsList = defineRecipe({
 })
 
 export const tabsTrigger = defineRecipe({
-  name: 'tabsTrigger',
+  className: 'tabsTrigger',
   description: 'Styles for the TabsTrigger component',
   base: {
     display: 'inline-flex',
@@ -53,7 +53,7 @@ export const tabsTrigger = defineRecipe({
 })
 
 export const tabsContent = defineRecipe({
-  name: 'tabsContent',
+  className: 'tabsContent',
   description: 'Styles for the TabsContent component',
   base: {
     mt: '2',

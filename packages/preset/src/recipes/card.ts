@@ -1,7 +1,7 @@
 import { defineRecipe } from '@pandacss/dev'
 
 export const card = defineRecipe({
-  name: 'card',
+  className: 'card',
   description: 'Styles for the Card component',
   base: {
     rounded: 'lg',
@@ -13,7 +13,7 @@ export const card = defineRecipe({
 })
 
 export const cardHeader = defineRecipe({
-  name: 'cardHeader',
+  className: 'cardHeader',
   description: 'Styles for the CardHeader component',
   base: {
     display: 'flex',
@@ -24,7 +24,7 @@ export const cardHeader = defineRecipe({
 })
 
 export const cardTitle = defineRecipe({
-  name: 'cardTitle',
+  className: 'cardTitle',
   description: 'Styles for the CardTitle component',
   base: {
     textStyle: '2xl',
@@ -35,7 +35,7 @@ export const cardTitle = defineRecipe({
 })
 
 export const cardDescription = defineRecipe({
-  name: 'cardDescription',
+  className: 'cardDescription',
   description: 'Styles for the CardDescription component',
   base: {
     textStyle: 'sm',
@@ -44,7 +44,7 @@ export const cardDescription = defineRecipe({
 })
 
 export const cardContent = defineRecipe({
-  name: 'cardContent',
+  className: 'cardContent',
   description: 'Styles for the CardContent component',
   base: {
     p: '6',
@@ -53,7 +53,7 @@ export const cardContent = defineRecipe({
 })
 
 export const cardFooter = defineRecipe({
-  name: 'cardFooter',
+  className: 'cardFooter',
   description: 'Styles for the CardFooter component',
   base: {
     display: 'flex',

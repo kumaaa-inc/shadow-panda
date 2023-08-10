@@ -1,7 +1,7 @@
 import { defineRecipe } from '@pandacss/dev'
 
 export const h1 = defineRecipe({
-  name: 'h1',
+  className: 'h1',
   description: 'Typography - h1 style',
   base: {
     textStyle: 'h1',
@@ -10,7 +10,7 @@ export const h1 = defineRecipe({
 })
 
 export const h2 = defineRecipe({
-  name: 'h2',
+  className: 'h2',
   description: 'Typography - h2 style',
   base: {
     textStyle: 'h2',
@@ -22,7 +22,7 @@ export const h2 = defineRecipe({
 })
 
 export const h3 = defineRecipe({
-  name: 'h3',
+  className: 'h3',
   description: 'Typography - h3 style',
   base: {
     textStyle: 'h3',
@@ -31,7 +31,7 @@ export const h3 = defineRecipe({
 })
 
 export const h4 = defineRecipe({
-  name: 'h4',
+  className: 'h4',
   description: 'Typography - h4 style',
   base: {
     textStyle: 'h4',
@@ -40,7 +40,7 @@ export const h4 = defineRecipe({
 })
 
 export const p = defineRecipe({
-  name: 'p',
+  className: 'p',
   description: 'Typography - p style',
   base: {
     textStyle: 'p',
@@ -51,7 +51,7 @@ export const p = defineRecipe({
 })
 
 export const tableContainer = defineRecipe({
-  name: 'tableContainer',
+  className: 'tableContainer',
   description: 'Typography - table container style',
   base: {
     my: '6',
@@ -61,7 +61,7 @@ export const tableContainer = defineRecipe({
 })
 
 export const table = defineRecipe({
-  name: 'table',
+  className: 'table',
   description: 'Typography - table style',
   base: {
     w: 'full',
@@ -97,7 +97,7 @@ export const table = defineRecipe({
 })
 
 export const blockquote = defineRecipe({
-  name: 'blockquote',
+  className: 'blockquote',
   description: 'Typography - blockquote style',
   base: {
     mt: '6',
@@ -109,7 +109,7 @@ export const blockquote = defineRecipe({
 })
 
 export const list = defineRecipe({
-  name: 'list',
+  className: 'list',
   description: 'Typography - list style',
   base: {
     my: '6',
@@ -122,7 +122,7 @@ export const list = defineRecipe({
 })
 
 export const inlineCode = defineRecipe({
-  name: 'inlineCode',
+  className: 'inlineCode',
   description: 'Typography - InlineCode style',
   base: {
     position: 'relative',
@@ -137,7 +137,7 @@ export const inlineCode = defineRecipe({
 })
 
 export const lead = defineRecipe({
-  name: 'lead',
+  className: 'lead',
   description: 'Typography - Lead style',
   base: {
     textStyle: 'lead',
@@ -146,7 +146,7 @@ export const lead = defineRecipe({
 })
 
 export const large = defineRecipe({
-  name: 'large',
+  className: 'large',
   description: 'Typography - Large style',
   base: {
     textStyle: 'large',
@@ -154,7 +154,7 @@ export const large = defineRecipe({
 })
 
 export const small = defineRecipe({
-  name: 'small',
+  className: 'small',
   description: 'Typography - Small style',
   base: {
     textStyle: 'small',
@@ -162,7 +162,7 @@ export const small = defineRecipe({
 })
 
 export const muted = defineRecipe({
-  name: 'muted',
+  className: 'muted',
   description: 'Typography - Muted style',
   base: {
     textStyle: 'sm',
@@ -171,7 +171,7 @@ export const muted = defineRecipe({
 })
 
 export const link = defineRecipe({
-  name: 'link',
+  className: 'link',
   description: 'Typography - Link style',
   base: {
     color: 'primary',

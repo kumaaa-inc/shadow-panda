@@ -1,7 +1,7 @@
 import { defineRecipe } from '@pandacss/dev'
 
 export const input = defineRecipe({
-  name: 'input',
+  className: 'input',
   description: 'Styles for the Input component',
   base: {
     display: 'flex',

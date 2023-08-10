@@ -1,7 +1,7 @@
 import { defineRecipe } from '@pandacss/dev'
 
 export const badge = defineRecipe({
-  name: 'badge',
+  className: 'badge',
   description: 'Styles for the Badge component',
   base: {
     display: 'inline-flex',

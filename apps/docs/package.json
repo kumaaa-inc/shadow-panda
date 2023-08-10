@@ -5,10 +5,8 @@
   "license": "MIT",
   "type": "module",
   "scripts": {
-    "prepare": "panda codegen",
     "postinstall": "node patch/postinstall-fix-nextra-theme-css.js",
     "watch": "panda codegen -w --clean",
-    "compile": "panda codegen --clean",
     "studio": "panda studio",
     "debug": "panda debug",
     "dev": "next dev",
@@ -45,7 +43,7 @@
     "zod": "3.21.4"
   },
   "devDependencies": {
-    "@pandacss/dev": "0.8.0",
+    "@pandacss/dev": "0.10.0",
     "@shadow-panda/preset": "workspace:*",
     "@types/react": "18.2.16",
     "eslint": "8.45.0",
@@ -53,6 +51,6 @@
     "typescript": "5.1.6"
   },
   "peerDependencies": {
-    "@pandacss/dev": "0.8.0"
+    "@pandacss/dev": "0.10.0"
   }
 }

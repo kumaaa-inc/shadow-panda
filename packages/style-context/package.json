@@ -1,6 +1,6 @@
 {
-  "name": "@shadow-panda/preset",
-  "description": "The preset for PandaCSS that contains the theme for Shadow Panda",
+  "name": "@shadow-panda/style-context",
+  "description": "Shared style context for using slot recipes in ShadowPanda",
   "version": "0.1.0",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
@@ -22,18 +22,22 @@
   "sideEffects": false,
   "license": "MIT",
   "scripts": {
-    "build": "tsup src/index.ts --format=esm,cjs --dts",
-    "build-fast": "tsup src/index.ts --format=esm,cjs --no-dts",
+    "build": "tsup src/index.ts --format=esm,cjs --dts --external react",
+    "build-fast": "tsup src/index.ts --format=esm,cjs --no-dts --external react",
     "dev": "pnpm build-fast --watch"
   },
-  "dependencies": {
-    "@pandacss/preset-panda": "0.10.0"
-  },
-  "devDependencies": {
-    "@pandacss/dev": "0.10.0",
-    "@pandacss/types": "0.10.0"
-  },
   "peerDependencies": {
-    "@pandacss/dev": "0.10.0"
+    "@types/react": "*",
+    "@types/react-dom": "*",
+    "react": "^16.8 || ^17.0 || ^18.0",
+    "react-dom": "^16.8 || ^17.0 || ^18.0"
+  },
+  "peerDependenciesMeta": {
+    "@types/react": {
+      "optional": true
+    },
+    "@types/react-dom": {
+      "optional": true
+    }
   }
 }

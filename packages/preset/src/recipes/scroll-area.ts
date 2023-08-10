@@ -10,7 +10,7 @@ const scrollAreaParts = defineParts({
 })
 
 export const scrollArea = defineRecipe({
-  name: 'scrollArea',
+  className: 'scrollArea',
   description: 'Styles for the ScrollArea component',
   base: scrollAreaParts({
     root: {
@@ -35,7 +35,7 @@ const scrollBarParts = defineParts({
 })
 
 export const scrollAreaScrollBar = defineRecipe({
-  name: 'scrollAreaScrollBar',
+  className: 'scrollAreaScrollBar',
   description: 'Styles for the ScrollBar component',
   base: scrollBarParts({
     root: {

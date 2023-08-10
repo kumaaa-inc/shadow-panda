@@ -13,13 +13,11 @@ const DocsLayout = ({ children }: PropsWithChildren) => {
         px: '4',
         alignItems: 'flex-start',
         md: {
-          px: '2',
           display: 'grid',
           gridTemplateColumns: '220px minmax(0, 1fr)',
           gap: '6',
         },
         lg: {
-          px: '2',
           gridTemplateColumns: '240px minmax(0, 1fr)',
           gap: '10',
         },
@@ -31,7 +29,7 @@ const DocsLayout = ({ children }: PropsWithChildren) => {
           top: '14',
           zIndex: 30,
           ml: '-2',
-          pl: '2',
+          px: '2',
           display: 'none',
           h: 'calc(100vh - 3.5rem)',
           w: 'full',

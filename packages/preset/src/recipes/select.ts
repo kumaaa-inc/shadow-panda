@@ -1,7 +1,7 @@
 import { defineRecipe } from '@pandacss/dev'
 
 export const selectTrigger = defineRecipe({
-  name: 'selectTrigger',
+  className: 'selectTrigger',
   description: 'Styles for the SelectTrigger component',
   base: {
     display: 'flex',
@@ -37,7 +37,7 @@ export const selectTrigger = defineRecipe({
 })
 
 export const selectContent = defineRecipe({
-  name: 'selectContent',
+  className: 'selectContent',
   description: 'Styles for the SelectContent component',
   base: {
     position: 'relative',
@@ -106,7 +106,7 @@ export const selectContent = defineRecipe({
 })
 
 export const selectViewport = defineRecipe({
-  name: 'selectViewport',
+  className: 'selectViewport',
   description: 'Styles for the SelectContent viewport',
   base: {
     p: '1',
@@ -127,7 +127,7 @@ export const selectViewport = defineRecipe({
 })
 
 export const selectLabel = defineRecipe({
-  name: 'selectLabel',
+  className: 'selectLabel',
   description: 'Styles for the SelectLabel component',
   base: {
     py: '1.5',
@@ -139,7 +139,7 @@ export const selectLabel = defineRecipe({
 })
 
 export const selectItem = defineRecipe({
-  name: 'selectItem',
+  className: 'selectItem',
   description: 'Styles for the SelectItem component',
   base: {
     position: 'relative',
@@ -167,7 +167,7 @@ export const selectItem = defineRecipe({
 })
 
 export const selectItemInner = defineRecipe({
-  name: 'selectItemInner',
+  className: 'selectItemInner',
   description: "Styles for the SelectItem component's inner element",
   base: {
     position: 'absolute',
@@ -181,7 +181,7 @@ export const selectItemInner = defineRecipe({
 })
 
 export const selectSeparator = defineRecipe({
-  name: 'selectSeparator',
+  className: 'selectSeparator',
   description: 'Styles for the SelectSeparator component',
   base: {
     mx: '-1',
