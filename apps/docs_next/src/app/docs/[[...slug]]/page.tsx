@@ -1,6 +1,9 @@
 import { notFound } from 'next/navigation'
 import { ChevronRightIcon } from 'lucide-react'
-import { allDocuments } from 'contentlayer/generated'
+import {
+  allDocuments,
+  type Component as ComponentDoc,
+} from 'contentlayer/generated'
 import { css } from '@shadow-panda/styled-system/css'
 import { h1 } from '@shadow-panda/styled-system/recipes'
 import { MdxComponent } from '@/components/docs/mdx-component'
@@ -8,6 +11,7 @@ import { Lead } from '@/components/docs/lead'
 import { ReferenceBadges } from '@/components/docs/reference-badges'
 import { ScrollArea } from '@/components/ui/scroll-area'
 import { Toc } from '@/components/docs/toc'
+import { Pager } from '@/components/docs/pager'
 
 export const generateStaticParams = async () =>
   allDocuments.map((doc) => ({ slug: doc.slugAsParams.split('/') }))
@@ -73,9 +77,13 @@ const ComponentsPage = ({ params }: { params: { slug: string[] } }) => {
 
         <h1 className={h1()}>{doc.title}</h1>
         <Lead className={css({ mt: '4' })}>{doc.description}</Lead>
-        {doc.references && <ReferenceBadges {...doc.references} />}
+        {(doc as ComponentDoc).references && (
+          <ReferenceBadges {...(doc as ComponentDoc).references} />
+        )}
 
         <MdxComponent code={doc.body.code} />
+
+        <Pager className={css({ mt: '8' })} doc={doc} />
       </div>
       {doc.toc && (
         <div

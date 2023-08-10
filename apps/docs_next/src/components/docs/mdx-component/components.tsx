@@ -25,6 +25,7 @@ import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'
 import { AspectRatio } from '@/components/ui/aspect-ratio'
 import { Button } from '@/components/ui/button'
 import { Tabs, Tab } from '@/components/docs/tabs'
+import { Callout, type CalloutProps } from '@/components/docs/callout'
 import { CopyButton } from '@/components/docs/copy-button'
 
 export const components = {
@@ -37,6 +38,14 @@ export const components = {
   AlertDescription,
   AspectRatio,
   Button,
+  Callout: (props: CalloutProps) => (
+    <Callout
+      className={css({
+        mt: '6',
+      })}
+      {...props}
+    />
+  ),
   Image,
   Tabs,
   Tab,
