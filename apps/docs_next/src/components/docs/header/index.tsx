@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { MenuIcon } from 'lucide-react'
 import { css } from '@shadow-panda/styled-system/css'
 import { Button } from '@/components/ui/button'
 import { HeaderNav } from '@/components/docs/header-nav'
@@ -22,15 +23,16 @@ export const Header = () => {
     >
       <div
         className={css({
-          container: true,
+          maxW: '7xl',
           display: 'flex',
           alignItems: 'center',
           h: '14',
           mx: 'auto',
-          px: '4',
+          pl: '4',
+          pr: '2',
 
           md: {
-            px: '2',
+            pl: '2',
           },
         })}
       >
@@ -65,10 +67,11 @@ export const Header = () => {
             className={css({
               display: 'flex',
               alignItems: 'center',
+              gap: '1',
             })}
           >
             <Button
-              className={css({ w: '9', px: '0' })}
+              className={css({ w: '9', h: '9', px: '0' })}
               variant="ghost"
               asChild
             >
@@ -82,6 +85,22 @@ export const Header = () => {
             </Button>
 
             <ModeToggle />
+
+            {/* TODO: MENU */}
+            <Button
+              className={css({
+                w: '9',
+                h: '9',
+                px: '0',
+                display: 'flex',
+                md: {
+                  display: 'none',
+                },
+              })}
+              variant="ghost"
+            >
+              <MenuIcon className={css({ w: '4', h: '4' })} />
+            </Button>
           </nav>
         </div>
       </div>

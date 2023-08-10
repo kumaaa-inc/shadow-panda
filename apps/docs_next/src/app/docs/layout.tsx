@@ -1,12 +1,13 @@
 import type { PropsWithChildren } from 'react'
 import { css } from '@shadow-panda/styled-system/css'
 import { ScrollArea } from '@/components/ui/scroll-area'
+import { SidebarNav } from '@/components/docs/sidebar-nav'
 
 const DocsLayout = ({ children }: PropsWithChildren) => {
   return (
     <div
       className={css({
-        container: true,
+        maxW: '7xl',
         mx: 'auto',
         flex: '1',
         px: '4',
@@ -50,7 +51,7 @@ const DocsLayout = ({ children }: PropsWithChildren) => {
             },
           })}
         >
-          content
+          <SidebarNav />
         </ScrollArea>
       </aside>
       {children}

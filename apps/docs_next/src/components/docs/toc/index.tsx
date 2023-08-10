@@ -102,7 +102,6 @@ export interface TocProps {
 export const Toc = ({ toc }: TocProps) => {
   const ids = React.useMemo(() => getSlugs(toc), [toc])
   const activeHeading = useActiveItem(ids)
-  console.log(activeHeading)
   const [mounted, setMounted] = React.useState(false)
 
   React.useEffect(() => {

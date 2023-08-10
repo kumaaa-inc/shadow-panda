@@ -48,9 +48,37 @@ const baseComputedFields: ComputedFields = {
   },
   slugAsParams: {
     type: 'string',
-    resolve: (doc) => doc._raw.flattenedPath.split('/').slice(1).join('/'),
+    resolve: (doc) => doc._raw.flattenedPath,
   },
 }
+
+export const Overview = defineDocumentType(() => ({
+  name: 'Overview',
+  filePathPattern: `overview/**/*.mdx`,
+  contentType: 'mdx',
+  fields: {
+    title: { type: 'string', required: true },
+    description: { type: 'string', required: true },
+    toc: { type: 'boolean', required: false, default: true },
+  },
+  computedFields: {
+    ...baseComputedFields,
+  },
+}))
+
+export const Guides = defineDocumentType(() => ({
+  name: 'Guides',
+  filePathPattern: `guides/**/*.mdx`,
+  contentType: 'mdx',
+  fields: {
+    title: { type: 'string', required: true },
+    description: { type: 'string', required: true },
+    toc: { type: 'boolean', required: false, default: true },
+  },
+  computedFields: {
+    ...baseComputedFields,
+  },
+}))
 
 export const Component = defineDocumentType(() => ({
   name: 'Component',
@@ -73,7 +101,7 @@ export const Component = defineDocumentType(() => ({
 
 export default makeSource({
   contentDirPath: 'src/posts',
-  documentTypes: [Component],
+  documentTypes: [Overview, Guides, Component],
   mdx: {
     remarkPlugins: [
       remarkGfm,

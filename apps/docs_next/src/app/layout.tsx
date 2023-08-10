@@ -39,7 +39,7 @@ export const metadata: Metadata = {
 
 const RootLayout = (props: PropsWithChildren) => {
   return (
-    <html lang="en" className={inter.variable}>
+    <html lang="en" className={inter.variable} suppressHydrationWarning>
       <body>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <div

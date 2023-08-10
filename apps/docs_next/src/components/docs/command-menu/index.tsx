@@ -22,7 +22,7 @@ import {
   CommandList,
   CommandSeparator,
 } from '@/components/ui/command'
-import { allComponents } from 'contentlayer/generated'
+import { allOverviews, allGuides, allComponents } from 'contentlayer/generated'
 
 export function CommandMenu({ ...props }: DialogProps) {
   const router = useRouter()
@@ -131,6 +131,56 @@ export function CommandMenu({ ...props }: DialogProps) {
               <FileIcon className={css({ mr: '2', h: '4', w: '4' })} />
               Documentation
             </CommandItem>
+          </CommandGroup>
+          <CommandGroup heading="Overview">
+            {allOverviews.map((doc) => (
+              <CommandItem
+                key={doc.url}
+                value={doc.title}
+                onSelect={() => {
+                  runCommand(() => router.push(doc.url as string))
+                }}
+              >
+                <div
+                  className={css({
+                    mr: '2',
+                    display: 'flex',
+                    h: '4',
+                    w: '4',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                  })}
+                >
+                  <CircleIcon className={css({ h: '3', w: '3' })} />
+                </div>
+                {doc.title}
+              </CommandItem>
+            ))}
+          </CommandGroup>
+          <CommandGroup heading="Guides">
+            {allGuides.map((doc) => (
+              <CommandItem
+                key={doc.url}
+                value={doc.title}
+                onSelect={() => {
+                  runCommand(() => router.push(doc.url as string))
+                }}
+              >
+                <div
+                  className={css({
+                    mr: '2',
+                    display: 'flex',
+                    h: '4',
+                    w: '4',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                  })}
+                >
+                  <CircleIcon className={css({ h: '3', w: '3' })} />
+                </div>
+                {doc.title}
+              </CommandItem>
+            ))}
           </CommandGroup>
           <CommandGroup heading="Components">
             {allComponents.map((doc) => (

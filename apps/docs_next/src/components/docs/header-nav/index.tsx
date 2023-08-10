@@ -38,7 +38,7 @@ export const HeaderNav = () => {
           spaceX: '6',
           textStyle: 'sm',
           fontWeight: 'medium',
-          lg: {
+          sm: {
             display: 'flex',
           },
         })}
@@ -56,19 +56,6 @@ export const HeaderNav = () => {
           })}
         >
           Documentation
-        </Link>
-        <Link
-          href="/docs/components"
-          className={css({
-            transition: 'colors',
-            opacity: pathname.startsWith('/docs/components') ? '1' : '0.6',
-
-            _hover: {
-              opacity: '0.8',
-            },
-          })}
-        >
-          Components
         </Link>
       </nav>
     </div>

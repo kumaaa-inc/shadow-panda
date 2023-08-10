@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation'
 import { ChevronRightIcon } from 'lucide-react'
-import { allComponents } from 'contentlayer/generated'
+import { allDocuments } from 'contentlayer/generated'
 import { css } from '@shadow-panda/styled-system/css'
 import { h1 } from '@shadow-panda/styled-system/recipes'
 import { MdxComponent } from '@/components/docs/mdx-component'
@@ -10,25 +10,25 @@ import { ScrollArea } from '@/components/ui/scroll-area'
 import { Toc } from '@/components/docs/toc'
 
 export const generateStaticParams = async () =>
-  allComponents.map((doc) => ({ slug: doc.componentName }))
+  allDocuments.map((doc) => ({ slug: doc.slugAsParams.split('/') }))
 
 export const generateMetadata = ({
   params,
 }: {
-  params: { component: string }
+  params: { slug: string[] }
 }) => {
-  const doc = allComponents.find(
-    (doc) => doc.componentName === params.component,
+  const doc = allDocuments.find(
+    (doc) => doc.slugAsParams === params.slug.join('/'),
   )
 
-  if (!doc) throw new Error(`Component not found: ${params.component}`)
+  if (!doc) throw new Error(`Page not found: ${params.slug.join('/')}`)
 
   return { title: doc.title, description: doc.description }
 }
 
-const ComponentsPage = ({ params }: { params: { component: string } }) => {
-  const doc = allComponents.find(
-    (doc) => doc.componentName === params.component,
+const ComponentsPage = ({ params }: { params: { slug: string[] } }) => {
+  const doc = allDocuments.find(
+    (doc) => doc.slugAsParams === params.slug.join('/'),
   )
 
   if (!doc) {
@@ -40,7 +40,7 @@ const ComponentsPage = ({ params }: { params: { component: string } }) => {
       className={css({
         position: 'relative',
         py: '8',
-        lg: {
+        xl: {
           display: 'grid',
           gridTemplateColumns: '1fr minmax(0, 200px)',
           gap: '10',
@@ -64,7 +64,7 @@ const ComponentsPage = ({ params }: { params: { component: string } }) => {
             color: 'muted.foreground',
           })}
         >
-          <div className={css({ truncate: true })}>Docs</div>
+          <div className={css({ truncate: true })}>{doc.type}</div>
           <ChevronRightIcon className={css({ h: '4', w: '4' })} />
           <div className={css({ fontWeight: 'medium', color: 'foreground' })}>
             {doc.title}
@@ -83,7 +83,7 @@ const ComponentsPage = ({ params }: { params: { component: string } }) => {
             display: 'none',
             position: 'relative',
             textStyle: 'sm',
-            lg: {
+            xl: {
               display: 'block',
             },
           })}
