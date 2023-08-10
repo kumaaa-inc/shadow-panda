@@ -55,10 +55,6 @@ export const Callout = ({
       </div>
     )}
     {title && <AlertTitle>{title}</AlertTitle>}
-    {children && (
-      <AlertDescription>
-        <p>{children}</p>
-      </AlertDescription>
-    )}
+    {children && <AlertDescription>{children}</AlertDescription>}
   </Alert>
 )
