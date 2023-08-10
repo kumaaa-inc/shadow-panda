@@ -9,14 +9,16 @@ const DocsLayout = ({ children }: PropsWithChildren) => {
         container: true,
         mx: 'auto',
         flex: '1',
-        px: '2',
+        px: '4',
         alignItems: 'flex-start',
         md: {
+          px: '2',
           display: 'grid',
           gridTemplateColumns: '220px minmax(0, 1fr)',
           gap: '6',
         },
         lg: {
+          px: '2',
           gridTemplateColumns: '240px minmax(0, 1fr)',
           gap: '10',
         },

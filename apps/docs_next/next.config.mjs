@@ -24,6 +24,12 @@ const nextConfig = {
         destination: '/docs/overview/getting-started',
         permanent: true,
       },
+
+      {
+        source: '/docs/components',
+        destination: '/docs/components/accordion',
+        permanent: true,
+      },
     ]
   },
 }

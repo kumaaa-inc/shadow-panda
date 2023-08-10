@@ -5,6 +5,7 @@ import { css } from '@shadow-panda/styled-system/css'
 import { Header } from '@/components/docs/header'
 import { Footer } from '@/components/docs/footer'
 import '../styles/global.css'
+import { ThemeProvider } from './theme-provider'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 
@@ -40,18 +41,20 @@ const RootLayout = (props: PropsWithChildren) => {
   return (
     <html lang="en" className={inter.variable}>
       <body>
-        <div
-          className={css({
-            display: 'flex',
-            position: 'relative',
-            flexDirection: 'column',
-            minH: 'screen',
-          })}
-        >
-          <Header />
-          <div className={css({ flex: '1' })}>{props.children}</div>
-          <Footer />
-        </div>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <div
+            className={css({
+              display: 'flex',
+              position: 'relative',
+              flexDirection: 'column',
+              minH: 'screen',
+            })}
+          >
+            <Header />
+            <div className={css({ flex: '1' })}>{props.children}</div>
+            <Footer />
+          </div>
+        </ThemeProvider>
       </body>
     </html>
   )

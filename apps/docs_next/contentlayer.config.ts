@@ -1,4 +1,5 @@
 import {
+  type ComputedFields,
   defineDocumentType,
   defineNestedType,
   makeSource,
@@ -30,6 +31,27 @@ const ReferencesType = defineNestedType(() => ({
   },
 }))
 
+const baseComputedFields: ComputedFields = {
+  url: {
+    type: 'string',
+    resolve: (post) => `/docs/${post._raw.flattenedPath}`,
+  },
+  tocData: {
+    type: 'json',
+    resolve: async (doc) => {
+      return generateToc(doc.body.raw, TOC_LEVEL)
+    },
+  },
+  slug: {
+    type: 'string',
+    resolve: (doc) => `/${doc._raw.flattenedPath}`,
+  },
+  slugAsParams: {
+    type: 'string',
+    resolve: (doc) => doc._raw.flattenedPath.split('/').slice(1).join('/'),
+  },
+}
+
 export const Component = defineDocumentType(() => ({
   name: 'Component',
   filePathPattern: `components/**/*.mdx`,
@@ -45,16 +67,7 @@ export const Component = defineDocumentType(() => ({
       type: 'string',
       resolve: (doc) => doc._raw.flattenedPath.replace(/^components\//, ''),
     },
-    url: {
-      type: 'string',
-      resolve: (post) => `/docs/${post._raw.flattenedPath}`,
-    },
-    tocData: {
-      type: 'json',
-      resolve: async (doc) => {
-        return generateToc(doc.body.raw, TOC_LEVEL)
-      },
-    },
+    ...baseComputedFields,
   },
 }))
 
