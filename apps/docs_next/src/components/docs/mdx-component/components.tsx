@@ -27,6 +27,8 @@ import { Button } from '@/components/ui/button'
 import { Tabs, Tab } from '@/components/docs/tabs'
 import { Callout, type CalloutProps } from '@/components/docs/callout'
 import { CopyButton } from '@/components/docs/copy-button'
+import { Preview, type PreviewProps } from '@/components/docs/preview'
+import { Steps } from '@/components/docs/steps'
 
 export const components = {
   Accordion,
@@ -38,18 +40,33 @@ export const components = {
   AlertDescription,
   AspectRatio,
   Button,
-  Callout: (props: CalloutProps) => (
+  Callout: ({ className, ...props }: CalloutProps) => (
     <Callout
-      className={css({
-        mt: '6',
-      })}
+      className={cx(
+        css({
+          mt: '6',
+        }),
+        className,
+      )}
       {...props}
     />
   ),
   Image,
   Tabs,
   Tab,
-
+  Preview: ({ className, ...props }: PreviewProps) => (
+    <Preview
+      className={cx(
+        css({
+          mt: '6',
+          mb: '4',
+        }),
+        className,
+      )}
+      {...props}
+    />
+  ),
+  Steps,
   h1: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
     <h1 className={cx(h1(), className)} {...props} />
   ),
@@ -164,20 +181,27 @@ export const components = {
               mb: '4',
               mt: '6',
               py: '4',
-              px: '2',
               maxHeight: '650px',
               overflowX: 'auto',
               rounded: 'lg',
-              border: 'base',
-              bg: 'slate.950',
-
-              _dark: {
-                bg: 'slate.900',
-              },
 
               '& code': {
                 display: 'grid',
                 bg: 'transparent',
+                p: '0',
+                minW: '100%',
+                overflowWrap: 'break-word',
+                borderRadius: 'none',
+                borderWidth: '0',
+                counterReset: 'line',
+                boxDecorationBreak: 'clone',
+              },
+
+              '& [data-line]': {
+                display: 'inline-block',
+                minHeight: '1rem',
+                width: 'full',
+                padding: '0.125rem 1rem',
               },
             }),
             className,
