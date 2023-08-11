@@ -6,7 +6,7 @@ We provide a **preset** for [Panda CSS](https://panda-css.com/) that allows you 
 
 ## Documentation
 
-Visit our documentation: [https://shadow-panda.vercel.app/](https://shadow-panda.vercel.app/)
+Visit our documentation: [https://shadow-panda.dev/](https://shadow-panda.dev/)
 
 ## Install
 
@@ -39,7 +39,7 @@ export default defineConfig({
 })
 ```
 
-Compile Panda CSS, copy [components](https://shadow-panda.vercel.app/docs/overview/supported-components) and use it!
+Compile Panda CSS, copy [components](https://shadow-panda.dev/docs/overview/supported-components) and use it!
 
 ## Acknowledgement
 
