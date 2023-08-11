@@ -178,5 +178,6 @@ export const link = defineRecipe({
     fontWeight: 'medium',
     textDecoration: 'underline',
     textUnderlineOffset: '4px',
+    cursor: 'pointer',
   },
 })

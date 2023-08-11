@@ -29,6 +29,7 @@ import { Tabs, Tab } from '@/components/docs/tabs'
 import { Callout, type CalloutProps } from '@/components/docs/callout'
 import { ComponentPreview } from '@/components/docs/component-preview'
 import { ComponentSource } from '@/components/docs/component-source'
+import { TypographyPreview } from '@/components/docs/typography-preview'
 import { CopyButton } from '@/components/docs/copy-button'
 import { Preview, type PreviewProps } from '@/components/docs/preview'
 import { Steps } from '@/components/docs/steps'
@@ -100,6 +101,7 @@ export const components = {
   Tab,
   ComponentPreview,
   ComponentSource,
+  TypographyPreview,
   Preview: ({ className, ...props }: PreviewProps) => (
     <Preview
       className={cx(
@@ -255,9 +257,21 @@ export const components = {
       {...props}
     />
   ),
-  a: ({ className, ...props }: React.HTMLAttributes<HTMLAnchorElement>) => (
-    <a className={cx(link(), className)} {...props} />
-  ),
+  a: ({
+    className,
+    href,
+    ...props
+  }: React.AnchorHTMLAttributes<HTMLAnchorElement>) => {
+    return (
+      <Link
+        className={cx(link(), className)}
+        href={href ?? ''}
+        target={href?.startsWith('http') ? '_blank' : ''}
+        rel={href?.startsWith('http') ? 'noopener noreferrer' : ''}
+        {...props}
+      />
+    )
+  },
   p: ({ className, ...props }: React.HTMLAttributes<HTMLParagraphElement>) => (
     <p className={cx(p(), className)} {...props} />
   ),

@@ -21,7 +21,7 @@ const nextConfig = {
     return [
       {
         source: '/docs',
-        destination: '/docs/overview/getting-started',
+        destination: '/docs/overview/introduction',
         permanent: true,
       },
 

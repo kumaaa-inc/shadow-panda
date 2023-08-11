@@ -1,4 +1,5 @@
 import * as React from 'react'
+import { css } from '@shadow-panda/styled-system/css'
 import * as WrappedTabs from './wrapper'
 
 type TabProps = React.ComponentProps<typeof WrappedTabs.TabsContent>
@@ -65,7 +66,14 @@ export const Tabs = ({
 
   return (
     <WrappedTabs.Tabs value={selectedIndex} onValueChange={handleChange}>
-      <WrappedTabs.TabsList>
+      <WrappedTabs.TabsList
+        className={css({
+          overflowX: 'auto',
+          _scrollbar: {
+            display: 'none',
+          },
+        })}
+      >
         {items.map((item, i) => (
           <WrappedTabs.TabsTrigger key={i} value={`${i}`}>
             {item}

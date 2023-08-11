@@ -10,10 +10,15 @@ import {
   AccordionTrigger,
 } from '@/components/ui/accordion'
 import { allOverviews, allGuides, allComponents } from 'contentlayer/generated'
+import { sortDocs } from '@/lib/sort-docs'
 
 export interface SidebarNavProps {
   onNavigate?: (url: string) => void
 }
+
+const sortedOverviews = sortDocs(allOverviews)
+const sortedGuides = sortDocs(allGuides)
+const sortedComponents = sortDocs(allComponents)
 
 export const SidebarNav = ({ onNavigate }: SidebarNavProps) => {
   const pathname = usePathname()
@@ -63,7 +68,7 @@ export const SidebarNav = ({ onNavigate }: SidebarNavProps) => {
             </AccordionTrigger>
             <AccordionContent>
               <ul className={subMenuStyle}>
-                {allOverviews.map((doc) => (
+                {sortedOverviews.map((doc) => (
                   <li key={doc.slug}>
                     <Link
                       className={css({
@@ -100,7 +105,7 @@ export const SidebarNav = ({ onNavigate }: SidebarNavProps) => {
             <AccordionTrigger className={triggerStyle}>Guides</AccordionTrigger>
             <AccordionContent>
               <ul className={subMenuStyle}>
-                {allGuides.map((doc) => (
+                {sortedGuides.map((doc) => (
                   <li key={doc.slug}>
                     <Link
                       className={css({
@@ -139,7 +144,7 @@ export const SidebarNav = ({ onNavigate }: SidebarNavProps) => {
             </AccordionTrigger>
             <AccordionContent>
               <ul className={subMenuStyle}>
-                {allComponents.map((doc) => (
+                {sortedComponents.map((doc) => (
                   <li key={doc.slug}>
                     <Link
                       className={css({

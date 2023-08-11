@@ -81,7 +81,9 @@ const ComponentsPage = ({ params }: { params: { slug: string[] } }) => {
           <ReferenceBadges {...(doc as ComponentDoc).references} />
         )}
 
-        <MdxComponent code={doc.body.code} />
+        <div className={css({ mt: '8' })}>
+          <MdxComponent code={doc.body.code} />
+        </div>
 
         <Pager className={css({ mt: '8' })} doc={doc} />
       </div>

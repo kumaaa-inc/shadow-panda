@@ -59,6 +59,7 @@ export const Overview = defineDocumentType(() => ({
   fields: {
     title: { type: 'string', required: true },
     description: { type: 'string', required: true },
+    order: { type: 'number', required: true, default: 99999 },
     toc: { type: 'boolean', required: false, default: true },
   },
   computedFields: {
@@ -73,6 +74,7 @@ export const Guides = defineDocumentType(() => ({
   fields: {
     title: { type: 'string', required: true },
     description: { type: 'string', required: true },
+    order: { type: 'number', required: true, default: 99999 },
     toc: { type: 'boolean', required: false, default: true },
   },
   computedFields: {
@@ -87,6 +89,7 @@ export const Component = defineDocumentType(() => ({
   fields: {
     title: { type: 'string', required: true },
     description: { type: 'string', required: true },
+    order: { type: 'number', required: true, default: 99999 },
     references: { type: 'nested', of: ReferencesType },
     toc: { type: 'boolean', required: false, default: true },
   },

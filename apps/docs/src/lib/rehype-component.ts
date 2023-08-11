@@ -50,6 +50,20 @@ function getRecipeSource(component: string) {
   }
 }
 
+function getTextStylePreviewSource(type: string) {
+  try {
+    return fs.readFileSync(
+      path.join(
+        process.cwd(),
+        `./src/components/previews/typography/${type}-text-style.tsx`,
+      ),
+      'utf8',
+    )
+  } catch (error) {
+    return ''
+  }
+}
+
 export function rehypeComponent() {
   return async (tree: UnistTree) => {
     visit(tree, (node: UnistNode) => {
@@ -157,6 +171,75 @@ export function rehypeComponent() {
               ],
             }),
           )
+        } catch (error) {
+          console.error(error)
+        }
+      }
+
+      if (node.name === 'TypographyPreview') {
+        const type = getNodeAttributeByName(node, 'type')?.value as string
+
+        const withTextStyle =
+          getNodeAttributeByName(node, 'withTextStyle')?.value !== undefined
+
+        // type is required
+        if (!type) return null
+
+        try {
+          const source = fs.readFileSync(
+            path.join(
+              process.cwd(),
+              `./src/components/previews/typography/${type}.tsx`,
+            ),
+            'utf8',
+          )
+
+          const textStyleSource = withTextStyle
+            ? getTextStylePreviewSource(type)
+            : ''
+
+          node.children?.push(
+            u('element', {
+              tagName: 'pre',
+              children: [
+                u('element', {
+                  tagName: 'code',
+                  properties: {
+                    className: ['language-tsx'],
+                  },
+                  children: [
+                    {
+                      type: 'text',
+                      // Replace default export
+                      value: source.replace('export default', 'export'),
+                    },
+                  ],
+                }),
+              ],
+            }),
+          )
+
+          if (textStyleSource) {
+            node.children?.push(
+              u('element', {
+                tagName: 'pre',
+                children: [
+                  u('element', {
+                    tagName: 'code',
+                    properties: {
+                      className: ['language-tsx'],
+                    },
+                    children: [
+                      {
+                        type: 'text',
+                        value: textStyleSource,
+                      },
+                    ],
+                  }),
+                ],
+              }),
+            )
+          }
         } catch (error) {
           console.error(error)
         }

@@ -1,20 +1,17 @@
 import Link from 'next/link'
 import { ChevronLeftIcon, ChevronRightIcon } from 'lucide-react'
 import { css, cx } from '@shadow-panda/styled-system/css'
-import {
-  allComponents,
-  allGuides,
-  allOverviews,
-  type DocumentTypes,
-} from 'contentlayer/generated'
+import { allDocuments, type DocumentTypes } from 'contentlayer/generated'
 import { Button } from '@/components/ui/button'
+import { sortDocs } from '@/lib/sort-docs'
 
-const orderedPages = [...allOverviews, ...allGuides, ...allComponents]
+const orderedPages = sortDocs(allDocuments)
 
 const getPagerForDocs = (doc: DocumentTypes) => {
   const index = orderedPages.findIndex((d) => d.url === doc.url)
   const prev = orderedPages[index - 1]
   const next = orderedPages[index + 1]
+
   return {
     prev,
     next,

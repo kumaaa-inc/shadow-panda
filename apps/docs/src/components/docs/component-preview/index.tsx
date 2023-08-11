@@ -39,7 +39,7 @@ export const ComponentPreview = ({
       <Tab>
         <Preview className={css({ mt: '6', mb: '4' })}>
           <React.Suspense fallback={<div>Loading...</div>}>
-            <Example name={name} type={type} />
+            <Example />
           </React.Suspense>
         </Preview>
       </Tab>
