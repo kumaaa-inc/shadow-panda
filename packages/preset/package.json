@@ -27,13 +27,13 @@
     "dev": "pnpm build-fast --watch"
   },
   "dependencies": {
-    "@pandacss/preset-panda": "0.10.0"
+    "@pandacss/preset-panda": "0.11.0"
   },
   "devDependencies": {
-    "@pandacss/dev": "0.10.0",
-    "@pandacss/types": "0.10.0"
+    "@pandacss/dev": "0.11.0",
+    "@pandacss/types": "0.11.0"
   },
   "peerDependencies": {
-    "@pandacss/dev": "0.10.0"
+    "@pandacss/dev": "0.11.0"
   }
 }
