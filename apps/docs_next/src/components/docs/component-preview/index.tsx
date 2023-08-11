@@ -6,6 +6,7 @@ import { Tabs, Tab } from '@/components/docs/tabs'
 export interface ComponentPreviewProps {
   name: string
   type?: string
+  withRecipe?: boolean
   children: React.ReactNode
 }
 
@@ -20,20 +21,30 @@ const getExampleComponent = ({
 export const ComponentPreview = ({
   name,
   type,
+  withRecipe,
   children,
 }: ComponentPreviewProps) => {
   const Example = getExampleComponent({ name, type })
 
+  const [code, recipe] = React.Children.toArray(children)
+
   return (
-    <Tabs items={['Preview', 'Code']}>
+    <Tabs
+      items={
+        withRecipe && recipe
+          ? ['Preview', 'Code', 'Recipe']
+          : ['Preview', 'Code']
+      }
+    >
       <Tab>
-        <Preview className={css({ mt: '6' })}>
+        <Preview className={css({ mt: '6', mb: '4' })}>
           <React.Suspense fallback={<div>Loading...</div>}>
             <Example name={name} type={type} />
           </React.Suspense>
         </Preview>
       </Tab>
-      <Tab>{children}</Tab>
+      <Tab>{code}</Tab>
+      {withRecipe && !!recipe && <Tab>{recipe}</Tab>}
     </Tabs>
   )
 }

@@ -5,7 +5,7 @@ references:
   shadcnUiLink: https://ui.shadcn.com/docs/components/button
 ---
 
-<ComponentPreview name="button" />
+<ComponentPreview name="button" withRecipe />
 
 ## Installation
 
@@ -20,4 +20,99 @@ npm i @radix-ui/react-slot
 
 <ComponentSource name="button" />
 
+### Update the import paths to match your project setup
+
 </Steps>
+
+## Usage
+
+```tsx copy
+import { Button } from '@/components/ui/button'
+```
+
+```tsx copy
+<Button variant="default" size="default">
+  Button
+</Button>
+```
+
+## Recipe
+
+### Usage
+
+You can use the `button` recipe to apply the button styles to any component.
+
+```tsx copy
+import {
+  button,
+  type ButtonVariantProps,
+} from '@shadow-panda/styled-system/recipes'
+```
+
+```tsx copy
+<button className={button({ variant: 'outline', size: 'default' })}>
+  Button
+</button>
+```
+
+### Link
+
+You can use the `button` recipe to create a link that looks like a button.
+
+```tsx copy
+import { button } from '@shadow-panda/styled-system/recipes'
+```
+
+```tsx copy
+<Link className={button({ variant: 'outline' })}>Click here</Link>
+```
+
+Alternatively, you can set the asChild parameter and nest the link component.
+
+```tsx copy
+<Button asChild>
+  <Link href="/login">Login</Link>
+</Button>
+```
+
+## Examples
+
+### Default (Primary)
+
+<ComponentPreview name="button" />
+
+### Secondary
+
+<ComponentPreview name="button" type="secondary" />
+
+### Destructive
+
+<ComponentPreview name="button" type="destructive" />
+
+### Outline
+
+<ComponentPreview name="button" type="outline" />
+
+### Ghost
+
+<ComponentPreview name="button" type="ghost" />
+
+### Link
+
+<ComponentPreview name="button" type="link" />
+
+### Icon
+
+<ComponentPreview name="button" type="icon" />
+
+### With Icon
+
+<ComponentPreview name="button" type="with-icon" />
+
+### Loading
+
+<ComponentPreview name="button" type="loading" />
+
+### As Child
+
+<ComponentPreview name="button" type="as-child" />

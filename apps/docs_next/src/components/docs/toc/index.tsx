@@ -16,7 +16,7 @@ function useActiveItem(itemIds: string[]) {
           }
         })
       },
-      { rootMargin: `0% 0% -90% 0%` },
+      { rootMargin: '0px 0px -90% 0%', threshold: 1 },
     )
 
     itemIds?.forEach((id) => {

@@ -1,6 +1,7 @@
 import * as React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
+import { HashIcon } from 'lucide-react'
 import { cx, css } from '@shadow-panda/styled-system/css'
 import {
   h1,
@@ -31,7 +32,6 @@ import { ComponentSource } from '@/components/docs/component-source'
 import { CopyButton } from '@/components/docs/copy-button'
 import { Preview, type PreviewProps } from '@/components/docs/preview'
 import { Steps } from '@/components/docs/steps'
-import { HashIcon } from 'lucide-react'
 
 const HeadingAnchor = ({
   id,

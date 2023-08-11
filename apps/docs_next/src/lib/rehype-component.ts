@@ -30,6 +30,26 @@ function getNodeAttributeByName(node: UnistNode, name: string) {
   return node.attributes?.find((attribute) => attribute.name === name)
 }
 
+function getRecipeSource(component: string) {
+  const presetSrcDir = path.join(process.cwd(), `../../packages/preset/src/`)
+
+  try {
+    return fs.readFileSync(
+      path.join(presetSrcDir, `./recipes/${component}.ts`),
+      'utf8',
+    )
+  } catch (error) {
+    try {
+      return fs.readFileSync(
+        path.join(presetSrcDir, `./slot-recipes/${component}.ts`),
+        'utf8',
+      )
+    } catch (e) {
+      return ''
+    }
+  }
+}
+
 export function rehypeComponent() {
   return async (tree: UnistTree) => {
     visit(tree, (node: UnistNode) => {
@@ -37,6 +57,9 @@ export function rehypeComponent() {
         const component = getNodeAttributeByName(node, 'name')?.value as string
         const type =
           (getNodeAttributeByName(node, 'type')?.value as string) ?? 'index'
+
+        const withRecipe =
+          getNodeAttributeByName(node, 'withRecipe')?.value !== undefined
 
         if (!component) return null
 
@@ -48,6 +71,8 @@ export function rehypeComponent() {
             ),
             'utf8',
           )
+
+          const recipeSource = withRecipe ? getRecipeSource(component) : ''
 
           node.children?.push(
             u('element', {
@@ -69,6 +94,28 @@ export function rehypeComponent() {
               ],
             }),
           )
+
+          if (recipeSource) {
+            node.children?.push(
+              u('element', {
+                tagName: 'pre',
+                children: [
+                  u('element', {
+                    tagName: 'code',
+                    properties: {
+                      className: ['language-tsx'],
+                    },
+                    children: [
+                      {
+                        type: 'text',
+                        value: recipeSource,
+                      },
+                    ],
+                  }),
+                ],
+              }),
+            )
+          }
         } catch (error) {
           console.error(error)
         }

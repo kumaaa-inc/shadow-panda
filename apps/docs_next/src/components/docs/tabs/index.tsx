@@ -2,7 +2,7 @@ import * as React from 'react'
 import * as WrappedTabs from './wrapper'
 
 type TabProps = React.ComponentProps<typeof WrappedTabs.TabsContent>
-type TabElement = React.ReactElement<TabProps>
+type TabElement = React.ReactElement<TabProps> | false | null | undefined
 type TabComponent = (props: Omit<TabProps, 'value'>) => JSX.Element
 
 export interface TabsProps {
