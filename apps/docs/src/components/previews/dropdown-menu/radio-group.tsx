@@ -13,7 +13,7 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu'
 
-export function RadioGroupExample() {
+export default function Example() {
   const [position, setPosition] = React.useState('bottom')
 
   return (

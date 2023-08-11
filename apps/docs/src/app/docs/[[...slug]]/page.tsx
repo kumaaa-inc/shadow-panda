@@ -85,7 +85,7 @@ const ComponentsPage = ({ params }: { params: { slug: string[] } }) => {
           <MdxComponent code={doc.body.code} />
         </div>
 
-        <Pager className={css({ mt: '8' })} doc={doc} />
+        <Pager className={css({ mt: '12' })} doc={doc} />
       </div>
       {doc.toc && (
         <div

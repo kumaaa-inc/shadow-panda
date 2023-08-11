@@ -358,11 +358,39 @@ export const components = {
                 boxDecorationBreak: 'clone',
               },
 
-              '& [data-line]': {
+              '& code > [data-line]': {
                 display: 'inline-block',
                 minHeight: '1rem',
                 width: 'full',
                 padding: '0.125rem 1rem',
+              },
+
+              '& code > [data-highlighted-line]': {
+                bga: 'white/10',
+              },
+
+              '& code[data-line-numbers] > [data-line]': {
+                _before: {
+                  counterIncrement: 'line',
+                  content: 'counter(line)',
+                  display: 'inline-block',
+                  width: '1rem',
+                  mr: '3',
+                  textAlign: 'right',
+                  color: 'gray.600',
+                },
+              },
+
+              '& code[data-line-numbers-max-digits="2"] > [data-line]': {
+                _before: {
+                  width: '1.5rem',
+                },
+              },
+
+              '& code[data-line-numbers-max-digits="3"] > [data-line]': {
+                _before: {
+                  width: '2rem',
+                },
               },
             }),
             className,
@@ -383,7 +411,14 @@ export const components = {
     )
   },
   code: ({ className, ...props }: React.HTMLAttributes<HTMLElement>) => (
-    <code className={cx(inlineCode(), className)} {...props} />
+    <code
+      className={cx(
+        inlineCode(),
+        css({ fontSize: 'inherit', mx: '0.5' }),
+        className,
+      )}
+      {...props}
+    />
   ),
   Link: ({ className, ...props }: React.ComponentProps<typeof Link>) => (
     <Link className={cx(link(), className)} {...props} />

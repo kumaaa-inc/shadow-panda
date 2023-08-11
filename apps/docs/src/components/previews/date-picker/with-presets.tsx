@@ -19,7 +19,7 @@ import {
   SelectValue,
 } from '@/components/ui/select'
 
-export function WithPresetsExample() {
+export default function Example() {
   const [date, setDate] = React.useState<Date>()
 
   return (

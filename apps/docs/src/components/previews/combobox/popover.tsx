@@ -60,7 +60,7 @@ const statuses: Status[] = [
   },
 ]
 
-export function PopoverExample() {
+export default function Example() {
   const [open, setOpen] = React.useState(false)
   const [selectedStatus, setSelectedStatus] = React.useState<Status | null>(
     null,

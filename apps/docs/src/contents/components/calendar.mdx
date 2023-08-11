@@ -1,0 +1,63 @@
+---
+title: Calendar
+description: A date field component that allows users to enter and edit date.
+references:
+  shadcnUiLink: https://ui.shadcn.com/docs/components/calendar
+---
+
+<ComponentPreview name="calendar" withRecipe />
+
+## About
+
+The `Calendar` component is built on top of [React DayPicker](https://react-day-picker.js.org).
+
+## Installation
+
+<Steps>
+### Install the following dependencies
+
+```bash npm2yarn
+npm i react-day-picker date-fns
+```
+
+### Copy and paste the following code into your project
+
+<ComponentSource name="calendar" />
+
+### Update the import paths to match your project setup
+
+</Steps>
+
+## Usage
+
+```tsx
+import { Calendar } from '@/components/ui/calendar'
+```
+
+```tsx
+const [date, setDate] = React.useState<Date | undefined>(new Date())
+
+return (
+  <Calendar
+    mode="single"
+    selected={date}
+    onSelect={setDate}
+    className={css({
+      border: 'base',
+      rounded: 'md',
+    })}
+  />
+)
+```
+
+See the [React DayPicker](https://react-day-picker.js.org) documentation for more information.
+
+## Date Picker
+
+You can use the `Calendar` component to build a date picker. See the See the [React DayPicker](https://react-day-picker.js.org) page for more information.
+
+## Examples
+
+### Form
+
+<Callout emoji="⚒️">WIP</Callout>

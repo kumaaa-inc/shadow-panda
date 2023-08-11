@@ -1,0 +1,59 @@
+---
+title: Select
+description: Displays a list of options for the user to pick from - triggered by a button.
+references:
+  shadcnUiLink: https://ui.shadcn.com/docs/components/select
+  radix:
+    link: https://www.radix-ui.com/docs/primitives/components/select
+    api: https://www.radix-ui.com/docs/primitives/components/select#api-reference
+---
+
+<ComponentPreview name="select" withRecipe />
+
+## Installation
+
+<Steps>
+### Install the following dependencies
+
+```bash npm2yarn
+npm i @radix-ui/react-select
+```
+
+### Copy and paste the following code into your project
+
+<ComponentSource name="select" />
+
+### Update the import paths to match your project setup
+
+</Steps>
+
+## Usage
+
+```tsx
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select'
+```
+
+```tsx
+<Select>
+  <SelectTrigger className="w-[180px]">
+    <SelectValue placeholder="Theme" />
+  </SelectTrigger>
+  <SelectContent>
+    <SelectItem value="light">Light</SelectItem>
+    <SelectItem value="dark">Dark</SelectItem>
+    <SelectItem value="system">System</SelectItem>
+  </SelectContent>
+</Select>
+```
+
+## Examples
+
+### Form
+
+<Callout emoji="⚒️">WIP</Callout>

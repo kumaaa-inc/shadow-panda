@@ -43,7 +43,7 @@ const iconStyle = css({
   h: '4',
 })
 
-export function DropdownMenuExample() {
+export default function Example() {
   const [label, setLabel] = React.useState('feature')
   const [open, setOpen] = React.useState(false)
 

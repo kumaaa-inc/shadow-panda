@@ -14,6 +14,7 @@ import {
 } from '@/components/ui/sheet'
 import { Icons } from '@/components/docs/icons'
 import { Button } from '@/components/ui/button'
+import { ScrollArea } from '@/components/ui/scroll-area'
 import { SidebarNav } from '@/components/docs/sidebar-nav'
 
 export const MobileSidebarToggle = () => {
@@ -38,7 +39,7 @@ export const MobileSidebarToggle = () => {
           <MenuIcon className={css({ w: '4', h: '4' })} />
         </Button>
       </SheetTrigger>
-      <SheetContent className={css({ w: '64' })}>
+      <SheetContent className={css({ w: '64', px: '4', py: '6' })}>
         <SheetHeader>
           <SheetTitle>
             <Link
@@ -54,14 +55,22 @@ export const MobileSidebarToggle = () => {
           </SheetTitle>
         </SheetHeader>
 
-        <div className={css({ mt: '6' })}>
-          <SidebarNav
-            onNavigate={(url) => {
-              router.push(url)
-              setOpen(false)
-            }}
-          />
-        </div>
+        <ScrollArea
+          className={css({
+            h: 'full',
+            py: '8',
+            pr: '2.5',
+          })}
+        >
+          <div>
+            <SidebarNav
+              onNavigate={(url) => {
+                router.push(url)
+                setOpen(false)
+              }}
+            />
+          </div>
+        </ScrollArea>
       </SheetContent>
     </Sheet>
   )

@@ -41,6 +41,7 @@ const DocsLayout = ({ children }: PropsWithChildren) => {
         <ScrollArea
           className={css({
             h: 'full',
+            pr: '2.5',
             py: '6',
             lg: {
               py: '8',

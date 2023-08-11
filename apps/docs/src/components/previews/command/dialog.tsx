@@ -24,12 +24,12 @@ import {
 
 const iconStyle = css({ mr: '2', h: '4', w: '4' })
 
-export const DialogExample = () => {
+export default function Example() {
   const [open, setOpen] = React.useState(false)
 
   React.useEffect(() => {
     const down = (e: KeyboardEvent) => {
-      if (e.key === 'k' && e.metaKey) {
+      if (e.key === 'z' && e.metaKey) {
         setOpen((open) => !open)
       }
     }
@@ -60,7 +60,7 @@ export const DialogExample = () => {
             opacity: '1',
           })}
         >
-          <span className={css({ textStyle: 'sm' })}>⌘</span>K
+          <span className={css({ textStyle: 'sm' })}>⌘</span>Z
         </kbd>
       </p>
       <CommandDialog open={open} onOpenChange={setOpen}>

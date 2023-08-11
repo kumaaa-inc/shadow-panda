@@ -9,6 +9,7 @@ export const checkbox = defineRecipe({
     flexShrink: '0',
     rounded: 'sm',
     border: 'primary',
+    cursor: 'pointer',
     focusRingOffsetColor: 'background',
 
     _focusVisible: {

@@ -19,6 +19,7 @@ export const radioGroupItem = defineRecipe({
     rounded: 'full',
     border: 'primary',
     color: 'primary',
+    cursor: 'pointer',
     focusRingOffsetColor: 'background',
 
     _focusVisible: {
