@@ -60,6 +60,7 @@ export const Overview = defineDocumentType(() => ({
     title: { type: 'string', required: true },
     description: { type: 'string', required: true },
     order: { type: 'number', required: true, default: 99999 },
+    references: { type: 'nested', of: ReferencesType },
     toc: { type: 'boolean', required: false, default: true },
   },
   computedFields: {
@@ -103,7 +104,7 @@ export const Component = defineDocumentType(() => ({
 }))
 
 export default makeSource({
-  contentDirPath: 'src/posts',
+  contentDirPath: 'src/contents',
   documentTypes: [Overview, Guides, Component],
   mdx: {
     remarkPlugins: [

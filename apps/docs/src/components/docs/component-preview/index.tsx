@@ -2,6 +2,7 @@ import * as React from 'react'
 import { css } from '@shadow-panda/styled-system/css'
 import { Preview } from '@/components/docs/preview'
 import { Tabs, Tab } from '@/components/docs/tabs'
+import { LoadingText } from '@/components/docs/loading-text'
 
 export interface ComponentPreviewProps {
   name: string
@@ -38,7 +39,7 @@ export const ComponentPreview = ({
     >
       <Tab>
         <Preview className={css({ mt: '6', mb: '4' })}>
-          <React.Suspense fallback={<div>Loading...</div>}>
+          <React.Suspense fallback={<LoadingText />}>
             <Example />
           </React.Suspense>
         </Preview>
