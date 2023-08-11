@@ -1,5 +1,5 @@
 import type { UtilityConfig } from '@pandacss/types'
-import { breakpoints } from '@/breakpoints'
+import { breakpoints } from '../breakpoints'
 
 export const container: UtilityConfig = {
   container: {
