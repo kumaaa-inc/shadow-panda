@@ -2,7 +2,10 @@ import { defineConfig } from '@pandacss/dev'
 
 export default defineConfig({
   // Whether to use css reset
-  // preflight: true,
+  preflight: true,
+
+  // Use styled
+  jsxFramework: 'react',
 
   // Namespace prefix for the generated css
   prefix: 'sp',

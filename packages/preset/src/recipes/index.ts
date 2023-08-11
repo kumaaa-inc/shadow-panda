@@ -15,10 +15,12 @@ import * as input from './input'
 import * as label from './label'
 import * as popover from './popover'
 import * as radioGroup from './radio-group'
+import * as scrollArea from './scroll-area'
 import * as select from './select'
 import * as separator from './separator'
 import * as switchRecipes from './switch'
 import * as textarea from './textarea'
+import * as tabs from './tabs'
 
 export const recipes = {
   ...typography,
@@ -36,10 +38,12 @@ export const recipes = {
   ...dropdownMenu,
   ...popover,
   ...radioGroup,
+  ...scrollArea,
   ...input,
   ...label,
   ...select,
   ...separator,
   ...switchRecipes,
   ...textarea,
+  ...tabs,
 }

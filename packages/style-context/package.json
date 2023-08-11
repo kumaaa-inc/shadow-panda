@@ -1,0 +1,43 @@
+{
+  "name": "@shadow-panda/style-context",
+  "description": "Shared style context for using slot recipes in ShadowPanda",
+  "version": "0.1.0",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "homepage": "https://shadow-panda.vercel.app",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kumaaa-inc/shadow-panda.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kumaaa-inc/shadow-panda/issues"
+  },
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "sideEffects": false,
+  "license": "MIT",
+  "scripts": {
+    "build": "tsup src/index.ts --format=esm,cjs --dts --external react",
+    "build-fast": "tsup src/index.ts --format=esm,cjs --no-dts --external react",
+    "dev": "pnpm build-fast --watch"
+  },
+  "peerDependencies": {
+    "@types/react": "*",
+    "@types/react-dom": "*",
+    "react": "^16.8 || ^17.0 || ^18.0",
+    "react-dom": "^16.8 || ^17.0 || ^18.0"
+  },
+  "peerDependenciesMeta": {
+    "@types/react": {
+      "optional": true
+    },
+    "@types/react-dom": {
+      "optional": true
+    }
+  }
+}

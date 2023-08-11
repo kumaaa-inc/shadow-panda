@@ -1,7 +1,7 @@
 import { defineRecipe } from '@pandacss/dev'
 
 export const alert = defineRecipe({
-  name: 'alert',
+  className: 'alert',
   description: 'Styles for the Alert component',
   base: {
     position: 'relative',
@@ -53,7 +53,7 @@ export const alert = defineRecipe({
 })
 
 export const alertTitle = defineRecipe({
-  name: 'alertTitle',
+  className: 'alertTitle',
   description: 'Styles for the AlertTitle component',
   base: {
     mb: '1',
@@ -64,7 +64,7 @@ export const alertTitle = defineRecipe({
 })
 
 export const alertDescription = defineRecipe({
-  name: 'alertDescription',
+  className: 'alertDescription',
   description: 'Styles for the AlertDescription component',
   base: {
     textStyle: 'sm',

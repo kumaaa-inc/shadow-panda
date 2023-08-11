@@ -1,5 +1,4 @@
-// eslint-disable-next-line import/default
-import nextra from 'nextra'
+import { createContentlayerPlugin } from 'next-contentlayer'
 
 /**
  * @type {import('next').NextConfig}
@@ -9,20 +8,34 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
+  webpack: (config) => {
+    // Disable logging from webpack
+    // Remove after the `webpack.cache.PackFileCacheStrategy` errors are fixed
+    // @see https://github.com/contentlayerdev/contentlayer/issues/506
+    config.infrastructureLogging = {
+      level: 'error',
+    }
+    return config
+  },
   redirects() {
     return [
       {
         source: '/docs',
-        destination: '/docs/overview/getting-started',
+        destination: '/docs/overview/introduction',
+        permanent: true,
+      },
+
+      {
+        source: '/docs/components',
+        destination: '/docs/components/accordion',
         permanent: true,
       },
     ]
   },
 }
 
-const withNextra = nextra({
-  theme: 'nextra-theme-docs',
-  themeConfig: './theme.config.tsx',
+const withContentlayer = createContentlayerPlugin({
+  // Additional Contentlayer config options
 })
 
-export default withNextra(nextConfig)
+export default withContentlayer(nextConfig)

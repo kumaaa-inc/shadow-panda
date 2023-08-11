@@ -6,8 +6,8 @@
   "license": "MIT",
   "scripts": {
     "prepare": "husky install && pnpm build-fast",
-    "apps:docs": "pnpm -F @shadow-panda/docs",
     "packages:preset": "pnpm -F @shadow-panda/preset",
+    "apps:docs": "pnpm -F @shadow-panda/docs",
     "dev:docs": "pnpm apps:docs dev",
     "dev": "pnpm -r --parallel dev",
     "reload": "pnpm build-fast && pnpm apps:docs compile",

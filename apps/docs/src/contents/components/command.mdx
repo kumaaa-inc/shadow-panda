@@ -1,0 +1,110 @@
+---
+title: Command
+description: Fast, composable, unstyled command menu for React.
+references:
+  shadcnUiLink: https://ui.shadcn.com/docs/components/command
+---
+
+<ComponentPreview name="command" withRecipe />
+
+## About
+
+The `Command` component uses the [cmdk](https://cmdk.paco.me/) component by [pacocoursey](https://twitter.com/pacocoursey).
+
+## Installation
+
+<Steps>
+### Install the following dependencies
+
+```bash npm2yarn
+npm i cmdk
+```
+
+### Add the `Dialog` component to your project.
+
+The `Command` component uses the [`Dialog`](/docs/components/dialog) component. Make sure you have it installed in your project.
+
+### Copy and paste the following code into your project
+
+<ComponentSource name="command" />
+
+### Update the import paths to match your project setup
+
+</Steps>
+
+## Usage
+
+```tsx
+import {
+  CommandDialog,
+  CommandEmpty,
+  CommandGroup,
+  CommandInput,
+  CommandItem,
+  CommandList,
+  CommandSeparator,
+  CommandShortcut,
+} from '@/components/ui/command'
+```
+
+```tsx
+<Command>
+  <CommandInput placeholder="Type a command or search..." />
+  <CommandList>
+    <CommandEmpty>No results found.</CommandEmpty>
+    <CommandGroup heading="Suggestions">
+      <CommandItem>Calendar</CommandItem>
+      <CommandItem>Search Emoji</CommandItem>
+      <CommandItem>Calculator</CommandItem>
+    </CommandGroup>
+    <CommandSeparator />
+    <CommandGroup heading="Settings">
+      <CommandItem>Profile</CommandItem>
+      <CommandItem>Billing</CommandItem>
+      <CommandItem>Settings</CommandItem>
+    </CommandGroup>
+  </CommandList>
+</Command>
+```
+
+## Examples
+
+### Dialog
+
+<ComponentPreview name="command" type="dialog" />
+
+To show the command menu in a dialog, use the `<CommandDialog />` component.
+
+```tsx
+export function Example() {
+  const [open, setOpen] = React.useState(false)
+
+  React.useEffect(() => {
+    const down = (e: KeyboardEvent) => {
+      if (e.key === 'k' && e.metaKey) {
+        setOpen((open) => !open)
+      }
+    }
+    document.addEventListener('keydown', down)
+    return () => document.removeEventListener('keydown', down)
+  }, [])
+
+  return (
+    <CommandDialog open={open} onOpenChange={setOpen}>
+      <CommandInput placeholder="Type a command or search..." />
+      <CommandList>
+        <CommandEmpty>No results found.</CommandEmpty>
+        <CommandGroup heading="Suggestions">
+          <CommandItem>Calendar</CommandItem>
+          <CommandItem>Search Emoji</CommandItem>
+          <CommandItem>Calculator</CommandItem>
+        </CommandGroup>
+      </CommandList>
+    </CommandDialog>
+  )
+}
+```
+
+### Combobox
+
+You can use the `<Command />` component as a combobox. See the [Combobox](/docs/components/combobox) page for more information.

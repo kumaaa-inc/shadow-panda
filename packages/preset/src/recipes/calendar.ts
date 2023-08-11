@@ -1,13 +1,13 @@
 import { defineRecipe } from '@pandacss/dev'
 
 export const calendar = defineRecipe({
-  name: 'calendar',
+  className: 'calendar',
   description: 'Styles for the Calendar component',
   base: { p: '3' },
 })
 
 export const calendarMonths = defineRecipe({
-  name: 'calendarMonths',
+  className: 'calendarMonths',
   description: 'Styles for the calendarMonths',
   base: {
     display: 'flex',
@@ -23,7 +23,7 @@ export const calendarMonths = defineRecipe({
 })
 
 export const calendarMonth = defineRecipe({
-  name: 'calendarMonth',
+  className: 'calendarMonth',
   description: 'Styles for the calendarMonth',
   base: {
     spaceY: '4',
@@ -31,7 +31,7 @@ export const calendarMonth = defineRecipe({
 })
 
 export const calendarCaption = defineRecipe({
-  name: 'calendarCaption',
+  className: 'calendarCaption',
   description: 'Styles for the calendarCaption',
   base: {
     display: 'flex',
@@ -43,7 +43,7 @@ export const calendarCaption = defineRecipe({
 })
 
 export const calendarCaptionLabel = defineRecipe({
-  name: 'calendarCaptionLabel',
+  className: 'calendarCaptionLabel',
   description: 'Styles for the calendarCaptionLabel',
   base: {
     textStyle: 'sm',
@@ -52,7 +52,7 @@ export const calendarCaptionLabel = defineRecipe({
 })
 
 export const calendarNav = defineRecipe({
-  name: 'calendarNav',
+  className: 'calendarNav',
   description: 'Styles for the calendarNav',
   base: {
     display: 'flex',
@@ -62,7 +62,7 @@ export const calendarNav = defineRecipe({
 })
 
 export const calendarNavButton = defineRecipe({
-  name: 'calendarNavButton',
+  className: 'calendarNavButton',
   description: 'Styles for the calendarNavButton',
   base: {
     h: '7 !important',
@@ -79,7 +79,7 @@ export const calendarNavButton = defineRecipe({
 })
 
 export const calendarNavButtonPrevious = defineRecipe({
-  name: 'calendarNavButtonPrevious',
+  className: 'calendarNavButtonPrevious',
   description: 'Styles for the calendarNavButtonPrevious',
   base: {
     position: 'absolute',
@@ -88,7 +88,7 @@ export const calendarNavButtonPrevious = defineRecipe({
 })
 
 export const calendarNavButtonNext = defineRecipe({
-  name: 'calendarNavButtonNext',
+  className: 'calendarNavButtonNext',
   description: 'Styles for the calendarNavButtonNext',
   base: {
     position: 'absolute',
@@ -97,7 +97,7 @@ export const calendarNavButtonNext = defineRecipe({
 })
 
 export const calendarTable = defineRecipe({
-  name: 'calendarTable',
+  className: 'calendarTable',
   description: 'Styles for the calendarTable',
   base: {
     w: 'full',
@@ -107,7 +107,7 @@ export const calendarTable = defineRecipe({
 })
 
 export const calendarHeadRow = defineRecipe({
-  name: 'calendarHeadRow',
+  className: 'calendarHeadRow',
   description: 'Styles for the calendarHeadRow',
   base: {
     display: 'flex',
@@ -115,7 +115,7 @@ export const calendarHeadRow = defineRecipe({
 })
 
 export const calendarHeadCell = defineRecipe({
-  name: 'calendarHeadCell',
+  className: 'calendarHeadCell',
   description: 'Styles for the calendarHeadCell',
   base: {
     color: 'muted.foreground',
@@ -127,7 +127,7 @@ export const calendarHeadCell = defineRecipe({
 })
 
 export const calendarRow = defineRecipe({
-  name: 'calendarRow',
+  className: 'calendarRow',
   description: 'Styles for the calendarRow',
   base: {
     display: 'flex',
@@ -137,7 +137,7 @@ export const calendarRow = defineRecipe({
 })
 
 export const calendarCell = defineRecipe({
-  name: 'calendarCell',
+  className: 'calendarCell',
   description: 'Styles for the calendarCell',
   base: {
     textAlign: 'center',
@@ -169,7 +169,7 @@ export const calendarCell = defineRecipe({
 })
 
 export const calendarDay = defineRecipe({
-  name: 'calendarDay',
+  className: 'calendarDay',
   description: 'Styles for the calendarDay',
   base: {
     // Unset button size styles
@@ -187,7 +187,7 @@ export const calendarDay = defineRecipe({
 })
 
 export const calendarDaySelected = defineRecipe({
-  name: 'calendarDaySelected',
+  className: 'calendarDaySelected',
   description: 'Styles for the calendarDaySelected',
   base: {
     bg: 'primary',
@@ -206,7 +206,7 @@ export const calendarDaySelected = defineRecipe({
 })
 
 export const calendarDayToday = defineRecipe({
-  name: 'calendarDayToday',
+  className: 'calendarDayToday',
   description: 'Styles for the calendarDayToday',
   base: {
     bg: 'accent',
@@ -215,7 +215,7 @@ export const calendarDayToday = defineRecipe({
 })
 
 export const calendarDayOutside = defineRecipe({
-  name: 'calendarDayOutside',
+  className: 'calendarDayOutside',
   description: 'Styles for the calendarDayOutside',
   base: {
     color: 'muted.foreground',
@@ -224,7 +224,7 @@ export const calendarDayOutside = defineRecipe({
 })
 
 export const calendarDayDisabled = defineRecipe({
-  name: 'calendarDayDisabled',
+  className: 'calendarDayDisabled',
   description: 'Styles for the calendarDayDisabled',
   base: {
     color: 'muted.foreground',
@@ -233,7 +233,7 @@ export const calendarDayDisabled = defineRecipe({
 })
 
 export const calendarDayRangeStart = defineRecipe({
-  name: 'calendarDayRangeStart',
+  className: 'calendarDayRangeStart',
   description: 'Styles for the calendarDayRangeStart',
   base: {
     _hover: {
@@ -244,7 +244,7 @@ export const calendarDayRangeStart = defineRecipe({
 })
 
 export const calendarDayRangeMiddle = defineRecipe({
-  name: 'calendarDayRangeMiddle',
+  className: 'calendarDayRangeMiddle',
   description: 'Styles for the calendarDayRangeMiddle',
   base: {
     '&[aria-selected="true"]': {
@@ -260,7 +260,7 @@ export const calendarDayRangeMiddle = defineRecipe({
 })
 
 export const calendarDayRangeEnd = defineRecipe({
-  name: 'calendarDayRangeEnd',
+  className: 'calendarDayRangeEnd',
   description: 'Styles for the calendarDayRangeEnd',
   base: {
     _hover: {
@@ -271,7 +271,7 @@ export const calendarDayRangeEnd = defineRecipe({
 })
 
 export const calendarDayHidden = defineRecipe({
-  name: 'calendarDayHidden',
+  className: 'calendarDayHidden',
   description: 'Styles for the calendarDayHidden',
   base: {
     visibility: 'hidden',

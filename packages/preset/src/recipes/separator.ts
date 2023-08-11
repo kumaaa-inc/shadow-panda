@@ -1,7 +1,7 @@
 import { defineRecipe } from '@pandacss/dev'
 
 export const separator = defineRecipe({
-  name: 'separator',
+  className: 'separator',
   description: 'Styles for the Separator component',
   base: {
     flexShrink: 0,

@@ -9,7 +9,7 @@ import {
   accordionTrigger,
   accordionContent,
 } from '@shadow-panda/styled-system/recipes'
-import { cx } from '@shadow-panda/styled-system/css'
+import { cx, css } from '@shadow-panda/styled-system/css'
 
 const Accordion = AccordionPrimitive.Root
 
@@ -51,7 +51,14 @@ const AccordionContent = React.forwardRef<
     className={cx(accordionContent(), className)}
     {...props}
   >
-    <div className="pb-4 pt-0">{children}</div>
+    <div
+      className={css({
+        pb: '4',
+        pt: '0',
+      })}
+    >
+      {children}
+    </div>
   </AccordionPrimitive.Content>
 ))
 AccordionContent.displayName = AccordionPrimitive.Content.displayName

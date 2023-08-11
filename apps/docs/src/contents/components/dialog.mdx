@@ -1,0 +1,89 @@
+---
+title: Dialog
+description: A window overlaid on either the primary window or another dialog window, rendering the content underneath inert.
+references:
+  shadcnUiLink: https://ui.shadcn.com/docs/components/dialog
+  radix:
+    link: https://www.radix-ui.com/docs/primitives/components/dialog
+    api: https://www.radix-ui.com/docs/primitives/components/dialog#api-reference
+---
+
+<ComponentPreview name="dialog" withRecipe />
+
+## Installation
+
+<Steps>
+### Install the following dependencies
+
+```bash npm2yarn
+npm i @radix-ui/react-dialog
+```
+
+### Copy and paste the following code into your project
+
+<ComponentSource name="dialog" />
+
+### Update the import paths to match your project setup
+
+</Steps>
+
+## Usage
+
+```tsx
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from '@/components/ui/dialog'
+```
+
+```tsx
+<Dialog>
+  <DialogTrigger>Open</DialogTrigger>
+  <DialogContent>
+    <DialogHeader>
+      <DialogTitle>Are you sure absolutely sure?</DialogTitle>
+      <DialogDescription>
+        This action cannot be undone. This will permanently delete your account
+        and remove your data from our servers.
+      </DialogDescription>
+    </DialogHeader>
+  </DialogContent>
+</Dialog>
+```
+
+## Notes
+
+To activate the `Dialog` component from within a `Context Menu` or `Dropdown Menu`, you must encase the `Context Menu` or `Dropdown Menu` component in the `Dialog` component. For more information, refer to the linked issue [here](https://github.com/radix-ui/primitives/issues/1836).
+
+```tsx showLineNumbers {14-25}
+<Dialog>
+  <ContextMenu>
+    <ContextMenuTrigger>Right click</ContextMenuTrigger>
+    <ContextMenuContent>
+      <ContextMenuItem>Open</ContextMenuItem>
+      <ContextMenuItem>Download</ContextMenuItem>
+      <DialogTrigger asChild>
+        <ContextMenuItem>
+          <span>Delete</span>
+        </ContextMenuItem>
+      </DialogTrigger>
+    </ContextMenuContent>
+  </ContextMenu>
+  <DialogContent>
+    <DialogHeader>
+      <DialogTitle>Are you sure absolutely sure?</DialogTitle>
+      <DialogDescription>
+        This action cannot be undone. Are you sure you want to permanently
+        delete this file from our servers?
+      </DialogDescription>
+    </DialogHeader>
+    <DialogFooter>
+      <Button type="submit">Confirm</Button>
+    </DialogFooter>
+  </DialogContent>
+</Dialog>
+```

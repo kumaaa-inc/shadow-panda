@@ -1,7 +1,7 @@
 import { defineRecipe } from '@pandacss/dev'
 
 export const checkbox = defineRecipe({
-  name: 'checkbox',
+  className: 'checkbox',
   description: 'Styles for the Checkbox component',
   base: {
     h: '4',
@@ -9,6 +9,7 @@ export const checkbox = defineRecipe({
     flexShrink: '0',
     rounded: 'sm',
     border: 'primary',
+    cursor: 'pointer',
     focusRingOffsetColor: 'background',
 
     _focusVisible: {
@@ -32,7 +33,7 @@ export const checkbox = defineRecipe({
 })
 
 export const checkboxIndicator = defineRecipe({
-  name: 'checkboxIndicator',
+  className: 'checkboxIndicator',
   description: 'Styles for the Checkbox indicator',
   base: {
     display: 'flex',

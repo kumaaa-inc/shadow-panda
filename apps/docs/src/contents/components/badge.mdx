@@ -1,0 +1,80 @@
+---
+title: Badge
+description: Displays a badge or a component that looks like a badge.
+references:
+  shadcnUiLink: https://ui.shadcn.com/docs/components/badge
+---
+
+<ComponentPreview name="badge" withRecipe />
+
+## Installation
+
+<Steps>
+### Copy and paste the following code into your project
+
+<ComponentSource name="badge" />
+
+### Update the import paths to match your project setup
+
+</Steps>
+
+## Usage
+
+```tsx
+import { Badge } from '@/components/ui/badge'
+```
+
+```tsx
+<Badge variant="outline">Badge</Badge>
+```
+
+## Recipe
+
+### Usage
+
+You can use the `badge` recipe to apply the badge styles to any component.
+
+```tsx
+import {
+  badge,
+  type BadgeVariantProps,
+} from '@shadow-panda/styled-system/recipes'
+```
+
+```tsx
+<span className={badge({ variant: 'outline' })}>Badge</span>
+```
+
+### Link
+
+You can use the `badge` recipe to create a link that looks like a badge.
+
+```tsx
+import { badge } from '@shadow-panda/styled-system/recipes'
+```
+
+```tsx
+<Link className={badge({ variant: 'outline' })}>Click here</Link>
+```
+
+## Examples
+
+### Default (Primary)
+
+<ComponentPreview name="badge" />
+
+### Secondary
+
+<ComponentPreview name="badge" type="secondary" />
+
+### Destructive
+
+<ComponentPreview name="badge" type="destructive" />
+
+### Outline
+
+<ComponentPreview name="badge" type="outline" />
+
+### With Icon
+
+<ComponentPreview name="badge" type="with-icon" />

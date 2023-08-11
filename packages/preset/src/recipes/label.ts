@@ -1,7 +1,7 @@
 import { defineRecipe } from '@pandacss/dev'
 
 export const label = defineRecipe({
-  name: 'label',
+  className: 'label',
   description: 'Styles for the Label component',
   base: {
     textStyle: 'sm',

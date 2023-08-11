@@ -1,7 +1,7 @@
 import { defineRecipe } from '@pandacss/dev'
 
 export const alertDialogOverlay = defineRecipe({
-  name: 'alertDialogOverlay',
+  className: 'alertDialogOverlay',
   description: 'Styles for the AlertDialogOverlay component',
   base: {
     position: 'fixed',
@@ -23,7 +23,7 @@ export const alertDialogOverlay = defineRecipe({
 })
 
 export const alertDialogContent = defineRecipe({
-  name: 'alertDialogContent',
+  className: 'alertDialogContent',
   description: 'Styles for the AlertDialogContent component',
   base: {
     position: 'fixed',
@@ -65,7 +65,7 @@ export const alertDialogContent = defineRecipe({
 })
 
 export const alertDialogHeader = defineRecipe({
-  name: 'alertDialogHeader',
+  className: 'alertDialogHeader',
   description: 'Styles for the AlertDialogHeader component',
   base: {
     display: 'flex',
@@ -80,7 +80,7 @@ export const alertDialogHeader = defineRecipe({
 })
 
 export const alertDialogFooter = defineRecipe({
-  name: 'alertDialogFooter',
+  className: 'alertDialogFooter',
   description: 'Styles for the AlertDialogFooter component',
   base: {
     display: 'flex',
@@ -95,7 +95,7 @@ export const alertDialogFooter = defineRecipe({
 })
 
 export const alertDialogTitle = defineRecipe({
-  name: 'alertDialogTitle',
+  className: 'alertDialogTitle',
   description: 'Styles for the AlertDialogTitle component',
   base: {
     textStyle: 'lg',
@@ -104,7 +104,7 @@ export const alertDialogTitle = defineRecipe({
 })
 
 export const alertDialogDescription = defineRecipe({
-  name: 'alertDialogDescription',
+  className: 'alertDialogDescription',
   description: 'Styles for the AlertDialogDescription component',
   base: {
     textStyle: 'sm',
@@ -113,7 +113,7 @@ export const alertDialogDescription = defineRecipe({
 })
 
 export const alertDialogCancel = defineRecipe({
-  name: 'alertDialogCancel',
+  className: 'alertDialogCancel',
   description: 'Styles for the AlertDialogCancel component',
   base: {
     mt: {

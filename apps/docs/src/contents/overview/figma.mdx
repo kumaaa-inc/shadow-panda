@@ -1,0 +1,50 @@
+---
+title: Figma
+description: Open sourced Figma UI Kit
+order: 3
+---
+
+import { css } from '@shadow-panda/styled-system/css'
+import { AspectRatio } from '@/components/ui/aspect-ratio'
+
+The Figma UI Kit is open sourced by [Pietro Schirano](https://twitter.com/skirano).
+
+export const aspectRatioStyles = css({
+  width: 'full',
+  mt: '4',
+})
+
+export const iframeStyles = css({
+  height: 'full',
+  width: 'full',
+  overflow: 'hidden',
+  rounded: 'lg',
+  border: 'base',
+  bg: 'muted',
+})
+
+<AspectRatio ratio={16 / 9} className={aspectRatioStyles}>
+  <iframe
+    src="https://embed.figma.com/file/1203061493325953101/hf_embed?community_viewer=true&embed_host=shadcn&hub_file_id=1203061493325953101&kind=&viewer=1"
+    className={iframeStyles}
+  />
+</AspectRatio>
+
+Dark mode version (made by a different author):
+
+<AspectRatio ratio={16 / 9} className={aspectRatioStyles}>
+  <iframe
+    src="https://embed.figma.com/file/1253738792915136237/hf_embed?community_viewer=true&embed_host=shadcn&hub_file_id=1203061493325953101&kind=&viewer=1"
+    className={iframeStyles}
+  />
+</AspectRatio>
+
+## Grab a copy
+
+### Light Mode
+
+https://www.figma.com/community/file/1203061493325953101
+
+### Dark Mode
+
+https://www.figma.com/community/file/1253738792915136237
