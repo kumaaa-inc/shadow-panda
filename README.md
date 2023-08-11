@@ -6,7 +6,7 @@ We provide a **preset** for [Panda CSS](https://panda-css.com/) that allows you 
 
 ## Documentation
 
-Visit our documentation: [https://shadow-panda.vercel.app/](https://shadow-panda.vercel.app/)
+Visit our documentation: [https://shadow-panda.dev/](https://shadow-panda.dev/)
 
 ## Install
 
@@ -28,6 +28,9 @@ export default defineConfig({
   // Optional: Enable CSS reset
   preflight: true,
 
+  // Use React
+  jsxFramework: 'react',
+
   // Optional: Emit artifacts to `node_modules` as a package.
   // The copy-paste component examples use `@shadow-panda/styled-system` as the import path of the generated files.
   // If you choose not to use this option, you should rewrite your component imports as needed.
@@ -39,7 +42,7 @@ export default defineConfig({
 })
 ```
 
-Compile Panda CSS, copy [components](https://shadow-panda.vercel.app/docs/overview/supported-components) and use it!
+Compile Panda CSS, copy [components](https://shadow-panda.dev/docs/overview/supported-components) and use it!
 
 ## Acknowledgement
 

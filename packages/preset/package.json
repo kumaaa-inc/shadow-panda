@@ -5,7 +5,7 @@
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
-  "homepage": "https://shadow-panda.vercel.app",
+  "homepage": "https://shadow-panda.dev",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/kumaaa-inc/shadow-panda.git"
