@@ -1,0 +1,41 @@
+---
+title: Avatar
+description: An image element with a fallback for representing the user.
+references:
+  shadcnUiLink: https://ui.shadcn.com/docs/components/avatar
+  radix:
+    link: https://www.radix-ui.com/docs/primitives/components/avatar
+    api: https://www.radix-ui.com/docs/primitives/components/avatar#api-reference
+---
+
+<ComponentPreview name="avatar" withRecipe />
+
+## Installation
+
+<Steps>
+### Install the following dependencies
+
+```bash npm2yarn
+npm i @radix-ui/react-avatar
+```
+
+### Copy and paste the following code into your project
+
+<ComponentSource name="avatar" />
+
+### Update the import paths to match your project setup
+
+</Steps>
+
+## Usage
+
+```tsx
+import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar'
+```
+
+```tsx
+<Avatar>
+  <AvatarImage src="https://github.com/nanopx.png" alt="@nanopx" />
+  <AvatarFallback>NP</AvatarFallback>
+</Avatar>
+```

@@ -1,0 +1,48 @@
+---
+title: AspectRatio
+description: Displays content within a desired ratio.
+references:
+  shadcnUiLink: https://ui.shadcn.com/docs/components/aspect-ratio
+  radix:
+    link: https://www.radix-ui.com/docs/primitives/components/aspect-ratio
+    api: https://www.radix-ui.com/docs/primitives/components/aspect-ratio#api-reference
+---
+
+<ComponentPreview name="aspect-ratio" withRecipe />
+
+## Installation
+
+<Steps>
+### Install the following dependencies
+
+```bash npm2yarn
+npm i @radix-ui/react-aspect-ratio
+```
+
+### Copy and paste the following code into your project
+
+<ComponentSource name="aspect-ratio" />
+
+### Update the import paths to match your project setup
+
+</Steps>
+
+## Usage
+
+```tsx
+import Image from 'next/image'
+import { css } from '@shadow-panda/styled-system/css'
+import { AspectRatio } from '@/components/ui/aspect-ratio'
+```
+
+```tsx
+<div className={css({ width: '450px' })}>
+  <AspectRatio ratio={16 / 9}>
+    <Image
+      src="..."
+      alt="..."
+      className={css({ rounded: 'md', objectFit: 'cover' })}
+    />
+  </AspectRatio>
+</div>
+```

@@ -26,11 +26,11 @@ npm i @radix-ui/react-slot
 
 ## Usage
 
-```tsx copy
+```tsx
 import { Button } from '@/components/ui/button'
 ```
 
-```tsx copy
+```tsx
 <Button variant="default" size="default">
   Button
 </Button>
@@ -42,14 +42,14 @@ import { Button } from '@/components/ui/button'
 
 You can use the `button` recipe to apply the button styles to any component.
 
-```tsx copy
+```tsx
 import {
   button,
   type ButtonVariantProps,
 } from '@shadow-panda/styled-system/recipes'
 ```
 
-```tsx copy
+```tsx
 <button className={button({ variant: 'outline', size: 'default' })}>
   Button
 </button>
@@ -59,17 +59,17 @@ import {
 
 You can use the `button` recipe to create a link that looks like a button.
 
-```tsx copy
+```tsx
 import { button } from '@shadow-panda/styled-system/recipes'
 ```
 
-```tsx copy
+```tsx
 <Link className={button({ variant: 'outline' })}>Click here</Link>
 ```
 
 Alternatively, you can set the asChild parameter and nest the link component.
 
-```tsx copy
+```tsx
 <Button asChild>
   <Link href="/login">Login</Link>
 </Button>
