@@ -14,11 +14,11 @@ const DocsLayout = ({ children }: PropsWithChildren) => {
         alignItems: 'flex-start',
         md: {
           display: 'grid',
-          gridTemplateColumns: '220px minmax(0, 1fr)',
+          gridTemplateColumns: '240px minmax(0, 1fr)',
           gap: '6',
         },
         lg: {
-          gridTemplateColumns: '240px minmax(0, 1fr)',
+          gridTemplateColumns: '280px minmax(0, 1fr)',
           gap: '10',
         },
       })}
@@ -28,8 +28,6 @@ const DocsLayout = ({ children }: PropsWithChildren) => {
           position: 'fixed',
           top: '14',
           zIndex: 30,
-          ml: '-2',
-          px: '2',
           display: 'none',
           h: 'calc(100vh - 3.5rem)',
           w: 'full',

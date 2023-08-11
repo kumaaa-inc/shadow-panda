@@ -38,7 +38,7 @@ export const MobileSidebarToggle = () => {
           <MenuIcon className={css({ w: '4', h: '4' })} />
         </Button>
       </SheetTrigger>
-      <SheetContent className={css({ w: '60' })}>
+      <SheetContent className={css({ w: '64' })}>
         <SheetHeader>
           <SheetTitle>
             <Link
