@@ -6,4 +6,8 @@ export const globalCss = defineGlobalStyles({
     color: 'foreground',
     fontFamily: 'sans',
   },
+  button: {
+    color: 'inherit',
+    outline: '2px solid transparent',
+  },
 })

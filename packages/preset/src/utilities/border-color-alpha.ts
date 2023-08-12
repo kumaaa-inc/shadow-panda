@@ -27,7 +27,8 @@ export const borderColorAlpha: UtilityConfig = {
         : `${100 - amount}%`
 
       return {
-        borderColor: `color-mix(in srgb, transparent ${amountValue}, ${colorValue})`,
+        '--sp-bca': `color-mix(in srgb, transparent ${amountValue}, ${colorValue})`,
+        borderColor: `var(--sp-bca, ${colorValue})`,
       }
     },
   },
