@@ -27,7 +27,8 @@ export const backgroundAlpha: UtilityConfig = {
         : `${100 - amount}%`
 
       return {
-        backgroundColor: `color-mix(in srgb, transparent ${amountValue}, ${colorValue})`,
+        '--sp-bga': `color-mix(in srgb, transparent ${amountValue}, ${colorValue})`,
+        backgroundColor: `var(--sp-bga, ${colorValue})`,
       }
     },
   },
