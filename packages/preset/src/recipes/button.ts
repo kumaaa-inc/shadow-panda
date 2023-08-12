@@ -48,7 +48,6 @@ export const button = defineRecipe({
       outline: {
         border: 'input',
         bg: 'background',
-        color: 'inherit',
 
         _hover: {
           bg: 'accent',
@@ -64,8 +63,6 @@ export const button = defineRecipe({
         },
       },
       ghost: {
-        color: 'inherit',
-
         _hover: {
           bg: 'accent',
           color: 'accent.foreground',
