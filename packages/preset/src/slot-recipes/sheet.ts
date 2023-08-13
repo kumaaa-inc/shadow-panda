@@ -14,38 +14,9 @@ export const sheet = defineSlotRecipe({
     'title',
     'description',
     'content',
+    'contentClose',
   ],
   base: {
-    close: {
-      cursor: 'pointer',
-      position: 'absolute',
-      right: '4',
-      top: '4',
-      rounded: 'sm',
-      opacity: '0.7',
-      focusRingOffsetColor: 'background',
-      transition: 'opacity',
-
-      _hover: {
-        opacity: '1',
-      },
-
-      _focus: {
-        outline: '2px solid transparent',
-        outlineOffset: '2px',
-        focusRingWidth: '2',
-        focusRingColor: 'ring',
-        focusRingOffsetWidth: '2',
-      },
-
-      _disabled: {
-        pointerEvents: 'none',
-      },
-
-      '&[data-state=open]': {
-        bg: 'secondary',
-      },
-    },
     overlay: {
       position: 'fixed',
       inset: '0',
@@ -81,6 +52,36 @@ export const sheet = defineSlotRecipe({
       '&[data-state=closed]': {
         animateOut: true,
         transitionDuration: '300ms',
+      },
+    },
+    contentClose: {
+      cursor: 'pointer',
+      position: 'absolute',
+      right: '4',
+      top: '4',
+      rounded: 'sm',
+      opacity: '0.7',
+      focusRingOffsetColor: 'background',
+      transition: 'opacity',
+
+      _hover: {
+        opacity: '1',
+      },
+
+      _focus: {
+        outline: '2px solid transparent',
+        outlineOffset: '2px',
+        focusRingWidth: '2',
+        focusRingColor: 'ring',
+        focusRingOffsetWidth: '2',
+      },
+
+      _disabled: {
+        pointerEvents: 'none',
+      },
+
+      '&[data-state=open]': {
+        bg: 'secondary',
       },
     },
     header: {

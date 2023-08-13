@@ -16,6 +16,11 @@ const SheetClose = withContext(styled(SheetPrimitive.Close), 'close')
 const SheetPortal = withContext(styled(SheetPrimitive.Portal), 'portal')
 const SheetOverlay = withContext(styled(SheetPrimitive.Overlay), 'overlay')
 
+const SheetContentClose = withContext(
+  styled(SheetPrimitive.Close),
+  'contentClose',
+)
+
 const BaseSheetContent = React.forwardRef<
   React.ElementRef<typeof SheetPrimitive.Content>,
   React.ComponentPropsWithoutRef<typeof SheetPrimitive.Content>
@@ -24,10 +29,10 @@ const BaseSheetContent = React.forwardRef<
     <SheetOverlay />
     <SheetPrimitive.Content ref={ref} className={className} {...props}>
       {children}
-      <SheetClose>
+      <SheetContentClose>
         <X className={css({ h: '4', w: '4' })} />
         <span className={css({ srOnly: true })}>Close</span>
-      </SheetClose>
+      </SheetContentClose>
     </SheetPrimitive.Content>
   </SheetPortal>
 ))

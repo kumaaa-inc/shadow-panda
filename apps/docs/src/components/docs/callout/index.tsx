@@ -48,6 +48,8 @@ export const Callout = ({
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
+            fontFamily:
+              '"Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
           }),
         )}
       >

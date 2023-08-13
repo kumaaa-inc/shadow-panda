@@ -10,6 +10,13 @@ export default defineConfig({
   // Namespace prefix for the generated css
   prefix: 'sp',
 
+  staticCss: {
+    recipes: {
+      // For dynamic `side` preview
+      sheet: [{ side: ['*'] }],
+    },
+  },
+
   // Presets
   presets: ['@shadow-panda/preset'],
 
