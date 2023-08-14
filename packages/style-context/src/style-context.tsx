@@ -14,10 +14,13 @@ type Slots<R extends () => Record<string, string>> = keyof ReturnType<R>
 export const createStyleContext = <R extends AnyRecipe>(recipe: R) => {
   const StyleContext = React.createContext<ReturnType<R> | null>(null)
 
-  // eslint-disable-next-line @typescript-eslint/ban-types
-  const withProvider = <T extends {}>(Component: React.ComponentType<T>, slot: Slots<R>) => {
+  const withProvider = <T,>(
+    Component: React.ComponentType<T>,
+    slot: Slots<R>,
+    initialProps?: Partial<T>,
+  ) => {
     const Comp = React.forwardRef((props: T & Parameters<R>[0], ref) => {
-      const [variantProps, otherProps] = recipe.splitVariantProps(props)
+      const [variantProps, otherProps] = recipe.splitVariantProps(props as AnyProps)
       const { className = '', ...rest } = otherProps
       const styles = recipe(variantProps) as ReturnType<R>
       const slotClass = styles?.[slot ?? '']
@@ -27,6 +30,7 @@ export const createStyleContext = <R extends AnyRecipe>(recipe: R) => {
           <Component
             ref={ref}
             className={className ? `${slotClass} ${className}` : slotClass}
+            {...initialProps}
             {...rest}
           />
         </StyleContext.Provider>
@@ -36,8 +40,11 @@ export const createStyleContext = <R extends AnyRecipe>(recipe: R) => {
     return Comp
   }
 
-  // eslint-disable-next-line @typescript-eslint/ban-types
-  const withContext = <T extends {}>(Component: React.ComponentType<T>, slot?: Slots<R>) => {
+  const withContext = <T,>(
+    Component: React.ComponentType<T>,
+    slot?: Slots<R>,
+    initialProps?: Partial<T>,
+  ) => {
     if (!slot) return Component
 
     const Comp = React.forwardRef(({ className, ...rest }: T & { className?: string }, ref) => {
@@ -47,6 +54,7 @@ export const createStyleContext = <R extends AnyRecipe>(recipe: R) => {
         <Component
           ref={ref}
           className={className ? `${slotClass} ${className}` : slotClass}
+          {...initialProps}
           {...(rest as T)}
         />
       )

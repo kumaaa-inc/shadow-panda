@@ -4,9 +4,9 @@ import * as React from 'react'
 import * as ContextMenuPrimitive from '@radix-ui/react-context-menu'
 import { Check, ChevronRight, Circle } from 'lucide-react'
 import { createStyleContext } from '@shadow-panda/style-context'
-import { contextMenu, icon } from '@shadow-panda/styled-system/recipes'
 import { styled } from '@shadow-panda/styled-system/jsx'
 import { css, cx } from '@shadow-panda/styled-system/css'
+import { contextMenu, icon } from '@shadow-panda/styled-system/recipes'
 
 const { withProvider, withContext } = createStyleContext(contextMenu)
 
