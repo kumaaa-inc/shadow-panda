@@ -53,7 +53,7 @@
     "@theguild/remark-npm2yarn": "0.1.1",
     "@types/react": "18.2.20",
     "@types/unist": "3.0.0",
-    "eslint": "8.45.0",
+    "eslint": "8.47.0",
     "github-slugger": "2.0.0",
     "postcss": "8.4.27",
     "rehype-pretty-code": "0.10.0",
