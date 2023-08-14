@@ -11,6 +11,7 @@ import * as checkbox from './checkbox'
 import * as command from './command'
 import * as dialog from './dialog'
 import * as dropdownMenu from './dropdown-menu'
+import * as icon from './icon'
 import * as input from './input'
 import * as label from './label'
 import * as popover from './popover'
@@ -36,6 +37,7 @@ export const recipes = {
   ...command,
   ...dialog,
   ...dropdownMenu,
+  ...icon,
   ...popover,
   ...radioGroup,
   ...scrollArea,

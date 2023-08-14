@@ -1,6 +1,7 @@
 'use client'
 
 import { css } from '@shadow-panda/styled-system/css'
+import { Grid } from '@shadow-panda/styled-system/jsx'
 import {
   Sheet,
   SheetTrigger,
@@ -19,9 +20,7 @@ const SHEET_SIDES = ['top', 'right', 'bottom', 'left'] as const
 
 export default function Example() {
   return (
-    <div
-      className={css({ display: 'grid', gridTemplateColumns: '2', gap: '2' })}
-    >
+    <Grid gridTemplateColumns="2" gap="2">
       {SHEET_SIDES.map((side) => (
         <Sheet key={side} side={side}>
           <SheetTrigger asChild>
@@ -34,45 +33,20 @@ export default function Example() {
                 Make changes to your profile here. Click save when you're done.
               </SheetDescription>
             </SheetHeader>
-            <div className={css({ display: 'grid', gap: '4', py: '4' })}>
-              <div
-                className={css({
-                  display: 'grid',
-                  gridTemplateColumns: '4',
-                  alignItems: 'center',
-                  gap: '4',
-                })}
-              >
+            <Grid gap="4" py="4">
+              <Grid gridTemplateColumns="4" gap="4" alignItems="center">
                 <Label className={css({ textAlign: 'right' })} htmlFor="name">
                   Name
                 </Label>
-                <Input
-                  id="name"
-                  value="Pedro Duarte"
-                  className={css({ gridColumn: '3' })}
-                />
-              </div>
-              <div
-                className={css({
-                  display: 'grid',
-                  gridTemplateColumns: '4',
-                  alignItems: 'center',
-                  gap: '4',
-                })}
-              >
-                <Label
-                  htmlFor="username"
-                  className={css({ textAlign: 'right' })}
-                >
+                <Input id="name" value="Pedro Duarte" gridColumn="3" />
+              </Grid>
+              <Grid gridTemplateColumns="4" gap="4" alignItems="center">
+                <Label htmlFor="username" className={css({ textAlign: 'right' })}>
                   Username
                 </Label>
-                <Input
-                  id="username"
-                  value="@peduarte"
-                  className={css({ gridColumn: '3' })}
-                />
-              </div>
-            </div>
+                <Input id="username" value="@peduarte" gridColumn="3" />
+              </Grid>
+            </Grid>
             <SheetFooter>
               <SheetClose asChild>
                 <Button type="submit">Save changes</Button>
@@ -81,6 +55,6 @@ export default function Example() {
           </SheetContent>
         </Sheet>
       ))}
-    </div>
+    </Grid>
   )
 }

@@ -28,7 +28,6 @@ export const tabsTrigger = defineRecipe({
     textStyle: 'sm',
     fontWeight: 'medium',
     transition: 'all',
-
     focusRingOffsetColor: 'background',
 
     _focusVisible: {

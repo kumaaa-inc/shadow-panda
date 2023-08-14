@@ -1,0 +1,57 @@
+---
+title: Context Menu
+description: Displays a menu to the user - such as a set of actions or functions - triggered by a button.
+references:
+  shadcnUiLink: https://ui.shadcn.com/docs/components/context-menu
+  radix:
+    link: https://www.radix-ui.com/docs/primitives/components/context-menu
+    api: https://www.radix-ui.com/docs/primitives/components/context-menu#api-reference
+---
+
+<ComponentPreview name="context-menu" withRecipe />
+
+## Installation
+
+<Steps>
+### Install the following dependencies
+
+```bash npm2yarn
+npm i @radix-ui/react-context-menu
+```
+
+### Copy and paste the following code into your project
+
+<ComponentSource name="context-menu" />
+
+### Update the import paths to match your project setup
+
+</Steps>
+
+## Usage
+
+```tsx
+import {
+  ContextMenu,
+  ContextMenuContent,
+  ContextMenuItem,
+  ContextMenuTrigger,
+} from '@/components/ui/context-menu'
+```
+
+```tsx
+<ContextMenu>
+  <ContextMenuTrigger>Right click</ContextMenuTrigger>
+  <ContextMenuContent>
+    <ContextMenuItem>Profile</ContextMenuItem>
+    <ContextMenuItem>Billing</ContextMenuItem>
+    <ContextMenuItem>Team</ContextMenuItem>
+    <ContextMenuItem>Subscription</ContextMenuItem>
+  </ContextMenuContent>
+</ContextMenu>
+```
+
+<Callout emoji="⚠️">
+  Unlike `shadcn/ui`, the `inset` prop for `<ContextMenuSubTrigger />
+  `, `<ContextMenuItem />` and `<ContextMenuLabel />` is renamed to `insetLeft`, since it collides with
+  the css `inset` property.
+</Callout>
