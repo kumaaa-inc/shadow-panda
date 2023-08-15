@@ -27,6 +27,7 @@ export const metadata: Metadata = {
       'Shadow Panda is a preset of Panda CSS for shadcn/ui & Radix UI, created for developers utilizing Panda CSS as an alternative to Tailwind CSS.',
   },
   twitter: {
+    card: 'summary_large_image',
     creator: '@nanopx',
   },
 }
