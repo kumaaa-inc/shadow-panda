@@ -30,21 +30,21 @@ npm i @radix-ui/react-radio-group
 ## Usage
 
 ```tsx
-import { css } from '@shadow-panda/styled-system/css'
+import { Flex } from '@shadow-panda/styled-system/jsx'
 import { Label } from '@/components/ui/label'
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group'
 ```
 
 ```tsx
 <RadioGroup defaultValue="option-one">
-  <div className={css({ display: 'flex', alignItems: 'center', spaceX: '2' })}>
+  <Flex alignItems="center" spaceX="2">
     <RadioGroupItem value="option-one" id="option-one" />
     <Label htmlFor="option-one">Option One</Label>
-  </div>
-  <div className={css({ display: 'flex', alignItems: 'center', spaceX: '2' })}>
+  </Flex>
+  <Flex alignItems="center" spaceX="2">
     <RadioGroupItem value="option-two" id="option-two" />
     <Label htmlFor="option-two">Option Two</Label>
-  </div>
+  </Flex>
 </RadioGroup>
 ```
 

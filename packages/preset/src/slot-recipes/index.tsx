@@ -11,7 +11,10 @@ import * as contextMenu from './context-menu'
 import * as dialog from './dialog'
 import * as dropdownMenu from './dropdown-menu'
 import * as popover from './popover'
+import * as radioGroup from './radio-group'
+import * as select from './select'
 import * as sheet from './sheet'
+import * as switchRecipe from './switch'
 
 export const slotRecipes = {
   ...accordion,
@@ -27,5 +30,8 @@ export const slotRecipes = {
   ...dialog,
   ...dropdownMenu,
   ...popover,
+  ...radioGroup,
+  ...select,
   ...sheet,
+  ...switchRecipe,
 }

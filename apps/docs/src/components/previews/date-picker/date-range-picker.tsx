@@ -4,44 +4,36 @@ import * as React from 'react'
 import { addDays, format } from 'date-fns'
 import { Calendar as CalendarIcon } from 'lucide-react'
 import { DateRange } from 'react-day-picker'
-import { css, cx } from '@shadow-panda/styled-system/css'
+import { icon } from '@shadow-panda/styled-system/recipes'
+import { Grid } from '@shadow-panda/styled-system/jsx'
 import { Button } from '@/components/ui/button'
 import { Calendar } from '@/components/ui/calendar'
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from '@/components/ui/popover'
+import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover'
 
-export default function Example({
-  className,
-}: React.HTMLAttributes<HTMLDivElement>) {
+export default function Example() {
   const [date, setDate] = React.useState<DateRange | undefined>({
     from: new Date(2022, 0, 20),
     to: addDays(new Date(2022, 0, 20), 20),
   })
 
   return (
-    <div className={cx(css({ display: 'grid', gap: '2' }), className)}>
+    <Grid gap="2">
       <Popover>
         <PopoverTrigger asChild>
           <Button
             id="date"
             variant={'outline'}
-            className={css({
-              w: '300px',
-              justifyContent: 'flex-start',
-              textAlign: 'left',
-              fontWeight: 'normal',
-              color: !date ? 'muted.foreground' : undefined,
-            })}
+            w="300px"
+            justifyContent="flex-start"
+            textAlign="left"
+            fontWeight="normal"
+            color={!date ? 'muted.foreground' : undefined}
           >
-            <CalendarIcon className={css({ mr: '2', h: '4', w: '4' })} />
+            <CalendarIcon className={icon()} />
             {date?.from ? (
               date.to ? (
                 <>
-                  {format(date.from, 'LLL dd, y')} -{' '}
-                  {format(date.to, 'LLL dd, y')}
+                  {format(date.from, 'LLL dd, y')} - {format(date.to, 'LLL dd, y')}
                 </>
               ) : (
                 format(date.from, 'LLL dd, y')
@@ -51,7 +43,7 @@ export default function Example({
             )}
           </Button>
         </PopoverTrigger>
-        <PopoverContent className={css({ w: 'auto', p: '0' })} align="start">
+        <PopoverContent w="auto" p="0" align="start">
           <Calendar
             initialFocus
             mode="range"
@@ -62,6 +54,6 @@ export default function Example({
           />
         </PopoverContent>
       </Popover>
-    </div>
+    </Grid>
   )
 }

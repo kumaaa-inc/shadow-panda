@@ -1,18 +1,12 @@
-import { css } from '@shadow-panda/styled-system/css'
+import { Grid } from '@shadow-panda/styled-system/jsx'
 import { Button } from '@/components/ui/button'
 import { Textarea } from '@/components/ui/textarea'
 
 export default function Example() {
   return (
-    <div
-      className={css({
-        display: 'grid',
-        w: 'full',
-        gap: '2',
-      })}
-    >
+    <Grid w="full" gap="2">
       <Textarea placeholder="Type your message here." />
       <Button>Send message</Button>
-    </div>
+    </Grid>
   )
 }

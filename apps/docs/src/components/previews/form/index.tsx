@@ -3,7 +3,7 @@
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import * as z from 'zod'
-import { css } from '@shadow-panda/styled-system/css'
+import { styled } from '@shadow-panda/styled-system/jsx'
 import { Button } from '@/components/ui/button'
 import {
   Form,
@@ -36,10 +36,7 @@ export default function Example() {
 
   return (
     <Form {...form}>
-      <form
-        onSubmit={form.handleSubmit(onSubmit)}
-        className={css({ w: '2/3', spaceY: '6' })}
-      >
+      <styled.form onSubmit={form.handleSubmit(onSubmit)} w="2/3" spaceY="6">
         <FormField
           control={form.control}
           name="username"
@@ -49,15 +46,13 @@ export default function Example() {
               <FormControl>
                 <Input placeholder="shadcn" {...field} />
               </FormControl>
-              <FormDescription>
-                This is your public display name.
-              </FormDescription>
+              <FormDescription>This is your public display name.</FormDescription>
               <FormMessage />
             </FormItem>
           )}
         />
         <Button type="submit">Submit</Button>
-      </form>
+      </styled.form>
     </Form>
   )
 }

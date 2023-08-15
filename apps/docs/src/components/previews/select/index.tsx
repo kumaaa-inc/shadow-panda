@@ -1,4 +1,3 @@
-import { css } from '@shadow-panda/styled-system/css'
 import {
   Select,
   SelectContent,
@@ -12,7 +11,7 @@ import {
 export default function Example() {
   return (
     <Select>
-      <SelectTrigger className={css({ w: '180px' })}>
+      <SelectTrigger w="180px">
         <SelectValue placeholder="Select a fruit" />
       </SelectTrigger>
       <SelectContent>

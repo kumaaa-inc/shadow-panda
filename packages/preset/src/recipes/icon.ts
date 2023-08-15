@@ -50,11 +50,17 @@ export const icon = defineRecipe({
         fill: 'currentColor',
       },
     },
+    dimmed: {
+      true: {
+        opacity: '0.5',
+      },
+    },
   },
   defaultVariants: {
     size: 'md',
     left: 'none',
     right: 'none',
     fillCurrent: false,
+    dimmed: false,
   },
 })

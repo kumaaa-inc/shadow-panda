@@ -3,110 +3,60 @@
 import * as React from 'react'
 import * as SelectPrimitive from '@radix-ui/react-select'
 import { Check, ChevronDown } from 'lucide-react'
-import { cx, css } from '@shadow-panda/styled-system/css'
-import {
-  selectTrigger,
-  selectContent,
-  selectViewport,
-  selectLabel,
-  selectItem,
-  selectItemInner,
-  selectSeparator,
-} from '@shadow-panda/styled-system/recipes'
+import { createStyleContext } from '@shadow-panda/style-context'
+import { styled } from '@shadow-panda/styled-system/jsx'
+import { select, icon } from '@shadow-panda/styled-system/recipes'
 
-const Select = SelectPrimitive.Root
+const { withProvider, withContext } = createStyleContext(select)
 
-const SelectGroup = SelectPrimitive.Group
-
-const SelectValue = SelectPrimitive.Value
-
-const SelectTrigger = React.forwardRef<
+const Trigger = React.forwardRef<
   React.ElementRef<typeof SelectPrimitive.Trigger>,
   React.ComponentPropsWithoutRef<typeof SelectPrimitive.Trigger>
->(({ className, children, ...props }, ref) => (
-  <SelectPrimitive.Trigger
-    ref={ref}
-    className={cx(selectTrigger(), className)}
-    {...props}
-  >
+>(({ children, ...props }, ref) => (
+  <SelectPrimitive.Trigger ref={ref} {...props}>
     {children}
     <SelectPrimitive.Icon asChild>
-      <ChevronDown className={css({ h: '4', w: '4', opacity: '0.5' })} />
+      <ChevronDown className={icon({ dimmed: true })} />
     </SelectPrimitive.Icon>
   </SelectPrimitive.Trigger>
 ))
-SelectTrigger.displayName = SelectPrimitive.Trigger.displayName
+Trigger.displayName = SelectPrimitive.Trigger.displayName
 
-const SelectContent = React.forwardRef<
+const Viewport = withContext(SelectPrimitive.Viewport, 'viewport')
+
+const Content = React.forwardRef<
   React.ElementRef<typeof SelectPrimitive.Content>,
   React.ComponentPropsWithoutRef<typeof SelectPrimitive.Content>
->(({ className, children, position = 'popper', ...props }, ref) => (
+>(({ children, position = 'popper', ...props }, ref) => (
   <SelectPrimitive.Portal>
-    <SelectPrimitive.Content
-      ref={ref}
-      className={cx(selectContent({ position }), className)}
-      position={position}
-      {...props}
-    >
-      <SelectPrimitive.Viewport className={selectViewport({ position })}>
-        {children}
-      </SelectPrimitive.Viewport>
+    <SelectPrimitive.Content ref={ref} position={position} data-position={position} {...props}>
+      <Viewport data-position={position}>{children}</Viewport>
     </SelectPrimitive.Content>
   </SelectPrimitive.Portal>
 ))
-SelectContent.displayName = SelectPrimitive.Content.displayName
+Content.displayName = SelectPrimitive.Content.displayName
 
-const SelectLabel = React.forwardRef<
-  React.ElementRef<typeof SelectPrimitive.Label>,
-  React.ComponentPropsWithoutRef<typeof SelectPrimitive.Label>
->(({ className, ...props }, ref) => (
-  <SelectPrimitive.Label
-    ref={ref}
-    className={cx(selectLabel(), className)}
-    {...props}
-  />
-))
-SelectLabel.displayName = SelectPrimitive.Label.displayName
+const ItemIndicator = withContext(styled(SelectPrimitive.ItemIndicator), 'itemIndicator')
 
-const SelectItem = React.forwardRef<
+const Item = React.forwardRef<
   React.ElementRef<typeof SelectPrimitive.Item>,
   React.ComponentPropsWithoutRef<typeof SelectPrimitive.Item>
->(({ className, children, ...props }, ref) => (
-  <SelectPrimitive.Item
-    ref={ref}
-    className={cx(selectItem(), className)}
-    {...props}
-  >
-    <span className={selectItemInner()}>
-      <SelectPrimitive.ItemIndicator>
-        <Check className={css({ h: '4', w: '4' })} />
-      </SelectPrimitive.ItemIndicator>
-    </span>
+>(({ children, ...props }, ref) => (
+  <SelectPrimitive.Item ref={ref} {...props}>
+    <ItemIndicator>
+      <Check className={icon()} />
+    </ItemIndicator>
 
     <SelectPrimitive.ItemText>{children}</SelectPrimitive.ItemText>
   </SelectPrimitive.Item>
 ))
-SelectItem.displayName = SelectPrimitive.Item.displayName
+Item.displayName = SelectPrimitive.Item.displayName
 
-const SelectSeparator = React.forwardRef<
-  React.ElementRef<typeof SelectPrimitive.Separator>,
-  React.ComponentPropsWithoutRef<typeof SelectPrimitive.Separator>
->(({ className, ...props }, ref) => (
-  <SelectPrimitive.Separator
-    ref={ref}
-    className={cx(selectSeparator(), className)}
-    {...props}
-  />
-))
-SelectSeparator.displayName = SelectPrimitive.Separator.displayName
-
-export {
-  Select,
-  SelectGroup,
-  SelectValue,
-  SelectTrigger,
-  SelectContent,
-  SelectLabel,
-  SelectItem,
-  SelectSeparator,
-}
+export const Select = withProvider(styled(SelectPrimitive.Root), 'root')
+export const SelectGroup = withContext(styled(SelectPrimitive.Group), 'group')
+export const SelectValue = withContext(styled(SelectPrimitive.Value), 'value')
+export const SelectTrigger = withContext(styled(Trigger), 'trigger')
+export const SelectContent = withContext(styled(Content), 'content')
+export const SelectLabel = withContext(styled(SelectPrimitive.Label), 'label')
+export const SelectItem = withContext(styled(Item), 'item')
+export const SelectSeparator = withContext(styled(SelectPrimitive.Separator), 'separator')
