@@ -3,32 +3,24 @@
 import * as React from 'react'
 import * as CheckboxPrimitive from '@radix-ui/react-checkbox'
 import { Check } from 'lucide-react'
-import { cx, css } from '@shadow-panda/styled-system/css'
-import {
-  checkbox,
-  checkboxIndicator,
-} from '@shadow-panda/styled-system/recipes'
+import { styled } from '@shadow-panda/styled-system/jsx'
+import { cx } from '@shadow-panda/styled-system/css'
+import { checkbox, icon } from '@shadow-panda/styled-system/recipes'
 
-const Checkbox = React.forwardRef<
+const BaseCheckbox = React.forwardRef<
   React.ElementRef<typeof CheckboxPrimitive.Root>,
   React.ComponentPropsWithoutRef<typeof CheckboxPrimitive.Root>
->(({ className, ...props }, ref) => (
-  <CheckboxPrimitive.Root
-    ref={ref}
-    className={cx('peer', checkbox(), className)}
-    {...props}
-  >
-    <CheckboxPrimitive.Indicator className={cx(checkboxIndicator())}>
-      <Check
-        className={css({
-          h: '4',
-          w: '4',
-        })}
-      />
-    </CheckboxPrimitive.Indicator>
-  </CheckboxPrimitive.Root>
-))
+>(({ className, ...props }, ref) => {
+  const styles = checkbox()
 
-Checkbox.displayName = CheckboxPrimitive.Root.displayName
+  return (
+    <CheckboxPrimitive.Root ref={ref} className={cx('peer', styles.root, className)} {...props}>
+      <CheckboxPrimitive.Indicator className={styles.indicator}>
+        <Check className={icon()} />
+      </CheckboxPrimitive.Indicator>
+    </CheckboxPrimitive.Root>
+  )
+})
+BaseCheckbox.displayName = CheckboxPrimitive.Root.displayName
 
-export { Checkbox }
+export const Checkbox = styled(BaseCheckbox)

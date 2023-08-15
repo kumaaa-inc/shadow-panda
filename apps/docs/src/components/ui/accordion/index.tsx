@@ -35,6 +35,7 @@ const Content = React.forwardRef<
 Content.displayName = AccordionPrimitive.Content.displayName
 
 // NOTE: union-style conditional props are not yet supported in `styled()`
+// @see https://github.com/chakra-ui/panda/issues/1220
 type AccordionComponent = React.ForwardRefExoticComponent<
   React.PropsWithoutRef<React.ComponentProps<typeof AccordionPrimitive.Root>> &
     HTMLStyledProps<typeof AccordionPrimitive.Root> &

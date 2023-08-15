@@ -1,9 +1,6 @@
 import * as typography from './typography'
 import * as badge from './badge'
 import * as button from './button'
-import * as checkbox from './checkbox'
-import * as command from './command'
-import * as dialog from './dialog'
 import * as dropdownMenu from './dropdown-menu'
 import * as icon from './icon'
 import * as input from './input'
@@ -21,9 +18,6 @@ export const recipes = {
   ...typography,
   ...badge,
   ...button,
-  ...checkbox,
-  ...command,
-  ...dialog,
   ...dropdownMenu,
   ...icon,
   ...popover,

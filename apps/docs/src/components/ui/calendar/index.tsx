@@ -31,6 +31,7 @@ function BaseCalendar({ className, classNames, showOutsideDays = true, ...props 
 BaseCalendar.displayName = 'Calendar'
 
 // NOTE: union-style conditional props are not yet supported in `styled()`
+// @see https://github.com/chakra-ui/panda/issues/1220
 type CalendarComponent = React.ForwardRefExoticComponent<
   React.PropsWithoutRef<React.ComponentProps<typeof DayPicker>> &
     HTMLStyledProps<typeof DayPicker> &

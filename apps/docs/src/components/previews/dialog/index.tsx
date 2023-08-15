@@ -1,6 +1,6 @@
 'use client'
 
-import { css } from '@shadow-panda/styled-system/css'
+import { Grid } from '@shadow-panda/styled-system/jsx'
 import { Button } from '@/components/ui/button'
 import {
   Dialog,
@@ -20,51 +20,27 @@ export default function Example() {
       <DialogTrigger asChild>
         <Button variant="outline">Edit Profile</Button>
       </DialogTrigger>
-      <DialogContent className={css({ sm: { maxW: '425px' } })}>
+      <DialogContent sm={{ maxW: '425px' }}>
         <DialogHeader>
           <DialogTitle>Edit profile</DialogTitle>
           <DialogDescription>
             Make changes to your profile here. Click save when you're done.
           </DialogDescription>
         </DialogHeader>
-        <div className={css({ display: 'grid', gap: '4', py: '4' })}>
-          <div
-            className={css({
-              display: 'grid',
-              gridTemplateColumns: '4',
-              alignItems: 'center',
-              gap: '4',
-            })}
-          >
-            <Label htmlFor="name" className={css({ textAlign: 'right' })}>
+        <Grid gap="4" py="4">
+          <Grid gridTemplateColumns="4" alignItems="center" gap="4">
+            <Label htmlFor="name" textAlign="right">
               Name
             </Label>
-            <Input
-              id="name"
-              value="Pedro Duarte"
-              className={css({ gridColumn: '3' })}
-              onChange={() => {}}
-            />
-          </div>
-          <div
-            className={css({
-              display: 'grid',
-              gridTemplateColumns: '4',
-              alignItems: 'center',
-              gap: '4',
-            })}
-          >
-            <Label htmlFor="username" className={css({ textAlign: 'right' })}>
+            <Input id="name" value="Pedro Duarte" gridColumn="3" onChange={() => {}} />
+          </Grid>
+          <Grid gridTemplateColumns="4" alignItems="center" gap="4">
+            <Label htmlFor="username" textAlign="right">
               Name
             </Label>
-            <Input
-              id="username"
-              value="@peduarte"
-              className={css({ gridColumn: '3' })}
-              onChange={() => {}}
-            />
-          </div>
-        </div>
+            <Input id="username" value="@peduarte" gridColumn="3" onChange={() => {}} />
+          </Grid>
+        </Grid>
         <DialogFooter>
           <Button type="submit">Save changes</Button>
         </DialogFooter>
