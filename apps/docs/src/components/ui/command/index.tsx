@@ -4,135 +4,47 @@ import * as React from 'react'
 import { DialogProps } from '@radix-ui/react-dialog'
 import { Command as CommandPrimitive } from 'cmdk'
 import { Search } from 'lucide-react'
-import { cx } from '@shadow-panda/styled-system/css'
-import {
-  command,
-  commandDialogContent,
-  commandDialogCommand,
-  commandInput,
-  commandInputSearch,
-  commandInputInput,
-  commandList,
-  commandEmpty,
-  commandGroup,
-  commandSeparator,
-  commandItem,
-  commandShortcut,
-} from '@shadow-panda/styled-system/recipes'
+import { createStyleContext } from '@shadow-panda/style-context'
+import { styled } from '@shadow-panda/styled-system/jsx'
+import { command, commandDialog } from '@shadow-panda/styled-system/recipes'
 import { Dialog, DialogContent } from '@/components/ui/dialog'
 
-const Command = React.forwardRef<
-  React.ElementRef<typeof CommandPrimitive>,
-  React.ComponentPropsWithoutRef<typeof CommandPrimitive>
->(({ className, ...props }, ref) => (
-  <CommandPrimitive ref={ref} className={cx(command(), className)} {...props} />
-))
-Command.displayName = CommandPrimitive.displayName
+const { withProvider, withContext } = createStyleContext(command)
 
-interface CommandDialogProps extends DialogProps {}
+const InputWrapper = withContext(styled('div'), 'inputWrapper')
+const SearchIcon = withContext(Search, 'inputSearch')
 
-const CommandDialog = ({ children, ...props }: CommandDialogProps) => {
-  return (
-    <Dialog {...props}>
-      <DialogContent className={commandDialogContent()}>
-        <Command className={commandDialogCommand()}>{children}</Command>
-      </DialogContent>
-    </Dialog>
-  )
-}
-
-const CommandInput = React.forwardRef<
+const BaseCommandInput = React.forwardRef<
   React.ElementRef<typeof CommandPrimitive.Input>,
   React.ComponentPropsWithoutRef<typeof CommandPrimitive.Input>
 >(({ className, ...props }, ref) => (
-  <div className={commandInput()} cmdk-input-wrapper="">
-    <Search className={commandInputSearch()} />
-    <CommandPrimitive.Input
-      ref={ref}
-      className={cx(commandInputInput(), className)}
-      {...props}
-    />
-  </div>
+  <InputWrapper cmdk-input-wrapper="">
+    <SearchIcon />
+    <CommandPrimitive.Input ref={ref} className={className} {...props} />
+  </InputWrapper>
 ))
 
-CommandInput.displayName = CommandPrimitive.Input.displayName
+BaseCommandInput.displayName = CommandPrimitive.Input.displayName
 
-const CommandList = React.forwardRef<
-  React.ElementRef<typeof CommandPrimitive.List>,
-  React.ComponentPropsWithoutRef<typeof CommandPrimitive.List>
->(({ className, ...props }, ref) => (
-  <CommandPrimitive.List
-    ref={ref}
-    className={cx(commandList(), className)}
-    {...props}
-  />
-))
+export const Command = withProvider(styled(CommandPrimitive), 'root')
+export const CommandInput = withContext(styled(BaseCommandInput), 'input')
+export const CommandList = withContext(styled(CommandPrimitive.List), 'list')
+export const CommandEmpty = withContext(styled(CommandPrimitive.Empty), 'empty')
+export const CommandGroup = withContext(styled(CommandPrimitive.Group), 'group')
+export const CommandSeparator = withContext(styled(CommandPrimitive.Separator), 'separator')
+export const CommandItem = withContext(styled(CommandPrimitive.Item), 'item')
+export const CommandShortcut = withContext(styled('span'), 'shortcut')
 
-CommandList.displayName = CommandPrimitive.List.displayName
+export interface CommandDialogProps extends DialogProps {}
 
-const CommandEmpty = React.forwardRef<
-  React.ElementRef<typeof CommandPrimitive.Empty>,
-  React.ComponentPropsWithoutRef<typeof CommandPrimitive.Empty>
->((props, ref) => (
-  <CommandPrimitive.Empty ref={ref} className={commandEmpty()} {...props} />
-))
+export const CommandDialog = ({ children, ...props }: CommandDialogProps) => {
+  const styles = commandDialog()
 
-CommandEmpty.displayName = CommandPrimitive.Empty.displayName
-
-const CommandGroup = React.forwardRef<
-  React.ElementRef<typeof CommandPrimitive.Group>,
-  React.ComponentPropsWithoutRef<typeof CommandPrimitive.Group>
->(({ className, ...props }, ref) => (
-  <CommandPrimitive.Group
-    ref={ref}
-    className={cx(commandGroup(), className)}
-    {...props}
-  />
-))
-
-CommandGroup.displayName = CommandPrimitive.Group.displayName
-
-const CommandSeparator = React.forwardRef<
-  React.ElementRef<typeof CommandPrimitive.Separator>,
-  React.ComponentPropsWithoutRef<typeof CommandPrimitive.Separator>
->(({ className, ...props }, ref) => (
-  <CommandPrimitive.Separator
-    ref={ref}
-    className={cx(commandSeparator(), className)}
-    {...props}
-  />
-))
-CommandSeparator.displayName = CommandPrimitive.Separator.displayName
-
-const CommandItem = React.forwardRef<
-  React.ElementRef<typeof CommandPrimitive.Item>,
-  React.ComponentPropsWithoutRef<typeof CommandPrimitive.Item>
->(({ className, ...props }, ref) => (
-  <CommandPrimitive.Item
-    ref={ref}
-    className={cx(commandItem(), className)}
-    {...props}
-  />
-))
-
-CommandItem.displayName = CommandPrimitive.Item.displayName
-
-const CommandShortcut = ({
-  className,
-  ...props
-}: React.HTMLAttributes<HTMLSpanElement>) => {
-  return <span className={cx(commandShortcut(), className)} {...props} />
-}
-CommandShortcut.displayName = 'CommandShortcut'
-
-export {
-  Command,
-  CommandDialog,
-  CommandInput,
-  CommandList,
-  CommandEmpty,
-  CommandGroup,
-  CommandItem,
-  CommandShortcut,
-  CommandSeparator,
+  return (
+    <Dialog {...props}>
+      <DialogContent className={styles.content}>
+        <Command className={styles.command}>{children}</Command>
+      </DialogContent>
+    </Dialog>
+  )
 }

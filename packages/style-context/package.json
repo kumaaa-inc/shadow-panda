@@ -1,6 +1,6 @@
 {
   "name": "@shadow-panda/style-context",
-  "description": "Shared style context for using slot recipes in ShadowPanda",
+  "description": "Shared style context for slot recipes in ShadowPanda",
   "version": "0.1.0",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
@@ -27,8 +27,8 @@
     "dev": "pnpm build-fast --watch"
   },
   "peerDependencies": {
-    "@types/react": "*",
-    "@types/react-dom": "*",
+    "@types/react": "18.2.20",
+    "@types/react-dom": "18.2.7",
     "react": "^16.8 || ^17.0 || ^18.0",
     "react-dom": "^16.8 || ^17.0 || ^18.0"
   },

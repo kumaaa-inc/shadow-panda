@@ -2,21 +2,22 @@
 
 import * as React from 'react'
 import * as SwitchPrimitives from '@radix-ui/react-switch'
+import { styled } from '@shadow-panda/styled-system/jsx'
 import { cx } from '@shadow-panda/styled-system/css'
-import { switchRecipe, switchThumb } from '@shadow-panda/styled-system/recipes'
+import { switchRecipe } from '@shadow-panda/styled-system/recipes'
 
-const Switch = React.forwardRef<
+const BaseSwitch = React.forwardRef<
   React.ElementRef<typeof SwitchPrimitives.Root>,
   React.ComponentPropsWithoutRef<typeof SwitchPrimitives.Root>
->(({ className, ...props }, ref) => (
-  <SwitchPrimitives.Root
-    className={cx('peer', switchRecipe(), className)}
-    {...props}
-    ref={ref}
-  >
-    <SwitchPrimitives.Thumb className={cx(switchThumb())} />
-  </SwitchPrimitives.Root>
-))
-Switch.displayName = SwitchPrimitives.Root.displayName
+>(({ className, ...props }, ref) => {
+  const styles = switchRecipe()
 
-export { Switch }
+  return (
+    <SwitchPrimitives.Root className={cx('peer', styles.root, className)} {...props} ref={ref}>
+      <SwitchPrimitives.Thumb className={styles.thumb} />
+    </SwitchPrimitives.Root>
+  )
+})
+BaseSwitch.displayName = SwitchPrimitives.Root.displayName
+
+export const Switch = styled(BaseSwitch)

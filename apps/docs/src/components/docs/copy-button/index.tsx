@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { CheckIcon, CopyIcon } from 'lucide-react'
-import { css, cx } from '@shadow-panda/styled-system/css'
+import { css } from '@shadow-panda/styled-system/css'
+import { icon } from '@shadow-panda/styled-system/recipes'
 import { Button, type ButtonProps } from '@/components/ui/button'
 
 export const copy = (value: string) => {
@@ -25,19 +26,15 @@ export function CopyButton({ value, className, ...props }: CopyButtonProps) {
     <Button
       size="icon"
       variant="ghost"
-      className={cx(
-        css({
-          zIndex: '10',
-          h: '7',
-          w: '7',
-          color: 'slate.50',
-          _hover: {
-            color: 'slate.50',
-            bg: 'slate.700',
-          },
-        }),
-        className,
-      )}
+      className={className}
+      zIndex="10"
+      h="7"
+      w="7"
+      color="slate.50"
+      _hover={{
+        color: 'slate.50',
+        bg: 'slate.700',
+      }}
       onClick={() => {
         copy(value)
         setHasCopied(true)
@@ -51,11 +48,7 @@ export function CopyButton({ value, className, ...props }: CopyButtonProps) {
       >
         Copy
       </span>
-      {hasCopied ? (
-        <CheckIcon className={css({ h: '4', w: '4' })} />
-      ) : (
-        <CopyIcon className={css({ h: '4', w: '4' })} />
-      )}
+      {hasCopied ? <CheckIcon className={icon()} /> : <CopyIcon className={icon()} />}
     </Button>
   )
 }

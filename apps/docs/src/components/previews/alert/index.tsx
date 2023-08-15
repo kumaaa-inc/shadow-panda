@@ -6,9 +6,7 @@ export default function Example() {
     <Alert>
       <Terminal />
       <AlertTitle>Heads up!</AlertTitle>
-      <AlertDescription>
-        You can add components to your app using the cli.
-      </AlertDescription>
+      <AlertDescription>You can add components to your app using the cli.</AlertDescription>
     </Alert>
   )
 }

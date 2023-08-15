@@ -1,18 +1,5 @@
-import * as React from 'react'
-import { cx } from '@shadow-panda/styled-system/css'
+import { styled, HTMLStyledProps } from '@shadow-panda/styled-system/jsx'
 import { textarea } from '@shadow-panda/styled-system/recipes'
 
-export interface TextareaProps
-  extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {}
-
-const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
-  ({ className, ...props }, ref) => {
-    return (
-      <textarea className={cx(textarea(), className)} ref={ref} {...props} />
-    )
-  },
-)
-
-Textarea.displayName = 'Textarea'
-
-export { Textarea }
+export const Textarea = styled('textarea', textarea)
+export type TextareaProps = HTMLStyledProps<typeof Textarea>

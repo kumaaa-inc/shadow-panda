@@ -1,16 +1,9 @@
 'use client'
 
 import * as React from 'react'
-import {
-  Calculator,
-  Calendar,
-  CreditCard,
-  Settings,
-  Smile,
-  User,
-} from 'lucide-react'
+import { Calculator, Calendar, CreditCard, Settings, Smile, User } from 'lucide-react'
 import { css } from '@shadow-panda/styled-system/css'
-import { muted } from '@shadow-panda/styled-system/recipes'
+import { muted, icon } from '@shadow-panda/styled-system/recipes'
 import {
   CommandDialog,
   CommandEmpty,
@@ -21,8 +14,6 @@ import {
   CommandSeparator,
   CommandShortcut,
 } from '@/components/ui/command'
-
-const iconStyle = css({ mr: '2', h: '4', w: '4' })
 
 export default function Example() {
   const [open, setOpen] = React.useState(false)
@@ -69,32 +60,32 @@ export default function Example() {
           <CommandEmpty>No results found.</CommandEmpty>
           <CommandGroup heading="Suggestions">
             <CommandItem>
-              <Calendar className={iconStyle} />
+              <Calendar className={icon()} />
               <span>Calendar</span>
             </CommandItem>
             <CommandItem>
-              <Smile className={iconStyle} />
+              <Smile className={icon()} />
               <span>Search Emoji</span>
             </CommandItem>
             <CommandItem>
-              <Calculator className={iconStyle} />
+              <Calculator className={icon()} />
               <span>Calculator</span>
             </CommandItem>
           </CommandGroup>
           <CommandSeparator />
           <CommandGroup heading="Settings">
             <CommandItem>
-              <User className={iconStyle} />
+              <User className={icon()} />
               <span>Profile</span>
               <CommandShortcut>⌘P</CommandShortcut>
             </CommandItem>
             <CommandItem>
-              <CreditCard className={iconStyle} />
+              <CreditCard className={icon()} />
               <span>Billing</span>
               <CommandShortcut>⌘B</CommandShortcut>
             </CommandItem>
             <CommandItem>
-              <Settings className={iconStyle} />
+              <Settings className={icon()} />
               <span>Settings</span>
               <CommandShortcut>⌘S</CommandShortcut>
             </CommandItem>

@@ -11,11 +11,7 @@ import {
   CommandInput,
   CommandItem,
 } from '@/components/ui/command'
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from '@/components/ui/popover'
+import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover'
 
 const frameworks = [
   {
@@ -51,10 +47,8 @@ export default function Example() {
           variant="outline"
           role="combobox"
           aria-expanded={open}
-          className={css({
-            w: '200px',
-            justifyContent: 'between',
-          })}
+          w="200px"
+          justifyContent="space-between"
         >
           {value
             ? frameworks.find((framework) => framework.value === value)?.label
@@ -70,12 +64,7 @@ export default function Example() {
           />
         </Button>
       </PopoverTrigger>
-      <PopoverContent
-        className={css({
-          w: '200px',
-          p: '0',
-        })}
-      >
+      <PopoverContent w="200px" p="0">
         <Command>
           <CommandInput placeholder="Search framework..." />
           <CommandEmpty>No framework found.</CommandEmpty>

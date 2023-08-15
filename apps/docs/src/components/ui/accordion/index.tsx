@@ -3,64 +3,46 @@
 import * as React from 'react'
 import * as AccordionPrimitive from '@radix-ui/react-accordion'
 import { ChevronDown } from 'lucide-react'
-import {
-  accordionItem,
-  accordionHeader,
-  accordionTrigger,
-  accordionContent,
-} from '@shadow-panda/styled-system/recipes'
-import { cx, css } from '@shadow-panda/styled-system/css'
+import { createStyleContext } from '@shadow-panda/style-context'
+import { styled, type HTMLStyledProps } from '@shadow-panda/styled-system/jsx'
+import { accordion } from '@shadow-panda/styled-system/recipes'
 
-const Accordion = AccordionPrimitive.Root
+const { withProvider, withContext } = createStyleContext(accordion)
 
-const AccordionItem = React.forwardRef<
-  React.ElementRef<typeof AccordionPrimitive.Item>,
-  React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Item>
->(({ className, ...props }, ref) => (
-  <AccordionPrimitive.Item
-    ref={ref}
-    className={cx(accordionItem(), className)}
-    {...props}
-  />
-))
-AccordionItem.displayName = 'AccordionItem'
+const Header = withContext(styled(AccordionPrimitive.Header), 'header')
 
-const AccordionTrigger = React.forwardRef<
+const Trigger = React.forwardRef<
   React.ElementRef<typeof AccordionPrimitive.Trigger>,
   React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Trigger>
->(({ className, children, ...props }, ref) => (
-  <AccordionPrimitive.Header className={accordionHeader()}>
-    <AccordionPrimitive.Trigger
-      ref={ref}
-      className={cx(accordionTrigger(), className)}
-      {...props}
-    >
+>(({ children, ...props }, ref) => (
+  <Header>
+    <AccordionPrimitive.Trigger ref={ref} {...props}>
       {children}
       <ChevronDown />
     </AccordionPrimitive.Trigger>
-  </AccordionPrimitive.Header>
+  </Header>
 ))
-AccordionTrigger.displayName = AccordionPrimitive.Trigger.displayName
+Trigger.displayName = AccordionPrimitive.Trigger.displayName
 
-const AccordionContent = React.forwardRef<
+const Content = React.forwardRef<
   React.ElementRef<typeof AccordionPrimitive.Content>,
   React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Content>
->(({ className, children, ...props }, ref) => (
-  <AccordionPrimitive.Content
-    ref={ref}
-    className={cx(accordionContent(), className)}
-    {...props}
-  >
-    <div
-      className={css({
-        pb: '4',
-        pt: '0',
-      })}
-    >
-      {children}
-    </div>
+>(({ children, ...props }, ref) => (
+  <AccordionPrimitive.Content ref={ref} {...props}>
+    <div>{children}</div>
   </AccordionPrimitive.Content>
 ))
-AccordionContent.displayName = AccordionPrimitive.Content.displayName
+Content.displayName = AccordionPrimitive.Content.displayName
 
-export { Accordion, AccordionItem, AccordionTrigger, AccordionContent }
+// NOTE: union-style conditional props are not yet supported in `styled()`
+// @see https://github.com/chakra-ui/panda/issues/1220
+type AccordionComponent = React.ForwardRefExoticComponent<
+  React.PropsWithoutRef<React.ComponentProps<typeof AccordionPrimitive.Root>> &
+    HTMLStyledProps<typeof AccordionPrimitive.Root> &
+    React.RefAttributes<React.ElementRef<typeof AccordionPrimitive.Root>>
+>
+
+export const Accordion = withProvider(styled(AccordionPrimitive.Root), 'root') as AccordionComponent
+export const AccordionItem = withContext(styled(AccordionPrimitive.Item), 'item')
+export const AccordionTrigger = withContext(styled(Trigger), 'trigger')
+export const AccordionContent = withContext(styled(Content), 'content')

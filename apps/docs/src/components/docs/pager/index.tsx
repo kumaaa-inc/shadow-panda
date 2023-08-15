@@ -52,7 +52,7 @@ export const Pager = ({ className, doc }: PagerProps) => {
         </Button>
       )}
       {pager?.next?.url && (
-        <Button variant="outline" className={css({ ml: 'auto' })} asChild>
+        <Button variant="outline" ml="auto" asChild>
           <Link href={pager.next.url}>
             {pager.next.title}
             <ChevronRightIcon

@@ -34,16 +34,10 @@ function getRecipeSource(component: string) {
   const presetSrcDir = path.join(process.cwd(), `../../packages/preset/src/`)
 
   try {
-    return fs.readFileSync(
-      path.join(presetSrcDir, `./recipes/${component}.ts`),
-      'utf8',
-    )
+    return fs.readFileSync(path.join(presetSrcDir, `./recipes/${component}.ts`), 'utf8')
   } catch (error) {
     try {
-      return fs.readFileSync(
-        path.join(presetSrcDir, `./slot-recipes/${component}.ts`),
-        'utf8',
-      )
+      return fs.readFileSync(path.join(presetSrcDir, `./slot-recipes/${component}.ts`), 'utf8')
     } catch (e) {
       return ''
     }
@@ -53,10 +47,7 @@ function getRecipeSource(component: string) {
 function getTextStylePreviewSource(type: string) {
   try {
     return fs.readFileSync(
-      path.join(
-        process.cwd(),
-        `./src/components/previews/typography/${type}-text-style.tsx`,
-      ),
+      path.join(process.cwd(), `./src/components/previews/typography/${type}-text-style.tsx`),
       'utf8',
     )
   } catch (error) {
@@ -69,20 +60,15 @@ export function rehypeComponent() {
     visit(tree, (node: UnistNode) => {
       if (node.name === 'ComponentPreview') {
         const component = getNodeAttributeByName(node, 'name')?.value as string
-        const type =
-          (getNodeAttributeByName(node, 'type')?.value as string) ?? 'index'
+        const type = (getNodeAttributeByName(node, 'type')?.value as string) ?? 'index'
 
-        const withRecipe =
-          getNodeAttributeByName(node, 'withRecipe')?.value !== undefined
+        const withRecipe = getNodeAttributeByName(node, 'withRecipe')?.value !== undefined
 
         if (!component) return null
 
         try {
           const source = fs.readFileSync(
-            path.join(
-              process.cwd(),
-              `./src/components/previews/${component}/${type}.tsx`,
-            ),
+            path.join(process.cwd(), `./src/components/previews/${component}/${type}.tsx`),
             'utf8',
           )
 
@@ -142,10 +128,7 @@ export function rehypeComponent() {
 
         try {
           const source = fs.readFileSync(
-            path.join(
-              process.cwd(),
-              `./src/components/ui/${component}/index.tsx`,
-            ),
+            path.join(process.cwd(), `./src/components/ui/${component}/index.tsx`),
             'utf8',
           )
 
@@ -179,24 +162,18 @@ export function rehypeComponent() {
       if (node.name === 'TypographyPreview') {
         const type = getNodeAttributeByName(node, 'type')?.value as string
 
-        const withTextStyle =
-          getNodeAttributeByName(node, 'withTextStyle')?.value !== undefined
+        const withTextStyle = getNodeAttributeByName(node, 'withTextStyle')?.value !== undefined
 
         // type is required
         if (!type) return null
 
         try {
           const source = fs.readFileSync(
-            path.join(
-              process.cwd(),
-              `./src/components/previews/typography/${type}.tsx`,
-            ),
+            path.join(process.cwd(), `./src/components/previews/typography/${type}.tsx`),
             'utf8',
           )
 
-          const textStyleSource = withTextStyle
-            ? getTextStylePreviewSource(type)
-            : ''
+          const textStyleSource = withTextStyle ? getTextStylePreviewSource(type) : ''
 
           node.children?.push(
             u('element', {

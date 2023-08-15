@@ -1,14 +1,7 @@
 'use client'
 
 import * as React from 'react'
-import {
-  ArrowUpCircle,
-  CheckCircle2,
-  Circle,
-  HelpCircle,
-  LucideIcon,
-  XCircle,
-} from 'lucide-react'
+import { ArrowUpCircle, CheckCircle2, Circle, HelpCircle, LucideIcon, XCircle } from 'lucide-react'
 import { css } from '@shadow-panda/styled-system/css'
 import { muted } from '@shadow-panda/styled-system/recipes'
 import { Button } from '@/components/ui/button'
@@ -20,11 +13,7 @@ import {
   CommandItem,
   CommandList,
 } from '@/components/ui/command'
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from '@/components/ui/popover'
+import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover'
 
 type Status = {
   value: string
@@ -62,25 +51,14 @@ const statuses: Status[] = [
 
 export default function Example() {
   const [open, setOpen] = React.useState(false)
-  const [selectedStatus, setSelectedStatus] = React.useState<Status | null>(
-    null,
-  )
+  const [selectedStatus, setSelectedStatus] = React.useState<Status | null>(null)
 
   return (
-    <div
-      className={css({ display: 'flex', alignItems: 'center', spaceX: '4' })}
-    >
+    <div className={css({ display: 'flex', alignItems: 'center', spaceX: '4' })}>
       <p className={muted()}>Status</p>
       <Popover open={open} onOpenChange={setOpen}>
         <PopoverTrigger asChild>
-          <Button
-            variant="outline"
-            size="sm"
-            className={css({
-              w: '150px',
-              justifyContent: 'flex-start',
-            })}
-          >
+          <Button variant="outline" size="sm" w="150px" justifyContent="flex-start">
             {selectedStatus ? (
               <>
                 <selectedStatus.icon
@@ -98,7 +76,7 @@ export default function Example() {
             )}
           </Button>
         </PopoverTrigger>
-        <PopoverContent className={css({ p: '0' })} side="right" align="start">
+        <PopoverContent p="0" side="right" align="start">
           <Command>
             <CommandInput placeholder="Change status..." />
             <CommandList>
@@ -109,8 +87,7 @@ export default function Example() {
                     key={status.value}
                     onSelect={(value) => {
                       setSelectedStatus(
-                        statuses.find((priority) => priority.value === value) ||
-                          null,
+                        statuses.find((priority) => priority.value === value) || null,
                       )
                       setOpen(false)
                     }}
@@ -120,8 +97,7 @@ export default function Example() {
                         mr: '2',
                         h: '4',
                         w: '4',
-                        opacity:
-                          status.value === selectedStatus?.value ? '1' : '0.4',
+                        opacity: status.value === selectedStatus?.value ? '1' : '0.4',
                       })}
                     />
                     <span>{status.label}</span>

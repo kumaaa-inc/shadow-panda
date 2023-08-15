@@ -8,12 +8,7 @@ export interface CalloutProps {
   children?: React.ReactNode
 }
 
-export const Callout = ({
-  className,
-  emoji,
-  title,
-  children,
-}: CalloutProps) => (
+export const Callout = ({ className, emoji, title, children }: CalloutProps) => (
   <Alert
     className={cx(
       css({
@@ -48,6 +43,7 @@ export const Callout = ({
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
+            fontFamily: '"Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
           }),
         )}
       >

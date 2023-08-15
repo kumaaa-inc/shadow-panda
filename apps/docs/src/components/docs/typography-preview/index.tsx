@@ -14,19 +14,11 @@ const getExampleTypography = (type: string) =>
   React.lazy(() => import(`@/components/previews/typography/${type}.tsx`))
 
 const getExampleTextStyleTypography = (type: string) =>
-  React.lazy(
-    () => import(`@/components/previews/typography/${type}-text-style.tsx`),
-  )
+  React.lazy(() => import(`@/components/previews/typography/${type}-text-style.tsx`))
 
-export const TypographyPreview = ({
-  type,
-  withTextStyle,
-  children,
-}: TypographyPreviewProps) => {
+export const TypographyPreview = ({ type, withTextStyle, children }: TypographyPreviewProps) => {
   const Example = getExampleTypography(type)
-  const ExampleTextStyle = withTextStyle
-    ? getExampleTextStyleTypography(type)
-    : null
+  const ExampleTextStyle = withTextStyle ? getExampleTextStyleTypography(type) : null
 
   const [recipe, textStyle] = React.Children.toArray(children)
 

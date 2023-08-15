@@ -13,7 +13,7 @@ export const TabsList = styled(BaseTabs.TabsList, {
   base: {
     w: 'full',
     justifyContent: 'flex-start',
-    rounded: 'none',
+    rounded: '0',
     borderBottom: 'base',
     bg: 'transparent',
     p: '0',

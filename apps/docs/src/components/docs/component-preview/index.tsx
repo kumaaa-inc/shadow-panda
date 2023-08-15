@@ -11,32 +11,16 @@ export interface ComponentPreviewProps {
   children: React.ReactNode
 }
 
-const getExampleComponent = ({
-  name,
-  type = 'index',
-}: {
-  name: string
-  type?: string
-}) => React.lazy(() => import(`@/components/previews/${name}/${type}.tsx`))
+const getExampleComponent = ({ name, type = 'index' }: { name: string; type?: string }) =>
+  React.lazy(() => import(`@/components/previews/${name}/${type}.tsx`))
 
-export const ComponentPreview = ({
-  name,
-  type,
-  withRecipe,
-  children,
-}: ComponentPreviewProps) => {
+export const ComponentPreview = ({ name, type, withRecipe, children }: ComponentPreviewProps) => {
   const Example = getExampleComponent({ name, type })
 
   const [code, recipe] = React.Children.toArray(children)
 
   return (
-    <Tabs
-      items={
-        withRecipe && recipe
-          ? ['Preview', 'Code', 'Recipe']
-          : ['Preview', 'Code']
-      }
-    >
+    <Tabs items={withRecipe && recipe ? ['Preview', 'Code', 'Recipe'] : ['Preview', 'Code']}>
       <Tab>
         <Preview className={css({ mt: '6', mb: '4' })}>
           <React.Suspense fallback={<LoadingText />}>

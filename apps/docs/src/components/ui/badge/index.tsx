@@ -1,16 +1,6 @@
-import * as React from 'react'
-import { cx } from '@shadow-panda/styled-system/css'
-import {
-  badge,
-  type BadgeVariantProps,
-} from '@shadow-panda/styled-system/recipes'
+import { styled, type HTMLStyledProps } from '@shadow-panda/styled-system/jsx'
+import { badge } from '@shadow-panda/styled-system/recipes'
 
-export interface BadgeProps
-  extends React.HTMLAttributes<HTMLDivElement>,
-    BadgeVariantProps {}
+export const Badge = styled('div', badge)
 
-function Badge({ className, variant, ...props }: BadgeProps) {
-  return <div className={cx(badge({ variant }), className)} {...props} />
-}
-
-export { Badge }
+export type BadgeProps = HTMLStyledProps<typeof Badge>

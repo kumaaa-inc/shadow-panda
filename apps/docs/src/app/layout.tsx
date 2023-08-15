@@ -10,20 +10,14 @@ import { ThemeProvider } from './theme-provider'
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://shadow-panda.dev'),
   title: {
     default: 'Shadow Panda',
     template: '%s | Shadow Panda',
   },
   description:
     'Shadow Panda is a preset of Panda CSS for shadcn/ui & Radix UI, created for developers utilizing Panda CSS as an alternative to Tailwind CSS.',
-  keywords: [
-    'Shadow Panda',
-    'Panda CSS',
-    'shadcn/ui',
-    'Radix UI',
-    'Components',
-    'React',
-  ],
+  keywords: ['Shadow Panda', 'Panda CSS', 'shadcn/ui', 'Radix UI', 'Components', 'React'],
   manifest: '/site.webmanifest',
   openGraph: {
     type: 'website',

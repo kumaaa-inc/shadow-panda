@@ -49,8 +49,7 @@ const Page = () => {
             Component Library
           </h1>
           <p className={lead()}>
-            Accessible and customizable components built with Panda CSS & Radix,
-            based on shadcn/ui.
+            Accessible and customizable components built with Panda CSS & Radix, based on shadcn/ui.
           </p>
           <div
             className={css({

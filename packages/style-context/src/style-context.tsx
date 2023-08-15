@@ -9,25 +9,28 @@ type AnyRecipe = {
   splitVariantProps: (props: AnyProps) => any
 }
 
-export const createStyleContext = <R extends AnyRecipe>(recipe: R) => {
-  const StyleContext = React.createContext<Record<string, string> | null>(null)
+type Slots<R extends () => Record<string, string>> = keyof ReturnType<R>
 
-  // eslint-disable-next-line @typescript-eslint/ban-types
-  const withProvider = <T extends {}>(
+export const createStyleContext = <R extends AnyRecipe>(recipe: R) => {
+  const StyleContext = React.createContext<ReturnType<R> | null>(null)
+
+  const withProvider = <T,>(
     Component: React.ComponentType<T>,
-    part?: string,
+    slot: Slots<R>,
+    initialProps?: Partial<T>,
   ) => {
     const Comp = React.forwardRef((props: T & Parameters<R>[0], ref) => {
-      const [variantProps, otherProps] = recipe.splitVariantProps(props)
+      const [variantProps, otherProps] = recipe.splitVariantProps(props as AnyProps)
       const { className = '', ...rest } = otherProps
-      const styles = recipe(variantProps)
-      const partClass = styles?.[part ?? '']
+      const styles = recipe(variantProps) as ReturnType<R>
+      const slotClass = styles?.[slot ?? '']
 
       return (
         <StyleContext.Provider value={styles}>
           <Component
             ref={ref}
-            className={className ? `${partClass} ${className}` : partClass}
+            className={className ? `${slotClass} ${className}` : slotClass}
+            {...initialProps}
             {...rest}
           />
         </StyleContext.Provider>
@@ -37,32 +40,37 @@ export const createStyleContext = <R extends AnyRecipe>(recipe: R) => {
     return Comp
   }
 
-  // eslint-disable-next-line @typescript-eslint/ban-types
-  const withContext = <T extends {}>(
+  const withContext = <T,>(
     Component: React.ComponentType<T>,
-    part?: string,
+    slot?: Slots<R>,
+    initialProps?: Partial<T>,
   ) => {
-    if (!part) return Component
+    if (!slot) return Component
 
-    const Comp = React.forwardRef(
-      ({ className, ...rest }: T & { className?: string }, ref) => {
-        const styles = React.useContext(StyleContext)
-        const partClass = styles?.[part ?? '']
-        return (
-          <Component
-            ref={ref}
-            className={className ? `${partClass} ${className}` : partClass}
-            {...(rest as T)}
-          />
-        )
-      },
-    )
+    const Comp = React.forwardRef(({ className, ...rest }: T & { className?: string }, ref) => {
+      const styles = React.useContext(StyleContext)
+      const slotClass = styles?.[slot ?? '']
+      return (
+        <Component
+          ref={ref}
+          className={className ? `${slotClass} ${className}` : slotClass}
+          {...initialProps}
+          {...(rest as T)}
+        />
+      )
+    })
     Comp.displayName = Component.displayName || Component.name
     return Comp
+  }
+
+  const useSlot = (slot?: Slots<R>) => {
+    const styles = React.useContext(StyleContext)
+    return styles?.[slot ?? ''] ?? ''
   }
 
   return {
     withProvider,
     withContext,
+    useSlot,
   }
 }

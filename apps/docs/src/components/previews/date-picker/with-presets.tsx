@@ -3,14 +3,11 @@
 import * as React from 'react'
 import { addDays, format } from 'date-fns'
 import { Calendar as CalendarIcon } from 'lucide-react'
-import { css } from '@shadow-panda/styled-system/css'
+import { Box } from '@shadow-panda/styled-system/jsx'
+import { icon } from '@shadow-panda/styled-system/recipes'
 import { Button } from '@/components/ui/button'
 import { Calendar } from '@/components/ui/calendar'
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from '@/components/ui/popover'
+import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover'
 import {
   Select,
   SelectContent,
@@ -27,32 +24,18 @@ export default function Example() {
       <PopoverTrigger asChild>
         <Button
           variant={'outline'}
-          className={css({
-            w: '280px',
-            justifyContent: 'flex-start',
-            textAlign: 'left',
-            fontWeight: 'normal',
-            color: !date ? 'muted.foreground' : undefined,
-          })}
+          w="280px"
+          justifyContent="flex-start"
+          textAlign="left"
+          fontWeight="normal"
+          color={!date ? 'muted.foreground' : undefined}
         >
-          <CalendarIcon className={css({ mr: '2', h: '4', w: '4' })} />
+          <CalendarIcon className={icon()} />
           {date ? format(date, 'PPP') : <span>Pick a date</span>}
         </Button>
       </PopoverTrigger>
-      <PopoverContent
-        className={css({
-          display: 'flex',
-          w: 'auto',
-          flexDirection: 'column',
-          spaceY: '2',
-          p: '2',
-        })}
-      >
-        <Select
-          onValueChange={(value) =>
-            setDate(addDays(new Date(), parseInt(value)))
-          }
-        >
+      <PopoverContent display="flex" w="auto" flexDirection="column" spaceY="2" p="2">
+        <Select onValueChange={(value) => setDate(addDays(new Date(), parseInt(value)))}>
           <SelectTrigger>
             <SelectValue placeholder="Select" />
           </SelectTrigger>
@@ -63,14 +46,9 @@ export default function Example() {
             <SelectItem value="7">In a week</SelectItem>
           </SelectContent>
         </Select>
-        <div
-          className={css({
-            rounded: 'md',
-            border: 'base',
-          })}
-        >
+        <Box rounded="md" border="base">
           <Calendar mode="single" selected={date} onSelect={setDate} />
-        </div>
+        </Box>
       </PopoverContent>
     </Popover>
   )

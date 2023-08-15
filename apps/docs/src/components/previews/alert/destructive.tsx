@@ -6,9 +6,7 @@ export default function Example() {
     <Alert variant="destructive">
       <AlertCircle />
       <AlertTitle>Error</AlertTitle>
-      <AlertDescription>
-        Your session has expired. Please log in again.
-      </AlertDescription>
+      <AlertDescription>Your session has expired. Please log in again.</AlertDescription>
     </Alert>
   )
 }

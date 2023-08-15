@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { css } from '@shadow-panda/styled-system/css'
+import { Grid, Flex } from '@shadow-panda/styled-system/jsx'
 import { Button } from '@/components/ui/button'
 import {
   Card,
@@ -21,38 +21,19 @@ import {
 
 export default function Example() {
   return (
-    <Card className={css({ w: '350px' })}>
+    <Card w="350px">
       <CardHeader>
         <CardTitle>Create project</CardTitle>
         <CardDescription>Deploy your new project in one-click.</CardDescription>
       </CardHeader>
       <CardContent>
         <form>
-          <div
-            className={css({
-              display: 'grid',
-              w: 'full',
-              alignItems: 'center',
-              gap: '4',
-            })}
-          >
-            <div
-              className={css({
-                display: 'flex',
-                flexDirection: 'column',
-                spaceY: '1.5',
-              })}
-            >
+          <Grid w="full" alignItems="center" gap="4">
+            <Flex flexDirection="column" gap="1.5">
               <Label htmlFor="name">Name</Label>
               <Input id="name" placeholder="Name of your project" />
-            </div>
-            <div
-              className={css({
-                display: 'flex',
-                flexDirection: 'column',
-                spaceY: '1.5',
-              })}
-            >
+            </Flex>
+            <Flex flexDirection="column" gap="1.5">
               <Label htmlFor="framework">Framework</Label>
               <Select>
                 <SelectTrigger id="framework">
@@ -65,16 +46,11 @@ export default function Example() {
                   <SelectItem value="nuxt">Nuxt.js</SelectItem>
                 </SelectContent>
               </Select>
-            </div>
-          </div>
+            </Flex>
+          </Grid>
         </form>
       </CardContent>
-      <CardFooter
-        className={css({
-          display: 'flex',
-          justifyContent: 'space-between',
-        })}
-      >
+      <CardFooter display="flex" justifyContent="space-between">
         <Button variant="outline">Cancel</Button>
         <Button>Deploy</Button>
       </CardFooter>

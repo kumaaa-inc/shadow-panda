@@ -16,7 +16,7 @@ import {
   UserPlus,
   Users,
 } from 'lucide-react'
-import { css } from '@shadow-panda/styled-system/css'
+import { icon } from '@shadow-panda/styled-system/recipes'
 import { Button } from '@/components/ui/button'
 import {
   DropdownMenu,
@@ -33,35 +33,33 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu'
 
-export const iconStyle = css({ mr: '2', h: '4', w: '4' })
-
 export default function Example() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button variant="outline">Open</Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent className={css({ w: '56' })}>
+      <DropdownMenuContent w="56">
         <DropdownMenuLabel>My Account</DropdownMenuLabel>
         <DropdownMenuSeparator />
         <DropdownMenuGroup>
           <DropdownMenuItem>
-            <User className={iconStyle} />
+            <User className={icon()} />
             <span>Profile</span>
             <DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut>
           </DropdownMenuItem>
           <DropdownMenuItem>
-            <CreditCard className={iconStyle} />
+            <CreditCard className={icon()} />
             <span>Billing</span>
             <DropdownMenuShortcut>⌘B</DropdownMenuShortcut>
           </DropdownMenuItem>
           <DropdownMenuItem>
-            <Settings className={iconStyle} />
+            <Settings className={icon()} />
             <span>Settings</span>
             <DropdownMenuShortcut>⌘S</DropdownMenuShortcut>
           </DropdownMenuItem>
           <DropdownMenuItem>
-            <Keyboard className={iconStyle} />
+            <Keyboard className={icon()} />
             <span>Keyboard shortcuts</span>
             <DropdownMenuShortcut>⌘K</DropdownMenuShortcut>
           </DropdownMenuItem>
@@ -69,54 +67,54 @@ export default function Example() {
         <DropdownMenuSeparator />
         <DropdownMenuGroup>
           <DropdownMenuItem>
-            <Users className={iconStyle} />
+            <Users className={icon()} />
             <span>Team</span>
           </DropdownMenuItem>
           <DropdownMenuSub>
             <DropdownMenuSubTrigger>
-              <UserPlus className={iconStyle} />
+              <UserPlus className={icon()} />
               <span>Invite users</span>
             </DropdownMenuSubTrigger>
             <DropdownMenuPortal>
               <DropdownMenuSubContent>
                 <DropdownMenuItem>
-                  <Mail className={iconStyle} />
+                  <Mail className={icon()} />
                   <span>Email</span>
                 </DropdownMenuItem>
                 <DropdownMenuItem>
-                  <MessageSquare className={iconStyle} />
+                  <MessageSquare className={icon()} />
                   <span>Message</span>
                 </DropdownMenuItem>
                 <DropdownMenuSeparator />
                 <DropdownMenuItem>
-                  <PlusCircle className={iconStyle} />
+                  <PlusCircle className={icon()} />
                   <span>More...</span>
                 </DropdownMenuItem>
               </DropdownMenuSubContent>
             </DropdownMenuPortal>
           </DropdownMenuSub>
           <DropdownMenuItem>
-            <Plus className={iconStyle} />
+            <Plus className={icon()} />
             <span>New Team</span>
             <DropdownMenuShortcut>⌘+T</DropdownMenuShortcut>
           </DropdownMenuItem>
         </DropdownMenuGroup>
         <DropdownMenuSeparator />
         <DropdownMenuItem>
-          <Github className={iconStyle} />
+          <Github className={icon()} />
           <span>GitHub</span>
         </DropdownMenuItem>
         <DropdownMenuItem>
-          <LifeBuoy className={iconStyle} />
+          <LifeBuoy className={icon()} />
           <span>Support</span>
         </DropdownMenuItem>
         <DropdownMenuItem disabled>
-          <Cloud className={iconStyle} />
+          <Cloud className={icon()} />
           <span>API</span>
         </DropdownMenuItem>
         <DropdownMenuSeparator />
         <DropdownMenuItem>
-          <LogOut className={iconStyle} />
+          <LogOut className={icon()} />
           <span>Log out</span>
           <DropdownMenuShortcut>⇧⌘Q</DropdownMenuShortcut>
         </DropdownMenuItem>
