@@ -1,31 +1,16 @@
 import * as React from 'react'
 import { Slot } from '@radix-ui/react-slot'
-import { cx } from '@shadow-panda/styled-system/css'
-import {
-  button,
-  type ButtonVariantProps,
-} from '@shadow-panda/styled-system/recipes'
+import { styled, type HTMLStyledProps } from '@shadow-panda/styled-system/jsx'
+import { button } from '@shadow-panda/styled-system/recipes'
 
-export interface ButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
-    ButtonVariantProps {
-  asChild?: boolean
-}
+const BaseButton = React.forwardRef<
+  HTMLButtonElement,
+  React.ButtonHTMLAttributes<HTMLButtonElement> & { asChild?: boolean; children: React.ReactNode }
+>(({ asChild = false, ...props }, ref) => {
+  const Comp = asChild ? Slot : 'button'
+  return <Comp ref={ref} {...props} />
+})
+BaseButton.displayName = 'Button'
 
-const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant, size, asChild = false, ...props }, ref) => {
-    const Comp = asChild ? Slot : 'button'
-
-    return (
-      <Comp
-        className={cx(button({ variant, size }), className)}
-        ref={ref}
-        {...props}
-      />
-    )
-  },
-)
-
-Button.displayName = 'Button'
-
-export { Button }
+export const Button = styled(BaseButton, button)
+export type ButtonProps = HTMLStyledProps<typeof Button>

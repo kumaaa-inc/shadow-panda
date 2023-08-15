@@ -1,60 +1,12 @@
-import * as React from 'react'
-import { cx } from '@shadow-panda/styled-system/css'
-import {
-  card,
-  cardHeader,
-  cardTitle,
-  cardDescription,
-  cardContent,
-  cardFooter,
-} from '@shadow-panda/styled-system/recipes'
+import { createStyleContext } from '@shadow-panda/style-context'
+import { styled } from '@shadow-panda/styled-system/jsx'
+import { card } from '@shadow-panda/styled-system/recipes'
 
-const Card = React.forwardRef<
-  HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement>
->(({ className, ...props }, ref) => (
-  <div ref={ref} className={cx(card(), className)} {...props} />
-))
-Card.displayName = 'Card'
+const { withProvider, withContext } = createStyleContext(card)
 
-const CardHeader = React.forwardRef<
-  HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement>
->(({ className, ...props }, ref) => (
-  <div ref={ref} className={cx(cardHeader(), className)} {...props} />
-))
-CardHeader.displayName = 'CardHeader'
-
-const CardTitle = React.forwardRef<
-  HTMLParagraphElement,
-  React.HTMLAttributes<HTMLHeadingElement>
->(({ className, ...props }, ref) => (
-  <h3 ref={ref} className={cx(cardTitle(), className)} {...props} />
-))
-CardTitle.displayName = 'CardTitle'
-
-const CardDescription = React.forwardRef<
-  HTMLParagraphElement,
-  React.HTMLAttributes<HTMLParagraphElement>
->(({ className, ...props }, ref) => (
-  <p ref={ref} className={cx(cardDescription(), className)} {...props} />
-))
-CardDescription.displayName = 'CardDescription'
-
-const CardContent = React.forwardRef<
-  HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement>
->(({ className, ...props }, ref) => (
-  <div ref={ref} className={cx(cardContent(), className)} {...props} />
-))
-CardContent.displayName = 'CardContent'
-
-const CardFooter = React.forwardRef<
-  HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement>
->(({ className, ...props }, ref) => (
-  <div ref={ref} className={cx(cardFooter(), className)} {...props} />
-))
-CardFooter.displayName = 'CardFooter'
-
-export { Card, CardHeader, CardFooter, CardTitle, CardDescription, CardContent }
+export const Card = withProvider(styled('div'), 'root')
+export const CardHeader = withContext(styled('div'), 'header')
+export const CardTitle = withContext(styled('h3'), 'title')
+export const CardDescription = withContext(styled('p'), 'description')
+export const CardContent = withContext(styled('div'), 'content')
+export const CardFooter = withContext(styled('div'), 'footer')

@@ -13,6 +13,7 @@ export const button = defineRecipe({
     transition: 'colors',
     cursor: 'pointer',
     focusRingOffsetColor: 'background',
+    gap: '2',
 
     _focusVisible: {
       outline: '2px solid transparent',

@@ -28,7 +28,8 @@ export const icon = defineRecipe({
       },
     },
     left: {
-      true: {
+      none: {},
+      sm: {
         ml: '2',
       },
       auto: {
@@ -36,7 +37,8 @@ export const icon = defineRecipe({
       },
     },
     right: {
-      true: {
+      none: {},
+      sm: {
         mr: '2',
       },
       auto: {
@@ -51,8 +53,8 @@ export const icon = defineRecipe({
   },
   defaultVariants: {
     size: 'md',
-    left: false,
-    right: false,
+    left: 'none',
+    right: 'none',
     fillCurrent: false,
   },
 })

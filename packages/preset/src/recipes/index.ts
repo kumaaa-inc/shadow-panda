@@ -1,10 +1,6 @@
 import * as typography from './typography'
-import * as alertDialog from './alert-dialog'
-import * as avatar from './avatar'
 import * as badge from './badge'
 import * as button from './button'
-import * as calendar from './calendar'
-import * as card from './card'
 import * as checkbox from './checkbox'
 import * as command from './command'
 import * as dialog from './dialog'
@@ -23,12 +19,8 @@ import * as tabs from './tabs'
 
 export const recipes = {
   ...typography,
-  ...alertDialog,
-  ...avatar,
   ...badge,
   ...button,
-  ...calendar,
-  ...card,
   ...checkbox,
   ...command,
   ...dialog,
