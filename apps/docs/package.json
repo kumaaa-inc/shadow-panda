@@ -15,7 +15,7 @@
     "start": "next start"
   },
   "dependencies": {
-    "@hookform/resolvers": "3.1.1",
+    "@hookform/resolvers": "3.2.0",
     "@radix-ui/react-accordion": "1.1.2",
     "@radix-ui/react-alert-dialog": "1.0.4",
     "@radix-ui/react-aspect-ratio": "1.0.3",
@@ -54,7 +54,7 @@
     "@theguild/remark-npm2yarn": "0.1.1",
     "@types/react": "18.2.20",
     "@types/unist": "3.0.0",
-    "eslint": "8.45.0",
+    "eslint": "8.47.0",
     "github-slugger": "2.0.0",
     "postcss": "8.4.27",
     "rehype-pretty-code": "0.10.0",
