@@ -1,8 +1,8 @@
 import { defineSlotRecipe } from '@pandacss/dev'
 
-export const contextMenu = defineSlotRecipe({
-  className: 'contextMenu',
-  description: 'Styles for the ContextMenu component',
+export const dropdownMenu = defineSlotRecipe({
+  className: 'dropdownMenu',
+  description: 'Styles for the DropdownMenu component',
   slots: [
     'root',
     'trigger',
@@ -14,12 +14,12 @@ export const contextMenu = defineSlotRecipe({
     'subContent',
     'content',
     'item',
+    'itemIndicator',
     'checkboxItem',
     'radioItem',
     'label',
     'separator',
     'shortcut',
-    'itemIndicator',
   ],
   base: {
     subTrigger: {
@@ -31,18 +31,15 @@ export const contextMenu = defineSlotRecipe({
       px: '2',
       py: '1.5',
       textStyle: 'sm',
-      outline: '2px solid transparent',
-      focusRingOffsetColor: 'background',
+      outline: 'none',
       gap: '2',
 
       _focus: {
         bg: 'accent',
-        color: 'accent.foreground',
       },
 
       '&[data-state=open]': {
         bg: 'accent',
-        color: 'accent.foreground',
       },
     },
     subContent: {
@@ -54,7 +51,7 @@ export const contextMenu = defineSlotRecipe({
       bg: 'popover',
       p: '1',
       color: 'popover.foreground',
-      shadow: 'md',
+      boxShadow: 'lg',
 
       '&[data-state=open]': {
         animateIn: true,
@@ -66,22 +63,6 @@ export const contextMenu = defineSlotRecipe({
         animateOut: true,
         fadeOut: 0,
         zoomOut: 95,
-      },
-
-      '&[data-side=top]': {
-        slideInFromBottom: '2',
-      },
-
-      '&[data-side=bottom]': {
-        slideInFromTop: '2',
-      },
-
-      '&[data-side=left]': {
-        slideInFromRight: '2',
-      },
-
-      '&[data-side=right]': {
-        slideInFromLeft: '2',
       },
     },
     content: {
@@ -93,9 +74,7 @@ export const contextMenu = defineSlotRecipe({
       bg: 'popover',
       p: '1',
       color: 'popover.foreground',
-      shadow: 'md',
-      animateIn: true,
-      fadeIn: 80,
+      boxShadow: 'md',
 
       '&[data-state=open]': {
         animateIn: true,
@@ -107,22 +86,6 @@ export const contextMenu = defineSlotRecipe({
         animateOut: true,
         fadeOut: 0,
         zoomOut: 95,
-      },
-
-      '&[data-side=top]': {
-        slideInFromBottom: '2',
-      },
-
-      '&[data-side=bottom]': {
-        slideInFromTop: '2',
-      },
-
-      '&[data-side=left]': {
-        slideInFromRight: '2',
-      },
-
-      '&[data-side=right]': {
-        slideInFromLeft: '2',
       },
     },
     item: {
@@ -135,7 +98,8 @@ export const contextMenu = defineSlotRecipe({
       px: '2',
       py: '1.5',
       textStyle: 'sm',
-      outline: '2px solid transparent',
+      outline: 'none',
+      transition: 'colors',
       gap: '2',
 
       _focus: {
@@ -159,7 +123,8 @@ export const contextMenu = defineSlotRecipe({
       pl: '8',
       pr: '2',
       textStyle: 'sm',
-      outline: '2px solid transparent',
+      outline: 'none',
+      transition: 'colors',
 
       _focus: {
         bg: 'accent',
@@ -182,7 +147,8 @@ export const contextMenu = defineSlotRecipe({
       pl: '8',
       pr: '2',
       textStyle: 'sm',
-      outline: '2px solid transparent',
+      outline: 'none',
+      transition: 'colors',
 
       _focus: {
         bg: 'accent',
@@ -194,25 +160,6 @@ export const contextMenu = defineSlotRecipe({
         opacity: '0.5',
       },
     },
-    label: {
-      px: '2',
-      py: '1.5',
-      textStyle: 'sm',
-      fontWeight: 'semibold',
-      color: 'foreground',
-    },
-    separator: {
-      mx: '-1',
-      my: '1',
-      h: '1px',
-      bg: 'border',
-    },
-    shortcut: {
-      ml: 'auto',
-      textStyle: 'xs',
-      tracking: 'widest',
-      color: 'muted.foreground',
-    },
     itemIndicator: {
       position: 'absolute',
       left: '2',
@@ -222,23 +169,23 @@ export const contextMenu = defineSlotRecipe({
       alignItems: 'center',
       justifyContent: 'center',
     },
-  },
-  variants: {
-    inset: {
-      true: {
-        subTrigger: {
-          pl: '8',
-        },
-        item: {
-          pl: '8',
-        },
-        label: {
-          pl: '8',
-        },
-      },
+    label: {
+      px: '2',
+      py: '1.5',
+      textStyle: 'sm',
+      fontWeight: 'semibold',
     },
-  },
-  defaultVariants: {
-    inset: false,
+    separator: {
+      mx: '-1',
+      my: '1',
+      h: '1px',
+      bg: 'muted',
+    },
+    shortcut: {
+      ml: 'auto',
+      textStyle: 'xs',
+      tracking: 'widest',
+      opacity: '0.6',
+    },
   },
 })

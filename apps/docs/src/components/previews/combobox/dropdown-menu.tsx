@@ -79,9 +79,7 @@ export default function Example() {
         >
           {label}
         </span>
-        <span className={css({ color: 'muted.foreground' })}>
-          Create a new project
-        </span>
+        <span className={css({ color: 'muted.foreground' })}>Create a new project</span>
       </p>
       <DropdownMenu open={open} onOpenChange={setOpen}>
         <DropdownMenuTrigger asChild>
@@ -89,7 +87,7 @@ export default function Example() {
             <MoreHorizontal />
           </Button>
         </DropdownMenuTrigger>
-        <DropdownMenuContent align="end" className={css({ w: '200px' })}>
+        <DropdownMenuContent align="end" w="200px">
           <DropdownMenuLabel>Actions</DropdownMenuLabel>
           <DropdownMenuGroup>
             <DropdownMenuItem>
@@ -106,12 +104,9 @@ export default function Example() {
                 <Tags className={iconStyle} />
                 Apply label
               </DropdownMenuSubTrigger>
-              <DropdownMenuSubContent className={css({ p: '0' })}>
+              <DropdownMenuSubContent p="0">
                 <Command>
-                  <CommandInput
-                    placeholder="Filter label..."
-                    autoFocus={true}
-                  />
+                  <CommandInput placeholder="Filter label..." autoFocus={true} />
                   <CommandList>
                     <CommandEmpty>No label found.</CommandEmpty>
                     <CommandGroup>
@@ -132,7 +127,7 @@ export default function Example() {
               </DropdownMenuSubContent>
             </DropdownMenuSub>
             <DropdownMenuSeparator />
-            <DropdownMenuItem className={css({ color: 'red.600' })}>
+            <DropdownMenuItem color="red.600">
               <Trash className={iconStyle} />
               Delete
               <DropdownMenuShortcut>⌘⌫</DropdownMenuShortcut>

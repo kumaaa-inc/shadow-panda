@@ -9,6 +9,8 @@ import * as collapsible from './collapsible'
 import * as command from './command'
 import * as contextMenu from './context-menu'
 import * as dialog from './dialog'
+import * as dropdownMenu from './dropdown-menu'
+import * as popover from './popover'
 import * as sheet from './sheet'
 
 export const slotRecipes = {
@@ -23,5 +25,7 @@ export const slotRecipes = {
   ...command,
   ...contextMenu,
   ...dialog,
+  ...dropdownMenu,
+  ...popover,
   ...sheet,
 }

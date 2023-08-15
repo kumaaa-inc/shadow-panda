@@ -1,7 +1,6 @@
 'use client'
 
 import * as React from 'react'
-import { css } from '@shadow-panda/styled-system/css'
 import { Button } from '@/components/ui/button'
 import {
   DropdownMenu,
@@ -21,7 +20,7 @@ export default function Example() {
       <DropdownMenuTrigger asChild>
         <Button variant="outline">Open</Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent className={css({ w: '56' })}>
+      <DropdownMenuContent w="56">
         <DropdownMenuLabel>Panel Position</DropdownMenuLabel>
         <DropdownMenuSeparator />
         <DropdownMenuRadioGroup value={position} onValueChange={setPosition}>

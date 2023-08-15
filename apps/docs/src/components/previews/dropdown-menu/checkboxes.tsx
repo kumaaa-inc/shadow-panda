@@ -2,7 +2,6 @@
 
 import * as React from 'react'
 import { DropdownMenuCheckboxItemProps } from '@radix-ui/react-dropdown-menu'
-import { css } from '@shadow-panda/styled-system/css'
 import { Button } from '@/components/ui/button'
 import {
   DropdownMenu,
@@ -25,13 +24,10 @@ export default function Example() {
       <DropdownMenuTrigger asChild>
         <Button variant="outline">Open</Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent className={css({ w: '56' })}>
+      <DropdownMenuContent w="56">
         <DropdownMenuLabel>Appearance</DropdownMenuLabel>
         <DropdownMenuSeparator />
-        <DropdownMenuCheckboxItem
-          checked={showStatusBar}
-          onCheckedChange={setShowStatusBar}
-        >
+        <DropdownMenuCheckboxItem checked={showStatusBar} onCheckedChange={setShowStatusBar}>
           Status Bar
         </DropdownMenuCheckboxItem>
         <DropdownMenuCheckboxItem
@@ -41,10 +37,7 @@ export default function Example() {
         >
           Activity Bar
         </DropdownMenuCheckboxItem>
-        <DropdownMenuCheckboxItem
-          checked={showPanel}
-          onCheckedChange={setShowPanel}
-        >
+        <DropdownMenuCheckboxItem checked={showPanel} onCheckedChange={setShowPanel}>
           Panel
         </DropdownMenuCheckboxItem>
       </DropdownMenuContent>

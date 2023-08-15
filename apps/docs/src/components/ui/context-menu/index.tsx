@@ -46,8 +46,8 @@ const ItemIndicator = withContext(styled(ContextMenuPrimitive.ItemIndicator), 'i
 const CheckboxItem = React.forwardRef<
   React.ElementRef<typeof ContextMenuPrimitive.CheckboxItem>,
   React.ComponentPropsWithoutRef<typeof ContextMenuPrimitive.CheckboxItem>
->(({ className, children, checked, ...props }, ref) => (
-  <ContextMenuPrimitive.CheckboxItem ref={ref} className={className} checked={checked} {...props}>
+>(({ children, ...props }, ref) => (
+  <ContextMenuPrimitive.CheckboxItem ref={ref} {...props}>
     <ItemIndicator>
       <Check className={icon()} />
     </ItemIndicator>
@@ -59,8 +59,8 @@ CheckboxItem.displayName = ContextMenuPrimitive.CheckboxItem.displayName
 const RadioItem = React.forwardRef<
   React.ElementRef<typeof ContextMenuPrimitive.RadioItem>,
   React.ComponentPropsWithoutRef<typeof ContextMenuPrimitive.RadioItem>
->(({ className, children, ...props }, ref) => (
-  <ContextMenuPrimitive.RadioItem ref={ref} className={className} {...props}>
+>(({ children, ...props }, ref) => (
+  <ContextMenuPrimitive.RadioItem ref={ref} {...props}>
     <ItemIndicator>
       <Circle className={icon({ size: 'xs', fillCurrent: true })} />
     </ItemIndicator>

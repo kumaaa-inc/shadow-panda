@@ -2,27 +2,24 @@
 
 import * as React from 'react'
 import * as PopoverPrimitive from '@radix-ui/react-popover'
-import { cx } from '@shadow-panda/styled-system/css'
-import { popoverContent } from '@shadow-panda/styled-system/recipes'
+import { createStyleContext } from '@shadow-panda/style-context'
+import { styled } from '@shadow-panda/styled-system/jsx'
+import { popover } from '@shadow-panda/styled-system/recipes'
 
-const Popover = PopoverPrimitive.Root
+const { withProvider, withContext } = createStyleContext(popover)
 
-const PopoverTrigger = PopoverPrimitive.Trigger
+const Portal = withContext(styled(PopoverPrimitive.Portal), 'portal')
 
-const PopoverContent = React.forwardRef<
+const Content = React.forwardRef<
   React.ElementRef<typeof PopoverPrimitive.Content>,
   React.ComponentPropsWithoutRef<typeof PopoverPrimitive.Content>
->(({ className, align = 'center', sideOffset = 4, ...props }, ref) => (
-  <PopoverPrimitive.Portal>
-    <PopoverPrimitive.Content
-      ref={ref}
-      align={align}
-      sideOffset={sideOffset}
-      className={cx(popoverContent(), className)}
-      {...props}
-    />
-  </PopoverPrimitive.Portal>
+>(({ align = 'center', sideOffset = 4, ...props }, ref) => (
+  <Portal>
+    <PopoverPrimitive.Content ref={ref} align={align} sideOffset={sideOffset} {...props} />
+  </Portal>
 ))
-PopoverContent.displayName = PopoverPrimitive.Content.displayName
+Content.displayName = PopoverPrimitive.Content.displayName
 
-export { Popover, PopoverTrigger, PopoverContent }
+export const Popover = withProvider(styled(PopoverPrimitive.Root), 'root')
+export const PopoverTrigger = withContext(styled(PopoverPrimitive.Trigger), 'trigger')
+export const PopoverContent = withContext(styled(Content), 'content')

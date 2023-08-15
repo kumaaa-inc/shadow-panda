@@ -1,11 +1,9 @@
 import * as typography from './typography'
 import * as badge from './badge'
 import * as button from './button'
-import * as dropdownMenu from './dropdown-menu'
 import * as icon from './icon'
 import * as input from './input'
 import * as label from './label'
-import * as popover from './popover'
 import * as radioGroup from './radio-group'
 import * as scrollArea from './scroll-area'
 import * as select from './select'
@@ -18,9 +16,7 @@ export const recipes = {
   ...typography,
   ...badge,
   ...button,
-  ...dropdownMenu,
   ...icon,
-  ...popover,
   ...radioGroup,
   ...scrollArea,
   ...input,
