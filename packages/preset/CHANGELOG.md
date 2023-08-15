@@ -1,5 +1,18 @@
 # @shadow-panda/preset
 
+## 0.2.0
+
+### Minor Changes
+
+- 7b3bc0d: Support `ScrollArea` component
+- 859f080: Support `ContextMenu` component
+- b5009c9: Update dependencies
+- 490efbc: Support `Sheet` component
+- cd52021: Migrate most of the recipes to slot recipes, and wrap all components with `styled()` so we can use css props.
+- cd52021: Update dependencies
+- 7b3bc0d: Support `Tabs` component
+- 34d7fdb: Fix button text color on iOS
+
 ## 0.1.0
 
 ### Minor Changes
