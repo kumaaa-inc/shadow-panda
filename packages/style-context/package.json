@@ -1,6 +1,6 @@
 {
   "name": "@shadow-panda/style-context",
-  "description": "Shared style context for using slot recipes in ShadowPanda",
+  "description": "Shared style context for slot recipes in ShadowPanda",
   "version": "0.1.0",
   "main": "dist/index.js",
   "module": "dist/index.mjs",

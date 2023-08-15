@@ -10,10 +10,14 @@ Visit our documentation: [https://shadow-panda.dev/](https://shadow-panda.dev/)
 
 ## Install
 
-Install the preset by running the following command:
+Install the preset and a utility package (used by most components) by running:
 
 ```bash
 npm i -D @shadow-panda/preset
+```
+
+```bash
+npm i @shadow-panda/style-context
 ```
 
 Add the preset to your `panda.config.ts`
