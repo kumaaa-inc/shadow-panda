@@ -1,34 +1,13 @@
 'use client'
 
-import * as React from 'react'
 import * as TabsPrimitive from '@radix-ui/react-tabs'
-import { tabsList, tabsTrigger, tabsContent } from '@shadow-panda/styled-system/recipes'
-import { cx } from '@shadow-panda/styled-system/css'
+import { createStyleContext } from '@shadow-panda/style-context'
+import { styled } from '@shadow-panda/styled-system/jsx'
+import { tabs } from '@shadow-panda/styled-system/recipes'
 
-const Tabs = TabsPrimitive.Root
+const { withProvider, withContext } = createStyleContext(tabs)
 
-const TabsList = React.forwardRef<
-  React.ElementRef<typeof TabsPrimitive.List>,
-  React.ComponentPropsWithoutRef<typeof TabsPrimitive.List>
->(({ className, ...props }, ref) => (
-  <TabsPrimitive.List ref={ref} className={cx(tabsList(), className)} {...props} />
-))
-TabsList.displayName = TabsPrimitive.List.displayName
-
-const TabsTrigger = React.forwardRef<
-  React.ElementRef<typeof TabsPrimitive.Trigger>,
-  React.ComponentPropsWithoutRef<typeof TabsPrimitive.Trigger>
->(({ className, ...props }, ref) => (
-  <TabsPrimitive.Trigger ref={ref} className={cx(tabsTrigger(), className)} {...props} />
-))
-TabsTrigger.displayName = TabsPrimitive.Trigger.displayName
-
-const TabsContent = React.forwardRef<
-  React.ElementRef<typeof TabsPrimitive.Content>,
-  React.ComponentPropsWithoutRef<typeof TabsPrimitive.Content>
->(({ className, ...props }, ref) => (
-  <TabsPrimitive.Content ref={ref} className={cx(tabsContent(), className)} {...props} />
-))
-TabsContent.displayName = TabsPrimitive.Content.displayName
-
-export { Tabs, TabsList, TabsTrigger, TabsContent }
+export const Tabs = withProvider(styled(TabsPrimitive.Root), 'root')
+export const TabsList = withContext(styled(TabsPrimitive.List), 'list')
+export const TabsTrigger = withContext(styled(TabsPrimitive.Trigger), 'trigger')
+export const TabsContent = withContext(styled(TabsPrimitive.Content), 'content')

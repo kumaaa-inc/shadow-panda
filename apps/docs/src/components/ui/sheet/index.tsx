@@ -4,9 +4,9 @@ import * as React from 'react'
 import * as SheetPrimitive from '@radix-ui/react-dialog'
 import { X } from 'lucide-react'
 import { createStyleContext } from '@shadow-panda/style-context'
-import { sheet, icon } from '@shadow-panda/styled-system/recipes'
 import { styled } from '@shadow-panda/styled-system/jsx'
 import { css } from '@shadow-panda/styled-system/css'
+import { sheet, icon } from '@shadow-panda/styled-system/recipes'
 
 const { withProvider, withContext } = createStyleContext(sheet)
 

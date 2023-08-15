@@ -127,7 +127,7 @@ export const semanticTokens = defineSemanticTokens({
     ring: {
       value: {
         base: 'hsl(240 5% 64.9%)',
-        _dark: 'hsl(240 3.7% 15.9%)',
+        _dark: 'hsl(240 4.9% 83.9%)',
       },
     },
   },

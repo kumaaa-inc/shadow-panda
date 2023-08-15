@@ -12,9 +12,11 @@ import * as dialog from './dialog'
 import * as dropdownMenu from './dropdown-menu'
 import * as popover from './popover'
 import * as radioGroup from './radio-group'
+import * as scrollArea from './scroll-area'
 import * as select from './select'
 import * as sheet from './sheet'
 import * as switchRecipe from './switch'
+import * as tabs from './tabs'
 
 export const slotRecipes = {
   ...accordion,
@@ -31,7 +33,9 @@ export const slotRecipes = {
   ...dropdownMenu,
   ...popover,
   ...radioGroup,
+  ...scrollArea,
   ...select,
   ...sheet,
   ...switchRecipe,
+  ...tabs,
 }

@@ -1,0 +1,51 @@
+---
+title: Tabs
+description: A set of layered sections of content - known as tab panels - that are displayed one at a time.
+references:
+  shadcnUiLink: https://ui.shadcn.com/docs/components/tabs
+  radix:
+    link: https://www.radix-ui.com/docs/primitives/components/tabs
+    api: https://www.radix-ui.com/docs/primitives/components/tabs#api-reference
+---
+
+<ComponentPreview name="tabs" withRecipe />
+
+## Installation
+
+<Steps>
+### Install the following dependencies
+
+```bash npm2yarn
+npm i @radix-ui/react-tabs
+```
+
+### Copy and paste the following code into your project
+
+<ComponentSource name="tabs" />
+
+### Update the import paths to match your project setup
+
+</Steps>
+
+## Usage
+
+```tsx
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
+```
+
+```tsx
+<Tabs defaultValue="account" w="400px">
+  <TabsList>
+    <TabsTrigger value="account">Account</TabsTrigger>
+    <TabsTrigger value="password">Password</TabsTrigger>
+  </TabsList>
+  <TabsContent value="account">Make changes to your account here.</TabsContent>
+  <TabsContent value="password">Change your password here.</TabsContent>
+</Tabs>
+```
+
+## Examples
+
+### Alternate styles
+
+<ComponentPreview name="tabs" type="alternate-styles" />
