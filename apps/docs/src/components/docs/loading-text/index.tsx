@@ -8,11 +8,11 @@ export const LoadingText = () => (
       color: 'muted.foreground',
       display: 'flex',
       alignItems: 'center',
+      gap: '2',
     })}
   >
     <Loader2
       className={css({
-        mr: '2',
         height: '4',
         width: '4',
         animation: 'spin',

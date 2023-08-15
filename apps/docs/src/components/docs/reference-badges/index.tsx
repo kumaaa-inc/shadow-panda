@@ -30,9 +30,7 @@ export function ReferenceBadges({ shadcnUiLink, radix }: ReferenceBadgesProps) {
           rel="noreferrer"
           className={badge({ variant: 'secondary' })}
         >
-          <Icons.shadcnUi
-            className={css({ mr: '1', height: '3', width: '3' })}
-          />
+          <Icons.shadcnUi className={css({ mr: '1', height: '3', width: '3' })} />
           shadcn/ui
         </Link>
       )}

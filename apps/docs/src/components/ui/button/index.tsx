@@ -5,7 +5,7 @@ import { button } from '@shadow-panda/styled-system/recipes'
 
 const BaseButton = React.forwardRef<
   HTMLButtonElement,
-  React.ButtonHTMLAttributes<HTMLButtonElement> & { asChild?: boolean; children: React.ReactNode }
+  React.ButtonHTMLAttributes<HTMLButtonElement> & { asChild?: boolean; children?: React.ReactNode }
 >(({ asChild = false, ...props }, ref) => {
   const Comp = asChild ? Slot : 'button'
   return <Comp ref={ref} {...props} />

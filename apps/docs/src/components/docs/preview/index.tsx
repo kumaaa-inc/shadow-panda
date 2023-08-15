@@ -7,11 +7,7 @@ export interface PreviewProps {
   children: React.ReactNode
 }
 
-export const Preview = ({
-  className,
-  height = '350px',
-  children,
-}: PreviewProps) => {
+export const Preview = ({ className, height = '350px', children }: PreviewProps) => {
   return (
     <div
       className={cx(

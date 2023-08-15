@@ -14,15 +14,8 @@ export interface TabsProps {
 }
 
 // `@theguild/remark-npm2yarn` -compatible tabs
-export const Tabs = ({
-  items,
-  storageKey,
-  defaultIndex,
-  children,
-}: TabsProps) => {
-  const [selectedIndex, setSelectedIndex] = React.useState(
-    String(defaultIndex ?? 0),
-  )
+export const Tabs = ({ items, storageKey, defaultIndex, children }: TabsProps) => {
+  const [selectedIndex, setSelectedIndex] = React.useState(String(defaultIndex ?? 0))
 
   React.useEffect(() => {
     if (!storageKey) {
@@ -49,9 +42,7 @@ export const Tabs = ({
     if (storageKey) {
       localStorage.setItem(storageKey, index)
 
-      window.dispatchEvent(
-        new StorageEvent('storage', { key: storageKey, newValue: index }),
-      )
+      window.dispatchEvent(new StorageEvent('storage', { key: storageKey, newValue: index }))
       return
     }
     setSelectedIndex(index)
@@ -59,9 +50,7 @@ export const Tabs = ({
 
   // Map children and add value prop
   const tabContent = React.Children.map(children, (child, i) => {
-    return React.isValidElement(child)
-      ? React.cloneElement(child, { value: `${i}` })
-      : null
+    return React.isValidElement(child) ? React.cloneElement(child, { value: `${i}` }) : null
   })
 
   return (

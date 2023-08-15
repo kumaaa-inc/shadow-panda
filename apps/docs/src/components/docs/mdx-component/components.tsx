@@ -34,13 +34,7 @@ import { CopyButton } from '@/components/docs/copy-button'
 import { Preview, type PreviewProps } from '@/components/docs/preview'
 import { Steps } from '@/components/docs/steps'
 
-const HeadingAnchor = ({
-  id,
-  level,
-}: {
-  id?: string
-  level: 1 | 2 | 3 | 4
-}) => {
+const HeadingAnchor = ({ id, level }: { id?: string; level: 1 | 2 | 3 | 4 }) => {
   if (!id) return null
 
   return (
@@ -115,16 +109,11 @@ export const components = {
     />
   ),
   Steps,
-  h1: ({
-    className,
-    children,
-    ...props
-  }: React.HTMLAttributes<HTMLHeadingElement>) => (
+  h1: ({ className, children, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
     <h1
       className={cx(
         h1(),
         css({
-          display: 'flex',
           alignItems: 'center',
           _hover: {
             '& a': {
@@ -140,17 +129,12 @@ export const components = {
       <HeadingAnchor id={props.id} level={1} />
     </h1>
   ),
-  h2: ({
-    className,
-    children,
-    ...props
-  }: React.HTMLAttributes<HTMLHeadingElement>) => (
+  h2: ({ className, children, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
     <h2
       className={cx(
         h2(),
         css({
           mt: '10',
-          display: 'flex',
           alignItems: 'center',
           _hover: {
             '& a': {
@@ -166,17 +150,12 @@ export const components = {
       <HeadingAnchor id={props.id} level={2} />
     </h2>
   ),
-  h3: ({
-    className,
-    children,
-    ...props
-  }: React.HTMLAttributes<HTMLHeadingElement>) => (
+  h3: ({ className, children, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
     <h3
       className={cx(
         h3(),
         css({
           mt: '8',
-          display: 'flex',
           alignItems: 'center',
           _hover: {
             '& a': {
@@ -192,17 +171,12 @@ export const components = {
       <HeadingAnchor id={props.id} level={3} />
     </h3>
   ),
-  h4: ({
-    className,
-    children,
-    ...props
-  }: React.HTMLAttributes<HTMLHeadingElement>) => (
+  h4: ({ className, children, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
     <h4
       className={cx(
         h4(),
         css({
           mt: '8',
-          display: 'flex',
           alignItems: 'center',
           _hover: {
             '& a': {
@@ -257,11 +231,7 @@ export const components = {
       {...props}
     />
   ),
-  a: ({
-    className,
-    href,
-    ...props
-  }: React.AnchorHTMLAttributes<HTMLAnchorElement>) => {
+  a: ({ className, href, ...props }: React.AnchorHTMLAttributes<HTMLAnchorElement>) => {
     return (
       <Link
         className={cx(link(), className)}
@@ -279,10 +249,7 @@ export const components = {
     <ul className={cx(list(), className)} {...props} />
   ),
   ol: ({ className, ...props }: React.HTMLAttributes<HTMLOListElement>) => (
-    <ol
-      className={cx(list(), css({ listStyleType: 'decimal' }), className)}
-      {...props}
-    />
+    <ol className={cx(list(), css({ listStyleType: 'decimal' }), className)} {...props} />
   ),
   li: ({ className, ...props }: React.HTMLAttributes<HTMLElement>) => (
     <li className={className} {...props} />
@@ -290,16 +257,8 @@ export const components = {
   blockquote: ({ className, ...props }: React.HTMLAttributes<HTMLElement>) => (
     <blockquote className={cx(blockquote(), className)} {...props} />
   ),
-  img: ({
-    className,
-    alt,
-    ...props
-  }: React.ImgHTMLAttributes<HTMLImageElement>) => (
-    <img
-      className={cx(css({ rounded: 'md' }), className)}
-      alt={alt}
-      {...props}
-    />
+  img: ({ className, alt, ...props }: React.ImgHTMLAttributes<HTMLImageElement>) => (
+    <img className={cx(css({ rounded: 'md' }), className)} alt={alt} {...props} />
   ),
   hr: ({ ...props }: React.HTMLAttributes<HTMLHRElement>) => (
     <hr
@@ -412,11 +371,7 @@ export const components = {
   },
   code: ({ className, ...props }: React.HTMLAttributes<HTMLElement>) => (
     <code
-      className={cx(
-        inlineCode(),
-        css({ fontSize: 'inherit', mx: '0.5' }),
-        className,
-      )}
+      className={cx(inlineCode(), css({ fontSize: 'inherit', mx: '0.5' }), className)}
       {...props}
     />
   ),

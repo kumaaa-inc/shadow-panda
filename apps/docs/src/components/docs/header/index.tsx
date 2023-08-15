@@ -70,15 +70,8 @@ export const Header = () => {
               gap: '1',
             })}
           >
-            <Button
-              className={css({ w: '9', h: '9', px: '0' })}
-              variant="ghost"
-              asChild
-            >
-              <Link
-                href="https://github.com/kumaaa-inc/shadow-panda"
-                target="_blank"
-              >
+            <Button variant="ghost" w="9" h="9" px="0" asChild>
+              <Link href="https://github.com/kumaaa-inc/shadow-panda" target="_blank">
                 <Icons.gitHub className={css({ w: '4', h: '4' })} />
                 <span className={css({ srOnly: true })}>GitHub</span>
               </Link>

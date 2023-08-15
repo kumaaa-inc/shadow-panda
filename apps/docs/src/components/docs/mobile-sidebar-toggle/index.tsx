@@ -5,13 +5,7 @@ import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { MenuIcon } from 'lucide-react'
 import { css } from '@shadow-panda/styled-system/css'
-import {
-  Sheet,
-  SheetTrigger,
-  SheetContent,
-  SheetHeader,
-  SheetTitle,
-} from '@/components/ui/sheet'
+import { Sheet, SheetTrigger, SheetContent, SheetHeader, SheetTitle } from '@/components/ui/sheet'
 import { Icons } from '@/components/docs/icons'
 import { Button } from '@/components/ui/button'
 import { ScrollArea } from '@/components/ui/scroll-area'

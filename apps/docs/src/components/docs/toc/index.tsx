@@ -82,11 +82,7 @@ const Tree = ({ tree, level = 1, activeItem }: TreeProps) => {
               {item.text}
             </a>
             {item?.children ? (
-              <Tree
-                tree={item.children}
-                level={level + 1}
-                activeItem={activeItem}
-              />
+              <Tree tree={item.children} level={level + 1} activeItem={activeItem} />
             ) : null}
           </li>
         )

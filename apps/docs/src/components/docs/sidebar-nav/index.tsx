@@ -50,22 +50,11 @@ export const SidebarNav = ({ onNavigate }: SidebarNavProps) => {
   })
 
   return (
-    <Accordion
-      type="multiple"
-      className={css({ width: 'full' })}
-      defaultValue={['overview', 'guides', 'components']}
-      asChild
-    >
+    <Accordion type="multiple" w="full" defaultValue={['overview', 'guides', 'components']} asChild>
       <ul>
-        <AccordionItem
-          value="overview"
-          className={css({ borderBottom: 'none' })}
-          asChild
-        >
+        <AccordionItem value="overview" borderBottom="none" asChild>
           <li>
-            <AccordionTrigger className={triggerStyle}>
-              Overview
-            </AccordionTrigger>
+            <AccordionTrigger className={triggerStyle}>Overview</AccordionTrigger>
             <AccordionContent>
               <ul className={subMenuStyle}>
                 {sortedOverviews.map((doc) => (
@@ -96,11 +85,7 @@ export const SidebarNav = ({ onNavigate }: SidebarNavProps) => {
             </AccordionContent>
           </li>
         </AccordionItem>
-        <AccordionItem
-          value="guides"
-          className={css({ borderBottom: 'none' })}
-          asChild
-        >
+        <AccordionItem value="guides" borderBottom="none" asChild>
           <li>
             <AccordionTrigger className={triggerStyle}>Guides</AccordionTrigger>
             <AccordionContent>
@@ -133,15 +118,9 @@ export const SidebarNav = ({ onNavigate }: SidebarNavProps) => {
             </AccordionContent>
           </li>
         </AccordionItem>
-        <AccordionItem
-          value="components"
-          className={css({ borderBottom: 'none' })}
-          asChild
-        >
+        <AccordionItem value="components" borderBottom="none" asChild>
           <li>
-            <AccordionTrigger className={triggerStyle}>
-              Components
-            </AccordionTrigger>
+            <AccordionTrigger className={triggerStyle}>Components</AccordionTrigger>
             <AccordionContent>
               <ul className={subMenuStyle}>
                 {sortedComponents.map((doc) => (

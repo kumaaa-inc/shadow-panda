@@ -3,6 +3,4 @@ export interface ComponentSourceProps {
   children: React.ReactNode
 }
 
-export const ComponentSource = ({ children }: ComponentSourceProps) => (
-  <>{children}</>
-)
+export const ComponentSource = ({ children }: ComponentSourceProps) => <>{children}</>
