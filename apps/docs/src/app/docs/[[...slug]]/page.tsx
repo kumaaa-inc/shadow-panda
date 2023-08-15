@@ -1,11 +1,8 @@
 import { notFound } from 'next/navigation'
 import { ChevronRightIcon } from 'lucide-react'
-import {
-  allDocuments,
-  type Component as ComponentDoc,
-} from 'contentlayer/generated'
+import { allDocuments, type Component as ComponentDoc } from 'contentlayer/generated'
 import { css } from '@shadow-panda/styled-system/css'
-import { h1 } from '@shadow-panda/styled-system/recipes'
+import { h1, icon } from '@shadow-panda/styled-system/recipes'
 import { MdxComponent } from '@/components/docs/mdx-component'
 import { Lead } from '@/components/docs/lead'
 import { ReferenceBadges } from '@/components/docs/reference-badges'
@@ -16,14 +13,8 @@ import { Pager } from '@/components/docs/pager'
 export const generateStaticParams = async () =>
   allDocuments.map((doc) => ({ slug: doc.slugAsParams.split('/') }))
 
-export const generateMetadata = ({
-  params,
-}: {
-  params: { slug: string[] }
-}) => {
-  const doc = allDocuments.find(
-    (doc) => doc.slugAsParams === params.slug.join('/'),
-  )
+export const generateMetadata = ({ params }: { params: { slug: string[] } }) => {
+  const doc = allDocuments.find((doc) => doc.slugAsParams === params.slug.join('/'))
 
   if (!doc) throw new Error(`Page not found: ${params.slug.join('/')}`)
 
@@ -31,9 +22,7 @@ export const generateMetadata = ({
 }
 
 const ComponentsPage = ({ params }: { params: { slug: string[] } }) => {
-  const doc = allDocuments.find(
-    (doc) => doc.slugAsParams === params.slug.join('/'),
-  )
+  const doc = allDocuments.find((doc) => doc.slugAsParams === params.slug.join('/'))
 
   if (!doc) {
     notFound()
@@ -69,10 +58,8 @@ const ComponentsPage = ({ params }: { params: { slug: string[] } }) => {
           })}
         >
           <div className={css({ truncate: true })}>{doc.type}</div>
-          <ChevronRightIcon className={css({ h: '4', w: '4' })} />
-          <div className={css({ fontWeight: 'medium', color: 'foreground' })}>
-            {doc.title}
-          </div>
+          <ChevronRightIcon className={icon()} />
+          <div className={css({ fontWeight: 'medium', color: 'foreground' })}>{doc.title}</div>
         </div>
 
         <h1 className={h1()}>{doc.title}</h1>

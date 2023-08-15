@@ -3,10 +3,7 @@
 import * as React from 'react'
 import * as ScrollAreaPrimitive from '@radix-ui/react-scroll-area'
 import { cx } from '@shadow-panda/styled-system/css'
-import {
-  scrollArea,
-  scrollAreaScrollBar,
-} from '@shadow-panda/styled-system/recipes'
+import { scrollArea, scrollAreaScrollBar } from '@shadow-panda/styled-system/recipes'
 
 const ScrollArea = React.forwardRef<
   React.ElementRef<typeof ScrollAreaPrimitive.Root>,
@@ -18,9 +15,7 @@ const ScrollArea = React.forwardRef<
     data-part="root"
     {...props}
   >
-    <ScrollAreaPrimitive.Viewport data-part="viewport">
-      {children}
-    </ScrollAreaPrimitive.Viewport>
+    <ScrollAreaPrimitive.Viewport data-part="viewport">{children}</ScrollAreaPrimitive.Viewport>
     <ScrollBar />
     <ScrollAreaPrimitive.Corner />
   </ScrollAreaPrimitive.Root>
