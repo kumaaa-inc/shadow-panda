@@ -36,11 +36,17 @@ function getRecipeSource(component: string) {
   try {
     return fs.readFileSync(path.join(presetSrcDir, `./recipes/${component}.ts`), 'utf8')
   } catch (error) {
-    try {
-      return fs.readFileSync(path.join(presetSrcDir, `./slot-recipes/${component}.ts`), 'utf8')
-    } catch (e) {
-      return ''
-    }
+    return ''
+  }
+}
+
+function getSlotRecipeSource(component: string) {
+  const presetSrcDir = path.join(process.cwd(), `../../packages/preset/src/`)
+
+  try {
+    return fs.readFileSync(path.join(presetSrcDir, `./slot-recipes/${component}.ts`), 'utf8')
+  } catch (error) {
+    return ''
   }
 }
 
@@ -60,7 +66,7 @@ export function rehypeComponent() {
     visit(tree, (node: UnistNode) => {
       if (node.name === 'ComponentPreview') {
         const component = getNodeAttributeByName(node, 'name')?.value as string
-        const type = (getNodeAttributeByName(node, 'type')?.value as string) ?? 'index'
+        const file = (getNodeAttributeByName(node, 'file')?.value as string) ?? 'index'
 
         const withRecipe = getNodeAttributeByName(node, 'withRecipe')?.value !== undefined
 
@@ -68,11 +74,12 @@ export function rehypeComponent() {
 
         try {
           const source = fs.readFileSync(
-            path.join(process.cwd(), `./src/components/previews/${component}/${type}.tsx`),
+            path.join(process.cwd(), `./src/components/previews/${component}/${file}.tsx`),
             'utf8',
           )
 
           const recipeSource = withRecipe ? getRecipeSource(component) : ''
+          const slotRecipeSource = withRecipe ? getSlotRecipeSource(component) : ''
 
           node.children?.push(
             u('element', {
@@ -96,6 +103,15 @@ export function rehypeComponent() {
           )
 
           if (recipeSource) {
+            node.attributes = [
+              ...(node.attributes ?? []),
+              {
+                name: 'hasRecipe',
+                value: null,
+                type: 'mdxJsxAttribute',
+              },
+            ]
+
             node.children?.push(
               u('element', {
                 tagName: 'pre',
@@ -116,6 +132,37 @@ export function rehypeComponent() {
               }),
             )
           }
+
+          if (slotRecipeSource) {
+            node.attributes = [
+              ...(node.attributes ?? []),
+              {
+                name: 'hasSlotRecipe',
+                value: null,
+                type: 'mdxJsxAttribute',
+              },
+            ]
+
+            node.children?.push(
+              u('element', {
+                tagName: 'pre',
+                children: [
+                  u('element', {
+                    tagName: 'code',
+                    properties: {
+                      className: ['language-tsx'],
+                    },
+                    children: [
+                      {
+                        type: 'text',
+                        value: slotRecipeSource,
+                      },
+                    ],
+                  }),
+                ],
+              }),
+            )
+          }
         } catch (error) {
           console.error(error)
         }
@@ -123,12 +170,13 @@ export function rehypeComponent() {
 
       if (node.name === 'ComponentSource') {
         const component = getNodeAttributeByName(node, 'name')?.value as string
+        const file = (getNodeAttributeByName(node, 'file')?.value as string) ?? 'index'
 
         if (!component) return null
 
         try {
           const source = fs.readFileSync(
-            path.join(process.cwd(), `./src/components/ui/${component}/index.tsx`),
+            path.join(process.cwd(), `./src/components/ui/${component}/${file}.tsx`),
             'utf8',
           )
 
@@ -139,7 +187,7 @@ export function rehypeComponent() {
                 u('element', {
                   tagName: 'code',
                   data: {
-                    meta: `title="components/ui/${component}.tsx"`,
+                    meta: `title="components/ui/${component}/${file}.tsx"`,
                   },
                   properties: {
                     className: ['language-tsx'],

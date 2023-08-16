@@ -17,6 +17,7 @@ import * as select from './select'
 import * as sheet from './sheet'
 import * as switchRecipe from './switch'
 import * as tabs from './tabs'
+import * as toast from './toast'
 
 export const slotRecipes = {
   ...accordion,
@@ -38,4 +39,5 @@ export const slotRecipes = {
   ...sheet,
   ...switchRecipe,
   ...tabs,
+  ...toast,
 }

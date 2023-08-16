@@ -14,6 +14,7 @@ export default defineConfig({
     recipes: {
       // For dynamic `side` preview
       sheet: [{ side: ['*'] }],
+      toast: [{ variant: ['*'] }],
     },
   },
 
