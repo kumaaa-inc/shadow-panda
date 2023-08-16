@@ -56,7 +56,7 @@
     "@types/unist": "3.0.0",
     "eslint": "8.47.0",
     "github-slugger": "2.0.0",
-    "postcss": "8.4.27",
+    "postcss": "8.4.28",
     "rehype-pretty-code": "0.10.0",
     "rehype-slug": "5.1.0",
     "remark-code-import": "1.2.0",
