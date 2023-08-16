@@ -1,5 +1,11 @@
 # @shadow-panda/preset
 
+## 0.3.0
+
+### Minor Changes
+
+- ffdd964: Support `Toast` component
+
 ## 0.2.0
 
 ### Minor Changes
