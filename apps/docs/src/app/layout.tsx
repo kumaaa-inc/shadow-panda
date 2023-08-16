@@ -4,6 +4,7 @@ import type { PropsWithChildren } from 'react'
 import { css } from '@shadow-panda/styled-system/css'
 import { Header } from '@/components/docs/header'
 import { Footer } from '@/components/docs/footer'
+import { Toaster } from '@/components/ui/toast/toaster'
 import '../styles/global.css'
 import { ThemeProvider } from './theme-provider'
 
@@ -49,6 +50,7 @@ const RootLayout = (props: PropsWithChildren) => {
             <div className={css({ flex: '1' })}>{props.children}</div>
             <Footer />
           </div>
+          <Toaster />
         </ThemeProvider>
       </body>
     </html>

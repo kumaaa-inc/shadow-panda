@@ -1,0 +1,114 @@
+---
+title: Toast
+description: A succinct message that is displayed temporarily.
+references:
+  shadcnUiLink: https://ui.shadcn.com/docs/components/toast
+  radix:
+    link: https://www.radix-ui.com/docs/primitives/components/toast
+    api: https://www.radix-ui.com/docs/primitives/components/toast#api-reference
+---
+
+<ComponentPreview name="toast" withRecipe />
+
+## Installation
+
+<Steps>
+### Install the following dependencies
+
+```bash npm2yarn
+npm i @radix-ui/react-toast
+```
+
+### Copy and paste the following code into your project
+
+<ComponentSource name="toast" />
+<ComponentSource name="toast" file="toaster" />
+<ComponentSource name="toast" file="use-toast" />
+
+### Update the import paths to match your project setup
+
+### Add the Toaster component to your app
+
+```tsx {1, 9} title="app/layout.tsx"
+import { Toaster } from '@/components/ui/toast/toaster'
+
+export default function RootLayout({ children }) {
+  return (
+    <html lang="en">
+      <head />
+      <body>
+        <main>{children}</main>
+        <Toaster />
+      </body>
+    </html>
+  )
+}
+```
+
+### Edit `panda.config.ts` to load the toast variant css
+
+```ts {6-11} title="panda.config.ts"
+import { defineConfig } from '@pandacss/dev'
+
+export default defineConfig({
+  // ...rest of your config
+
+  staticCss: {
+    recipes: {
+      // Load toast variant styles since it cannot be statically analyzed
+      toast: [{ variant: ['*'] }],
+    },
+  },
+})
+```
+
+</Steps>
+
+## Usage
+
+```tsx
+import { useToast } from '@/components/ui/toast/use-toast'
+```
+
+```tsx {2, 7-10}
+export const Example = () => {
+  const { toast } = useToast()
+
+  return (
+    <Button
+      onClick={() => {
+        toast({
+          title: 'Scheduled: Catch up',
+          description: 'Friday, February 10, 2023 at 5:57 PM',
+        })
+      }}
+    >
+      Show Toast
+    </Button>
+  )
+}
+```
+
+<Callout emoji="ℹ️">
+  To display multiple toasts at the same time, you can update the `TOAST_LIMIT` in `use-toast.tsx`.
+</Callout>
+
+## Examples
+
+### Simple
+
+<ComponentPreview name="toast" file="simple" />
+
+### With Title
+
+<ComponentPreview name="toast" file="with-title" />
+
+### With Action
+
+<ComponentPreview name="toast" file="with-action" />
+
+### Destructive
+
+Use `toast({ variant: "destructive" })` to display a destructive toast.
+
+<ComponentPreview name="toast" file="destructive" />

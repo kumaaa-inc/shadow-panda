@@ -135,6 +135,7 @@ export const semanticTokens = defineSemanticTokens({
     base: { value: '1px solid {colors.border}' },
     input: { value: '1px solid {colors.input}' },
     primary: { value: '1px solid {colors.primary}' },
+    destructive: { value: '1px solid {colors.destructive}' },
   },
   radii: {
     radius: {

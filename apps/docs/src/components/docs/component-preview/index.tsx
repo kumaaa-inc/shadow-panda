@@ -6,21 +6,40 @@ import { LoadingText } from '@/components/docs/loading-text'
 
 export interface ComponentPreviewProps {
   name: string
-  type?: string
+  file?: string
   withRecipe?: boolean
+  hasRecipe?: boolean
+  hasSlotRecipe?: boolean
   children: React.ReactNode
 }
 
-const getExampleComponent = ({ name, type = 'index' }: { name: string; type?: string }) =>
-  React.lazy(() => import(`@/components/previews/${name}/${type}.tsx`))
+const getExampleComponent = ({ name, file = 'index' }: { name: string; file?: string }) =>
+  React.lazy(() => import(`@/components/previews/${name}/${file}.tsx`))
 
-export const ComponentPreview = ({ name, type, withRecipe, children }: ComponentPreviewProps) => {
-  const Example = getExampleComponent({ name, type })
+export const ComponentPreview = ({
+  name,
+  file,
+  withRecipe,
+  hasRecipe,
+  hasSlotRecipe,
+  children,
+}: ComponentPreviewProps) => {
+  const Example = getExampleComponent({ name, file })
 
-  const [code, recipe] = React.Children.toArray(children)
+  const [code, recipe1, recipe2] = React.Children.toArray(children)
+
+  const items = ['Preview', 'Code']
+
+  if (withRecipe && hasRecipe) {
+    items.push('Recipe')
+  }
+
+  if (withRecipe && hasSlotRecipe) {
+    items.push('Slot Recipe')
+  }
 
   return (
-    <Tabs items={withRecipe && recipe ? ['Preview', 'Code', 'Recipe'] : ['Preview', 'Code']}>
+    <Tabs items={items}>
       <Tab>
         <Preview className={css({ mt: '6', mb: '4' })}>
           <React.Suspense fallback={<LoadingText />}>
@@ -29,7 +48,8 @@ export const ComponentPreview = ({ name, type, withRecipe, children }: Component
         </Preview>
       </Tab>
       <Tab>{code}</Tab>
-      {withRecipe && !!recipe && <Tab>{recipe}</Tab>}
+      {withRecipe && !!recipe1 && <Tab>{recipe1}</Tab>}
+      {withRecipe && !!recipe2 && <Tab>{recipe2}</Tab>}
     </Tabs>
   )
 }
