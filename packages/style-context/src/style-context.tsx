@@ -17,7 +17,7 @@ export const createStyleContext = <R extends AnyRecipe>(recipe: R) => {
   const withProvider = <T,>(
     Component: React.ComponentType<T>,
     slot: Slots<R>,
-    initialProps?: Partial<T> & { className?: string },
+    defaultProps?: Partial<T> & { className?: string },
   ) => {
     const Comp = React.forwardRef((props: T & Parameters<R>[0], ref) => {
       const [variantProps, otherProps] = recipe.splitVariantProps(props as AnyProps)
@@ -25,14 +25,14 @@ export const createStyleContext = <R extends AnyRecipe>(recipe: R) => {
       const styles = recipe(variantProps) as ReturnType<R>
       const slotClass = styles?.[slot ?? '']
       const classNames = [
-        initialProps?.className ?? null,
+        defaultProps?.className ?? null,
         slotClass ?? null,
         className ?? null,
       ].filter(Boolean)
 
       return (
         <StyleContext.Provider value={styles}>
-          <Component ref={ref} {...initialProps} className={classNames.join(' ')} {...rest} />
+          <Component ref={ref} {...defaultProps} className={classNames.join(' ')} {...rest} />
         </StyleContext.Provider>
       )
     })
@@ -43,7 +43,7 @@ export const createStyleContext = <R extends AnyRecipe>(recipe: R) => {
   const withContext = <T,>(
     Component: React.ComponentType<T>,
     slot?: Slots<R>,
-    initialProps?: Partial<T> & { className?: string },
+    defaultProps?: Partial<T> & { className?: string },
   ) => {
     if (!slot) return Component
 
@@ -51,13 +51,13 @@ export const createStyleContext = <R extends AnyRecipe>(recipe: R) => {
       const styles = React.useContext(StyleContext)
       const slotClass = styles?.[slot ?? '']
       const classNames = [
-        initialProps?.className ?? null,
+        defaultProps?.className ?? null,
         slotClass ?? null,
         className ?? null,
       ].filter(Boolean)
 
       return (
-        <Component ref={ref} {...initialProps} className={classNames.join(' ')} {...(rest as T)} />
+        <Component ref={ref} {...defaultProps} className={classNames.join(' ')} {...(rest as T)} />
       )
     })
     Comp.displayName = Component.displayName || Component.name

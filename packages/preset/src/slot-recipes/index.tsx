@@ -18,6 +18,7 @@ import * as sheet from './sheet'
 import * as switchRecipe from './switch'
 import * as tabs from './tabs'
 import * as toast from './toast'
+import * as tooltip from './tooltip'
 
 export const slotRecipes = {
   ...accordion,
@@ -40,4 +41,5 @@ export const slotRecipes = {
   ...switchRecipe,
   ...tabs,
   ...toast,
+  ...tooltip,
 }
