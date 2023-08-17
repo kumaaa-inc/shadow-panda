@@ -11,6 +11,7 @@ import * as contextMenu from './context-menu'
 import * as dialog from './dialog'
 import * as dropdownMenu from './dropdown-menu'
 import * as hoverCard from './hover-card'
+import * as menubar from './menubar'
 import * as popover from './popover'
 import * as radioGroup from './radio-group'
 import * as scrollArea from './scroll-area'
@@ -35,6 +36,7 @@ export const slotRecipes = {
   ...dialog,
   ...dropdownMenu,
   ...hoverCard,
+  ...menubar,
   ...popover,
   ...radioGroup,
   ...scrollArea,
