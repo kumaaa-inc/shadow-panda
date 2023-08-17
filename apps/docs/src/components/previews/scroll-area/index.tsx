@@ -13,10 +13,8 @@ export default function Example() {
           Tags
         </styled.h4>
         {tags.map((tag) => (
-          <React.Fragment>
-            <styled.div key={tag} textStyle="sm">
-              {tag}
-            </styled.div>
+          <React.Fragment key={tag}>
+            <styled.div textStyle="sm">{tag}</styled.div>
             <Separator my="2" />
           </React.Fragment>
         ))}
