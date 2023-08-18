@@ -1,5 +1,14 @@
 # @shadow-panda/preset
 
+## 0.3.0
+
+### Minor Changes
+
+- ba2b385: Support `HoverCard` component
+- 42d35ab: Support `Tooltip` component
+- ffdd964: Support `Toast` component
+- 2ce0557: Support `Menubar` component
+
 ## 0.2.0
 
 ### Minor Changes
