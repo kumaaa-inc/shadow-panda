@@ -1,0 +1,66 @@
+---
+title: Menubar
+description: A visually persistent menu common in desktop applications that provides quick access to a consistent set of commands.
+references:
+  shadcnUiLink: https://ui.shadcn.com/docs/components/menubar
+  radix:
+    link: https://www.radix-ui.com/docs/primitives/components/menubar
+    api: https://www.radix-ui.com/docs/primitives/components/menubar#api-reference
+---
+
+<ComponentPreview name="menubar" withRecipe />
+
+## Installation
+
+<Steps>
+### Install the following dependencies
+
+```bash npm2yarn
+npm i @radix-ui/react-menubar
+```
+
+### Copy and paste the following code into your project
+
+<ComponentSource name="menubar" />
+
+### Update the import paths to match your project setup
+
+</Steps>
+
+## Usage
+
+```tsx
+import {
+  Menubar,
+  MenubarContent,
+  MenubarItem,
+  MenubarMenu,
+  MenubarSeparator,
+  MenubarShortcut,
+  MenubarTrigger,
+} from '@/components/ui/menubar'
+```
+
+```tsx
+<Menubar>
+  <MenubarMenu>
+    <MenubarTrigger>File</MenubarTrigger>
+    <MenubarContent>
+      <MenubarItem>
+        New Tab <MenubarShortcut>⌘T</MenubarShortcut>
+      </MenubarItem>
+      <MenubarItem>New Window</MenubarItem>
+      <MenubarSeparator />
+      <MenubarItem>Share</MenubarItem>
+      <MenubarSeparator />
+      <MenubarItem>Print</MenubarItem>
+    </MenubarContent>
+  </MenubarMenu>
+</Menubar>
+```
+
+<Callout emoji="⚠️">
+  Unlike `shadcn/ui`, the `inset` prop for `<MenubarSubTrigger />
+  `, `<MenubarItem />` and `<MenubarLabel />` is renamed to `insetLeft`, since it collides with the css
+  `inset` property.
+</Callout>

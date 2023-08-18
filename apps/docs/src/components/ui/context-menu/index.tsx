@@ -10,6 +10,8 @@ import { contextMenu, icon } from '@shadow-panda/styled-system/recipes'
 
 const { withProvider, withContext } = createStyleContext(contextMenu)
 
+const ItemIndicator = withContext(styled(ContextMenuPrimitive.ItemIndicator), 'itemIndicator')
+
 const SubTrigger = React.forwardRef<
   React.ElementRef<typeof ContextMenuPrimitive.SubTrigger>,
   React.ComponentPropsWithoutRef<typeof ContextMenuPrimitive.SubTrigger> & {
@@ -40,8 +42,6 @@ const Item = React.forwardRef<
   />
 ))
 Item.displayName = ContextMenuPrimitive.Item.displayName
-
-const ItemIndicator = withContext(styled(ContextMenuPrimitive.ItemIndicator), 'itemIndicator')
 
 const CheckboxItem = React.forwardRef<
   React.ElementRef<typeof ContextMenuPrimitive.CheckboxItem>,

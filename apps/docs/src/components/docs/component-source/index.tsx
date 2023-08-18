@@ -1,5 +1,6 @@
 export interface ComponentSourceProps {
   name: string
+  file: string
   children: React.ReactNode
 }
 

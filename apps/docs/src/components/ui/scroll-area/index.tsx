@@ -27,17 +27,18 @@ const BaseScrollBar = React.forwardRef<
 ))
 BaseScrollBar.displayName = ScrollAreaPrimitive.ScrollAreaScrollbar.displayName
 
+export const ScrollBar = withContext(styled(BaseScrollBar), 'scrollbar')
+
 const BaseScrollArea = React.forwardRef<
   React.ElementRef<typeof ScrollAreaPrimitive.Root>,
   React.ComponentPropsWithoutRef<typeof ScrollAreaPrimitive.Root>
 >(({ children, ...props }, ref) => (
   <ScrollAreaPrimitive.Root ref={ref} {...props}>
     <Viewport>{children}</Viewport>
-    <BaseScrollBar />
+    <ScrollBar />
     <Corner />
   </ScrollAreaPrimitive.Root>
 ))
 BaseScrollArea.displayName = ScrollAreaPrimitive.Root.displayName
 
-export const ScrollBar = withProvider(styled(BaseScrollBar), 'scrollbar')
 export const ScrollArea = withProvider(styled(BaseScrollArea), 'root')

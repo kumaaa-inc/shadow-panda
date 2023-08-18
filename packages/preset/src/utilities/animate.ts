@@ -9,7 +9,7 @@ export const animate: UtilityConfig = {
 
       return {
         animationName: 'enter',
-        animationDuration: token('durations.normal'),
+        animationDuration: token('durations.fast'),
         '--shadow-panda-enter-opacity': 1,
         '--shadow-panda-enter-scale': 1,
         '--shadow-panda-enter-rotate': 0,
@@ -26,7 +26,7 @@ export const animate: UtilityConfig = {
 
       return {
         animationName: 'exit',
-        animationDuration: token('durations.normal'),
+        animationDuration: token('durations.fast'),
         '--shadow-panda-exit-opacity': 1,
         '--shadow-panda-exit-scale': 1,
         '--shadow-panda-exit-rotate': 0,
