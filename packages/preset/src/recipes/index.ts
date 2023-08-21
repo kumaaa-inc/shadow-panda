@@ -5,6 +5,7 @@ import * as icon from './icon'
 import * as input from './input'
 import * as label from './label'
 import * as separator from './separator'
+import * as skeleton from './skeleton'
 import * as textarea from './textarea'
 import * as toast from './toast'
 
@@ -16,6 +17,7 @@ export const recipes = {
   ...input,
   ...label,
   ...separator,
+  ...skeleton,
   ...textarea,
   ...toast,
 }
