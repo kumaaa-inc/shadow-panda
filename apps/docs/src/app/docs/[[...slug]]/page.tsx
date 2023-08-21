@@ -18,7 +18,36 @@ export const generateMetadata = ({ params }: { params: { slug: string[] } }) => 
 
   if (!doc) throw new Error(`Page not found: ${params.slug.join('/')}`)
 
-  return { title: doc.title, description: doc.description }
+  const metadata = {
+    title: doc.title,
+    description: doc.description,
+  }
+
+  const ogImage = {
+    alt: `${doc.title} | Shadow Panda`,
+    type: 'image/png',
+    width: 1200,
+    height: 630,
+    url: `/og/docs/${params.slug.join('/')}`,
+  }
+
+  return {
+    ...metadata,
+    openGraph: {
+      ...metadata,
+      type: 'website',
+      locale: 'en_US',
+      url: `https://shadow-panda.dev/docs/${doc.slugAsParams}`,
+      images: [ogImage],
+    },
+    twitter: {
+      ...metadata,
+      site: 'Shadow Panda',
+      card: 'summary_large_image',
+      creator: '@nanopx',
+      images: [ogImage],
+    },
+  }
 }
 
 const ComponentsPage = ({ params }: { params: { slug: string[] } }) => {
