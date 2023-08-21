@@ -4,10 +4,9 @@ import { ImageResponse } from 'next/server'
 import { Icons } from '@/components/docs/icons'
 
 export const runtime = 'edge'
-
 export const contentType = 'image/png'
-export const alt = 'Shadow Panda'
-export const size = {
+
+const size = {
   width: 1200,
   height: 630,
 }
