@@ -4,7 +4,6 @@ import { ImageResponse } from 'next/server'
 import { Icons } from '@/components/docs/icons'
 
 export const runtime = 'edge'
-export const contentType = 'image/png'
 
 const size = {
   width: 1200,
