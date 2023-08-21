@@ -17,6 +17,7 @@ import * as radioGroup from './radio-group'
 import * as scrollArea from './scroll-area'
 import * as select from './select'
 import * as sheet from './sheet'
+import * as slider from './slider'
 import * as switchRecipe from './switch'
 import * as tabs from './tabs'
 import * as toast from './toast'
@@ -42,6 +43,7 @@ export const slotRecipes = {
   ...scrollArea,
   ...select,
   ...sheet,
+  ...slider,
   ...switchRecipe,
   ...tabs,
   ...toast,
