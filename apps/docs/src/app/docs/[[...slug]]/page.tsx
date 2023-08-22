@@ -16,7 +16,7 @@ export const generateStaticParams = async () =>
 export const generateMetadata = ({ params }: { params: { slug: string[] } }) => {
   const doc = allDocuments.find((doc) => doc.slugAsParams === params.slug.join('/'))
 
-  if (!doc) throw new Error(`Page not found: ${params.slug.join('/')}`)
+  if (!doc) return notFound()
 
   const metadata = {
     title: doc.title,

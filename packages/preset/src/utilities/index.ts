@@ -1,4 +1,4 @@
-import type { UtilityConfig } from '@pandacss/types'
+import type { Config } from '@pandacss/types'
 import { animate } from './animate'
 import { backdropFilter } from './backdrop-filter'
 import { backgroundAlpha } from './background-alpha'
@@ -11,16 +11,18 @@ import { textAlpha } from './text-alpha'
 import { transform } from './transform'
 import { typography } from './typography'
 
-export const utilities: UtilityConfig = {
-  ...animate,
-  ...backdropFilter,
-  ...backgroundAlpha,
-  ...borderColorAlpha,
-  ...container,
-  ...focusRing,
-  ...screenReaders,
-  ...space,
-  ...transform,
-  ...textAlpha,
-  ...typography,
+export const utilities: Config['utilities'] = {
+  extend: {
+    ...animate,
+    ...backdropFilter,
+    ...backgroundAlpha,
+    ...borderColorAlpha,
+    ...container,
+    ...focusRing,
+    ...screenReaders,
+    ...space,
+    ...transform,
+    ...textAlpha,
+    ...typography,
+  },
 }

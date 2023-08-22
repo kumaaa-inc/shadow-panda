@@ -13,11 +13,14 @@ import * as dropdownMenu from './dropdown-menu'
 import * as hoverCard from './hover-card'
 import * as menubar from './menubar'
 import * as popover from './popover'
+import * as progress from './progress'
 import * as radioGroup from './radio-group'
 import * as scrollArea from './scroll-area'
 import * as select from './select'
 import * as sheet from './sheet'
+import * as slider from './slider'
 import * as switchRecipe from './switch'
+import * as table from './table'
 import * as tabs from './tabs'
 import * as toast from './toast'
 import * as tooltip from './tooltip'
@@ -38,11 +41,14 @@ export const slotRecipes = {
   ...hoverCard,
   ...menubar,
   ...popover,
+  ...progress,
   ...radioGroup,
   ...scrollArea,
   ...select,
   ...sheet,
+  ...slider,
   ...switchRecipe,
+  ...table,
   ...tabs,
   ...toast,
   ...tooltip,

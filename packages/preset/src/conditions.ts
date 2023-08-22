@@ -1,4 +1,5 @@
-export const conditions = {
-  // light: '&.light, .light &',
-  // dark: '&.dark, .dark &',
+import type { Config } from '@pandacss/types'
+
+export const conditions: Config['conditions'] = {
+  extend: {},
 }
