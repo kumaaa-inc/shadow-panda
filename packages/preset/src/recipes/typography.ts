@@ -50,8 +50,8 @@ export const p = defineRecipe({
   },
 })
 
-export const tableContainer = defineRecipe({
-  className: 'tableContainer',
+export const tableContainerStyles = defineRecipe({
+  className: 'tableContainerStyles',
   description: 'Typography - table container style',
   base: {
     my: '6',
@@ -60,8 +60,8 @@ export const tableContainer = defineRecipe({
   },
 })
 
-export const table = defineRecipe({
-  className: 'table',
+export const tableStyles = defineRecipe({
+  className: 'tableStyles',
   description: 'Typography - table style',
   base: {
     w: 'full',

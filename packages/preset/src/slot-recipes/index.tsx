@@ -20,6 +20,7 @@ import * as select from './select'
 import * as sheet from './sheet'
 import * as slider from './slider'
 import * as switchRecipe from './switch'
+import * as table from './table'
 import * as tabs from './tabs'
 import * as toast from './toast'
 import * as tooltip from './tooltip'
@@ -47,6 +48,7 @@ export const slotRecipes = {
   ...sheet,
   ...slider,
   ...switchRecipe,
+  ...table,
   ...tabs,
   ...toast,
   ...tooltip,
