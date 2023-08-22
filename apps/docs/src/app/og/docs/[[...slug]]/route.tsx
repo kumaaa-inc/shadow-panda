@@ -48,14 +48,14 @@ export async function GET(_: Request, { params }: { params: { slug?: string[] } 
             flexDirection: 'column',
           }}
         >
-          <Icons.logoWithText style={{ width: 274.12, height: 38 }} />
+          <Icons.logoWithText style={{ width: 274.12 * 1.3, height: 38 * 1.3 }} />
           <div
             style={{
               display: 'flex',
               flex: '1',
               flexDirection: 'column',
               marginTop: '64px',
-              gap: '16px',
+              gap: '32px',
             }}
           >
             <div
@@ -70,9 +70,9 @@ export async function GET(_: Request, { params }: { params: { slug?: string[] } 
                   justifyContent: 'center',
                   color: '#fafafa',
                   background: '#18181b',
-                  fontSize: '18px',
+                  fontSize: '28px',
                   borderRadius: '9999px',
-                  padding: '6px 10px 2px',
+                  padding: '12px 24px 6px',
                   fontWeight: 500,
                   lineHeight: '100%',
                 }}
@@ -84,13 +84,14 @@ export async function GET(_: Request, { params }: { params: { slug?: string[] } 
               style={{
                 display: 'flex',
                 flexDirection: 'column',
+                gap: '8px',
               }}
             >
               <div
                 style={{
-                  fontSize: '52px',
+                  fontSize: '72px',
                   fontWeight: 600,
-                  lineHeight: '120%',
+                  lineHeight: '100%',
                   letterSpacing: '-0.01em',
                 }}
               >
@@ -99,7 +100,7 @@ export async function GET(_: Request, { params }: { params: { slug?: string[] } 
 
               <div
                 style={{
-                  fontSize: '28px',
+                  fontSize: '44px',
                   fontWeight: 500,
                   lineHeight: '120%',
                   letterSpacing: '-0.01em',
