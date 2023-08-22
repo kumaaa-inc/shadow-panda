@@ -7,6 +7,7 @@ import { Footer } from '@/components/docs/footer'
 import { Toaster } from '@/components/ui/toast/toaster'
 import '../styles/global.css'
 import { ThemeProvider } from './theme-provider'
+import { siteUrl } from '@/lib/env'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 
@@ -20,7 +21,7 @@ const commonMetadata = {
 }
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://shadow-panda.dev'),
+  metadataBase: new URL(siteUrl),
   ...commonMetadata,
   keywords: ['Shadow Panda', 'Panda CSS', 'shadcn/ui', 'Radix UI', 'Components', 'React'],
   manifest: '/site.webmanifest',
@@ -28,7 +29,7 @@ export const metadata: Metadata = {
     ...commonMetadata,
     type: 'website',
     locale: 'en_US',
-    url: 'https://shadow-panda.dev',
+    url: siteUrl,
   },
   twitter: {
     ...commonMetadata,
