@@ -1,34 +1,42 @@
 import type { UtilityConfig } from '@pandacss/types'
+import { colorMix } from '@/lib/color-mix'
 
 export const backgroundAlpha: UtilityConfig = {
   backgroundAlpha: {
     shorthand: ['bga'],
     property: 'backgroundColor',
-    className: 'background_alpha',
-    transform: (value, { token }) => {
-      const lastIndex = value?.lastIndexOf('/')
-      if (!lastIndex) {
-        return {}
-      }
-
-      if (typeof value?.substring !== 'function') {
-        return {}
-      }
-
-      const color = value?.substring(0, lastIndex)
-      if (!color) {
-        return {}
-      }
-
-      const amount = value.split('/').at(-1)
-      const colorValue = token(`colors.${color}`)
-      const amountValue = token(`opacity.${amount}`)
-        ? token(`opacity.${amount}`) * 100
-        : `${100 - amount}%`
+    className: 'background-alpha',
+    values: { type: 'string' },
+    transform: (...args) => {
+      const { value, color } = colorMix(...args)
 
       return {
-        '--sp-bga': `color-mix(in srgb, transparent ${amountValue}, ${colorValue})`,
-        backgroundColor: `var(--sp-bga, ${colorValue})`,
+        '--sp-bga': value,
+        backgroundColor: `var(--sp-bga, ${color})`,
+      }
+    },
+  },
+  // Used with `bgGradient`
+  gradientFromAlpha: {
+    className: 'from-alpha',
+    values: { type: 'string' },
+    transform: (...args) => {
+      const { value } = colorMix(...args)
+
+      return {
+        '--gradient-from': value,
+      }
+    },
+  },
+  // Used with `bgGradient`
+  gradientToAlpha: {
+    className: 'to-alpha',
+    values: { type: 'string' },
+    transform: (...args) => {
+      const { value } = colorMix(...args)
+
+      return {
+        '--gradient-to': value,
       }
     },
   },
