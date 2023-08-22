@@ -16,15 +16,9 @@ const defineConfig = <T extends Config>(config: T) => config
 
 export const shadowPandaPreset = defineConfig({
   presets: [pandaPreset],
-  globalCss: {
-    extend: globalCss,
-  },
-  conditions: {
-    extend: conditions,
-  },
-  utilities: {
-    extend: utilities,
-  },
+  globalCss,
+  conditions,
+  utilities,
   theme: {
     extend: {
       tokens,

@@ -7,9 +7,6 @@ export default defineConfig({
   // Use React
   jsxFramework: 'react',
 
-  // Namespace prefix for the generated css
-  prefix: 'sp',
-
   staticCss: {
     recipes: {
       // For dynamic `side` preview
