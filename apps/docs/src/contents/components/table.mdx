@@ -1,0 +1,59 @@
+---
+title: Table
+description: A responsive table component.
+references:
+  shadcnUiLink: https://ui.shadcn.com/docs/components/table
+---
+
+<ComponentPreview name="table" withRecipe />
+
+## Installation
+
+<Steps>
+### Copy and paste the following code into your project
+
+<ComponentSource name="table" />
+
+### Update the import paths to match your project setup
+
+</Steps>
+
+## Usage
+
+```tsx
+import {
+  Table,
+  TableBody,
+  TableCaption,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from '@/components/ui/table'
+```
+
+```tsx
+<Table>
+  <TableCaption>A list of your recent invoices.</TableCaption>
+  <TableHeader>
+    <TableRow>
+      <TableHead w="100px">Invoice</TableHead>
+      <TableHead>Status</TableHead>
+      <TableHead>Method</TableHead>
+      <TableHead textAlign="right">Amount</TableHead>
+    </TableRow>
+  </TableHeader>
+  <TableBody>
+    <TableRow>
+      <TableCell fontWeight="medium">INV001</TableCell>
+      <TableCell>Paid</TableCell>
+      <TableCell>Credit Card</TableCell>
+      <TableCell textAlign="right">$250.00</TableCell>
+    </TableRow>
+  </TableBody>
+</Table>
+```
+
+## Data Table
+
+<Callout emoji="⚒️">WIP</Callout>

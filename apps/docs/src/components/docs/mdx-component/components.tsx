@@ -12,8 +12,8 @@ import {
   p,
   list,
   blockquote,
-  tableContainer,
-  table,
+  tableContainerStyles,
+  tableStyles,
   inlineCode,
 } from '@shadow-panda/styled-system/recipes'
 import {
@@ -273,8 +273,8 @@ export const components = {
     />
   ),
   table: ({ className, ...props }: React.HTMLAttributes<HTMLTableElement>) => (
-    <div className={tableContainer()}>
-      <table className={cx(table(), className)} {...props} />
+    <div className={tableContainerStyles()}>
+      <table className={cx(tableStyles(), className)} {...props} />
     </div>
   ),
   tr: ({ className, ...props }: React.HTMLAttributes<HTMLTableRowElement>) => (
