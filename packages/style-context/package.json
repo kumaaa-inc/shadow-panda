@@ -24,7 +24,8 @@
   "scripts": {
     "build": "tsup src/index.ts --format=esm,cjs --dts --external react",
     "build-fast": "tsup src/index.ts --format=esm,cjs --no-dts --external react",
-    "dev": "pnpm build-fast --watch"
+    "dev": "pnpm build-fast --watch",
+    "typecheck": "tsc --noEmit"
   },
   "peerDependencies": {
     "@types/react": "18.2.20",

@@ -12,7 +12,8 @@
     "debug": "panda debug",
     "dev": "next dev",
     "build": "contentlayer build && next build",
-    "start": "next start"
+    "start": "next start",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@hookform/resolvers": "3.2.0",

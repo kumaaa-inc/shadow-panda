@@ -9,6 +9,7 @@ import { ReferenceBadges } from '@/components/docs/reference-badges'
 import { ScrollArea } from '@/components/ui/scroll-area'
 import { Toc } from '@/components/docs/toc'
 import { Pager } from '@/components/docs/pager'
+import { siteUrl } from '@/lib/env'
 
 export const generateStaticParams = async () =>
   allDocuments.map((doc) => ({ slug: doc.slugAsParams.split('/') }))
@@ -37,7 +38,7 @@ export const generateMetadata = ({ params }: { params: { slug: string[] } }) => 
       ...metadata,
       type: 'website',
       locale: 'en_US',
-      url: `https://shadow-panda.dev/docs/${doc.slugAsParams}`,
+      url: `${siteUrl}/docs/${doc.slugAsParams}`,
       images: [ogImage],
     },
     twitter: {
