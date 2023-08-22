@@ -3,3 +3,6 @@ node_modules/
 .next/
 out/
 .contentlayer/
+.env
+.env.*
+!.env.example

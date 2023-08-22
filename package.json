@@ -1,6 +1,6 @@
 {
   "name": "shadow-panda",
-  "version": "0.0.1-alpha.0",
+  "version": "0.0.1",
   "description": "Panda CSS preset for shadcn/ui & Radix UI",
   "author": "nanopx <0nanopx@gmail.com>",
   "license": "MIT",
@@ -15,7 +15,7 @@
     "build": "pnpm -r --filter=./packages/** build",
     "release": "changeset publish",
     "release-dev": "changeset version --snapshot dev && changeset publish --tag dev",
-    "typecheck": "tsc --noEmit",
+    "typecheck": "pnpm -r --parallel --filter=./packages/** typecheck",
     "lint": "eslint ./ --ext .ts,.tsx,.json",
     "lint-fix": "eslint --fix --ext .ts,.tsx,.json"
   },
