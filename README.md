@@ -1,6 +1,6 @@
 ![Shadow Panda](/apps/docs/src/app/opengraph-image.png)
 
-`Shadow Panda` is an adoption of [shadcn/ui](https://ui.shadcn.com/), tailored specifically for developers utilizing [Panda CSS](https://panda-css.com/) as an alternative to Tailwind CSS.
+`Shadow Panda` is created based on [shadcn/ui](https://ui.shadcn.com/), tailored specifically for developers utilizing [Panda CSS](https://panda-css.com/) as an alternative to Tailwind CSS.
 
 We provide a **preset** for [Panda CSS](https://panda-css.com/) that allows you to use the same components as [shadcn/ui](https://ui.shadcn.com/), but with [Panda CSS](https://panda-css.com/).
 
@@ -57,3 +57,19 @@ Also, a huge thanks to:
 
 - [Panda CSS](https://panda-css.com/)
 - [Radix UI](https://radix-ui.com/)
+
+## Contributors
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+## License
+
+[MIT](LICENSE)
+© [nanopx](https://github.com/nanopx)
