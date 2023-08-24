@@ -1,9 +1,15 @@
 {
+  "projectName": "shadow-panda",
+  "projectOwner": "kumaaa-inc",
+  "contributorsPerLine": 7,
+  "skipCi": true,
+  "repoType": "github",
+  "repoHost": "https://github.com",
   "files": [
     "README.md"
   ],
-  "imageSize": 100,
-  "commit": false,
+  "imageSize": 60,
+  "commit": true,
   "commitType": "docs",
   "commitConvention": "angular",
   "contributors": [
@@ -20,11 +26,5 @@
         "maintenance"
       ]
     }
-  ],
-  "contributorsPerLine": 7,
-  "skipCi": true,
-  "repoType": "github",
-  "repoHost": "https://github.com",
-  "projectName": "shadow-panda",
-  "projectOwner": "kumaaa-inc"
+  ]
 }
