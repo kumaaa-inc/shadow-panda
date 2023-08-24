@@ -22,7 +22,7 @@ export const table = defineSlotRecipe({
     body: {
       '& tr': {
         _last: {
-          borderBottom: 'none',
+          borderBottom: 'transparent',
         },
       },
     },
