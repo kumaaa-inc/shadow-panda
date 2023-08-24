@@ -1,4 +1,7 @@
 ![Shadow Panda](/apps/docs/src/app/opengraph-image.png)
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 `Shadow Panda` is created based on [shadcn/ui](https://ui.shadcn.com/), tailored specifically for developers utilizing [Panda CSS](https://panda-css.com/) as an alternative to Tailwind CSS.
 
@@ -61,6 +64,20 @@ Also, a huge thanks to:
 ## Contributors
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tbody>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/nanopx"><img src="https://avatars.githubusercontent.com/u/7698394?v=4?s=100" width="100px;" alt="Atsushi Yoshitake"/><br /><sub><b>Atsushi Yoshitake</b></sub></a><br /><a href="https://github.com/kumaaa-inc/shadow-panda/commits?author=nanopx" title="Code">💻</a> <a href="https://github.com/kumaaa-inc/shadow-panda/commits?author=nanopx" title="Documentation">📖</a> <a href="#design-nanopx" title="Design">🎨</a> <a href="#example-nanopx" title="Examples">💡</a> <a href="#maintenance-nanopx" title="Maintenance">🚧</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->
 
