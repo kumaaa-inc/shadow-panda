@@ -1,0 +1,30 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "commitType": "docs",
+  "commitConvention": "angular",
+  "contributors": [
+    {
+      "login": "nanopx",
+      "name": "Atsushi Yoshitake",
+      "avatar_url": "https://avatars.githubusercontent.com/u/7698394?v=4",
+      "profile": "https://github.com/nanopx",
+      "contributions": [
+        "code",
+        "doc",
+        "design",
+        "example",
+        "maintenance"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "skipCi": true,
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "projectName": "shadow-panda",
+  "projectOwner": "kumaaa-inc"
+}
