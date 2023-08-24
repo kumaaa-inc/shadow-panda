@@ -72,3 +72,4 @@ Also, a huge thanks to:
 ## License
 
 [MIT](LICENSE)
+© [nanopx](https://github.com/nanopx)
