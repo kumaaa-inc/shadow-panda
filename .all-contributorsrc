@@ -8,7 +8,7 @@
   "files": [
     "README.md"
   ],
-  "imageSize": 60,
+  "imageSize": 100,
   "commit": true,
   "commitType": "docs",
   "commitConvention": "angular",
