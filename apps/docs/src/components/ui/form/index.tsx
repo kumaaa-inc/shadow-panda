@@ -9,12 +9,13 @@ import {
   FormProvider,
   useFormContext,
 } from 'react-hook-form'
+import { createStyleContext } from '@shadow-panda/style-context'
 import { styled } from '@shadow-panda/styled-system/jsx'
 import { css, cx } from '@shadow-panda/styled-system/css'
-import { muted } from '@shadow-panda/styled-system/recipes'
+import { form } from '@shadow-panda/styled-system/recipes'
 import { Label } from '@/components/ui/label'
 
-export const Form = FormProvider
+const { withProvider, withContext } = createStyleContext(form)
 
 type FormFieldContextValue<
   TFieldValues extends FieldValues = FieldValues,
@@ -23,20 +24,12 @@ type FormFieldContextValue<
   name: TName
 }
 
-const FormFieldContext = React.createContext<FormFieldContextValue>({} as FormFieldContextValue)
-
-export const FormField = <
-  TFieldValues extends FieldValues = FieldValues,
-  TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>,
->({
-  ...props
-}: ControllerProps<TFieldValues, TName>) => {
-  return (
-    <FormFieldContext.Provider value={{ name: props.name }}>
-      <Controller {...props} />
-    </FormFieldContext.Provider>
-  )
+type FormItemContextValue = {
+  id: string
 }
+
+const FormFieldContext = React.createContext<FormFieldContextValue>({} as FormFieldContextValue)
+const FormItemContext = React.createContext<FormItemContextValue>({} as FormItemContextValue)
 
 export const useFormField = () => {
   const fieldContext = React.useContext(FormFieldContext)
@@ -61,26 +54,31 @@ export const useFormField = () => {
   }
 }
 
-type FormItemContextValue = {
-  id: string
-}
-
-const FormItemContext = React.createContext<FormItemContextValue>({} as FormItemContextValue)
+const BaseFormField = <
+  TFieldValues extends FieldValues = FieldValues,
+  TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>,
+>({
+  ...props
+}: ControllerProps<TFieldValues, TName>) => (
+  <FormFieldContext.Provider value={{ name: props.name }}>
+    <Controller {...props} />
+  </FormFieldContext.Provider>
+)
 
 const BaseFormItem = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(
-  ({ className, ...props }, ref) => {
+  (props, ref) => {
     const id = React.useId()
 
     return (
       <FormItemContext.Provider value={{ id }}>
-        <div ref={ref} className={cx(css({ spaceY: '2' }), className)} {...props} />
+        <div ref={ref} {...props} />
       </FormItemContext.Provider>
     )
   },
 )
 BaseFormItem.displayName = 'FormItem'
 
-export const FormLabel = React.forwardRef<
+const BaseFormLabel = React.forwardRef<
   React.ElementRef<typeof LabelPrimitive.Root>,
   React.ComponentPropsWithoutRef<typeof Label>
 >(({ className, ...props }, ref) => {
@@ -95,7 +93,7 @@ export const FormLabel = React.forwardRef<
     />
   )
 })
-FormLabel.displayName = 'FormLabel'
+BaseFormLabel.displayName = 'FormLabel'
 
 const BaseFormControl = React.forwardRef<
   React.ElementRef<typeof Slot>,
@@ -118,17 +116,17 @@ BaseFormControl.displayName = 'FormControl'
 const BaseFormDescription = React.forwardRef<
   HTMLParagraphElement,
   React.HTMLAttributes<HTMLParagraphElement>
->(({ className, ...props }, ref) => {
+>((props, ref) => {
   const { formDescriptionId } = useFormField()
 
-  return <p ref={ref} id={formDescriptionId} className={cx(muted(), className)} {...props} />
+  return <p ref={ref} id={formDescriptionId} {...props} />
 })
 BaseFormDescription.displayName = 'FormDescription'
 
 const BaseFormMessage = React.forwardRef<
   HTMLParagraphElement,
   React.HTMLAttributes<HTMLParagraphElement>
->(({ className, children, ...props }, ref) => {
+>(({ children, ...props }, ref) => {
   const { error, formMessageId } = useFormField()
   const body = error ? String(error?.message) : children
 
@@ -137,26 +135,17 @@ const BaseFormMessage = React.forwardRef<
   }
 
   return (
-    <p
-      ref={ref}
-      id={formMessageId}
-      className={cx(
-        css({
-          textStyle: 'sm',
-          fontWeight: 'medium',
-          color: 'destructive',
-        }),
-        className,
-      )}
-      {...props}
-    >
+    <p ref={ref} id={formMessageId} {...props}>
       {body}
     </p>
   )
 })
 BaseFormMessage.displayName = 'FormMessage'
 
-export const FormItem = styled(BaseFormItem)
-export const FormControl = styled(BaseFormControl)
-export const FormDescription = styled(BaseFormDescription)
-export const FormMessage = styled(BaseFormMessage)
+export const Form = withProvider(FormProvider, 'root') as typeof FormProvider
+export const FormField = withContext(BaseFormField, 'field') as typeof BaseFormField
+export const FormLabel = withContext(styled(BaseFormLabel), 'label')
+export const FormItem = withContext(styled(BaseFormItem), 'item')
+export const FormControl = withContext(styled(BaseFormControl), 'control')
+export const FormDescription = withContext(styled(BaseFormDescription), 'description')
+export const FormMessage = withContext(styled(BaseFormMessage), 'message')

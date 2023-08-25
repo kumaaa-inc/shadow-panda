@@ -10,6 +10,7 @@ import * as command from './command'
 import * as contextMenu from './context-menu'
 import * as dialog from './dialog'
 import * as dropdownMenu from './dropdown-menu'
+import * as form from './form'
 import * as hoverCard from './hover-card'
 import * as menubar from './menubar'
 import * as navigationMenu from './navigation-menu'
@@ -39,6 +40,7 @@ export const slotRecipes = {
   ...contextMenu,
   ...dialog,
   ...dropdownMenu,
+  ...form,
   ...hoverCard,
   ...menubar,
   ...navigationMenu,
