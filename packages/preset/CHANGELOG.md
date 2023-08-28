@@ -1,5 +1,19 @@
 # @shadow-panda/preset
 
+## 0.5.0
+
+### Minor Changes
+
+- fa2b188: Support `Toggle` component
+- 5c29f32: Improved `Form` component to use slot recipes for better style overrides
+- e773343: Support `DataTable` component
+- 75e945d: Changed destructive color in dark mode for better contrast
+- ed0081f: Support `NavigationMenu` component
+
+### Patch Changes
+
+- fa2b188: Fix cursor style for `Accordion` and `Dialog` close button
+
 ## 0.4.0
 
 ### Minor Changes
