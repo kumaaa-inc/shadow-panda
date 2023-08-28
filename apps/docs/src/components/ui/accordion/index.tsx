@@ -4,7 +4,7 @@ import * as React from 'react'
 import * as AccordionPrimitive from '@radix-ui/react-accordion'
 import { ChevronDown } from 'lucide-react'
 import { createStyleContext } from '@shadow-panda/style-context'
-import { styled, type HTMLStyledProps } from '@shadow-panda/styled-system/jsx'
+import { styled } from '@shadow-panda/styled-system/jsx'
 import { accordion } from '@shadow-panda/styled-system/recipes'
 
 const { withProvider, withContext } = createStyleContext(accordion)
@@ -34,15 +34,7 @@ const Content = React.forwardRef<
 ))
 Content.displayName = AccordionPrimitive.Content.displayName
 
-// NOTE: union-style conditional props are not yet supported in `styled()`
-// @see https://github.com/chakra-ui/panda/issues/1220
-type AccordionComponent = React.ForwardRefExoticComponent<
-  React.PropsWithoutRef<React.ComponentProps<typeof AccordionPrimitive.Root>> &
-    HTMLStyledProps<typeof AccordionPrimitive.Root> &
-    React.RefAttributes<React.ElementRef<typeof AccordionPrimitive.Root>>
->
-
-export const Accordion = withProvider(styled(AccordionPrimitive.Root), 'root') as AccordionComponent
+export const Accordion = withProvider(styled(AccordionPrimitive.Root), 'root')
 export const AccordionItem = withContext(styled(AccordionPrimitive.Item), 'item')
 export const AccordionTrigger = withContext(styled(Trigger), 'trigger')
 export const AccordionContent = withContext(styled(Content), 'content')

@@ -1,0 +1,68 @@
+---
+title: Data Table
+description: Powerful table and datagrids built using TanStack Table.
+references:
+  shadcnUiLink: https://ui.shadcn.com/docs/components/data-table
+---
+
+<ComponentPreview name="data-table" />
+
+## Installation
+
+<Steps>
+### Install the following dependencies
+
+```bash npm2yarn
+npm i @tanstack/react-table
+```
+
+### Add the `Table` component to your project.
+
+We'll use the [`Table`](/docs/components/table) component for the Data Table. Make sure you have it installed in your project.
+
+</Steps>
+
+## Guide
+
+For the data table, we'll use [TanStack Table](https://tanstack.com/table) and the `<Table />` component. It's a powerful table component that allows you to build any kind of table or datagrid.
+
+Please refer to the [detailed guide from shadcn/ui](https://ui.shadcn.com/docs/components/data-table#table-of-contents) for how to create your own data table.
+
+## Reusable Components
+
+Here are some reusable components you can use to build your data tables.
+
+### Column Header
+
+Make any column header sortable and hideable.
+
+<ComponentSource directory="components/previews" name="data-table" file="column-header" />
+
+```tsx
+export const columns = [
+  {
+    accessorKey: 'email',
+    header: ({ column }) => <DataTableColumnHeader column={column} title="Email" />,
+  },
+]
+```
+
+### Pagination
+
+Add pagination controls to your table including page size and selection count.
+
+<ComponentSource directory="components/previews" name="data-table" file="pagination" />
+
+```tsx
+<DataTablePagination table={table} />
+```
+
+### Column Toggle
+
+A component to toggle column visibility.
+
+<ComponentSource directory="components/previews" name="data-table" file="column-toggle" />
+
+```tsx
+<DataTableViewOptions table={table} />
+```

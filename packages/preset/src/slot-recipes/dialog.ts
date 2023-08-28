@@ -41,6 +41,7 @@ export const dialog = defineSlotRecipe({
       opacity: '0.7',
       focusRingOffsetColor: 'background',
       transition: 'opacity',
+      cursor: 'pointer',
 
       _hover: {
         opacity: '1',

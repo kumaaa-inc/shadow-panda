@@ -114,7 +114,7 @@ export const semanticTokens = defineSemanticTokens({
       DEFAULT: {
         value: {
           base: '{colors.red.500}',
-          _dark: '{colors.red.900}',
+          _dark: '{colors.red.700}',
         },
       },
       foreground: {

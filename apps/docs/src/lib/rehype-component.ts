@@ -169,6 +169,8 @@ export function rehypeComponent() {
       }
 
       if (node.name === 'ComponentSource') {
+        const directory =
+          (getNodeAttributeByName(node, 'directory')?.value as string) ?? 'components/ui'
         const component = getNodeAttributeByName(node, 'name')?.value as string
         const file = (getNodeAttributeByName(node, 'file')?.value as string) ?? 'index'
 
@@ -176,7 +178,7 @@ export function rehypeComponent() {
 
         try {
           const source = fs.readFileSync(
-            path.join(process.cwd(), `./src/components/ui/${component}/${file}.tsx`),
+            path.join(process.cwd(), `./src/${directory}/${component}/${file}.tsx`),
             'utf8',
           )
 
@@ -187,7 +189,7 @@ export function rehypeComponent() {
                 u('element', {
                   tagName: 'code',
                   data: {
-                    meta: `title="components/ui/${component}/${file}.tsx"`,
+                    meta: `title="${directory}/${component}/${file}.tsx"`,
                   },
                   properties: {
                     className: ['language-tsx'],

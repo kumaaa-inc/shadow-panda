@@ -19,6 +19,7 @@ export const accordion = defineSlotRecipe({
       py: '4',
       fontWeight: 'medium',
       transition: 'all',
+      cursor: 'pointer',
 
       _hover: {
         textDecoration: 'underline',

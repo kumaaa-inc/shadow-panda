@@ -72,7 +72,7 @@ const Page = () => {
               }}
               asChild
             >
-              <Link href="/docs">Get Started</Link>
+              <Link href="/docs/overview/introduction">Get Started</Link>
             </Button>
             <Button
               size={{
@@ -82,7 +82,7 @@ const Page = () => {
               variant="outline"
               asChild
             >
-              <Link href="/docs/components">View Components</Link>
+              <Link href="/docs/components/accordion">View Components</Link>
             </Button>
           </div>
         </div>

@@ -2,12 +2,24 @@
 
 import * as React from 'react'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
-import { DayPicker } from 'react-day-picker'
-import { styled, type HTMLStyledProps } from '@shadow-panda/styled-system/jsx'
+import {
+  DayPicker,
+  type DayPickerDefaultProps,
+  type DayPickerSingleProps,
+  type DayPickerMultipleProps,
+  type DayPickerRangeProps,
+} from 'react-day-picker'
+import { styled } from '@shadow-panda/styled-system/jsx'
 import { cx } from '@shadow-panda/styled-system/css'
 import { button, icon, calendar } from '@shadow-panda/styled-system/recipes'
 
-function BaseCalendar({ className, classNames, showOutsideDays = true, ...props }: CalendarProps) {
+type DayPickerProps =
+  | DayPickerDefaultProps
+  | DayPickerSingleProps
+  | DayPickerMultipleProps
+  | DayPickerRangeProps
+
+function BaseCalendar({ className, classNames, showOutsideDays = true, ...props }: DayPickerProps) {
   const { root, nav_button: navButton, day, ...rest } = calendar()
 
   return (
@@ -30,13 +42,5 @@ function BaseCalendar({ className, classNames, showOutsideDays = true, ...props 
 }
 BaseCalendar.displayName = 'Calendar'
 
-// NOTE: union-style conditional props are not yet supported in `styled()`
-// @see https://github.com/chakra-ui/panda/issues/1220
-type CalendarComponent = React.ForwardRefExoticComponent<
-  React.PropsWithoutRef<React.ComponentProps<typeof DayPicker>> &
-    HTMLStyledProps<typeof DayPicker> &
-    React.RefAttributes<React.ElementRef<typeof DayPicker>>
->
-
-export const Calendar = styled(BaseCalendar) as CalendarComponent
+export const Calendar = styled(BaseCalendar)
 export type CalendarProps = React.ComponentProps<typeof Calendar>
