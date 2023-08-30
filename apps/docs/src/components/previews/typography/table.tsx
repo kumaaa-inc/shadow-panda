@@ -1,9 +1,9 @@
-import { tableContainerStyles, tableStyles } from '@shadow-panda/styled-system/recipes'
+import { typographyTableContainer, typographyTable } from '@shadow-panda/styled-system/recipes'
 
 export default function Example() {
   return (
-    <div className={tableContainerStyles()}>
-      <table className={tableStyles()}>
+    <div className={typographyTableContainer()}>
+      <table className={typographyTable()}>
         <thead>
           <tr>
             <th>King's Treasury</th>

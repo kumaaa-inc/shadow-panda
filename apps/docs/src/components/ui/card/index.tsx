@@ -1,12 +1,16 @@
-import { createStyleContext } from '@shadow-panda/style-context'
 import { styled } from '@shadow-panda/styled-system/jsx'
-import { card } from '@shadow-panda/styled-system/recipes'
+import {
+  card,
+  cardHeader,
+  cardTitle,
+  cardDescription,
+  cardContent,
+  cardFooter,
+} from '@shadow-panda/styled-system/recipes'
 
-const { withProvider, withContext } = createStyleContext(card)
-
-export const Card = withProvider(styled('div'), 'root')
-export const CardHeader = withContext(styled('div'), 'header')
-export const CardTitle = withContext(styled('h3'), 'title')
-export const CardDescription = withContext(styled('p'), 'description')
-export const CardContent = withContext(styled('div'), 'content')
-export const CardFooter = withContext(styled('div'), 'footer')
+export const Card = styled('div', card)
+export const CardHeader = styled('div', cardHeader)
+export const CardTitle = styled('h3', cardTitle)
+export const CardDescription = styled('p', cardDescription)
+export const CardContent = styled('div', cardContent)
+export const CardFooter = styled('div', cardFooter)

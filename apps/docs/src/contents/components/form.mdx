@@ -5,6 +5,8 @@ references:
   shadcnUiLink: https://ui.shadcn.com/docs/components/form
 ---
 
+<ComponentPreview name="form" withRecipe />
+
 For detailed explanation of the Form component, see the [documentation from shadcn/ui](https://ui.shadcn.com/docs/components/form).
 
 ## Anatomy
@@ -159,10 +161,7 @@ export function ProfileForm() {
 
   return (
     <Form {...form}>
-      <form
-        onSubmit={form.handleSubmit(onSubmit)}
-        className={css({ spaceY: '8' })}
-      >
+      <form onSubmit={form.handleSubmit(onSubmit)} className={css({ spaceY: '8' })}>
         <FormField
           control={form.control}
           name="username"
@@ -172,9 +171,7 @@ export function ProfileForm() {
               <FormControl>
                 <Input placeholder="shadcn" {...field} />
               </FormControl>
-              <FormDescription>
-                This is your public display name.
-              </FormDescription>
+              <FormDescription>This is your public display name.</FormDescription>
               <FormMessage />
             </FormItem>
           )}

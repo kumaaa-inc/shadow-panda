@@ -4,8 +4,8 @@ import {
   h3,
   p,
   blockquote,
-  tableContainerStyles,
-  tableStyles,
+  typographyTableContainer,
+  typographyTable,
   list,
   link,
 } from '@shadow-panda/styled-system/recipes'
@@ -60,8 +60,8 @@ export default function Example() {
         again, and soon the entire kingdom was in on the joke.
       </p>
 
-      <div className={tableContainerStyles()}>
-        <table className={tableStyles()}>
+      <div className={typographyTableContainer()}>
+        <table className={typographyTable()}>
           <thead>
             <tr>
               <th>King's Treasury</th>

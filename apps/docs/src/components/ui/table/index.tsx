@@ -1,11 +1,18 @@
 import * as React from 'react'
-import { createStyleContext } from '@shadow-panda/style-context'
 import { styled } from '@shadow-panda/styled-system/jsx'
-import { table } from '@shadow-panda/styled-system/recipes'
+import {
+  tableContainer,
+  table,
+  tableHeader,
+  tableBody,
+  tableFooter,
+  tableHead,
+  tableRow,
+  tableCell,
+  tableCaption,
+} from '@shadow-panda/styled-system/recipes'
 
-const { withProvider, withContext } = createStyleContext(table)
-
-const TableContainer = withContext(styled('div'), 'container')
+const TableContainer = styled('div', tableContainer)
 
 const BaseTable = React.forwardRef<HTMLTableElement, React.HTMLAttributes<HTMLTableElement>>(
   (props, ref) => (
@@ -16,11 +23,11 @@ const BaseTable = React.forwardRef<HTMLTableElement, React.HTMLAttributes<HTMLTa
 )
 BaseTable.displayName = 'Table'
 
-export const Table = withProvider(styled(BaseTable), 'root')
-export const TableHeader = withContext(styled('thead'), 'header')
-export const TableBody = withContext(styled('tbody'), 'body')
-export const TableFooter = withContext(styled('tfoot'), 'footer')
-export const TableHead = withContext(styled('th'), 'head')
-export const TableRow = withContext(styled('tr'), 'row')
-export const TableCell = withContext(styled('td'), 'cell')
-export const TableCaption = withContext(styled('caption'), 'caption')
+export const Table = styled(BaseTable, table)
+export const TableHeader = styled('thead', tableHeader)
+export const TableBody = styled('tbody', tableBody)
+export const TableFooter = styled('tfoot', tableFooter)
+export const TableHead = styled('th', tableHead)
+export const TableRow = styled('tr', tableRow)
+export const TableCell = styled('td', tableCell)
+export const TableCaption = styled('caption', tableCaption)
