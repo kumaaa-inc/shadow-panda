@@ -1,3 +1,5 @@
+'use client'
+
 import * as React from 'react'
 import * as LabelPrimitive from '@radix-ui/react-label'
 import { Slot } from '@radix-ui/react-slot'
@@ -9,13 +11,16 @@ import {
   FormProvider,
   useFormContext,
 } from 'react-hook-form'
-import { createStyleContext } from '@shadow-panda/style-context'
 import { styled } from '@shadow-panda/styled-system/jsx'
 import { css, cx } from '@shadow-panda/styled-system/css'
-import { form } from '@shadow-panda/styled-system/recipes'
+import {
+  formLabel,
+  formItem,
+  formControl,
+  formDescription,
+  formMessage,
+} from '@shadow-panda/styled-system/recipes'
 import { Label } from '@/components/ui/label'
-
-const { withProvider, withContext } = createStyleContext(form)
 
 type FormFieldContextValue<
   TFieldValues extends FieldValues = FieldValues,
@@ -142,10 +147,10 @@ const BaseFormMessage = React.forwardRef<
 })
 BaseFormMessage.displayName = 'FormMessage'
 
-export const Form = withProvider(FormProvider, 'root') as typeof FormProvider
-export const FormField = withContext(BaseFormField, 'field') as typeof BaseFormField
-export const FormLabel = withContext(styled(BaseFormLabel), 'label')
-export const FormItem = withContext(styled(BaseFormItem), 'item')
-export const FormControl = withContext(styled(BaseFormControl), 'control')
-export const FormDescription = withContext(styled(BaseFormDescription), 'description')
-export const FormMessage = withContext(styled(BaseFormMessage), 'message')
+export const Form = FormProvider
+export const FormField = BaseFormField
+export const FormLabel = styled(BaseFormLabel, formLabel)
+export const FormItem = styled(BaseFormItem, formItem)
+export const FormControl = styled(BaseFormControl, formControl)
+export const FormDescription = styled(BaseFormDescription, formDescription)
+export const FormMessage = styled(BaseFormMessage, formMessage)

@@ -22,7 +22,7 @@
 - e1ff788: Support `Table` component
 - 797b99e: Support `Progress` component
 - 4d9670b: Support `Slider` component
-- e1ff788: (BREAKING) Renamed `tableContainer` and `table` recipes to `tableContainerStyles` and `tableStyles`, due to recipe created for the `Table` component
+- e1ff788: (BREAKING) Renamed `tableContainer` and `table` recipes to `typographyTableContainer` and `typographyTable`, due to recipe created for the `Table` component
 
 ## 0.3.0
 
