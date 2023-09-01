@@ -68,7 +68,7 @@
     "github-slugger": "2.0.0",
     "postcss": "8.4.29",
     "rehype-pretty-code": "0.10.0",
-    "rehype-slug": "5.1.0",
+    "rehype-slug": "6.0.0",
     "remark-code-import": "1.2.0",
     "remark-gfm": "3.0.1",
     "shiki": "0.14.4",
