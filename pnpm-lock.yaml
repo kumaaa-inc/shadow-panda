@@ -132,8 +132,8 @@ importers:
         specifier: 1.0.6
         version: 1.0.6(@types/react-dom@18.2.7)(@types/react@18.2.21)(react-dom@18.2.0)(react@18.2.0)
       '@tanstack/react-table':
-        specifier: 8.9.7
-        version: 8.9.7(react-dom@18.2.0)(react@18.2.0)
+        specifier: 8.9.8
+        version: 8.9.8(react-dom@18.2.0)(react@18.2.0)
       cmdk:
         specifier: 0.2.0
         version: 0.2.0(@types/react@18.2.21)(react-dom@18.2.0)(react@18.2.0)
@@ -3812,20 +3812,20 @@ packages:
     dependencies:
       tslib: 2.6.0
 
-  /@tanstack/react-table@8.9.7(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-UKUekM8JNUyWbjT1q3s1GpH5OtBL9mJ4258Il23fsahvkh3ou9TuFVmqI0/UPiFROgHkRlCBDNPUhcsC9YPFgg==}
+  /@tanstack/react-table@8.9.8(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-ZUd+ZydvUP8+XLI+oQ3IcG6Pqq3vw94na3fViD/v0dsIVwgQaWanizeh+si/Pn/8eU0XgbSVU9VpejOJEbp/lg==}
     engines: {node: '>=12'}
     peerDependencies:
       react: '>=16'
       react-dom: '>=16'
     dependencies:
-      '@tanstack/table-core': 8.9.7
+      '@tanstack/table-core': 8.9.8
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
     dev: false
 
-  /@tanstack/table-core@8.9.7:
-    resolution: {integrity: sha512-lkhVcGDxa9GSoDFPkplPDvzsiUACPZrxT3U1edPs0DCMKFhBDgZ7d1DPd7cqHH0JoybfbQ/qiTQYOQBg8sinJg==}
+  /@tanstack/table-core@8.9.8:
+    resolution: {integrity: sha512-f2Y/BcJy3IBkdDxWEk6WX6zJSmCDBI5iS0icr5DyeSbWsbnfaBtOIaeBjfnTEedt9Kk3xPmfciA6uSNOQ1BEXA==}
     engines: {node: '>=12'}
     dev: false
 
