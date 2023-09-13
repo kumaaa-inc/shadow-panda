@@ -28,13 +28,13 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@pandacss/preset-panda": "0.13.1"
+    "@pandacss/preset-panda": "0.14.0"
   },
   "devDependencies": {
-    "@pandacss/dev": "0.13.1",
-    "@pandacss/types": "0.13.1"
+    "@pandacss/dev": "0.14.0",
+    "@pandacss/types": "0.14.0"
   },
   "peerDependencies": {
-    "@pandacss/dev": "0.13.1"
+    "@pandacss/dev": "0.14.0"
   }
 }
