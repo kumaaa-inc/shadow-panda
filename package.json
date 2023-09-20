@@ -16,8 +16,8 @@
     "release": "changeset publish",
     "release-dev": "changeset version --snapshot dev && changeset publish --tag dev",
     "typecheck": "pnpm -r --parallel --filter=./packages/** typecheck",
-    "lint": "eslint ./ --ext .ts,.tsx,.json",
-    "lint-fix": "eslint --fix --ext .ts,.tsx,.json"
+    "lint": "eslint ./ --ext .ts,.tsx",
+    "lint-fix": "eslint --fix --ext .ts,.tsx"
   },
   "packageManager": "pnpm@8.6.5",
   "keywords": [
@@ -37,10 +37,12 @@
   "dependencies": {
     "@changesets/changelog-github": "0.4.8",
     "@changesets/cli": "2.26.2",
+    "@next/eslint-plugin-next": "13.5.1",
     "@typescript-eslint/eslint-plugin": "6.7.2",
     "@typescript-eslint/parser": "6.7.2",
     "eslint": "8.49.0",
     "eslint-plugin-prettier": "5.0.0",
+    "eslint-config-next": "13.5.1",
     "eslint-config-prettier": "9.0.0",
     "eslint-plugin-import": "2.28.1",
     "husky": "8.0.3",
