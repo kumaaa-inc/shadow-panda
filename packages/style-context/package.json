@@ -28,7 +28,7 @@
     "typecheck": "tsc --noEmit"
   },
   "peerDependencies": {
-    "@types/react": "18.2.21",
+    "@types/react": "18.2.22",
     "@types/react-dom": "18.2.7",
     "react": "^16.8 || ^17.0 || ^18.0",
     "react-dom": "^16.8 || ^17.0 || ^18.0"

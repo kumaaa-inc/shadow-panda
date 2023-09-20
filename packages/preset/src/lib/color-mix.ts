@@ -8,12 +8,11 @@ export const colorMix: (...args: Parameters<PropertyTransform>) => {
   const [color, opacityAmount] = value.split('/')
   const amount = !isNaN(Number(opacityAmount)) ? Number(opacityAmount) : 100
   const colorValue = token(`colors.${color}`)
-  const amountValue = token(`opacity.${amount}`)
-    ? token(`opacity.${amount}`) * 100
-    : `${100 - amount}%`
+  const opacityValue = token(`opacity.${amount}`)
+  const amountValue = opacityValue ? Number(opacityValue) * 100 : `${100 - amount}%`
 
   return {
-    color: colorValue,
+    color: colorValue ?? color,
     amount: amountValue,
     value: `color-mix(in srgb, transparent ${amountValue}, ${colorValue})`,
   }
