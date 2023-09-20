@@ -36,17 +36,20 @@ export const Tabs = ({ items, storageKey, defaultIndex, children }: TabsProps) =
     return () => {
       window.removeEventListener('storage', fn)
     }
-  }, [])
+  }, [storageKey])
 
-  const handleChange = React.useCallback((index: string) => {
-    if (storageKey) {
-      localStorage.setItem(storageKey, index)
+  const handleChange = React.useCallback(
+    (index: string) => {
+      if (storageKey) {
+        localStorage.setItem(storageKey, index)
 
-      window.dispatchEvent(new StorageEvent('storage', { key: storageKey, newValue: index }))
-      return
-    }
-    setSelectedIndex(index)
-  }, [])
+        window.dispatchEvent(new StorageEvent('storage', { key: storageKey, newValue: index }))
+        return
+      }
+      setSelectedIndex(index)
+    },
+    [storageKey],
+  )
 
   // Map children and add value prop
   const tabContent = React.Children.map(children, (child, i) => {

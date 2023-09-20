@@ -1,0 +1,13 @@
+{
+  "extends": ["../../.eslintrc", "plugin:@next/next/recommended", "next"],
+  "settings": {
+    "next": {
+      "rootDir": "apps/docs/"
+    }
+  },
+  "rules": {
+    "semi": "off",
+    "react/no-unescaped-entities": "off",
+    "@next/next/no-html-link-for-pages": "off"
+  }
+}
