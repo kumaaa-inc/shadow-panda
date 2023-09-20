@@ -1,5 +1,11 @@
 # @shadow-panda/preset
 
+## 0.7.0
+
+### Minor Changes
+
+- 72d0a05: Updated dependencies
+
 ## 0.6.0
 
 ### Minor Changes
