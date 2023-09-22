@@ -15,8 +15,8 @@ importers:
         specifier: 2.26.2
         version: 2.26.2
       '@next/eslint-plugin-next':
-        specifier: 13.5.1
-        version: 13.5.1
+        specifier: 13.5.2
+        version: 13.5.2
       '@typescript-eslint/eslint-plugin':
         specifier: 6.7.2
         version: 6.7.2(@typescript-eslint/parser@6.7.2)(eslint@8.49.0)(typescript@5.2.2)
