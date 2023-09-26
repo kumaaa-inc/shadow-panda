@@ -37,7 +37,7 @@
   "dependencies": {
     "@changesets/changelog-github": "0.4.8",
     "@changesets/cli": "2.26.2",
-    "@next/eslint-plugin-next": "13.5.2",
+    "@next/eslint-plugin-next": "13.5.3",
     "@typescript-eslint/eslint-plugin": "6.7.2",
     "@typescript-eslint/parser": "6.7.2",
     "eslint": "8.50.0",
