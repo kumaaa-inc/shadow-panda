@@ -42,7 +42,7 @@
     "@radix-ui/react-tabs": "1.0.4",
     "@radix-ui/react-toast": "1.1.4",
     "@radix-ui/react-toggle": "1.0.3",
-    "@radix-ui/react-tooltip": "1.0.6",
+    "@radix-ui/react-tooltip": "1.0.7",
     "@tanstack/react-table": "8.10.1",
     "cmdk": "0.2.0",
     "contentlayer": "0.3.4",
