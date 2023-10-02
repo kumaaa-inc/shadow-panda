@@ -58,7 +58,7 @@
     "zod": "3.22.2"
   },
   "devDependencies": {
-    "@pandacss/dev": "0.15.3",
+    "@pandacss/dev": "0.15.4",
     "@shadow-panda/preset": "workspace:*",
     "@shadow-panda/style-context": "workspace:*",
     "@theguild/remark-npm2yarn": "0.2.0",
@@ -77,6 +77,6 @@
     "unist-util-visit": "5.0.0"
   },
   "peerDependencies": {
-    "@pandacss/dev": "0.15.3"
+    "@pandacss/dev": "0.15.4"
   }
 }
