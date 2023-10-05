@@ -245,10 +245,10 @@ importers:
   packages/style-context:
     dependencies:
       '@types/react':
-        specifier: 18.2.22
+        specifier: ^18.2
         version: 18.2.22
       '@types/react-dom':
-        specifier: 18.2.7
+        specifier: ^18.2
         version: 18.2.7
       react:
         specifier: ^16.8 || ^17.0 || ^18.0
