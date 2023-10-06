@@ -55,7 +55,7 @@
     "react-day-picker": "8.8.2",
     "react-dom": "18.2.0",
     "react-hook-form": "7.46.2",
-    "zod": "3.22.3"
+    "zod": "3.22.4"
   },
   "devDependencies": {
     "@pandacss/dev": "0.15.5",
