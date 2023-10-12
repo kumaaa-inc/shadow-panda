@@ -5,6 +5,15 @@
       "rootDir": "apps/docs/"
     }
   },
+  "overrides": [
+    {
+      "files": ["*.mjs"],
+      "parser": "espree",
+      "parserOptions": {
+        "ecmaVersion": 2020
+      }
+    }
+  ],
   "rules": {
     "semi": "off",
     "react/no-unescaped-entities": "off",

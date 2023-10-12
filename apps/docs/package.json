@@ -11,7 +11,7 @@
     "studio": "panda studio",
     "debug": "panda debug",
     "dev": "next dev",
-    "build": "contentlayer build && next build",
+    "build": "next build",
     "start": "next start",
     "typecheck": "tsc --noEmit"
   },
