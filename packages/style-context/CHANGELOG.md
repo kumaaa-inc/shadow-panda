@@ -1,5 +1,12 @@
 # @shadow-panda/style-context
 
+## 0.7.1
+
+### Patch Changes
+
+- 2ff1412: Updated PandaCSS
+- 2d9db30: Fix dependencies
+
 ## 0.7.0
 
 ### Minor Changes
