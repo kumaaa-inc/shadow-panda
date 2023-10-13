@@ -1,4 +1,4 @@
-lockfileVersion: '6.1'
+lockfileVersion: '6.0'
 
 settings:
   autoInstallPeers: true
@@ -57,8 +57,8 @@ importers:
   apps/docs:
     dependencies:
       '@hookform/resolvers':
-        specifier: 3.3.1
-        version: 3.3.1(react-hook-form@7.46.2)
+        specifier: 3.3.2
+        version: 3.3.2(react-hook-form@7.46.2)
       '@radix-ui/react-accordion':
         specifier: 1.1.2
         version: 1.1.2(@types/react-dom@18.2.10)(@types/react@18.2.25)(react-dom@18.2.0)(react@18.2.0)
@@ -1706,8 +1706,8 @@ packages:
       yargs: 17.7.2
     dev: false
 
-  /@hookform/resolvers@3.3.1(react-hook-form@7.46.2):
-    resolution: {integrity: sha512-K7KCKRKjymxIB90nHDQ7b9nli474ru99ZbqxiqDAWYsYhOsU3/4qLxW91y+1n04ic13ajjZ66L3aXbNef8PELQ==}
+  /@hookform/resolvers@3.3.2(react-hook-form@7.46.2):
+    resolution: {integrity: sha512-Tw+GGPnBp+5DOsSg4ek3LCPgkBOuOgS5DsDV7qsWNH9LZc433kgsWICjlsh2J9p04H2K66hsXPPb9qn9ILdUtA==}
     peerDependencies:
       react-hook-form: ^7.0.0
     dependencies:
