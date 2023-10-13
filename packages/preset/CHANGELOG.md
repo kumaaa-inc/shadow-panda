@@ -1,5 +1,11 @@
 # @shadow-panda/preset
 
+## 0.7.1
+
+### Patch Changes
+
+- 2ff1412: Updated PandaCSS
+
 ## 0.7.0
 
 ### Minor Changes
