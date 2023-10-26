@@ -62,7 +62,7 @@
     "@shadow-panda/preset": "workspace:*",
     "@shadow-panda/style-context": "workspace:*",
     "@theguild/remark-npm2yarn": "0.2.0",
-    "@types/react": "18.2.31",
+    "@types/react": "18.2.32",
     "@types/unist": "3.0.1",
     "eslint": "8.52.0",
     "github-slugger": "2.0.0",
