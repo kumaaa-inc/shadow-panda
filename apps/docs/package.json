@@ -67,7 +67,7 @@
     "eslint": "8.52.0",
     "github-slugger": "2.0.0",
     "postcss": "8.4.31",
-    "rehype-pretty-code": "0.10.1",
+    "rehype-pretty-code": "0.10.2",
     "rehype-slug": "6.0.0",
     "remark-code-import": "1.2.0",
     "remark-gfm": "3.0.1",
